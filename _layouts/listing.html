@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if site.papers.size > 0 -%}
+    <ul class="post-list">
+      {%- for paper in site.papers -%}
+      <li>
+        <h3>
+            <h2 class="post-list-heading">{{ paper.title | escape }}</h2>
+            {{paper.content}}
+          </a>
+        </h3>
+      </li>
+      <br>
+      <center><hr style="height:1px;border:none;background-color:#E8E8E8;width:80%" /></center><br>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</div>

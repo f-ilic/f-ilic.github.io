@@ -1,7 +1,11 @@
 ---
-layout: page
+layout: default
 title: About Me
 permalink: /about/
 ---
 
-Computer vision and machine learning guy
+
+<h1>Experiences</h1>
+
+
+Some stuff goes here
