@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Teaching
+# title: Teaching
 permalink: /teaching/
+exclude: true
 ---
 
 <h1>General</h1>
@@ -9,33 +10,26 @@ permalink: /teaching/
 * Late submissions need to be discussed beforehand
 * It is advised to familiarize yourself with the assignment sheets before attending the laboratory
 
-
-
-<br>
-<center><hr style="height:1px;border:none;color:#333;background-color:#E8E8E8;width:80%" /></center>
-<br>
+<center><hr/></center>
 
 <h1> Winter Semester 2018/2019</h1>
 
-<h2>Image Based Measurement, Laboratory</h2>
-[ [Signup] ](https://online.tugraz.at/tug_online/wbLv.wbShowLVDetail?pStpSpNr=213223&pSpracheNr=2) [ [Intro Slides] ]() [ [Assignments] ]() 
+Image Based Measurement, Laboratory
 
-<br>
-<center><hr style="height:1px;border:none;color:#333;background-color:#E8E8E8;width:40%" /></center>
-<br>
-
-<h2>Optical Measurement Principles, Laboratory </h2>
-[ [Signup] ](https://online.tugraz.at/tug_online/wbLv.wbShowLVDetail?pStpSpNr=211083&pSpracheNr=2) [ [Intro Slides] ]() [ [Assignments] ]()
-
-<br>
-<center><hr style="height:1px;border:none;color:#333;background-color:#E8E8E8;width:40%" /></center>
-<br>
-
-<h2>Image Understanding, Design practical</h2> 
-[ [Signup] ](https://online.tugraz.at/tug_online/wbLv.wbShowLVDetail?pStpSpNr=214556&pSpracheNr=2) [ [Intro Slides] ]()
+[Register](https://online.tugraz.at/tug_online/wbLv.wbShowLVDetail?pStpSpNr=213223&pSpracheNr=2){: .boxed} 
+[Intro Slides](){: .boxed} 
+[Assignments](){: .boxed}  
 
 
-<br>
-<center><hr style="height:1px;border:none;color:#333;background-color:#E8E8E8;width:80%" /></center>
-<br>
+Optical Measurement Principles, Laboratory
 
+[Register](https://online.tugraz.at/tug_online/wbLv.wbShowLVDetail?pStpSpNr=211083&pSpracheNr=2){: .boxed}
+[Intro Slides](){: .boxed} 
+[Assignments](){: .boxed}  
+
+Image Understanding, Design practical
+
+[Register](https://online.tugraz.at/tug_online/wbLv.wbShowLVDetail?pStpSpNr=214556&pSpracheNr=2){: .boxed} 
+[Intro Slides](){: .boxed} 
+
+<hr>

@@ -1,0 +1,51 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+.boxed {
+    border: 1px solid #E8E8E8;
+    padding: 5px;
+    margin: 2px 2px;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.muted-gray{
+    font-size: 14px;
+    /* color: #828282; */
+    color:#454545;
+    display: block;  
+}
+
+.tiny-heading {
+    display: block;  
+}
+
+hr {
+    height:1px;
+    border:none;
+    color:#333;
+    background-color:#E8E8E8;
+}
+
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+

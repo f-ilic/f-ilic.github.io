@@ -2,15 +2,15 @@
 title: Space-Time Volumes of Interest
 authors: Filip Ilic, Axel Pinz
 ---
+
 <video width="100%" nocontrols loop autoplay>
   <source src="assets/SpaceTimeVolumesOfInterest/jumpingjack.mp4" type="video/mp4">
 </video> 
 
-<center>Representing objects at various spatio-temporal scales</center>
 
-<br>
-Abstract<br>
-<span class="post-meta">
+
+<span class="tiny-heading">Abstract</span>
+<span class="muted-gray">
 As top-down based approaches of object recognition
 from video are getting more powerful, a structured way
 to combine them with bottom-up grouping processes becomes
@@ -32,9 +32,13 @@ of relative motion between components of an object, and
 large-scale interactions between objects that model the dynamics of a scene.
 </span>
 
-Keywords<br>
-<span class="post-meta">
-Object representation, Gaussian spatio-tempora scale space, object decomposition, SLIC, top-down anchors, Mask R-CNN, Flownet2.0
-</span>
+<span class="tiny-heading">Keywords</span>
+<span class="muted-gray">Object representation, Gaussian spatio-tempora scale space, object decomposition, SLIC, top-down anchors, Mask R-CNN, Flownet2.0</span>
 
-[ [Paper] ](assets/SpaceTimeVolumesOfInterest/cvpr19.pdf) [ [Poster] ](SpaceTimeVolumesOfInterest/cvpr19_poster.pdf) [ [Code] ](https://github.com/f-ilic/space-time-volumes) [ [BibTex] ](assets/SpaceTimeVolumesOfInterest//bib.txt) 
+<span class="tiny-heading">tl;dr</span>
+<span class="muted-gray">Representing objects at various spatio-temporal scales<span>
+
+[Paper](projects/voctree/techrep.pdf){: .boxed} 
+[Poster](SpaceTimeVolumesOfInterest/cvpr19_poster.pdf){: .boxed} 
+[Code](https://github.com/f-ilic/space-time-volumes){: .boxed} 
+[BibTex](../assets/SpaceTimeVolumesOfInterest/bib.txt){: .boxed} 

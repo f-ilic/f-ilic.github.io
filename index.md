@@ -1,3 +1,4 @@
 ---
-layout: listing
+layout: paper_listing
 ---
+

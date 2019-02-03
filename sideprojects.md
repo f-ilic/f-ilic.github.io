@@ -1,7 +1,6 @@
 ---
 layout: default
-title: Side Projects
+# title: Side Projects
 permalink: /sideprojects/
 ---
 
-stuffs

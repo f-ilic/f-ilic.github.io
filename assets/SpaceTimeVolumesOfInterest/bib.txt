@@ -1,1 +1,7 @@
-Some Text here
+@inproceedings{ilic2019stvi,
+  title={Combining stuff},
+  author={Ilic, Filip and Pinz, Axel},
+  booktitle={Randomconf},
+  pages={0},
+  year={2019}
+}
