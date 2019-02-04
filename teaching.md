@@ -1,8 +1,8 @@
 ---
 layout: default
-# title: Teaching
+title: Teaching
 permalink: /teaching/
-exclude: true
+published: true
 ---
 
 <h1>General</h1>
@@ -27,9 +27,9 @@ Optical Measurement Principles, Laboratory
 [Intro Slides](){: .boxed} 
 [Assignments](){: .boxed}  
 
-Image Understanding, Design practical
+<!-- Image Understanding, Design practical
 
 [Register](https://online.tugraz.at/tug_online/wbLv.wbShowLVDetail?pStpSpNr=214556&pSpracheNr=2){: .boxed} 
-[Intro Slides](){: .boxed} 
+[Intro Slides](){: .boxed}  -->
 
 <hr>

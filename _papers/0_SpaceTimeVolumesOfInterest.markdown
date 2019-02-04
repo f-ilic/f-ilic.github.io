@@ -4,10 +4,8 @@ authors: Filip Ilic, Axel Pinz
 ---
 
 <video width="100%" nocontrols loop autoplay>
-  <source src="assets/SpaceTimeVolumesOfInterest/jumpingjack.mp4" type="video/mp4">
+  <source src="data/SpaceTimeVolumesOfInterest/jumpingjack.mp4" type="video/mp4">
 </video> 
-
-
 
 <span class="tiny-heading">Abstract</span>
 <span class="muted-gray">
@@ -40,5 +38,6 @@ large-scale interactions between objects that model the dynamics of a scene.
 
 [Paper](projects/voctree/techrep.pdf){: .boxed} 
 [Poster](SpaceTimeVolumesOfInterest/cvpr19_poster.pdf){: .boxed} 
+[Presentation](SpaceTimeVolumesOfInterest/cvpr19_poster.pdf){: .boxed} 
 [Code](https://github.com/f-ilic/space-time-volumes){: .boxed} 
 [BibTex](../assets/SpaceTimeVolumesOfInterest/bib.txt){: .boxed} 
