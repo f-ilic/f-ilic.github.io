@@ -2,7 +2,7 @@
 layout: default
 title: Teaching
 permalink: /teaching/
-published: true
+published: false
 ---
 
 <h1>General</h1>
@@ -26,10 +26,5 @@ Optical Measurement Principles, Laboratory
 [Register](https://online.tugraz.at/tug_online/wbLv.wbShowLVDetail?pStpSpNr=211083&pSpracheNr=2){: .boxed}
 [Intro Slides](){: .boxed} 
 [Assignments](){: .boxed}  
-
-<!-- Image Understanding, Design practical
-
-[Register](https://online.tugraz.at/tug_online/wbLv.wbShowLVDetail?pStpSpNr=214556&pSpracheNr=2){: .boxed} 
-[Intro Slides](){: .boxed}  -->
 
 <hr>
