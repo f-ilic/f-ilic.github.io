@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CVWW19 - Filip Ilic</title>
+    <meta charset="utf-8">
+    <style>
+      /* @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic); */
+
+      body { font-family: 'Roboto'; 
+            }
+       h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: normal;
+        font-size: 50px;
+      }
+
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .footer { font-family: 'Roboto';
+                font-weight: normal; font-size: 10pt; 
+                color: #454545;
+                position: absolute;
+                bottom: 15px;
+                left: 20px;
+                width: 100%;
+        
+    }
+    .footer-title { font-family: 'Roboto';
+                font-weight: normal; font-size: 10pt; 
+                color: #454545;
+                position: bottom 15px;
+                width: 100%;
+    }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+<!-- ## Master's Thesis -->
+###Combining Top-Down and Bottom-Up Processes to Extract Space-Time Volumes of Interest from Video
+##### Computer Vision Winter Workshop 2019
+<br>
+Filip **Ilic**<br>
+Axel **Pinz**
+<br>
+
+<br>
+
+<small><center><img height="30" src="presentation/tugraz_logo.png" /> <br>Graz University of Technology</center>
+
+<br>
+
+
+
+
+---
+layout: true
+<div class="footer"><img height="18" src="presentation/tugraz_logo.png" />&nbsp;&nbsp; **Filip Ilic** &nbsp;&nbsp; _Combining Top-down and Bottom-Up Processes to Extract Space-Time Volumes of Interest from Video_</div>
+---
+
+### Representing objects in video
+
+<center><video width="31.5%" controls loop autoplay> <source src="presentation/girl.mp4" type="video/mp4"></center>
+
+
+<table style="width:100%; table-layout:fixed;">
+<tr>
+    <th><video width="95%" controls loop > <source src="presentation/tsp_girl.mp4" type="video/mp4"> </video> 
+    </th>
+    <th><video width="95%" controls loop> <source src="presentation/mrcnn_girl.mp4" type="video/mp4"> </video> 
+    </th>
+    <th><video width="95%" controls loop> <source src="presentation/mine_girl.mp4" type="video/mp4"> </video> 
+    </th>
+</tr>
+<tr>
+    <td><center><small><b>Temporal Superpixel</b><br>Chang et al. CVPR13</small></center></td>
+    <td><center><small><b>Mask R-CNN</b><br>He et al. ICCV17</small></center></td>
+    <td><center><small><b>Our approach</b><br></small>&nbsp;</center></td>
+</tr>
+</table> 
+
+---
+
+### Overview
+
+Top-Down Information
+- Used to find salient objects (Anchors)
+
+Bottom-Up grouping
+- Describe objects and their parts
+- Group them based on proximity (spatial, appearance, optical flow)
+
+--
+
+Result of our method
+
+<video width="44%" controls loop autoplay> <source src="presentation/rollerblade_backproj.mp4" type="video/mp4"> </video>
+<img width="55%" src="presentation/rollerblade_demo.png">
+
+---
+
+### Overview
+
+<img width="100%" src="presentation/pipeline.png">
+
+Mask R-CNN trained with COCO dataset (80 object categories)
+
+In principle our approach works with any kind of object detector
+
+---
+
+### Preprocessing
+
+Object-centered coordinate system
+* Mask R-CNN: use mask to find crop object
+* Flownet2.0: Optical flow of that region
+
+Video: think of it as stacked images (volumetric)
+<br><br><br><br>
+<img width="50%" src="presentation/video_volume.png">   <img width="45%" src="presentation/cropped.png">
+
+---
+
+### How to decompose the object?
+
+Combine apearance and flow!
+
+<img width="35%" src="presentation/cropped.png">
+--
+<small>
+\\[
+\phi(x,y,t)= \begin{bmatrix}\alpha (x,y,t)^T \\\\ (L,a,b)^T \\\\ \beta (\hat{F}_x, \hat{F}_y)^T\end{bmatrix}, \text{dimensionality } 8 \times 1
+\\] 
+</small>
+
+* Our goal: Represent certain parts in that subvolume.
+    * Therefore need a way to set the **scale**
+
+---
+
+### Scale selection in Gaussian scale space
+
+$$\mathscr{L}(\cdot;\sigma{^2}, \tau{^2}) =  g(\cdot; \sigma{^2}, \tau{^2}) * f(\cdot)$$
+
+`\(\sigma\)` ... spatial scale
+
+`\(\tau\)` ... temporal scale
+
+
+--
+
+#### Examples
+
+<center>
+<div>
+<video width="45%" controls loop autoplay> <source src="presentation/sig_vid.mp4" type="video/mp4"> </video>
+<video width="45%" controls loop autoplay> <source src="presentation/tau_vid.mp4" type="video/mp4"> </video>
+</div>
+</center>
+
+<center><small>Choice of the scale determines which parts are prominent</small></center>
+
+---
+
+### Scale selection in Gaussian scale space
+
+$$\mathscr{L}(\cdot;\sigma{^2}, \tau{^2}) =  g(\cdot; \sigma{^2}, \tau{^2}) * f(\cdot)$$
+
+`\(\sigma\)` ... spatial scale
+
+`\(\tau\)` ... temporal scale
+
+#### So how do these different scales look like?
+
+--
+
+<video width="100%" loop controls autoplay>
+    <source src="./jumpingjack.mp4" type="video/mp4">
+</video> 
+
+
+What is the correct scale of an object?
+
+* Depends on the application
+* We provide a framework that allows the choice the appropriate scale
+
+---
+
+### Scale selection in Gaussian scale space
+
+$$\mathscr{L}(\cdot;\sigma{^2}, \tau{^2}) =  g(\cdot; \sigma{^2}, \tau{^2}) * f(\cdot)$$
+
+`\(\sigma\)` ... spatial scale
+
+`\(\tau\)` ... temporal scale
+
+#### Automatic scale selection based on
+`\(\sigma\)` ~ Object size
+
+`\(\tau\)` ~ Object motion
+
+---
+
+### Space-Time Volumes of Interest
+#### Recap
+* Descriptor for each pixel
+* Selected scale
+
+_Next_: Clustering
+--
+
+
+#### Structures after SLIC clustering
+
+<center><img width="75%" src="presentation/structures.png"></center>
+---
+
+### Space-Time Volumes of Interest
+#### Removing background structures
+We use Mask R-CNN masks to constrain the chosen clusters
+<br>
+<br>
+
+<center><img width="70%" src="presentation/tube_selection.png"></center>
+
+<br>
+
+The result is a **Space-Time Volume of Interest**
+
+---
+
+### Space-Time Volumes of Interest
+
+#### Object-centered coordinate system
+<center>
+<video height="210px" controls loop>
+    <source src="presentation/rollerblade_object_white.mp4" type="video/mp4">
+</video>
+</center> 
+
+* Relative motion of object parts
+* Centered around the centroid of the object
+
+---
+
+### Space-Time Volumes of Interest
+
+#### Viewer-centered coordinate system
+<center>
+<video height="300px" controls loop>
+    <source src="presentation/rollerblade_viewer_white.mp4" type="video/mp4">
+</video>
+</center> 
+
+* Trajectories of the object 
+* Visualization of interactions of multiple objects
+
+---
+
+### Space-Time Volumes of Interest
+
+#### Dense Method
+* Use masks in every frame
+* **Fails** if a single mask extraction fails
+
+--
+
+#### Sparse Method
+* Use masks every 15 frames and track the object
+* Only different Pre-processing
+
+<table style="width:100%; table-layout:fixed;">
+        <tr>
+            <th><center><img width="65%" src="presentation/pipeline_dense.png"></center>
+            </th>
+            <th><center><img width="65%" src="presentation/pipeline_sparse.png"></center>
+            </th>
+        </tr>
+</table> 
+
+---
+
+### Evaluation
+
+#### DAVIS Dataset
+* 50 videos, average duration ~70 frames
+* Ground truth segmentation masks
+* Classes which Mask R-CNN can recognize
+    * Humans, Animals, Cars, Bikes, etc.
+
+#### Metrics
+* Segmentation Accuracy (3D) "How much do we get right?"
+* Under-segmentation Error (3D) "How much do we get wrong?"
+
+---
+
+### Evaluation
+
+#### Quantiative Results
+* Able to evaluate 47/50 videos with **sparse**, and 39/50 with **dense** method.
+--
+
+* Segmentation Performance average
+    * Little differece beween **sparse** and **dense** method
+    * Lower Accuracy than Mask R-CNN 
+    * Lower Under-segmentation Error than Mask R-CNN
+
+<center><img width="80%" src="presentation/result_table.png"></center>
+
+--
+<br>
+<center><video width="70%" controls loop autoplay>
+        <source src="./jumpingjack.mp4" type="video/mp4">
+    </video> 
+</center>
+<center><small>Segmentation performance highly depends on our automatic scale selection</small></center>
+
+---
+
+### Evaluation
+
+####Qualitative Results
+
+lucia ours vs groundtruth vs mask
+
+use RED for ground truth and mask rcnn
+---
+
+### Discussion
+
+#### Issues with automatic parametrization
+We require contrast in appearance or flow.
+
+<center><img width="100%" src="presentation/elephant.png"></center>
+
+---
+
+### Discussion
+
+#### Where does it work well?
+<center><img width="45%" src="presentation/good_examples.png"></center>
+
+---
+
+### Discussion
+
+#### Visualizations
+
+<center><img width="100%" src="presentation/jumpingjack_slices.png"></center>
+
+--
+<br>
+Volumetric representation allows for slicing along any of its axis
+* (b) emphasizes the oscilating motion pattern of the legs
+* (c) emphasizes the torso and head respectively modeled by one _tube_.
+
+---
+
+### Conclusion
+
+#### Representation of salient objects
+* Decomposition into meaningful parts
+* Variable (per object) scale - with proposed automatic scale selection
+* Shown viability to use sparse masks (anchors) to provide focus on objects
+
+#### Different frames of reference
+* Object-centered: Emphasizes relative motion between object parts
+* Viewer-centered: Dynamics of a scene and possibly trajectories
+
+#### Novel representation that might be useful in other applications
+
+
+
+</textarea>
+<script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+<script type="text/javascript">
+  var slideshow = remark.create({
+      ratio: '4:3',
+      countIncrementalSlides: false
+
+  });
+    
+
+  // Setup MathJax
+  MathJax.Hub.Config({
+      tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+  });
+
+  MathJax.Hub.Configured();
+</script>
+  </body>
+</html>
