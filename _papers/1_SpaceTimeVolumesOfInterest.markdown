@@ -4,7 +4,7 @@ authors: Filip Ilic, Axel Pinz
 ---
 
 <video width="100%" nocontrols loop autoplay>
-  <source src="data/SpaceTimeVolumesOfInterest/jumpingjack.mp4" type="video/mp4">
+  <source src="paper_assets/SpaceTimeVolumesOfInterest/summary_figures/jumpingjack.mp4" type="video/mp4">
 </video> 
 
 <span class="tiny-heading">Abstract</span>
@@ -31,13 +31,13 @@ large-scale interactions between objects that model the dynamics of a scene.
 </span>
 
 <span class="tiny-heading">Keywords</span>
-<span class="muted-gray">Object representation, Gaussian spatio-tempora scale space, object decomposition, SLIC, top-down anchors, Mask R-CNN, Flownet2.0</span>
+<span class="muted-gray">Object representation, Gaussian spatio-temporal scale space, object decomposition, SLIC, top-down anchors, Mask R-CNN, Flownet2.0</span>
 
 <span class="tiny-heading">tl;dr</span>
 <span class="muted-gray">Representing objects at various spatio-temporal scales<span>
 
-[Paper](projects/voctree/techrep.pdf){: .boxed} 
-[Poster](SpaceTimeVolumesOfInterest/cvpr19_poster.pdf){: .boxed} 
-[Presentation](SpaceTimeVolumesOfInterest/cvpr19_poster.pdf){: .boxed} 
+[Paper](paper_assets/SpaceTimeVolumesOfInterest/paper.pdf){: .boxed} 
+[Poster](paper_assets/SpaceTimeVolumesOfInterest/poster.pdf){: .boxed} 
+[Presentation](paper_assets/SpaceTimeVolumesOfInterest/presentation/index.html){: .boxed} 
 [Code](https://github.com/f-ilic/space-time-volumes){: .boxed} 
-[BibTex](../assets/SpaceTimeVolumesOfInterest/bib.txt){: .boxed} 
+[BibTex](paper_assets/SpaceTimeVolumesOfInterest/bib.txt){: .boxed} 

@@ -1,5 +1,5 @@
 ---
-#layout: paper_listing
-layout: default
+layout: paper_listing
+# layout: default
 ---
 

@@ -2,10 +2,12 @@
 layout: default
 ---
 
+{% assign ordered_papers = site.papers  | sort:"title" | reverse %}
+
 <div class="home">
   {%- if site.papers.size > 0 -%}
     <ul class="post-list">
-      {%- for paper in site.papers -%}
+      {%- for paper in ordered_papers -%}
       <li>
         <h3>
             <h2 class="post-list-heading">{{ paper.title | escape }}</h2>
