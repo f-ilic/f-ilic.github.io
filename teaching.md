@@ -5,6 +5,13 @@ permalink: /teaching/
 published: false
 ---
 
+<h1>Open Student Projects</h1>
+
+[Space Time Interest Points](){: .boxed}
+[Rotation Equivariance in ConNets](){: .boxed}
+[Scale Invariant ConvNets](){: .boxed}    
+[Autoencoders for Style Transfer](){: .boxed}    
+
 <h1>General</h1>
 * Submission via email with the subject `[IBM]`, `[OMP]`, or `[IU]` and your group number
 * Late submissions need to be discussed beforehand

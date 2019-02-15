@@ -2,8 +2,12 @@
 layout: default
 title: About Me
 permalink: /about/
-published: false
+published: true
 ---
+
+{%- include personal.html -%}
+
+<!-- [Other](cv.pdf){: .boxed} -->
 
 
 Employment
@@ -18,3 +22,10 @@ Education
 *  BSc in Computer Science at Graz University of Technology
 
 Skills
+
+[Download CV (PDF)](cv.pdf){: .boxed}
+
+
+
+
+

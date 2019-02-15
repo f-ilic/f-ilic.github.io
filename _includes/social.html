@@ -1,0 +1,3 @@
+{%- if site.email -%}<a href="mailto:{{ site.email }}"><img class="svg-icon" src="../assets/social-icons/email.svg" /></a>{%- endif -%}
+{%- if site.github_username -%}<a href="https://github.com/{{ site.github_username| cgi_escape | escape }}"><img class="svg-icon" src="../assets/social-icons/github.svg" /></a>{%- endif -%}
+{%- if site.linkedin_username -%}<a href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}"><img class="svg-icon" src="../assets/social-icons/linkedin.svg" /></a>{%- endif -%}
