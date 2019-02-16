@@ -5,11 +5,6 @@ permalink: /about/
 published: true
 ---
 
-{%- include personal.html -%}
-
-<!-- [Other](cv.pdf){: .boxed} -->
-
-
 Employment
 *  2018-2019 Teaching Assistent for Computer Vision and Optics courses
 *  2017-2018 Technical student at CERN developing data quality monitoring software for the CMS detector

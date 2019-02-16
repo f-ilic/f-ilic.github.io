@@ -3,21 +3,9 @@ layout: default
 title: Teaching
 permalink: /teaching/
 published: false
+order: 1
 ---
 
-<h1>Open Student Projects</h1>
-
-[Space Time Interest Points](){: .boxed}
-[Rotation Equivariance in ConNets](){: .boxed}
-[Scale Invariant ConvNets](){: .boxed}    
-[Autoencoders for Style Transfer](){: .boxed}    
-
-<h1>General</h1>
-* Submission via email with the subject `[IBM]`, `[OMP]`, or `[IU]` and your group number
-* Late submissions need to be discussed beforehand
-* It is advised to familiarize yourself with the assignment sheets before attending the laboratory
-
-<center><hr/></center>
 
 <h1> Winter Semester 2018/2019</h1>
 
@@ -35,3 +23,10 @@ Optical Measurement Principles, Laboratory
 [Assignments](){: .boxed}  
 
 <hr>
+
+
+
+<h1>General</h1>
+* Submission via email with the subject `[IBM]`, `[OMP]`, or `[IU]` and your group number
+* Late submissions need to be discussed beforehand
+* It is advised to familiarize yourself with the assignment sheets before attending the laboratory
