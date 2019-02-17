@@ -4,6 +4,10 @@
 
 @import "minima";
 
+$subcaption-blue-color: rgb(51, 34, 148);
+$subcaption-green-color: rgb(34, 148, 49);
+$accent-teal-color: #7bc2d3;
+
 .boxed {
     border: 1px solid $grey-color-light;
     padding: 5px;
@@ -27,12 +31,12 @@
 
 .paper-authors {
     display: block;
-    color: rgb(51, 34, 148);
+    color: $subcaption-blue-color;
 }
 
 .paper-published {
     display: block;
-    color: rgb(34, 148, 49);
+    color: $subcaption-green-color;
 }
 
 .tiny-heading {
@@ -51,6 +55,12 @@ blockquote {
 }
 
 .svg-icon {
+    // width: 23px;
+    // height: 23px;
+    vertical-align: middle;
+}
+
+.svg-social-icon {
     width: 28px;
     height: 28px;
     margin: 5px;
@@ -58,11 +68,12 @@ blockquote {
     transition: background-color .05s, transform .05s ease-in-out;
 }
 
-.svg-icon:hover {
+.svg-social-icon:hover {
     opacity:1;
     transform: scale(1.15);
     transition: background-color .05s, transform .05s ease-in-out;
 }
+
 
 .circle-img {
     border-radius: 70%;
@@ -110,3 +121,64 @@ nav-li {
     border-top: 1px solid $grey-color-light;
     padding: 10px;
   }
+.skillset {
+    margin-top: 20px;
+}
+.skillset .item {
+width:50%;
+overflow:hidden
+}
+.skillset .level-title {
+color: $grey-color-dark;
+font-size:14px;
+font-weight: bold;
+margin-top:0;
+margin-bottom:12px
+}
+.skillset .level-bar {
+height:12px;
+background:$grey-color-light
+}
+.skillset .level-bar-inner {
+height:12px;
+background:$accent-teal-color;
+}
+
+.skillset .level-title {
+    display:inline-block;
+    width:25%;
+
+    widows: 15px;
+    margin-bottom:0;
+    vertical-align: middle;
+}
+.skillset .level-bar {
+    display:inline-block;
+    width:70%;
+    vertical-align: middle;
+    position:relative;
+}
+
+.skillset {
+    margin-bottom: 20px;
+}
+
+.item-wrapper .time {
+float:right;
+color: $subcaption-blue-color;
+}
+.item-wrapper .company {
+margin-bottom:10px;
+color:$subcaption-blue-color;
+margin-bottom: 10px;
+}
+
+.item-wrapper .item {
+    margin-bottom: 30px;
+}
+
+.item-title {
+    display: block;  
+    font-size: 14pt;
+    margin-bottom: 20px;
+}
