@@ -1,12 +1,47 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+
 ---
 
 @import "minima";
 
-$subcaption-blue-color: rgb(51, 34, 148);
-$subcaption-green-color: rgb(34, 148, 49);
-$accent-teal-color: #7bc2d3;
+//  ---------------- Colors
+$blue-dark: hsl(249, 63%, 36%);
+$blue-mid: hsl(207, 63%, 63%);
+$blue-light: hsl(207, 100%, 81%);
+
+$green-dark: rgb(34, 148, 49);
+
+//  ---------------- Paragraphs and Headings
+.tiny {
+    font-size: 10pt;
+}
+
+.muted-gray{
+    font-size: 14px;
+    color: $grey-color-dark;
+    display: block;  
+}
+
+.tiny-heading {
+    display: block;  
+}
+
+blockquote {
+    font-size: 16px;
+    margin-bottom: 8%;
+}
+
+//  ---------------- Other
+hr {
+    height:1px;
+    border:none;
+    background-color:$grey-color-light;
+}
+
+.site-footer {
+    border-top: 1px solid $grey-color-light;
+    padding: 10px;
+}
 
 .boxed {
     border: 1px solid $grey-color-light;
@@ -17,13 +52,7 @@ $accent-teal-color: #7bc2d3;
 }
 
 
-
-.muted-gray{
-    font-size: 14px;
-    color: $grey-color-dark;
-    display: block;  
-}
-
+//  ---------------- Published Paper Stuff
 .paper-title {
     display: block;  
     font-size: 14pt;
@@ -31,32 +60,16 @@ $accent-teal-color: #7bc2d3;
 
 .paper-authors {
     display: block;
-    color: $subcaption-blue-color;
+    color: $blue-dark;
 }
 
 .paper-published {
     display: block;
-    color: $subcaption-green-color;
+    color: $green-dark;
 }
 
-.tiny-heading {
-    display: block;  
-}
-
-hr {
-    height:1px;
-    border:none;
-    background-color:$grey-color-light;
-}
-
-blockquote {
-    font-size: 16px;
-    margin-bottom: 8%;
-}
-
+//  ---------------- General Image Stuff
 .svg-icon {
-    // width: 23px;
-    // height: 23px;
     vertical-align: middle;
 }
 
@@ -92,85 +105,15 @@ blockquote {
     transition: transform .2s ease-in-out;
 }
 
-.tiny {
-    font-size: 10pt;
-}
-
-nav-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav-li {
-    display: inline;
-}
-
-.nav-elem{
-    border: 1px solid $grey-color-light;
-    // opacity: 0.5;
-//  border-bottom-color: #ee983d;
-    padding-left: 35px;
-    padding-right: 35px;
-    margin: 2px 2px;
-    display: inline-block;
-    font-size: 16px;
-}
-
-.site-footer {
-    border-top: 1px solid $grey-color-light;
-    padding: 10px;
-  }
-.skillset {
-    margin-top: 20px;
-}
-.skillset .item {
-width:50%;
-overflow:hidden
-}
-.skillset .level-title {
-color: $grey-color-dark;
-font-size:14px;
-font-weight: bold;
-margin-top:0;
-margin-bottom:12px
-}
-.skillset .level-bar {
-height:12px;
-background:$grey-color-light
-}
-.skillset .level-bar-inner {
-height:12px;
-background:$accent-teal-color;
-}
-
-.skillset .level-title {
-    display:inline-block;
-    width:25%;
-
-    widows: 15px;
-    margin-bottom:0;
-    vertical-align: middle;
-}
-.skillset .level-bar {
-    display:inline-block;
-    width:70%;
-    vertical-align: middle;
-    position:relative;
-}
-
-.skillset {
-    margin-bottom: 20px;
-}
-
+//  ---------------- Items in cv page
 .item-wrapper .time {
 float:right;
-color: $subcaption-blue-color;
+color: $blue-dark;
 }
 .item-wrapper .company {
-margin-bottom:10px;
-color:$subcaption-blue-color;
-margin-bottom: 10px;
+    margin-bottom:10px;
+    color:$blue-dark;
+    margin-bottom: 10px;
 }
 
 .item-wrapper .item {
@@ -182,3 +125,77 @@ margin-bottom: 10px;
     font-size: 14pt;
     margin-bottom: 20px;
 }
+
+
+//  ---------------- Navigation Elements
+nav-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-elem{
+    border: 1px solid #fff;
+    color: $blue-dark;
+
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left:15px;
+    margin-right:15px;
+    display: inline-block;
+    // font-size: 16px;
+    // font-weight: bold;
+}
+
+.nav-elem:hover{
+    border-bottom-color: $grey-color-light;
+    text-decoration: none;
+    color: $blue-dark;
+}
+
+.active{
+    border-bottom-color: $blue-dark;
+}
+
+//  ---------------- Skillset Progress Bars
+.skillset {
+    margin-top: 20px;    
+    margin-bottom: 20px;
+}
+
+.skillset .item {
+    width:50%;
+    overflow:hidden
+}
+.skillset .level-title {
+    color: $grey-color-dark;
+    font-size:14px;
+    font-weight: bold;
+    margin-top:0;
+    margin-bottom:12px
+}
+.skillset .level-bar {
+height:12px;
+background:$grey-color-light
+}
+
+.skillset .level-bar-inner {
+    height:12px;
+    background:$blue-mid;
+}
+
+.skillset .level-title {
+    display:inline-block;
+    width:25%;
+    widows: 15px;
+    margin-bottom:0;
+    vertical-align: middle;
+}
+.skillset .level-bar {
+    display:inline-block;
+    width:70%;
+    vertical-align: middle;
+    position:relative;
+}
+
+

@@ -1,18 +1,27 @@
 <nav-ul>
       {%- assign default_paths = site.pages | map: "path" -%}
       {%- assign page_paths = site.header_pages | default: default_paths -%}
-      <!-- <li><a class="nav-elem" href="{{ "/research" | relative_url }}">Research</a></li>
-      <li><a class="nav-elem" href="{{ "/" | relative_url }}">Projects</a></li>
-      <li><a class="nav-elem" href="{{ "/teaching" | relative_url }}">Teaching</a></li>
-      <li><a class="nav-elem" href="{{ "/about" | relative_url }}">About Me</a></li> -->
 
       {% assign sorted_page_paths = page_paths | sort:"order" | reverse %}
       {%- if page_paths -%}
             {%- for path in sorted_page_paths -%}
               {%- assign my_page = site.pages | where: "path", path | first -%}
               {%- if my_page.title -%}
-              <nav-li><a class="nav-elem" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></nav-li>
+                  
+                  {% if page.url == my_page.url %}
+                  <nav-li>
+                        <a class="nav-elem active" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                  </nav-li>
+                  {%- else -%}
+                  <nav-li>
+                        <a class="nav-elem" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                  </nav-li>
+                  {%- endif -%}
+
+
+
               {%- endif -%}
+
             {%- endfor -%}
       {%- endif -%}
 </nav-ul>
