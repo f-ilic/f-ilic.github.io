@@ -4,7 +4,7 @@ title: Research
 permalink: /research/
 published: true
 ---
-<div class="item-title">What's all of this about?<hr></div>
+<div class="item-title">What's all this about?<hr></div>
 
 <blockquote> My overarching goal is to make interpretable models for computer vision systems using machine learning techniques. 
     This enables a more explicit representation in the problem domain, 

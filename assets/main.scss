@@ -5,11 +5,17 @@
 @import "minima";
 
 //  ---------------- Colors
-$blue-dark: hsl(249, 63%, 36%);
-$blue-mid: hsl(207, 63%, 63%);
-$blue-light: hsl(207, 100%, 81%);
+$blue-dark:  hsl(220, 63%, 36%);
+$blue-mid:   hsl(220, 63%, 63%);
+$blue-light: hsl(220, 63%, 81%);
 
-$green-dark: rgb(34, 148, 49);
+$green-dark:  hsl(128, 63%, 36%);
+$green-mid:   hsl(128, 63%, 61%);
+$green-light: hsl(128, 63%, 81%);
+
+$red-dark:  hsl(0, 63%, 36%);
+$red-mid:   hsl(0, 63%, 61%);
+$red-light: hsl(0, 63%, 81%);
 
 //  ---------------- Paragraphs and Headings
 .tiny {
@@ -135,9 +141,8 @@ nav-ul {
 }
 
 .nav-elem{
-    border: 1px solid #fff;
+    box-shadow: 0 2px 0 0 transparent;
     color: $blue-dark;
-
     padding-left: 5px;
     padding-right: 5px;
     margin-left:15px;
@@ -148,13 +153,17 @@ nav-ul {
 }
 
 .nav-elem:hover{
-    border-bottom-color: $grey-color-light;
+    box-shadow: 0 2px 0 0 $grey-color-light;
     text-decoration: none;
     color: $blue-dark;
 }
 
 .active{
-    border-bottom-color: $blue-dark;
+    box-shadow: 0 2px 0 0 $blue-dark;
+}
+
+.active:hover{
+    box-shadow: 0 2px 0 0 $blue-dark;
 }
 
 //  ---------------- Skillset Progress Bars
@@ -191,6 +200,7 @@ background:$grey-color-light
     margin-bottom:0;
     vertical-align: middle;
 }
+
 .skillset .level-bar {
     display:inline-block;
     width:70%;

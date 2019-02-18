@@ -8,10 +8,9 @@ published: true
 <div class="item-title"><img class="svg-icon" src="../assets/other-icons/avatar-default-symbolic.svg" />Profile<hr></div>
 
 <p class="muted-gray">
-I have done alround stuff, communicator and for encouraging young students to study at university.
-Worked with different technologies, love to tinker with (and occasionally break) everything. 
-During university teaching assistant and tutor for computer vision and image understanding courses.
-Snowboard instructor for magistrat graz for 6 years local outreach.
+My professional background and interest are in computer vision and machine learning, and especially the constrained learning and understanding of the resulting representations. Close to my heart is also the communication of knowledge and encouraging and motivating young students for scientific and engeneering projects. <br>
+I love to try out new technologies and to tinker (and occasionally) break everything. <br>
+During my spare time in winter I particularly enjoy snowboarding and skiing for which I have been a instructor for the Magistrat Graz for 6 years.
 </p>
 
 
@@ -40,8 +39,8 @@ Snowboard instructor for magistrat graz for 6 years local outreach.
         </div>
         <div class="muted-gray">
         I had the privilege to join the largest science experiment in the world, the LHC where I worked on quality monitoring tools used for the CMS detector.
-        During my time there I was working in a small team that had the overall goal to create and extend tools used to quantify, visualize and solve the (inevitable) failures of parts of the detector.
-        It involved a large amount of data processing, building monitoring software, and extending the <a href="https://root.cern/">ROOT</a> library.
+        During my time there I was working in a small team that had the overall goal to create and extend tools used to quantify, visualize and analyze the (inevitable) failures of parts of the detector.
+        It involved a large amount of data processing, building monitoring software, and maintaining and extending the <a href="https://root.cern/">ROOT</a> library.
         </div>
     </div>
     <div class="item">
@@ -185,6 +184,6 @@ to small changes in concepts and conventions prevalant in those communities.
 
 <div class="item-title"><img class="svg-icon" src="../assets/other-icons/preferences-desktop-locale-symbolic.svg" />Languages<hr></div>
 <div class="muted-gray">
-I am fluent in <b>German, English,</b> and <b>Serbo-Croatian.</b><br>
-Additionally I am trying to motivate myself to learn (swiss) French.
+I am fluent in <b>English, German,</b> and <b>Serbo-Croatian.</b><br>
+Additionally I am trying to motivate myself to learn French.
 </div>
