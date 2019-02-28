@@ -1,22 +1,25 @@
 ---
 layout: default
 title: Teaching
-permalink: /teaching/
+permalink: /
 published: true
+order: 1
 ---
+
+
+
+<div class="item-title">Open Student Projects<hr></div>
+
+* <a href="https://www.tugraz.at/fileadmin/user_upload/Institute/EMT/Pinz/STIP_bakk.pdf">Space-Time Interest Points</a> - Bachelor's Thesis, Master's Project
 
 
 <div class="item-title">Wintersemester 2018/2019<hr></div>
 
-Image Based Measurement, Laboratory
-
-[Register](https://online.tugraz.at/tug_online/wbLv.wbShowLVDetail?pStpSpNr=213223&pSpracheNr=2){: .boxed} 
-[Intro Slides](){: .boxed} 
-[Assignments](){: .boxed}  
+* Image Based Measurement, Laboratory 
+    * [Slides](){: .boxed} [Assignments](){: .boxed} [Report Template](){: .boxed}
 
 
-Optical Measurement Principles, Laboratory
+* Optical Measurement Principles, Laboratory 
+    * [Slides](){: .boxed} [Assignments](){: .boxed}  [Report Template](){: .boxed}  
 
-[Register](https://online.tugraz.at/tug_online/wbLv.wbShowLVDetail?pStpSpNr=211083&pSpracheNr=2){: .boxed}
-[Intro Slides](){: .boxed} 
-[Assignments](){: .boxed}  
+

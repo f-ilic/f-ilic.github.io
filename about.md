@@ -3,18 +3,20 @@ layout: default
 title: About Me
 permalink: /about/
 published: true
+order: 2
 ---
 
-<div class="item-title"><img class="svg-icon" src="../assets/other-icons/avatar-default-symbolic.svg" />Profile<hr></div>
+<div class="item-title">Short bio<hr></div>
 
 <p class="muted-gray">
-My professional background and interest are in computer vision and machine learning, and especially the constrained learning and understanding of the resulting representations. Close to my heart is also the communication of knowledge and encouraging and motivating young students for scientific and engeneering projects. <br>
-I love to try out new technologies and to tinker (and occasionally) break everything. <br>
-During my spare time in winter I particularly enjoy snowboarding and skiing for which I have been a instructor for the Magistrat Graz for 6 years.
+My professional background and interest are in computer vision and machine learning. I know my way around various different toolchains and technologies, and love tinkering. Teaching, colaborating, and communicating knowledge to scientific and engeneering endevours is something I really enjoy. <br>
+During my spare time in winter I particularly enjoy snowboarding and skiing for which I have been a snowboard instructor for 6 years.<br>
+If you're interested in getting in contact with me, it's probably easiest just to drop me a line via email.
+I'd be happy to hear from you, bounce ideas around, collaborate or even build something for/with you!
 </p>
 
 
-<div class="item-title"><img class="svg-icon" src="../assets/other-icons/applications-science-symbolic.svg" />Experience<hr></div>
+<div class="item-title">Experience<hr></div>
 
 <div class="item-wrapper">
     <div class="item">
@@ -38,9 +40,9 @@ During my spare time in winter I particularly enjoy snowboarding and skiing for 
             CERN, Geneva
         </div>
         <div class="muted-gray">
-        I had the privilege to join the largest science experiment in the world, the LHC where I worked on quality monitoring tools used for the CMS detector.
+        I had the privilege to join the largest science experiment in the world at <a href="https://home.cern/">CERN</a>, the <a href="https://en.wikipedia.org/wiki/Large_Hadron_Collider">LHC</a>, where I worked on quality monitoring tools used for the  <a href="https://en.wikipedia.org/wiki/Large_Hadron_Collider#CMS">CMS</a> detector.
         During my time there I was working in a small team that had the overall goal to create and extend tools used to quantify, visualize and analyze the (inevitable) failures of parts of the detector.
-        It involved a large amount of data processing, building monitoring software, and maintaining and extending the <a href="https://root.cern/">ROOT</a> library.
+        It involved a large amount of data processing, building monitoring software, and maintaining and extending the <a href="https://root.cern/">ROOT</a> library which is used for data analysis.
         </div>
     </div>
     <div class="item">
@@ -52,7 +54,7 @@ During my spare time in winter I particularly enjoy snowboarding and skiing for 
             AR4, Graz
         </div>
         <div class="muted-gray">
-        Joint research project between AR4 and TUGraz. 
+        Joint research project between <a href="https://www.ar4.io/">AR4</a> and <a href="https://www.tugraz.at/">TUGraz</a>. 
         The goal of the project was to boost the performance w.r.t. exectution speed of an existing image classification algorithm.
         I was therefore confronted with measuring and tweaking the algorithms performance, which eventually resulted in novel approach that yielded a considerable (up to 10x) speedup with no decrease in classficiation performance.
         </div>
@@ -79,14 +81,14 @@ During my spare time in winter I particularly enjoy snowboarding and skiing for 
         </div>
         <div class="muted-gray">
         Accessability, interest, and information about possibilities of education are things that need to be encouraged.
-        The Office for Gender Equality and Equal Opportinuty of the TUGraz tries to achieve that goal by informing young adults, predominantly students close to their  A-levels (dt. Matura) about their options with respect to Universities, Colleges (Fachhochschulen), and other educational facilities.
+        The<a href="https://www.tugraz.at/en/tu-graz/organisational-structure/service-departments-and-staff-units/office-for-gender-equality-and-equal-opportunity/"> Office for Gender Equality and Equal Opportinuty</a> of the TUGraz tries to achieve that goal by informing young adults, predominantly students close to their  A-levels (dt. Matura) about their options with respect to Universities, Colleges (Fachhochschulen), and other educational facilities.
         Therefore the general purpose is outreach, clear communication of expectations, requirements, and a careful handling of future students' questions.
         </div>
     </div>
 
 </div>
 
-<div class="item-title"><img class="svg-icon" src="../assets/other-icons/application-certificate-symbolic.svg" />Education<hr></div>
+<div class="item-title">Education<hr></div>
 <div class="item-wrapper">
     <div class="item">
         <div class="upper-row">
@@ -119,7 +121,7 @@ During my spare time in winter I particularly enjoy snowboarding and skiing for 
 
 </div>
 
-<div class="item-title"><img class="svg-icon" src="../assets/other-icons/preferences-system-symbolic.svg" />Technical Skills<hr></div>
+<div class="item-title">Technical Skills<hr></div>
 <div class="muted-gray">
 I was lucky enough to be exposed to different technologies, whose usages range from back-end to front-end development.
 In general I enjoy programming and tinkering in different languages, as they force you to adjust 
@@ -182,8 +184,8 @@ to small changes in concepts and conventions prevalant in those communities.
     </div>
 </div>
 
-<div class="item-title"><img class="svg-icon" src="../assets/other-icons/preferences-desktop-locale-symbolic.svg" />Languages<hr></div>
-<div class="muted-gray">
+<div class="item-title">Languages<hr></div>
+<p class="muted-gray">
 I am fluent in <b>English, German,</b> and <b>Serbo-Croatian.</b><br>
 Additionally I am trying to motivate myself to learn French.
-</div>
+</p>
