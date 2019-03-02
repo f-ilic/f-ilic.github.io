@@ -7,6 +7,7 @@
             {%- for path in sorted_page_paths -%}
               {%- assign my_page = site.pages | where: "path", path | first -%}
               {%- if my_page.title -%}
+              
                   
                   {% if page.url == my_page.url %}
                   <nav-li>

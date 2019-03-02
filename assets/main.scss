@@ -35,14 +35,15 @@ $grey-mid: rgb(172, 172, 172);
     color: $grey-color-dark;
 }
 
-.muted-gray{
-    font-size: 14px;
-    color: $grey-color-dark;
-    display: block;  
-}
+// .muted-gray{
+//     font-size: 14px;
+//     color: $grey-color-dark;
+//     display: block;  
+// }
 
 .tiny-heading {
     display: block;  
+    font-weight: bold;
 }
 
 blockquote {
@@ -55,6 +56,7 @@ hr {
     height:1px;
     border:none;
     background-color:$grey-color-light;
+    margin-bottom:16px;
 }
 
 .site-footer {
@@ -87,21 +89,7 @@ text-align:right;
 }​
 
 
-//  ---------------- Published Paper Stuff
-.paper-title {
-    display: block;  
-    // font-size: 14pt;
-}
 
-.paper-authors {
-    display: block;
-    color: $blue-dark;
-}
-
-.paper-published {
-    display: block;
-    color: $green-dark;
-}
 
 //  ---------------- General Image Stuff
 .svg-icon {
@@ -151,15 +139,13 @@ text-align:right;
 }
 
 //  ---------------- Items in cv page
-.item-wrapper .time {
-float:right;
-color: $teal-dark;
+.time {
+    float:right;
+    color: $teal-dark;
 }
-.item-wrapper .company {
+.company {
     margin-bottom:10px;
     color:$teal-dark;
-    margin-bottom: 10px;
-    // font-style: italic;
     font-weight: bold;
 }
 
@@ -172,7 +158,6 @@ color: $teal-dark;
     font-size: 14pt;
     margin-bottom: 20px;
 }
-
 
 //  ---------------- Navigation Elements
 nav-ul {
@@ -291,3 +276,50 @@ background:$grey-color-light;
     stroke: #4691f6;
     stroke-width: 1;
   }
+
+body {
+    font-size: 14px;
+    color: $grey-color-dark; 
+  }
+
+
+  //  ---------------- Published Paper Stuff
+.paper-info .paper-title {
+    font-size: 12pt;
+}
+
+.paper-info .paper-authors {
+    display: block;
+    color: $blue-dark;
+    font-size: 10pt;
+}
+
+.paper-info .paper-published {
+    display: block;
+    color: $green-dark;
+    font-size: 10pt;
+}
+
+.paper-info .section {
+    margin-top: 10px;
+    font-weight: bold;
+    display: block;  
+}
+
+.paper-info .paper-links {
+    // margin-top:16px;
+    margin-bottom:10px;
+}
+
+h1{
+    display: inline;  
+    font-size: 14pt;
+    // margin-bottom: 20px;
+}
+
+h2{
+    display: inline;  
+    font-size: 12pt;
+    // text-decoration: underline;
+    // margin-bottom: 20px;
+}

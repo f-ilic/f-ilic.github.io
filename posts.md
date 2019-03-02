@@ -3,7 +3,7 @@ layout: default
 title: Posts
 permalink: /posts/
 published: true
-order: 2
+order: 4
 ---
 
 {% for post in site.posts %}
@@ -17,8 +17,6 @@ order: 2
         </div>
         <div class="company tiny">
             {{post.subheading}}
-        </div>
-        <div class="muted-gray">
         </div>
     </div>
 </div>
