@@ -38,9 +38,9 @@ I'd be happy to hear from you, bounce ideas around, collaborate or even build so
     </div>
     <div class="company tiny">CERN, Geneva</div>
     <p>
-    I had the privilege to join the largest science experiment in the world at <a href="https://home.cern/">CERN</a>, the <a href="https://en.wikipedia.org/wiki/Large_Hadron_Collider">LHC</a>, where I worked on quality monitoring tools used for the  <a href="https://en.wikipedia.org/wiki/Large_Hadron_Collider#CMS">CMS</a> detector.
+    I had the privilege to join <a href="https://home.cern/">CERN</a>, where I worked on quality monitoring tools used for the  <a href="https://en.wikipedia.org/wiki/Large_Hadron_Collider#CMS">CMS</a> particle detector used to analyze the resulting particle collisions of the largest particle accelerator in the world, the <a href="https://en.wikipedia.org/wiki/Large_Hadron_Collider">LHC</a>.
     I was working in a small team that had the overall goal to create and extend tools used to quantify, visualize and analyze the (inevitable) failures of parts of the detector.
-    It involved a large amount of data processing, building monitoring software, and maintaining and extending the <a href="https://root.cern/">ROOT</a> library.
+    I was involved in building monitoring software, data processing, and maintaining and extending <a href="https://root.cern/">ROOT</a> - a high performance C++ library used for big data processing, statistical analysis, visualisation and storage.
     </p>
 </div>
 
