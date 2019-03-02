@@ -9,10 +9,9 @@ order: 0
 <div class="item-title">Short bio<hr></div>
 
 <p>
-My professional background and interest are in computer vision and machine learning. I know my way around various different toolchains and technologies, and love tinkering. Teaching, colaborating, and communicating knowledge to scientific and engeneering endevours is something I really enjoy. <br>
-During my spare time in winter I particularly enjoy snowboarding and skiing for which I have been a snowboard instructor for 6 years.<br>
-If you're interested in getting in contact with me, it's probably easiest just to drop me a line via email.
-I'd be happy to hear from you, bounce ideas around, collaborate or even build something for/with you!
+My professional background and interest are in computer vision and machine learning. I know my way around various different toolchains and technologies. I enjoy teaching, colaborating, communicating and sharing knowledge with others.<br>
+During my spare time in winter I particularly enjoy snowboarding and skiing for which I have been a snowboard instructor since 2008.<br>
+If you're interested in getting in contact with me, it's easiest just to drop me a line via email.
 </p>
 
 
@@ -25,7 +24,7 @@ I'd be happy to hear from you, bounce ideas around, collaborate or even build so
         <div class="time tiny">2018 - 2019</div>
         <div class="tiny-heading">Teaching Assistant</div>
     </div>
-    <div class="company tiny">Institute of Electrical Measurement and Measurement Signal Processing, Graz</div>
+    <div class="subheading">Institute of Electrical Measurement and Measurement Signal Processing, Graz</div>
     <p>
     Laboratory supervision on advanced computer vision topics that dealt with camera calibration, color spaces, image-based measurements from calibrated and uncalibrated cameras, and the fundamentals of optical lens systems.
     </p>
@@ -36,7 +35,7 @@ I'd be happy to hear from you, bounce ideas around, collaborate or even build so
         <div class="time tiny">2016 - 2018</div>
         <div class="tiny-heading">Technical Student / Developer</div>
     </div>
-    <div class="company tiny">CERN, Geneva</div>
+    <div class="subheading">CERN, Geneva</div>
     <p>
     I had the privilege to join <a href="https://home.cern/">CERN</a>, where I worked on quality monitoring tools used for the  <a href="https://en.wikipedia.org/wiki/Large_Hadron_Collider#CMS">CMS</a> particle detector used to analyze the resulting particle collisions of the largest particle accelerator in the world, the <a href="https://en.wikipedia.org/wiki/Large_Hadron_Collider">LHC</a>.
     I was working in a small team that had the overall goal to create and extend tools used to quantify, visualize and analyze the (inevitable) failures of parts of the detector.
@@ -49,7 +48,7 @@ I'd be happy to hear from you, bounce ideas around, collaborate or even build so
         <div class="time tiny">2016</div>
         <div class="tiny-heading">Developer</div>
     </div>
-    <div class="company tiny">AR4, Graz</div>
+    <div class="subheading">AR4, Graz</div>
     <p>
     Joint research project between <a href="https://www.ar4.io/">AR4</a> and <a href="https://www.tugraz.at/">TUGraz</a>. 
     The goal of the project was to boost the performance w.r.t. exectution speed of an existing image classification algorithm.
@@ -62,7 +61,7 @@ I'd be happy to hear from you, bounce ideas around, collaborate or even build so
         <div class="time tiny">2014 - 2015</div>
         <div class="tiny-heading">Teaching Assistant</div>
     </div>
-    <div class="company tiny">Institute for Computer Graphics and Vision, Graz</div>
+    <div class="subheading">Institute for Computer Graphics and Vision, Graz</div>
     <p>
     Tutoring students and grading assignments on computer vision basics: <br>Inpainting, panorama stitching, feature descriptors and simple object recognition.
     </p>
@@ -73,7 +72,7 @@ I'd be happy to hear from you, bounce ideas around, collaborate or even build so
         <div class="time tiny">2013 - 2016</div>
         <div class="tiny-heading">Mentor & Communicator</div>
     </div>
-    <div class="company tiny">Office for Gender Equality and Equal Opportunity, Graz</div>
+    <div class="subheading">Office for Gender Equality and Equal Opportunity, Graz</div>
     <p>
     Accessability, interest, and information about possibilities of education are things that need to be encouraged.
     The<a href="https://www.tugraz.at/en/tu-graz/organisational-structure/service-departments-and-staff-units/office-for-gender-equality-and-equal-opportunity/"> Office for Gender Equality and Equal Opportinuty</a> of the TUGraz tries to achieve that goal by informing young adults, predominantly students close to their  A-levels (dt. Matura) about their options with respect to Universities, Colleges (Fachhochschulen), and other educational facilities.
@@ -93,7 +92,7 @@ I'd be happy to hear from you, bounce ideas around, collaborate or even build so
         <div class="time tiny">2015 - 2019</div>
         <div class="tiny-heading">MSc in Computer Science</div>
     </div>
-    <div class="company tiny">Graz University of Technology</div>
+    <div class="subheading">Graz University of Technology</div>
     <p>
     In the master's study program covered a variety of advanced topics ranging from applied IT-security to theoretical foundations of Information Theory.
     The focus that I set myself during my studies was primarily on computer vision(representing, understanding and reconstructing images and video) and knowledge technologies (big-data analysis and information retrival).<br>
@@ -107,7 +106,7 @@ I'd be happy to hear from you, bounce ideas around, collaborate or even build so
         <div class="time tiny">2011 - 2015</div>
         <div class="tiny-heading">BSc in Computer Science</div>
     </div>
-    <div class="company tiny">Graz University of Technology</div>
+    <div class="subheading">Graz University of Technology</div>
     <p>
     The Bachelor degree introduced me to the many different facettes of computer science and taught me independent research and studying.
     In that regard I feel it's important to mention how the internet has allowed widespread access of information, even from top universities.

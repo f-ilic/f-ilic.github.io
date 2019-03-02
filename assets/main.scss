@@ -41,7 +41,7 @@ $grey-mid: rgb(172, 172, 172);
 //     display: block;  
 // }
 
-.tiny-heading {
+.post-list-title {
     display: block;  
     font-weight: bold;
 }
@@ -138,12 +138,14 @@ text-align:right;
     transition: transform .1s ease-in-out;
 }
 
-//  ---------------- Items in cv page
+//  ---------------- 
 .time {
     float:right;
     color: $teal-dark;
+    font-size: 10pt;
 }
-.company {
+.subheading {
+    font-size: 10pt;
     margin-bottom:10px;
     color:$teal-dark;
     font-weight: bold;

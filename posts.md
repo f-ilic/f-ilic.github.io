@@ -12,10 +12,10 @@ order: 4
 
 <div class="item">
         <div class="upper-row">
-            <div class="time tiny">{{post.date | date_to_string}}</div>
-            <div class="tiny-heading"><a href="{{ post.url }}">{{post.title}}</a></div>
+            <div class="time">{{post.date | date_to_string}}</div>
+            <div class="post-list-title"><a href="{{ post.url }}">{{post.title}}</a></div>
         </div>
-        <div class="company tiny">
+        <div class="subheading">
             {{post.subheading}}
         </div>
     </div>
