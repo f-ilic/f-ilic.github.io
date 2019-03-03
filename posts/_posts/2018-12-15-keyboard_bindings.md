@@ -52,7 +52,7 @@ key <AC10> {[semicolon,colon,Delete,Delete]};
 key <SPCE> {[space,space,Return,nobreakspace]};
 ```
 
-<span class="boxed"><a href="us.txt">My whole xkb layout</a></span>
+<span class="boxed"><a href="{{ site.url }}/posts/keyboard/us.txt">My whole xkb layout</a></span>
 
 # MacOS
 ---
