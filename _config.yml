@@ -24,15 +24,16 @@ github_username:  f-ilic
 # scholar_username: asdfasd
 # google_analytics: UA-135499587-1
 
-includes:
-- papers
+# includes:
+# - papers
 
+exclude: [vendor]
 
 # Build settings
 markdown: kramdown
 theme: minima
-plugins:
-  - jekyll-feed
+# plugins:
+#   - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

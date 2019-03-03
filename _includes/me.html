@@ -1,7 +1,7 @@
 <center>
   <table id="me-container" style="border: none;">
       <tr style="border: none;">
-        <td style="border: none;" align="left"><a title="Homepage" href="/"><img src='../assets/facepic_rect.png' class='circle-img' align="right"></a></td>
+        <td style="border: none;" align="left"><a title="Homepage" href="/"><img src='{{ site.url }}/assets/facepic_rect.png' class='circle-img' align="right"></a></td>
         <td style="border: none;" align="left">        
           <div id='header-name'>
             Filip Ilic
@@ -10,8 +10,10 @@
           TUGraz, CERN <br>
           Soon: MSc graduate in computer science
           </div>
-          {%- include social.html -%}</td>
+          
+          {%- include social.html -%}
+        
+        </td>
       </tr>
   </table> 
-  
 </center>

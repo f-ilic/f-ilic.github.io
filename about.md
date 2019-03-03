@@ -6,7 +6,7 @@ published: true
 order: 0
 ---
 
-<div class="item-title">Short bio<hr></div>
+<h2>Short bio<hr></h2>
 
 <p>
 My professional background and interest are in computer vision and machine learning. I know my way around various different toolchains and technologies. I enjoy teaching, colaborating, communicating and sharing knowledge with others.<br>
@@ -15,14 +15,14 @@ If you're interested in getting in contact with me, it's easiest just to drop me
 </p>
 
 
-<div class="item-title">Experience<hr></div>
+<h2>Experience<hr></h2>
 
 <div class="item-wrapper">
 
 <div class="item">
     <div class="upper-row">
         <div class="time tiny">2018 - 2019</div>
-        <div class="tiny-heading">Teaching Assistant</div>
+        <div class="post-list-title">Teaching Assistant</div>
     </div>
     <div class="subheading">Institute of Electrical Measurement and Measurement Signal Processing, Graz</div>
     <p>
@@ -33,7 +33,7 @@ If you're interested in getting in contact with me, it's easiest just to drop me
 <div class="item">
     <div class="upper-row">
         <div class="time tiny">2016 - 2018</div>
-        <div class="tiny-heading">Technical Student / Developer</div>
+        <div class="post-list-title">Technical Student / Developer</div>
     </div>
     <div class="subheading">CERN, Geneva</div>
     <p>
@@ -46,7 +46,7 @@ If you're interested in getting in contact with me, it's easiest just to drop me
 <div class="item">
     <div class="upper-row">
         <div class="time tiny">2016</div>
-        <div class="tiny-heading">Developer</div>
+        <div class="post-list-title">Developer</div>
     </div>
     <div class="subheading">AR4, Graz</div>
     <p>
@@ -59,7 +59,7 @@ If you're interested in getting in contact with me, it's easiest just to drop me
 <div class="item">
     <div class="upper-row">
         <div class="time tiny">2014 - 2015</div>
-        <div class="tiny-heading">Teaching Assistant</div>
+        <div class="post-list-title">Teaching Assistant</div>
     </div>
     <div class="subheading">Institute for Computer Graphics and Vision, Graz</div>
     <p>
@@ -70,7 +70,7 @@ If you're interested in getting in contact with me, it's easiest just to drop me
 <div class="item">
     <div class="upper-row">
         <div class="time tiny">2013 - 2016</div>
-        <div class="tiny-heading">Mentor & Communicator</div>
+        <div class="post-list-title">Mentor & Communicator</div>
     </div>
     <div class="subheading">Office for Gender Equality and Equal Opportunity, Graz</div>
     <p>
@@ -84,39 +84,38 @@ If you're interested in getting in contact with me, it's easiest just to drop me
 </div> 
 
 
-<div class="item-title">Education<hr></div>
+<h2>Education<hr></h2>
 <div class="item-wrapper">
 
 <div class="item">
     <div class="upper-row">
-        <div class="time tiny">2015 - 2019</div>
-        <div class="tiny-heading">MSc in Computer Science</div>
+        <div class="time">2015 - 2019</div>
+        <div class="post-list-title">MSc in Computer Science</div>
     </div>
     <div class="subheading">Graz University of Technology</div>
     <p>
-    In the master's study program covered a variety of advanced topics ranging from applied IT-security to theoretical foundations of Information Theory.
-    The focus that I set myself during my studies was primarily on computer vision(representing, understanding and reconstructing images and video) and knowledge technologies (big-data analysis and information retrival).<br>
-    My Master's Thesis was written at the Institute of Electrical Measurement and Measurement Signal Processing with the supervision of Prof. Axel Pinz, in which we explored the combination of
+    In the Master's programme covered a variety of advanced topics ranging from applied IT-security to theoretical foundations of Information Theory.
+    I focused primarily on computer vision (representing, understanding and reconstructing images and video) and knowledge technologies (big-data analysis and information retrival) with emphasis on machine learning.<br>
+    My Master's Thesis was written at the Institute of Electrical Measurement and Measurement Signal Processing with the supervision of Prof. Axel Pinz, in which I explored the combination of
     state of the art deep convolutional neural networks and explicit grouping processes to create a decomposable representation of objects from video.
     </p>
 </div>
 
 <div class="item">
     <div class="upper-row">
-        <div class="time tiny">2011 - 2015</div>
-        <div class="tiny-heading">BSc in Computer Science</div>
+        <div class="time">2011 - 2015</div>
+        <div class="post-list-title">BSc in Computer Science</div>
     </div>
     <div class="subheading">Graz University of Technology</div>
     <p>
-    The Bachelor degree introduced me to the many different facettes of computer science and taught me independent research and studying.
-    In that regard I feel it's important to mention how the internet has allowed widespread access of information, even from top universities.
+    The Bachelor's programme introduced me to the many different facettes of computer science and taught me independent research and studying.
     </p>
 </div>
 
 <!-- End Item wrapper -->
 </div>
 
-<div class="item-title">Technical Skills<hr></div>
+<h2>Technical Skills<hr></h2>
 <p>
 I was lucky enough to be exposed to different technologies, whose usages range from back-end to front-end development.
 In general I enjoy programming and tinkering in different languages, as they force you to adjust 
@@ -178,7 +177,7 @@ to small changes in concepts and conventions prevalant in those communities.
     </p>
 </div>
 
-<div class="item-title">Languages<hr></div>
+<h2>Languages<hr></h2>
 <p>
 I am fluent in <b>English, German,</b> and <b>Serbo-Croatian.</b><br>
 Additionally I am trying to motivate myself to learn French.

@@ -6,7 +6,7 @@ published: true
 order: 4
 ---
 
-{% for post in site.posts %}
+{% for post in site.categories.posts %}
 
 <div class="item-wrapper">
 
@@ -20,5 +20,4 @@ order: 4
         </div>
     </div>
 </div>
-
 {% endfor %}

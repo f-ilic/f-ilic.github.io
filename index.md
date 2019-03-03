@@ -7,12 +7,6 @@ order: 1
 ---
 
 
-
-## Open Student Projects
----
-
-* <a href="https://www.tugraz.at/fileadmin/user_upload/Institute/EMT/Pinz/STIP_bakk.pdf">Space-Time Interest Points</a>
-
 ## Image Based Measurement, Laboratory (438.019)
 <div class="time">Winter semester 2018/2019</div>
 ---
@@ -40,5 +34,7 @@ Content:
 * Electronic Speckle Interferometer (ESPI)
 * Digital Image Processing
 
-<!-- [Assignment 1](){: .boxed} [Assignment 2](){: .boxed} [Assignment 3](){: .boxed} [Report Template](){: .boxed} -->
+## Open Student Projects
+---
 
+<a href="https://www.tugraz.at/fileadmin/user_upload/Institute/EMT/Pinz/STIP_bakk.pdf">Space-Time Interest Points</a>
