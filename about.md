@@ -10,8 +10,8 @@ order: 0
 
 <p>
 My professional background and interest are in computer vision and machine learning. I know my way around various different toolchains and technologies. I enjoy teaching, colaborating, communicating and sharing knowledge with others.<br>
-During my spare time in winter I particularly enjoy snowboarding and skiing for which I have been a snowboard instructor since 2008.<br>
-If you're interested in getting in contact with me, it's easiest just to drop me a line via email.
+During my spare time in winter I particularly enjoy snowboarding for which I have been an instructor since 2008.<br>
+If you're interested in getting in contact with me, just write me an email.
 </p>
 
 

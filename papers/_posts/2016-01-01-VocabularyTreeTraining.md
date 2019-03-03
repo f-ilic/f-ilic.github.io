@@ -11,5 +11,5 @@ published: true
 Vocabulary Tree, Bag of words, Image classification, Hierarchical clustering
 
 <div class="paper-links">
-<span class="boxed"><a href="">Technical Report</a></span>
+<a class="boxed" href="">Technical Report</a>
 </div>

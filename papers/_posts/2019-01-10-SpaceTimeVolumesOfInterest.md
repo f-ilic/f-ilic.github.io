@@ -15,8 +15,9 @@ published: true
 Object representation, Object decomposition, Gaussian spatio-temporal scale space, SLIC, top-down anchors
 
 <div class="paper-links">
-<span class="boxed"><a href="">Paper</a></span>
-<span class="boxed"><a href="../papers/SpaceTimeVolumesOfInterest/presentation/index.html">Presentation</a></span>
-<span class="boxed"><a href="https://github.com/f-ilic/space-time-volumes">Code</a></span>
-<span class="boxed"><a href="../papers/SpaceTimeVolumesOfInterest/bib.txt">BibTex</a></span>
+<a class="boxed" href="">Paper</a>
+<a class="boxed" href="../papers/SpaceTimeVolumesOfInterest/presentation/index.html">Presentation</a>
+<a class="boxed" href="https://github.com/f-ilic/space-time-volumes">Code</a>
+<a class="boxed" href="../papers/SpaceTimeVolumesOfInterest/bib.txt">BibTex</a>
+
 </div>

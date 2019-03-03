@@ -74,6 +74,11 @@ hr {
     font-size: 12px;
 }
 
+.boxed:hover {
+    text-decoration: none;
+    border: 1px solid $grey-color-dark;
+}
+
 .site-footer .alignleft {
 float: left;
 width:33.33333%;
@@ -316,7 +321,8 @@ body {
 
 .paper-info .section {
     margin-top: 10px;
-    font-weight: bold;
+    font-style: italic;
+    // text-decoration: underline;
     display: block;  
 }
 
