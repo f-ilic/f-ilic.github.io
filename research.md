@@ -19,5 +19,5 @@ order: 3
 
 {% for paper in site.categories.papers %}
 {{paper.output}}
----
+<hr>
 {%- endfor -%}
