@@ -12,7 +12,7 @@ order: 4
 
 <div class="item">
         <div class="upper-row">
-            <div class="time">{{post.date | date_to_string}}</div>
+            <div class="time">{{post.date | date: "%b %Y"}}</div>
             <div class="post-list-title"><a href="{{ post.url }}">{{post.title}}</a></div>
         </div>
         <div class="subheading">

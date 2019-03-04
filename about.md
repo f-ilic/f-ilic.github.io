@@ -9,10 +9,12 @@ order: 0
 <h2>Short bio<hr></h2>
 
 <p>
-My professional background and interest are in computer vision and machine learning. I know my way around various different toolchains and technologies. I enjoy teaching, colaborating, communicating and sharing knowledge with others.<br>
-During my spare time in winter I particularly enjoy snowboarding for which I have been an instructor since 2008.<br>
+My professional background and interests are computer vision, machine learning and data visualization. I know my way around various different toolchains and technologies. I enjoy teaching, colaborating, communicating and sharing knowledge with others.<br>
+During my spare time in winter enjoy snowboarding for which I have been an instructor since 2008.<br>
 If you're interested in getting in contact with me, just write me an email.
 </p>
+<!-- <a class="boxed" href="#">CV (PDF)</a> -->
+
 
 
 <h2>Experience<hr></h2>

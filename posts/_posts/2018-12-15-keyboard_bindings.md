@@ -5,11 +5,11 @@ permalink: /posts/keyboard
 subheading: Keyboard trickery and fast navigation
 ---
 
-Keyboard only text navigation without having to constantly move your hands off to the mouse is important to me.
+Text navigation without having to constantly move my hands off keyboard to the mouse is important to me, and should also be important to you <a href="https://en.wikipedia.org/wiki/Repetitive_strain_injury">(RSI)</a>.
 To achieve this I'll show you how to remap your capslock key to do something useful for a change.
 Editors such as vi/vim are good in that regard, but I want a more universal approach that works with every program.
 
-The goal is to set up capslock as a the modifier key so **j,k,l,i** + **capslock** act as **left,down,right, up**.
+The goal is to set up capslock as a modifier key so **j,k,l,i** + **capslock** act as though **left,down,right, up** were pressed. This is because that's the natural resting position of my right hand on the home row. There's also **Home, End, Backspace, Delete, Return** which I remapped in a way that they are reachable without needing to move your hands off the home row.
 
 # Linux 
 ---
@@ -39,7 +39,6 @@ The xkb file contains entries that look like this:
 
 
 We already set capslock to act as the level3 modifier, and now only need to insert the desired functionality into the corresponding entries.
-My modifications looks like this:
 ```
 key <AD07> {[u,U,Home,Home]};
 key <AD08> {[i,I,Up,Up]};
@@ -52,60 +51,19 @@ key <AC10> {[semicolon,colon,Delete,Delete]};
 key <SPCE> {[space,space,Return,nobreakspace]};
 ```
 
-<a class="boxed" href="{{ site.url }}/posts/keyboard/us.txt">My whole xkb layout</a>
+If this is something that sounds desirable to you, download my xkb layout and play around with it!
+
+<a class="boxed" href="{{ site.url }}/posts/keyboard/us.txt">My xkb config</a>
 
 # MacOS
 ---
 
 If you're using MacOS, one way to do the same it is to rebind the capslock key to alt in the system settings and use <a href="https://www.hammerspoon.org/">Hammerspoon</a>. Hammerspoon is a program that exposes the system API to a lua scripting engine, in which you can then catch keypresses and send other sigals instead.
 
-The following script should get you started: 
+The following script should get you started:
 
-```
-local function pressFn(mods, key)
-	if key == nil then
-		key = mods
-		mods = {}
-	end
+<a class="boxed" href="{{ site.url }}/posts/keyboard/hammerspoon_cfg.txt">Hammerspoon config</a>
 
-	return function() hs.eventtap.keyStroke(mods, key, 1000) end
-end
-
-local function remap(mods, key, pressFn)
-	hs.hotkey.bind(mods, key, pressFn, nil, pressFn)	
-end
-
-remap({'alt'}, 'j', pressFn('left'))
-remap({'alt'}, 'k', pressFn('down'))
-remap({'alt'}, 'i', pressFn('up'))
-remap({'alt'}, 'l', pressFn('right'))
-remap({'alt', 'shift'}, 'j', pressFn({'shift'}, 'left'))
-remap({'alt', 'shift'}, 'k', pressFn({'shift'}, 'down'))
-remap({'alt', 'shift'}, 'i', pressFn({'shift'}, 'up'))
-remap({'alt', 'shift'}, 'l', pressFn({'shift'}, 'right'))
-
-remap({'alt'}, 'o', pressFn('end'))
-remap({'alt'}, 'u', pressFn('home'))
-remap({'alt', 'shift'}, 'o', pressFn({'shift'}, 'end'))
-remap({'alt', 'shift'}, 'u', pressFn({'shift'}, 'home'))
-
-remap({'alt', 'cmd'}, 'l', pressFn({'cmd'},'right'))
-remap({'alt', 'cmd'}, 'j',  pressFn({'cmd'},'left'))
-remap({'alt', 'cmd', 'shift'}, 'l', pressFn({'shift', 'cmd'}, 'right'))
-remap({'alt', 'cmd' ,'shift'}, 'j',  pressFn({'shift', 'cmd'}, 'left'))
-
-remap({'alt', 'cmd'}, 'i', pressFn('pageup'))
-remap({'alt', 'cmd'}, 'k', pressFn('pagedown'))
-remap({'alt', 'cmd', 'shift'}, 'i', pressFn({'shift'}, 'pageup'))
-remap({'alt', 'cmd', 'shift'}, 'k', pressFn({'shift'}, 'pagedown'))
-
-remap({'alt'}, 'h', pressFn('delete'))
-remap({'alt'}, ';', pressFn('forwarddelete'))
-
-remap({'alt', 'cmd'}, ';', pressFn({'cmd'}, 'delete'))
-
-remap({'alt'}, 'space', pressFn('return'))
-```
 
 
 # Windows
