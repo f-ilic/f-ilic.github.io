@@ -18,7 +18,7 @@ Houses that have a photovoltaic system need to spend the generated energy as soo
 
 Our proposed solution was to provide a web interface in which the users could monitor the peak hours of the photovoltaic energy production, make informed decisions, and connect and control their smart devices to deal with the peak electricity output (i.e. start the dishwasher, charge the roomba, etc.)
 
-A somewhat functional mockup of our envisioned system is shown <a href="website/index.html"> here </a>.
+A somewhat functional mockup of our envisioned system is shown <a href="/posts/greentech2019/website/index.html"> here </a>.
 
 ## The Atmosphere
 ---
