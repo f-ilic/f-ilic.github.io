@@ -2,7 +2,7 @@
 layout: post
 title: GreenTech 2019
 permalink: /posts/greentech2019
-subheading: Innovating, Prototyping and little sleep
+subheading: Innovating, prototyping and little sleep
 ---
 
 The <a href="https://www.greentech.at/jam2019/">greentech jam</a> is a "Interdisciplinary student hackathon on the topic of
