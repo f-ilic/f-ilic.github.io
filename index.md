@@ -40,5 +40,5 @@ Content:
 <div class="subheading">Bachelor's Thesis, Master's Project</div>
 With the same techniques that allow us to detect points of interest in images, it is possible to detect and describe feature points in video. The goal of this project is to implement such a Space-Time Interest Point detector, and experiment with different descriptors on human action datasets.
 
-<a class="boxed" href="https://www.tugraz.at/fileadmin/user_upload/Institute/EMT/Pinz/STIP_bakk.pdf">PDF</a>
-<a class="boxed" href="https://www.irisa.fr/vista/Papers/2005_ijcv_laptev.pdf">Original paper</a>
+[Info PDF](../teaching/stip.pdf){: .boxed}
+[Reference paper](https://www.irisa.fr/vista/Papers/2005_ijcv_laptev.pdf){: .boxed}
