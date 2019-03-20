@@ -9,7 +9,7 @@ order: 0
 <h2>Short bio<hr></h2>
 
 <p>
-My professional background and interests are computer vision, machine learning and data visualization. I know my way around various different toolchains and technologies. I enjoy teaching, colaborating, communicating and sharing knowledge with others.<br>
+My professional background and interests are computer vision, machine learning and data visualization. I know my way around various different tool-chains and technologies. I enjoy teaching, collaborating, communicating and sharing knowledge with others.<br>
 During my spare time in winter enjoy snowboarding for which I have been an instructor since 2008.<br>
 If you're interested in getting in contact with me, just write me an email.
 </p>
@@ -41,7 +41,7 @@ If you're interested in getting in contact with me, just write me an email.
     <p>
     I had the privilege to join <a href="https://home.cern/">CERN</a>, where I worked on quality monitoring tools used for the  <a href="https://en.wikipedia.org/wiki/Large_Hadron_Collider#CMS">CMS</a> particle detector used to analyze the resulting particle collisions of the largest particle accelerator in the world, the <a href="https://en.wikipedia.org/wiki/Large_Hadron_Collider">LHC</a>.
     I was working in a small team that had the overall goal to create and extend tools used to quantify, visualize and analyze the (inevitable) failures of parts of the detector.
-    I was involved in building monitoring software, data processing, and maintaining and extending <a href="https://root.cern/">ROOT</a> - a high performance C++ library used for big data processing, statistical analysis, visualisation and storage.
+    I was involved in building monitoring and data processing software, and maintaining and extending <a href="https://root.cern/">ROOT</a> - a high performance C++ library used for statistical analysis, visualisation and storage of big data.
     </p>
 </div>
 
