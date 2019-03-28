@@ -13,9 +13,8 @@ My professional background and interests are computer vision, machine learning a
 During my spare time in winter enjoy snowboarding for which I have been an instructor since 2008.<br>
 If you're interested in getting in contact with me, just write me an email.
 </p>
-<!-- <a class="boxed" href="#">CV (PDF)</a> -->
 
-
+<a class="boxed" href="/cv.pdf">Short CV (PDF)</a>
 
 <h2>Experience<hr></h2>
 
@@ -34,7 +33,7 @@ If you're interested in getting in contact with me, just write me an email.
 
 <div class="item">
     <div class="upper-row">
-        <div class="time tiny">2016 - 2018</div>
+        <div class="time tiny">2017 - 2018</div>
         <div class="post-list-title">Technical Student / Developer</div>
     </div>
     <div class="subheading">CERN, Geneva</div>
@@ -77,7 +76,7 @@ If you're interested in getting in contact with me, just write me an email.
     <div class="subheading">Office for Gender Equality and Equal Opportunity, Graz</div>
     <p>
     Accessability, interest, and information about possibilities of education are things that need to be encouraged.
-    The<a href="https://www.tugraz.at/en/tu-graz/organisational-structure/service-departments-and-staff-units/office-for-gender-equality-and-equal-opportunity/"> Office for Gender Equality and Equal Opportinuty</a> of the TUGraz tries to achieve that goal by informing young adults, predominantly students close to their  A-levels (dt. Matura) about their options with respect to Universities, Colleges (Fachhochschulen), and other educational facilities.
+    The<a href="https://www.tugraz.at/en/tu-graz/organisational-structure/service-departments-and-staff-units/office-for-gender-equality-and-equal-opportunity/"> Office for Gender Equality and Equal Opportinuty</a> of the TUGraz tries to achieve that goal by informing young adults, predominantly students close to their  A-levels (dt. Abitur) about their options with respect to Universities, Colleges (Fachhochschulen), and other educational facilities.
     Therefore the general purpose is outreach, clear communication of expectations, requirements, and a careful handling of future students' questions.
     </p>
 </div>
