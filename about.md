@@ -15,6 +15,7 @@ If you're interested in getting in contact with me, just write me an email.
 </p>
 
 <a class="boxed" href="/cv.pdf">Short CV (PDF)</a>
+<a class="boxed" href="/cv">Short CV (website)</a>
 
 <h2>Experience<hr></h2>
 
