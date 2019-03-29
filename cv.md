@@ -91,3 +91,7 @@ Qt, Gtk, Django, RubyOnRails, Jekyll, SQL<br>
 I am fluent in <b>English, German,</b> and <b>Serbo-Croatian.</b><br>
 Additionally I am trying to motivate myself to learn French.
 </p>
+
+<center>
+<a class="boxed" href="/cv.pdf">Download CV as PDF</a>
+</center>
