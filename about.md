@@ -118,9 +118,7 @@ You can find my <a class="boxed" href="/cv">CV</a> here.
 
 <h2>Technical Skills<hr></h2>
 <p>
-I was lucky enough to be exposed to different technologies, whose usages range from back-end to front-end development.
-In general I enjoy programming and tinkering in different languages, as they force you to adjust 
-to small changes in concepts and conventions prevalant in those communities.
+I was lucky enough to be exposed to different technologies, ranging from back-end to front-end development.
 </p>
 
 <div class="skillset">
@@ -172,8 +170,8 @@ to small changes in concepts and conventions prevalant in those communities.
     <p>
     Because of my focus on computer vision and data science I am also quite familiar with the industry standard frameworks such as
     <b>OpenCV, PyTorch, Scikit-learn, Scikit-image</b> and <b>Pandas</b>.<br><br>
-    I am also a advocate for the open source and FOSS movement, as I think it enables a more transparent and communal approach to the most
-    influencial technologies and software. Therefore I am also familiar with software used in these environments such as
+    I fully support the open source and FOSS movement, as it enables a more transparent and communal approach to many
+    influencial technologies and software. By participating in community and side projects I also am familiar with some other frameworks and toolkits such as 
     <b>Qt, Gtk, SQL,</b> and Web-frameworks <b>Django, RubyOnRails,</b> and <b>Jekyll</b>.
     </p>
 </div>

@@ -2,7 +2,7 @@
 layout: default
 title: Research
 permalink: /research/
-published: false
+published: true
 order: 3
 ---
 
