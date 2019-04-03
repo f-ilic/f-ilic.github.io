@@ -5,7 +5,7 @@ published: true
 ---
 
 <p>
-My professional background and interests are computer vision, machine learning and data visualization. I enjoy teaching, collaborating, communicating and sharing knowledge with others. Currently I am looking forward to starting my PhD at TUGraz!<br>
+My professional background and interests are computer vision, machine learning and data visualization. I enjoy teaching, collaborating, communicating and sharing knowledge with others. I am currently a PhD student at TU Graz.<br>
 </p>
 
 <h2>Experience<hr></h2>

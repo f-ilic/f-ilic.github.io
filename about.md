@@ -9,7 +9,7 @@ order: 0
 <h2>Short bio<hr></h2>
 
 <p>
-My professional background and interests are computer vision, machine learning and data visualization. I know my way around various different tool-chains and technologies. I enjoy teaching, collaborating, communicating and sharing knowledge with others. Currently I am looking to start my PhD at TUGraz very soon!<br>
+My professional background and interests are computer vision, machine learning and data visualization. I know my way around various different tool-chains and technologies. I enjoy teaching, collaborating, communicating and sharing knowledge with others. I am currently a PhD student at TU Graz.<br>
 During my spare time in winter enjoy snowboarding for which I have been an instructor since 2008.<br>
 If you're interested in getting in contact with me, just write me an email.
 </p>
