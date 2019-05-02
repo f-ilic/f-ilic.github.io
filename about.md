@@ -1,9 +1,9 @@
 ---
 layout: default
 title: About Me
-permalink: /about
+permalink: /about/
 published: true
-order: 0
+order: 1
 ---
 
 <h2>Short bio<hr></h2>

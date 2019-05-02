@@ -3,7 +3,7 @@ layout: default
 title: Posts
 permalink: /posts/
 published: true
-order: 4
+order: 3
 ---
 
 {% for post in site.categories.posts %}
