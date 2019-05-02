@@ -4,7 +4,7 @@ title: Efficient Vocabulary Tree Training
 authors: <b>Filip Ilic</b>
 publication: Not published
 time: 2016
-published: true
+published: false
 ---
 
 <span class="section">Keywords</span>

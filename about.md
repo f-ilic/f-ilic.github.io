@@ -1,7 +1,7 @@
 ---
 layout: default
 title: About Me
-permalink: /about/
+permalink: /about
 published: true
 order: 0
 ---
@@ -9,13 +9,13 @@ order: 0
 <h2>Short bio<hr></h2>
 
 <p>
-My professional background and interests are computer vision, machine learning and data visualization. I know my way around various different tool-chains and technologies. I enjoy teaching, collaborating, communicating and sharing knowledge with others. I am currently a PhD student at TU Graz.<br>
-During my spare time in winter enjoy snowboarding for which I have been an instructor since 2008.<br>
+I'm currently a PhD student at the TU Graz. 
+My interests lie in the fields of  computer vision, machine learning and data analysis. I know my way around various different toolchains and technologies, with which I enjoy to tinker.<br>
+During my spare time I enjoy cycling, and in winter snowboarding for which I have been an instructor since 2008.<br>
 If you're interested in getting in contact with me, just write me an email.
 </p>
 
-You can find my <a class="boxed" href="/cv">CV</a> here.
-
+<!-- You can find my <a class="boxed" href="/cv">CV</a> here. -->
 <h2>Experience<hr></h2>
 
 <div class="item-wrapper">
@@ -179,5 +179,5 @@ I was lucky enough to be exposed to different technologies, ranging from back-en
 <h2>Languages<hr></h2>
 <p>
 I am fluent in <b>English, German,</b> and <b>Serbo-Croatian.</b><br>
-Additionally I am trying to motivate myself to learn French.
+Additionally I am trying to motivate myself to learn French (with mediocre success).
 </p>

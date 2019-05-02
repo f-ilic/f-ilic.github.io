@@ -2,17 +2,18 @@
 layout: paper
 title: Space-Time Volumes of Interest
 authors: <b>Filip Ilic</b>, Axel Pinz
-publication: Not published
+publication: Nowhere
 time: 2019
 published: true
 ---
 
-<video width="100%" controls loop>
-        <source src="../papers/SpaceTimeVolumesOfInterest/summary_figures/jumpingjack.mp4" type="video/mp4">
-</video> 
-      
-<span class="section">Keywords</span>
-Object representation, Object decomposition, Gaussian spatio-temporal scale space, SLIC, top-down anchors
+  <table style="border: none;">
+      <tr style="border: none;">
+        <td style="border: none;" align="left"><video width="100%" controls loop autoplay><source src="../papers/SpaceTimeVolumesOfInterest/summary_figures/jumpingjack.mp4" type="video/mp4"></video> </td>
+        <td style="border: none;" align="left">Representing objects at appropriate spatio-temporal scales, and decomposing them into salient motion and appearance tubes.</td>
+      </tr>
+  </table> 
+
 
 <div class="paper-links">
 <a class="boxed" href="">Paper</a>
