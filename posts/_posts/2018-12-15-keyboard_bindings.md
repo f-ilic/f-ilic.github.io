@@ -27,12 +27,14 @@ If you want to familiarize yourself even more with xkb I suggest:
 Long story short; A xkb layout defines what symbol is registered when you press a key. 
 The file that defines that layout is in my case ```/usr/share/X11/xkb/symbols/us```.
 
-**Be careful editing this file; if its malformed your keyboard won't work!**
+<span style="color:red">**CAUTION!**</span>
+**If the layout file is malformed your keyboard won't work!** <br>
 This means that before you start editing the file make sure that: 
 * you have a on-screen keyboard or
 * have a bootable usb stick, to perform emergecy edits of the file
+* or ya know, don't edit the original.
 
-
+<br>
 The xkb file contains entries that look like this:
 
 ```{[Key, Key + Shift, Key + level3 modifier, Key + level3 modifier + Shift]}```
