@@ -116,7 +116,7 @@ If you're interested in getting in contact with me, just write me an email.
 <!-- End Item wrapper -->
 </div>
 
-<h2>Technical Skills<hr></h2>
+<!-- <h2>Technical Skills<hr></h2>
 <p>
 I was lucky enough to be exposed to different technologies, ranging from back-end to front-end development.
 </p>
@@ -174,7 +174,7 @@ I was lucky enough to be exposed to different technologies, ranging from back-en
     influencial technologies and software. By participating in community and side projects I also am familiar with some other frameworks and toolkits such as 
     <b>Qt, Gtk, SQL,</b> and Web-frameworks <b>Django, RubyOnRails,</b> and <b>Jekyll</b>.
     </p>
-</div>
+</div> -->
 
 <h2>Languages<hr></h2>
 <p>

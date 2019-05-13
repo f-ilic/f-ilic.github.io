@@ -22,7 +22,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  f-ilic
 linkedin_username: filip-ilic-82a898185
 # scholar_username: asdfasd
-rsa_key: yes
+rsa_key: no
 # google_analytics: UA-135499587-1
 
 # includes:
