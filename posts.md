@@ -9,7 +9,6 @@ order: 3
 {% for post in site.categories.posts %}
 
 <div class="item-wrapper">
-
 <div class="item">
         <div class="upper-row">
             <div class="time">{{post.date | date: "%b %Y"}}</div>
@@ -20,4 +19,5 @@ order: 3
         </div>
     </div>
 </div>
+
 {% endfor %}

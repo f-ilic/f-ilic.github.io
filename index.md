@@ -6,39 +6,61 @@ published: true
 order: 2
 ---
 
-<div class="time">Winter semester 2018/2019</div>
-## Image Based Measurement, Laboratory (438.019)
+
+## Classes
 ---
 
-Content: 	
-* Image measurement laboratory, illumination, image acquisition 
-* Implementation of image beased measurement systems, understanding of camera-framegrabber-computer 
-* image processing (filters, transforms) 
-* basic 2d measurements 
-* 3d reconstruction (structured light, stereo) 
-* colour calibration and colour measurement
+<table>
+  <tr>
+    <td>
+    <div class="time">Winter semester 2018/2019</div>
+        <div class="post-list-title">Image Based Measurement</div>
+        <div class="subheading">Laboratory (438.019)</div>
+        <p>
+            Submission deadline: <b>2 March 2019</b>
+        </p>
+      <div class="paper-links">
+      <a class="boxed" href="../teaching/assignment1.pdf">Assignment 1</a>
+      <a class="boxed" href="../teaching/assignment2.pdf">Assignment 2</a>
+      <a class="boxed" href="../teaching/assignment3.pdf">Assignment 3</a>
+      <a class="boxed" href="../teaching/report_template.tex">Report Template</a>
+      </div>    
+    </td>
+  </tr>
+</table>
 
-Submission deadline: **2 March 2019** 
+<table>
+    <tr>
+    <td>
+    <div class="time">Winter semester 2018/2019</div>
+        <div class="post-list-title">Optical Measurement Principles</div>
+        <div class="subheading">Laboratory (438.021)</div>
+        <p>
+            Submission deadline: <b>12 Jan 2019</b>
+        </p>  
+    </td>
+    </tr>
+</table>
 
-[Assignment 1](../teaching/assignment1.pdf){: .boxed} [Assignment 2](../teaching/assignment2.pdf){: .boxed} [Assignment 3](../teaching/assignment3.pdf){: .boxed} [Report Template](../teaching/report_template.tex){: .boxed}
-
-<div class="time">Winter semester 2018/2019</div>
-## Optical Measurement Principles, Laboratory (438.021)
----
-
-Content:
-* Michelson Interferometer (measuring of length, wavelength, density)
-* Laser-Doppler-Anemometer (LDA)
-* Electronic Speckle Interferometer (ESPI)
-* Digital Image Processing
 
 ## Open Student Projects
 ---
 
-<div class="time">Published Oct 2018</div>
-<div class="post-list-title">Space-Time Interest Points</div>
-<div class="subheading">Bachelor's Thesis, Master's Project</div>
-With the same techniques that allow us to detect points of interest in images, it is possible to detect and describe feature points in video. The goal of this project is to implement such a Space-Time Interest Point detector, and experiment with different descriptors on human action datasets.
+<table>
+  <tr>
+    <td width="20%"> <img src="../teaching/stip.png"></td>
+    <td width="80%">  
+        <div class="time">Published Oct 2018</div>
+        <div class="post-list-title">Space-Time Interest Points</div>
+        <div class="subheading">Bachelor's Thesis, Master's Project</div>
+        <p>
+        Implementing a Space-Time Interest Point detector, and experiment with different descriptors on human action datasets.
+        </p>
+      <div class="paper-links">
+      <a class="boxed" href="../teaching/stip.pdf">Info PDF</a>
+      <a class="boxed" href="https://www.irisa.fr/vista/Papers/2005_ijcv_laptev.pdf">Reference paper</a>
+      </div>
+    </td>
 
-[Info PDF](../teaching/stip.pdf){: .boxed}
-[Reference paper](https://www.irisa.fr/vista/Papers/2005_ijcv_laptev.pdf){: .boxed}
+  </tr>
+</table>
