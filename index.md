@@ -7,18 +7,15 @@ order: 2
 ---
 
 
-## Classes
+## Teaching
 ---
 
-<table>
+<table class='tiles'>
   <tr>
     <td>
     <div class="time">Winter semester 2018/2019</div>
         <div class="post-list-title">Image Based Measurement</div>
         <div class="subheading">Laboratory (438.019)</div>
-        <p>
-            Submission deadline: <b>2 March 2019</b>
-        </p>
       <div class="paper-links">
       <a class="boxed" href="../teaching/assignment1.pdf">Assignment 1</a>
       <a class="boxed" href="../teaching/assignment2.pdf">Assignment 2</a>
@@ -27,17 +24,12 @@ order: 2
       </div>    
     </td>
   </tr>
-</table>
-
-<table>
     <tr>
     <td>
     <div class="time">Winter semester 2018/2019</div>
         <div class="post-list-title">Optical Measurement Principles</div>
         <div class="subheading">Laboratory (438.021)</div>
-        <p>
-            Submission deadline: <b>12 Jan 2019</b>
-        </p>  
+        <a class="boxed" href="../teaching/report_template.tex">Report Template</a>
     </td>
     </tr>
 </table>
@@ -46,7 +38,7 @@ order: 2
 ## Open Student Projects
 ---
 
-<table>
+<table class='tiles'>
   <tr>
     <td width="20%"> <img src="../teaching/stip.png"></td>
     <td width="80%">  
@@ -54,7 +46,7 @@ order: 2
         <div class="post-list-title">Space-Time Interest Points</div>
         <div class="subheading">Bachelor's Thesis, Master's Project</div>
         <p>
-        Implementing a Space-Time Interest Point detector, and experiment with different descriptors on human action datasets.
+        Implement a Space-Time Interest Point detector and experiment with different descriptors for action recognition.
         </p>
       <div class="paper-links">
       <a class="boxed" href="../teaching/stip.pdf">Info PDF</a>

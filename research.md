@@ -9,7 +9,7 @@ order: 1
 ## Publications
 ---
 
-<table>
+<table class='tiles'>
   <tr>
     <td width="20%"> <img src="../papers/SpaceTimeVolumesOfInterest/summary_figures/teaser.png"></td>
     <td width="80%">  

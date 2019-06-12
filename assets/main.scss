@@ -65,6 +65,8 @@ hr {
     margin-bottom:16px;
 }
 
+
+
 .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: 10px;
@@ -371,4 +373,12 @@ h2{
     font-size: 12pt;
     // text-decoration: underline;
     // margin-bottom: 20px;
+}
+
+.tiles tr:nth-child(odd){
+    background-color: white;
+}
+
+.tiles tr:nth-child(even){
+    background-color: white;
 }
