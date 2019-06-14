@@ -6,6 +6,7 @@
 $blue-dark:  hsl(220, 64%, 36%);
 $blue-mid:   hsl(281, 63%, 60%);
 $blue-light: hsl(220, 63%, 91%);
+$blue-barely: hsl(250, 100%, 99%);
 
 $teal-dark:  hsl(196, 41%, 35%);
 $teal-mid:   hsl(196, 41%, 45%);
@@ -175,7 +176,7 @@ text-align:right;
     font-size: 10pt;
     margin-bottom:10px;
     color:$teal-dark;
-    font-weight: bold;
+    // font-weight: bold;
 }
 
 .item-wrapper .item {
@@ -381,4 +382,25 @@ h2{
 
 .tiles tr:nth-child(even){
     background-color: white;
+}
+
+
+
+.clickable-tiles tr:nth-child(odd){
+    background-color: white;
+}
+
+.clickable-tiles tr:nth-child(even){
+    background-color: white;
+}
+.clickable-tiles tr:hover{
+    background-color: $blue-barely;
+}
+
+.clickable-tiles a:link {
+    color: $blue-dark;
+}
+
+.clickable-tiles a:visited {
+    color: $blue-dark;
 }

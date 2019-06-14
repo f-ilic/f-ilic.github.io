@@ -29,6 +29,10 @@ rsa_key: no
 # includes:
 # - papers
 
+# collections:
+#   category:
+#     output: true
+
 exclude: [vendor]
 
 # Build settings

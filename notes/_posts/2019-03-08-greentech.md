@@ -11,7 +11,7 @@ The <a href="https://www.greentech.at/jam2019/">greentech jam</a> is a "Interdis
 ## The Challenge
 ---
 
-Our team, consisting of two computer scientists, an architect and a physicist chose the problem presented by <b>Energie Graz</b>.
+Our team, consisting of two computer scientists, an architect and a physicist chose the problem presented by Energie Graz.
 
 Their problem is rather straight forward;
 Houses that have a photovoltaic system need to spend the generated energy as soon as it is generated to avoid energy storage costs, or even taxes if the eletricity were to be fed into the power grid. The time at which the photovoltaic electricity is available is - unexpectedly - around noon; this is also the time at which people are generally not at home.

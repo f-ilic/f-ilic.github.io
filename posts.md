@@ -6,21 +6,44 @@ published: true
 order: 3
 ---
 
-<table class='tiles'>
 
-{% for post in site.categories.posts %}
+## Articles
+---
 
-<tr>
+<table class='clickable-tiles'>
+{% for article in site.categories.articles %}
+<tr >
 <td>
-
-        <div class="upper-row">
-            <div class="time">{{post.date | date: "%b %Y"}}</div>
-            <div class="post-list-title"><a href="{{ post.url }}">{{post.title}}</a></div>
-        </div>
-        <div class="subheading">
-            {{post.subheading}}
-        </div>
+    <a href="{{ article.url }}" style='display:block;text-decoration:none;'>
+    <div class="time">{{article.date | date: "%b %Y"}}</div>
+    <div class="post-list-title">{{article.title}}</div>
+    <div class="subheading">
+        {{article.subheading}}
+    </div>
+    <span class="gray">You wrote your first paper. <br> You're fuled by your supervisors encouragement and are hopeful that you will be accepted. <br>
+    Sometimes that does not happen and we have to deal with rejection and learn from it.</span>
+    </a>
 </td>
 </tr>
 {% endfor %}
 </table>
+
+## Notes
+---
+
+<table class='clickable-tiles'>
+{% for post in site.categories.notes %}
+<tr >
+<td>
+    <a href="{{ post.url }}" style='display:block;text-decoration:none;'>
+    <div class="time">{{post.date | date: "%b %Y"}}</div>
+    <div class="post-list-title">{{post.title}}</div>
+    <div class="subheading">
+        {{post.subheading}}
+    </div>
+    </a>
+</td>
+</tr>
+{% endfor %}
+</table>
+

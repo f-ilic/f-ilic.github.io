@@ -10,6 +10,10 @@ order: 2
 ## Teaching
 ---
 
+There are two courses that I help organize.
+Both of them contain some theoretical background but focus mostly on the experimentation and implementation side of things.
+If you are interested in optics and image based measurements they might be interesting to you.
+
 <table class='tiles'>
   <tr>
     <td>
@@ -37,7 +41,6 @@ order: 2
 
 ## Open Student Projects
 ---
-
 <table class='tiles'>
   <tr>
     <td width="20%"> <img src="../teaching/stip.png"></td>
