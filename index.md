@@ -1,41 +1,82 @@
 ---
 layout: default
-title: Teaching
+title: Research
 permalink: /
 published: true
-order: 2
+order: 1
 ---
+
+
+
+## Short bio
+---
+
+<p>
+I'm currently a PhD student at the TU Graz, interested in machine learning and its applications in computer vision.
+My current work focuses on the spatio-temporal relation between objects and their parts in video.
+</p>
+
+
+## Publications
+---
+
+<table class='tiles'>
+  <tr>
+    <td width="20%" class='teaserimg'> <img src="/wacv2020_thumb.png"></td>
+    <td width="80%">  
+      <div class="paper-info">
+      <div class="paper-head">
+        <span class="paper-title">Representing Objects in Video as Space-Time Volumes by Combining Top-Down and Bottom-Up Processes</span>
+        <span class="paper-authors"><b>Filip Ilic</b>, Axel Pinz</span>
+        <span class="paper-published"><b>WACV 2020</b></span>
+      </div>
+      </div>
+      <div class="paper-links">
+      <a href="todo">[Paper]</a>
+      <a href="todo">[BibTex]</a>
+      </div>
+    </td>
+  </tr>
+</table>
+<table class='tiles'>
+  <tr>
+  <td width="20%" class='teaserimg'> <img src="/davisparts_thumb.png"></td>
+  <td width="80%">  
+    <div class="paper-info">
+    <div class="paper-head">
+      <span class="paper-title">The DAVIS Parts Dataset</span>
+      <span class="paper-authors"><b>Filip Ilic</b>, Axel Pinz</span>
+      <span class="paper-published"><b>Part of WACV 2020 Paper</b></span>
+    </div>
+    </div>
+    <div class="paper-links">
+    <!-- <a class="boxed" href="todo">Code</a> -->
+    <a href="/DAVISParts">[Info Page]</a>
+    <!-- <a href="todo">[Tech. report]</a>
+    <a href="todo">[BibTex]</a> -->
+    </div>
+  </td>
+</tr>
+  
+  
+</table>
+
 
 
 ## Teaching
 ---
 
-There are two courses that I help organize.
-Both of them contain some theoretical background but focus mostly on the experimentation and implementation side of things.
-If you are interested in optics and image based measurements they might be interesting to you.
-
 <table class='tiles'>
   <tr>
     <td>
-    <div class="time">Winter semester 2018/2019</div>
+    <div class="time">Winter semester </div>
         <div class="post-list-title">Image Based Measurement</div>
         <div class="subheading">Laboratory (438.019)</div>
       <div class="paper-links">
-      <a class="boxed" href="../teaching/assignment1.pdf">Assignment 1</a>
-      <a class="boxed" href="../teaching/assignment2.pdf">Assignment 2</a>
-      <a class="boxed" href="../teaching/assignment3.pdf">Assignment 3</a>
-      <a class="boxed" href="../teaching/report_template.tex">Report Template</a>
+      <a href="../teaching/report_template.tex">[Report Template]</a>
       </div>    
     </td>
   </tr>
-    <tr>
-    <td>
-    <div class="time">Winter semester 2018/2019</div>
-        <div class="post-list-title">Optical Measurement Principles</div>
-        <div class="subheading">Laboratory (438.021)</div>
-        <a class="boxed" href="../teaching/report_template.tex">Report Template</a>
-    </td>
-    </tr>
 </table>
 
 
@@ -43,17 +84,17 @@ If you are interested in optics and image based measurements they might be inter
 ---
 <table class='tiles'>
   <tr>
-    <td width="20%"> <img src="../teaching/stip.png"></td>
+    <td width="20%" class='teaserimg'> <img src="../teaching/stip.png"></td>
     <td width="80%">  
-        <div class="time">Published Oct 2018</div>
+        <div class="time">Oct 2018</div>
         <div class="post-list-title">Space-Time Interest Points</div>
         <div class="subheading">Bachelor's Thesis, Master's Project</div>
         <p>
         Implement a Space-Time Interest Point detector and experiment with different descriptors for action recognition.
         </p>
       <div class="paper-links">
-      <a class="boxed" href="../teaching/stip.pdf">Info PDF</a>
-      <a class="boxed" href="https://www.irisa.fr/vista/Papers/2005_ijcv_laptev.pdf">Reference paper</a>
+      <a href="../teaching/stip.pdf">[Info PDF]</a>
+      <a href="https://www.irisa.fr/vista/Papers/2005_ijcv_laptev.pdf">[Reference paper]</a>
       </div>
     </td>
 

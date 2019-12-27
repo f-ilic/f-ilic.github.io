@@ -1,7 +1,11 @@
 There is a nested git repo thing going on here.
 The base directory is the location of the source code.
 
-Inside this directory modify the site etc and run
+There are two branches: ```master``` and ```sources```.
+switch to ```sources``` when you are developing.
+
+
+Inside this directory:
 ```
 bundle exec jekyll build
 ```

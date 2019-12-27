@@ -2,12 +2,12 @@
 layout: default
 title: Posts
 permalink: /posts/
-published: true
+published: True
 order: 3
 ---
 
 
-## Articles
+<!-- ## Articles
 ---
 
 <table class='clickable-tiles'>
@@ -20,13 +20,12 @@ order: 3
     <div class="subheading">
         {{article.subheading}}
     </div>
-    <span class="gray">You wrote your first paper. <br> You're fuled by your supervisors encouragement and are hopeful that you will be accepted. <br>
-    Sometimes that does not happen and we have to deal with rejection and learn from it.</span>
+
     </a>
 </td>
 </tr>
 {% endfor %}
-</table>
+</table> -->
 
 ## Notes
 ---

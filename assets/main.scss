@@ -26,6 +26,9 @@ $grey-mid: rgb(172, 172, 172);
 $gradient-primary:  $blue-dark;
 $gradient-secondary:  $teal-mid;
 
+table{
+    border-color: $grey-mid;
+}
 
 //  ---------------- Paragraphs and Headings
 .tiny {
@@ -62,7 +65,8 @@ blockquote {
 hr {
     height:1px;
     border:none;
-    background-color:$grey-color-light;
+    // background-color:$grey-color-light;
+    background-color: $grey-mid;
     margin-bottom:16px;
 }
 
@@ -375,6 +379,17 @@ h2{
     // text-decoration: underline;
     // margin-bottom: 20px;
 }
+
+
+.teaserimg{
+    padding: 0px; 
+    margin: 0px;
+}
+// .teaserimg:hover{
+//     -webkit-transform:scale(1.4);
+//     transform:scale(1.4);
+//     transition: 0.2s;
+// }
 
 .tiles tr:nth-child(odd){
     background-color: white;

@@ -2,7 +2,7 @@
 layout: post
 title: GreenTech 2019
 permalink: /posts/greentech2019
-subheading: Innovating, prototyping and little sleep
+subheading: Prototyping a smart photovoltaic UI
 ---
 
 The <a href="https://www.greentech.at/jam2019/">greentech jam</a> is a "Interdisciplinary student hackathon on the topic of
@@ -17,8 +17,6 @@ Their problem is rather straight forward;
 Houses that have a photovoltaic system need to spend the generated energy as soon as it is generated to avoid energy storage costs, or even taxes if the eletricity were to be fed into the power grid. The time at which the photovoltaic electricity is available is - unexpectedly - around noon; this is also the time at which people are generally not at home.
 
 Our proposed solution was to provide a web interface in which the users could monitor the peak hours of the photovoltaic energy production, make informed decisions, and connect and control their smart devices to deal with the peak electricity output (i.e. start the dishwasher, charge the roomba, etc.)
-
-A somewhat functional mockup of our envisioned system is shown <a href="/posts/greentech2019/website/index.html"> here </a>.
 
 ## The Atmosphere
 ---

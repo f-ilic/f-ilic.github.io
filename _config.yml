@@ -22,16 +22,17 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  f-ilic
 linkedin_username: filip-ilic-82a898185
 # medium_username: asdfasdf
-scholar_username: asdfasd
-rsa_key: no
+# scholar_username: asdfasd
+# rsa_key: yes
 # google_analytics: UA-135499587-1
+github: [metadata]
 
 # includes:
 # - papers
 
-# collections:
-#   category:
-#     output: true
+collections:
+  category:
+    output: true
 
 exclude: [vendor]
 

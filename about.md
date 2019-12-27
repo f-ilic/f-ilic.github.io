@@ -2,7 +2,7 @@
 layout: default
 title: About Me
 permalink: /about/
-published: true
+published: false
 order: 4
 ---
 
@@ -12,7 +12,6 @@ order: 4
 I'm currently a PhD student at the TU Graz. 
 My interests lie in the fields of  computer vision, machine learning and data analysis. I know my way around various different toolchains and technologies, with which I enjoy to tinker.<br>
 During my spare time I enjoy cycling, and in winter snowboarding for which I have been an instructor since 2008.<br>
-If you're interested in getting in contact with me, just write me an email.
 </p>
 
 ---
