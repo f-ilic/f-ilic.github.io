@@ -32,33 +32,13 @@ My current work focuses on the spatio-temporal relation between objects and thei
       </div>
       </div>
       <div class="paper-links">
-      <a href="todo">[Paper]</a>
-      <a href="todo">[BibTex]</a>
+      <a href="/STVI">[Info Page]</a>
+      <a href="papers/STVI/stvi.pdf">[Paper]</a>
+      <a href="papers/STVI/poster.pdf">[Poster]</a>
+      <a href="papers/STVI/bib.txt">[BibTex]</a>
       </div>
     </td>
   </tr>
-</table>
-<table class='tiles'>
-  <tr>
-  <td width="20%" class='teaserimg'> <img src="/davisparts_thumb.png"></td>
-  <td width="80%">  
-    <div class="paper-info">
-    <div class="paper-head">
-      <span class="paper-title">The DAVIS Parts Dataset</span>
-      <span class="paper-authors"><b>Filip Ilic</b>, Axel Pinz</span>
-      <span class="paper-published"><b>Part of WACV 2020 Paper</b></span>
-    </div>
-    </div>
-    <div class="paper-links">
-    <!-- <a class="boxed" href="todo">Code</a> -->
-    <a href="/DAVISParts">[Info Page]</a>
-    <!-- <a href="todo">[Tech. report]</a>
-    <a href="todo">[BibTex]</a> -->
-    </div>
-  </td>
-</tr>
-  
-  
 </table>
 
 
