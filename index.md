@@ -26,7 +26,9 @@ My current work focuses on the spatio-temporal relation between objects and thei
     <td width="80%">  
       <div class="paper-info">
       <div class="paper-head">
-        <span class="paper-title">Representing Objects in Video as Space-Time Volumes by Combining Top-Down and Bottom-Up Processes</span>
+          <div class="time">Mar 2020 </div>
+
+        <span class="paper-title">Representing Objects in Video as Space-Time Volumes by<br> Combining Top-Down and Bottom-Up Processes</span>
         <span class="paper-authors"><b>Filip Ilic</b>, Axel Pinz</span>
         <span class="paper-published"><b>WACV 2020</b></span>
       </div>
@@ -34,8 +36,6 @@ My current work focuses on the spatio-temporal relation between objects and thei
       <div class="paper-links">
       <a href="/STVI">[Info Page]</a>
       <a href="papers/STVI/stvi.pdf">[Paper]</a>
-      <a href="papers/STVI/poster.pdf">[Poster]</a>
-      <a href="papers/STVI/bib.txt">[BibTex]</a>
       </div>
     </td>
   </tr>
@@ -66,7 +66,7 @@ My current work focuses on the spatio-temporal relation between objects and thei
   <tr>
     <td width="20%" class='teaserimg'> <img src="../teaching/stip.png"></td>
     <td width="80%">  
-        <div class="time">Oct 2018</div>
+        <div class="time">May 2019</div>
         <div class="post-list-title">Space-Time Interest Points</div>
         <div class="subheading">Bachelor's Thesis, Master's Project</div>
         <p>
@@ -79,4 +79,24 @@ My current work focuses on the spatio-temporal relation between objects and thei
     </td>
 
   </tr>
+</table>
+
+
+## Notes
+---
+
+<table class='clickable-tiles'>
+{% for post in site.categories.notes %}
+<tr >
+<td>
+    <a href="{{ post.url }}" style='display:block;text-decoration:none;'>
+    <div class="time">{{post.date | date: "%b %Y"}}</div>
+    <div class="post-list-title">{{post.title}}</div>
+    <div class="subheading">
+        {{post.subheading}}
+    </div>
+    </a>
+</td>
+</tr>
+{% endfor %}
 </table>

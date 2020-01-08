@@ -55,7 +55,7 @@ key <SPCE> {[space,space,Return,nobreakspace]};
 
 If this is something that sounds desirable to you, download my xkb layout and play around with it!
 
-<a class="boxed" href="/posts/keyboard/us.txt">My xkb config</a>
+<a href="/notes/keyboard/us.txt">[My xkb config]</a>
 
 # MacOS
 ---
@@ -64,7 +64,7 @@ If you're using MacOS, one way to do the same it is to rebind the capslock key t
 
 The following script should get you started:
 
-<a class="boxed" href="/posts/keyboard/hammerspoon_cfg.txt">Hammerspoon config</a>
+<a href="/notes/keyboard/hammerspoon_cfg.txt">[Hammerspoon config]</a>
 
 
 
