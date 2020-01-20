@@ -88,3 +88,12 @@ Some sample annotations of the dataset are shown below:
 <video controls autoplay loop height="120">
   <source  src="papers/STVI/parts/paragliding.mp4" type="video/mp4">
 </video> 
+<video controls autoplay loop height="120">
+  <source  src="papers/STVI/parts/stroller.mp4" type="video/mp4">
+</video> 
+<video controls autoplay loop height="120">
+  <source  src="papers/STVI/parts/lucia.mp4" type="video/mp4">
+</video> 
+<video controls autoplay loop height="120">
+  <source  src="papers/STVI/parts/car-roundabout.mp4" type="video/mp4">
+</video> 
