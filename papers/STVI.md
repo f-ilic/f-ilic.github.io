@@ -65,3 +65,26 @@ The trajectory w.r.t. the observer is shown on the left. The relative motion of 
 </table>
 
 The DAVIS Parts Dataset was created for the purpose of evaluating the decomposition of various objects into their parts and contains 20 annotated videos from the DAVIS2016 challenge, with a total number of 1392 annotated frames.<br>
+
+
+<a href='#DAVISsamples'></a>
+Some sample annotations of the dataset are shown below:
+
+<video controls autoplay loop height="120">
+  <source  src="papers/STVI/parts/rollerblade.mp4" type="video/mp4">
+</video> 
+<video controls autoplay loop height="120">
+  <source  src="papers/STVI/parts/breakdance-flare.mp4" type="video/mp4">
+</video> 
+<video controls autoplay loop height="120">
+  <source  src="papers/STVI/parts/parkour.mp4" type="video/mp4">
+</video> 
+<video controls autoplay loop height="120">
+  <source  src="papers/STVI/parts/tennis.mp4" type="video/mp4">
+</video> 
+<video controls autoplay loop height="120">
+  <source  src="papers/STVI/parts/train.mp4" type="video/mp4">
+</video> 
+<video controls autoplay loop height="120">
+  <source  src="papers/STVI/parts/paragliding.mp4" type="video/mp4">
+</video> 
