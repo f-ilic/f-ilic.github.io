@@ -29,7 +29,7 @@ My current work focuses on the spatio-temporal relation between objects and thei
           <div class="time">Mar 2020 </div>
         <span class="paper-title">Representing Objects in Video as Space-Time Volumes by<br> Combining Top-Down and Bottom-Up Processes</span>
         <span class="paper-authors"><b>Filip Ilic</b>, Axel Pinz</span>
-        <span class="paper-published"><b>WACV 2020</b></span>
+        <span class="paper-published"><b>2020 IEEE Winter Conference on Applications of Computer Vision (WACV)</b></span>
       </div>
       </div>
       <div class="paper-links">

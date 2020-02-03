@@ -3,7 +3,7 @@ layout: post
 title: Representing Objects in Video as Space-Time Volumes by Combining Top-Down and Bottom-Up Processes
 permalink: /STVI
 subheading: <b>Filip Ilic</b>, Axel Pinz 
-venue: WACV 2020
+venue: 2020 IEEE Winter Conference on Applications of Computer Vision (WACV)
 exclude: true
 ---
 
@@ -55,8 +55,8 @@ Figure 2: Space-Time Volumes of Interest extracted at increasing spatial and tem
 Viewer/Object-centered representation 
 <table>
 <tr>
-<td>
-  <video controls autoplay loop muted height="120">
+<td width='50%'>
+  <video controls autoplay loop muted width="100%" style="min-width:50%">
     <source  src="papers/STVI/rollerblade.mp4" type="video/mp4">
   </video> 
 </td>
@@ -82,20 +82,13 @@ Figure 3: The trajectory w.r.t. the observer is shown on the left. The relative 
               <a href="papers/STVI/DAVISParts_v1.zip">[Download]</a>
     </div>
     </div>
-
   </td>
 </tr>  
-
 <tr>
-<td><video controls autoplay loop muted width="100%"><source  src="papers/STVI/parts/parkour_wipe.mp4" type="video/mp4"></video></td>
-<td><video controls autoplay loop muted width="100%"><source  src="papers/STVI/parts/stroller_wipe.mp4" type="video/mp4"></video></td>
-<td><video controls autoplay loop muted width="100%"><source  src="papers/STVI/parts/train_wipe.mp4" type="video/mp4"></video></td>
+<td><video controls autoplay loop muted width="100%"><source  src="papers/STVI/parts/DAVIS_parts.mp4" type="video/mp4"></video></td>
 </tr>
-
 <tr>
-
-<td colspan='3' bgcolor='#F7F7F7'>Figure 4: The DAVIS Parts Dataset contains a varity of densely annotated objects and their parts.<br>
-Three samples ('parkour', 'stroller', and 'train') are shown.</td>
+<td bgcolor='#F7F7F7'>Figure 4: The DAVIS Parts Dataset contains a varity of densely annotated objects and their parts. We envision this dataset being used for object part tracking and detection.</td>
 </tr>
 
 </table>
