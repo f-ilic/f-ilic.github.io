@@ -79,7 +79,7 @@ Figure 3: The trajectory w.r.t. the observer is shown on the left. The relative 
     <div class="paper-head">
       <span class="paper-title">The DAVIS Parts Dataset</span>
       <span class="paper-published"><b>A new dataset for object part segmentation and tracking</b></span>
-              <a href="https://github.com/f-ilic/f-ilic.github.io/raw/master/papers/STVI/DAVISParts_v1.7z">[Download]</a>
+              <a href="https://drive.google.com/open?id=1-I8f44UddQZBbYDT9ravd-ueAiKqxV68">[Download]</a>
     </div>
     </div>
   </td>
