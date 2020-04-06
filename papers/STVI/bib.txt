@@ -1,6 +1,7 @@
-@inproceedings{ilic20stvi,
-  title={Representing Objects in Video as Space-Time Volumes by Combining Top-Down and Bottom-Up Processes},
-  author={Ilic, Filip and Pinz, Axel},
-  booktitle={{IEEE} Winter Conference on Applications of Computer Vision, {WACV} 2020}},
-  year={2020}
-}
+@InProceedings{Ilic_2020_WACV,
+author = {Ilic, Filip and Pinz, Axel},
+title = {Representing Objects in Video as Space-Time Volumes by Combining Top-Down and Bottom-Up Processes},
+booktitle = {The IEEE Winter Conference on Applications of Computer Vision (WACV)},
+month = {March},
+year = {2020}
+} 
