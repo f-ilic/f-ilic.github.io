@@ -42,7 +42,7 @@ My current work focuses on the spatio-temporal relation between objects and thei
 
 
 
-## Teaching
+<!-- ## Teaching
 ---
 
 <table class='tiles'>
@@ -98,4 +98,4 @@ My current work focuses on the spatio-temporal relation between objects and thei
 </td>
 </tr>
 {% endfor %}
-</table>
+</table> -->
