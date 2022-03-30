@@ -20,23 +20,6 @@ I previously worked at CERN, writing performance critical data quality monitorin
 ## Publications
 ---
 
-<table>
-  <tr>
-    <td width="10%"><div class="badge">JRNL</div></td>
-    <td width="90%">  
-      <div class="paper-info">
-      <div class="paper-head">
-        <span class="paper-title">Austenit Martensit Paper</span>
-        <span class="paper-authors"><b>Filip Ilic</b></span>
-        <span class="paper-published">...</span>
-      </div>
-      </div>
-      <div class="paper-links">
-      <a href="/RobustFeatureAustenit">Paper</a>
-      </div>
-    </td>
-  </tr>
-</table>
 
 <table>
   <tr>
@@ -92,7 +75,6 @@ I previously worked at CERN, writing performance critical data quality monitorin
       <div class="paper-links">
       <a href="/RobustFeatureAustenit">Project Page</a>
       <a href="papers/RobustFeatureAustenit/ilic21RobustFeatureAustenit.pdf">Paper</a>
-      <a href="papers/RobustFeatureAustenit/poster.pdf">Poster</a>
       <a href="papers/RobustFeatureAustenit/bib.txt">BibTex</a>
       </div>
     </td>
@@ -114,9 +96,9 @@ I previously worked at CERN, writing performance critical data quality monitorin
       <div class="paper-links">
       <a href="/STVI">Project Page</a>
       <a href="papers/STVI/ilic20stvi.pdf">Paper</a>
-      <a href="papers/STVI/poster.pdf">Poster</a>
       <a href="papers/STVI/bib.txt">BibTex</a>
       </div>
     </td>
   </tr>
 </table>
+
