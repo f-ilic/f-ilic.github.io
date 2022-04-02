@@ -4,9 +4,9 @@
 
 //  ---------------- Colors
 $blue-dark:  hsl(220, 64%, 36%);
-$blue-mid:   hsl(281, 63%, 60%);
+$blue-mid:   hsl(220, 63%, 60%);
 $blue-light: hsl(220, 63%, 91%);
-$blue-barely: hsl(250, 100%, 99%);
+$blue-barely: hsl(220, 100%, 98%);
 
 $teal-dark:  hsl(196, 41%, 35%);
 $teal-mid:   hsl(196, 41%, 45%);
@@ -26,7 +26,6 @@ $purple-light:hsl(300, 63%, 91%);
 
 $grey-mid: rgb(172, 172, 172);
 
-// $gradient-primary:  hsl(281, 89%, 18%);
 $gradient-primary:  $blue-dark;
 $gradient-secondary:  $teal-mid;
 
@@ -34,87 +33,48 @@ table td{
     border: none;
     vertical-align: top;
 }
+.footnotesize {
+    font-size: 9pt;
+}
 table {
     border: none;
 }
 
 //  ---------------- Paragraphs and Headings
-.tiny {
-    font-size: 10pt;
-}
-
-.footnotesize {
-    font-size:8pt;
-}
-
 .gray {
     color: $grey-color-dark;
-}
-
-// .muted-gray{
-//     font-size: 14px;
-//     color: $grey-color-dark;
-//     display: block;  
-// }
-
-.post-list-title {
-    display: block;  
-    font-weight: bold;
-}
-
-
-
-blockquote {
-    font-size: 16px;
-    margin-bottom: 8%;
 }
 
 //  ---------------- Other
 hr {
     height:1px;
     border:none;
-    // background-color:$grey-color-light;
     background-color: $grey-mid;
     margin-bottom:16px;
 }
-
-
 
 .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: 10px;
 }
 
-.boxed {
-    border: 1px solid $grey-color-light;
-    padding: 2px 5px 2px 5px;
-    margin: 2px 2px;
-    // display: inline-block;
-    // font-size: 12px;
-}
-
-.boxed:hover {
-    text-decoration: none;
-    border: 1px solid $grey-color-dark;
-}
-
 .site-footer .alignleft {
-float: left;
-width:33.33333%;
-text-align:left;
+    float: left;
+    width:33.33333%;
+    text-align:left;
 }
+
 .site-footer .aligncenter {
-float: left;
-width:33.33333%;
-text-align:center;
+    float: left;
+    width:33.33333%;
+    text-align:center;
 }
+
 .site-footer .alignright {
-float: left;
-width:33.33333%;
-text-align:right;
+    float: left;
+    width:33.33333%;
+    text-align:right;
 }​
-
-
 
 
 //  ---------------- General Image Stuff
@@ -135,7 +95,7 @@ text-align:right;
 
 .svg-social-icon:hover {
     opacity:1;
-    // transform: scale(1.01);
+    transform: scale(1.2);
     border-color: rgba(255, 255, 255, 1);
     transition: background-color .05s, transform .05s ease-in-out;
 }
@@ -144,7 +104,6 @@ text-align:right;
 .circle-img {
     border-radius: 70%;
     border: 3px solid white;
-    // display: block;
     max-width:110;
     max-height:110px;
     width:auto;
@@ -152,7 +111,6 @@ text-align:right;
     border-color: rgba(255, 255, 255, 0.5);
     transition: transform .1s ease-in-out;
 }
-
 
 .circle-img-cv {
     border-radius: 70%;
@@ -168,69 +126,18 @@ text-align:right;
 
 .circle-img:hover {
     border-radius: 70%;
-    // border: 4px solid white;
-    // display: block;
-    // max-width:140;
-    // max-height:110px;
     width:auto;
     height:auto;
     border-color: rgba(255, 255, 255, 1);
     transition: transform .1s ease-in-out;
 }
 
-//  ---------------- 
-.time {
-    float:right;
-    color: $teal-dark;
-    font-size: 10pt;
-}
 .subheading {
     font-size: 10pt;
     margin-bottom:10px;
     color:$teal-dark;
-    // font-weight: bold;
 }
 
-.venue {
-    display: block;
-    color: $green-dark;
-    font-size: 10pt;
-}
-
-.item-wrapper .item {
-    margin-bottom: 30px;
-}
-
-.item-title {
-    display: block;  
-    font-size: 14pt;
-    margin-bottom: 20px;
-}
-
-//  ---------------- Navigation Elements
-nav-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav-li a:link {
-    color: $blue-dark;
-}
-
-nav-li a:visited {
-    color: $blue-dark;
-}
-
-.nav-elem{
-    box-shadow: 0 2px 0 0 transparent;
-    color: $blue-dark;
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-left: 15px;
-    margin-right: 15px;
-    display: inline-block;
-}
 
 .nav-elem:hover{
     box-shadow: 0 2px 0 0 $grey-color-light;
@@ -246,72 +153,23 @@ nav-li a:visited {
     box-shadow: 0 2px 0 0 $blue-dark;
 }
 
-//  ---------------- Skillset Progress Bars
-.skillset {
-    margin-top: 20px;    
-    margin-bottom: 20px;
-}
-
-.skillset .item {
-    // max-width:100px;
-    width:60%;
-    overflow:hidden
-}
-.skillset .level-title {
-    color: $grey-color-dark;
-
-    font-size:14px;
-    font-weight: bold;
-    margin-top:0;
-    margin-bottom:12px
-}
-.skillset .level-bar {
-height:12px;
-background:$grey-color-light;
-}
-
-.skillset .level-bar-inner {
-    height:12px;
-    background:$teal-mid;
-    // background: linear-gradient(120deg, $blue-mid, $teal-mid); 
-
-}
-
-.skillset .level-title {
-    display:inline-block;
-    width:25%;
-    margin-bottom:0;
-    vertical-align: middle;
-}
-
-.skillset .level-bar {
-    display:inline-block;
-    width:70%;
-    vertical-align: middle;
-    position:relative;
-}
-
 #me-container {   
-    // background-color: $grey-mid;
-    // background-image: linear-gradient(120deg, hsl(210, 76%, 14%),hsl(150, 76%, 14%));
-    // background-image: linear-gradient(120deg, #00c6ff, #0072ff)
-    // background: linear-gradient(120deg, $blue-dark, $green-dark); 
     background: linear-gradient(120deg, $gradient-primary, $gradient-secondary); 
-    // background-color: #fffcf4;
-  }
+}
 
 
 #header-name {
     color: white;
     font-weight: bold;
     font-size: 20px;
-  }
+}
 
-  #header-name-cv {
-    color: $grey-color-dark;
-    font-weight: bold;
-    font-size: 20px;
-  }
+#header-name-cv {
+color: $grey-color-dark;
+font-weight: bold;
+font-size: 20px;
+}
+
 #header-description {
     color:white;
     display: block;
@@ -385,11 +243,12 @@ body {
         padding-bottom: 0.25rem;
         font-size: 10pt;
         color: $teal-dark;
+        border-radius: .125rem;
 }
+
 h1{
     display: inline;  
     font-size: 14pt;
-    // margin-bottom: 20px;
 }
 
 h2{
@@ -401,7 +260,7 @@ h2{
 
 .badge {
     color: #fff !important;
-    background-color:$purple-dark;
+    background-color:$teal-mid;
     padding-left: 1rem;
     padding-right: 1rem;
     border-radius: .125rem;
@@ -409,4 +268,7 @@ h2{
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
     display: inline-block;
     vertical-align: top;
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: monospace;
   }

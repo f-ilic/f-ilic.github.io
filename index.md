@@ -8,12 +8,12 @@ order: 1
 
 
 
-<!-- ## Who dis?
---- -->
 
 <p>
-I'm currently a PhD student at TU Graz, interested in machine learning and computer vision.<br>
-I previously worked at CERN, writing performance critical data quality monitoring software for the <a href='https://cms.cern/detector'>CMS experiment</a>.
+I'm currently a PhD student at TU Graz; supervised by Prof. Thomas Pock in the 'Vision, Learning & Optimization group' at Institute of Computer Graphics and Vision. I am also closely collaborating with Prof. Richard Wildes at York University and his group.
+<br>
+
+Other than my work at university with occasional teaching I'm proud to have worked and contributed to data quality monitoring software for the <a href='https://cms.cern/detector'>CMS experiment</a> during my employment at CERN.
 </p>
 
 
@@ -33,9 +33,9 @@ I previously worked at CERN, writing performance critical data quality monitorin
       </div>
       </div>
       <div class="paper-links">
-      <a href="LINKTOLEA">Project Page</a>
-      <a href="papers/T1D/T1D.pdf">Paper</a>
-      <a href="papers/RobustFeatureAustenit/bib.txt">BibTex</a>
+      <a href=" AppearanceFreeActionRecognition">Project Page</a>
+      <a href="papers/AppearanceFreeActionRecognition/AppearanceFreeActionRecognition.pdf">Paper</a>
+      <a href="papers/AppearanceFreeActionRecognition/bib.txt">BibTex</a>
       </div>
     </td>
   </tr>
@@ -53,7 +53,6 @@ I previously worked at CERN, writing performance critical data quality monitorin
       </div>
       </div>
       <div class="paper-links">
-      <a href="LINKTOLEA">Project Page</a>
       <a href="papers/T1D/T1D.pdf">Paper</a>
       <a href="papers/RobustFeatureAustenit/bib.txt">BibTex</a>
       </div>
