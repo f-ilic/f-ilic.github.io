@@ -33,7 +33,8 @@ Other than my work at university with occasional teaching I'm proud to have work
       </div>
       </div>
       <div class="paper-links">
-      <a href=" AppearanceFreeActionRecognition">Project Page</a>
+      <a href="AppearanceFreeActionRecognition">Project Page</a>
+      <a href="https://github.com/f-ilic/MotionPaper">Code</a>
       <a href="papers/AppearanceFreeActionRecognition/AppearanceFreeActionRecognition.pdf">Paper</a>
       <a href="papers/AppearanceFreeActionRecognition/bib.txt">BibTex</a>
       </div>
@@ -73,6 +74,7 @@ Other than my work at university with occasional teaching I'm proud to have work
       </div>
       <div class="paper-links">
       <a href="/RobustFeatureAustenit">Project Page</a>
+      <a href="https://github.com/f-ilic/RobustFeatureAustenit">Code</a>
       <a href="papers/RobustFeatureAustenit/ilic21RobustFeatureAustenit.pdf">Paper</a>
       <a href="papers/RobustFeatureAustenit/bib.txt">BibTex</a>
       </div>
