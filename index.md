@@ -42,7 +42,7 @@ My research interests revolve around <u>Action recognition & Spatio-Temporal Mod
   </tr>
 </table>
 
-<table>
+<!-- <table>
   <tr>
     <td width="10%"><div class="badge">OAGM</div></td>
     <td width="90%">  
@@ -59,7 +59,7 @@ My research interests revolve around <u>Action recognition & Spatio-Temporal Mod
       </div>
     </td>
   </tr>
-</table>
+</table> -->
 
 <table>
   <tr>

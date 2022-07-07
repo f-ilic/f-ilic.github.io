@@ -9,8 +9,8 @@ venue: TODO
 exclude: true
 ---
 <h1>Redirecting...</h1>
-<a href='https://github.com/f-ilic/afd'>Click here if you are not redirected.<a>
-<script>location='https://github.com/f-ilic/afd'</script>
+<a href='https://github.com/f-ilic/AppearanceFreeActionRecognition'>Click here if you are not redirected.<a>
+<script>location='https://github.com/f-ilic/AppearanceFreeActionRecognition'</script>
 
 <div class="paper-links">
 <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition">Code</a>
