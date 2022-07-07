@@ -14,7 +14,6 @@ I'm currently a PhD student at TU Graz, supervised by Prof. Thomas Pock in the '
 My research interests revolve around <u>Action recognition & Spatio-Temporal Modeling</u>  and <u>Network Interpretability & Explainability</u>.
 <br>
 
-<!-- Other than my work at university with occasional teaching I'm proud to have worked and contributed to data quality monitoring software for the <a href='https://cms.cern/detector'>CMS experiment</a> during my employment at CERN. -->
 </p>
 
 
