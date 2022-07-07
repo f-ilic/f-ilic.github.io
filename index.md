@@ -10,10 +10,11 @@ order: 1
 
 
 <p>
-I'm currently a PhD student at TU Graz; supervised by Prof. Thomas Pock in the 'Vision, Learning & Optimization group' at Institute of Computer Graphics and Vision. I am also closely collaborating with Prof. Richard Wildes at York University and his group.
+I'm currently a PhD student at TU Graz, supervised by Prof. Thomas Pock in the 'Vision, Learning & Optimization group'. I am also closely collaborating with Prof. Richard Wildes at York University.
+My research interests revolve around <u>Action recognition & Spatio-Temporal Modeling</u>  and <u>Network Interpretability & Explainability</u>.
 <br>
 
-Other than my work at university with occasional teaching I'm proud to have worked and contributed to data quality monitoring software for the <a href='https://cms.cern/detector'>CMS experiment</a> during my employment at CERN.
+<!-- Other than my work at university with occasional teaching I'm proud to have worked and contributed to data quality monitoring software for the <a href='https://cms.cern/detector'>CMS experiment</a> during my employment at CERN. -->
 </p>
 
 
@@ -34,7 +35,7 @@ Other than my work at university with occasional teaching I'm proud to have work
       </div>
       <div class="paper-links">
       <a href="AppearanceFreeActionRecognition">Project Page</a>
-      <a href="https://github.com/f-ilic/MotionPaper">Code</a>
+      <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition">Code</a>
       <a href="papers/AppearanceFreeActionRecognition/AppearanceFreeActionRecognition.pdf">Paper</a>
       <a href="papers/AppearanceFreeActionRecognition/bib.txt">BibTex</a>
       </div>
@@ -55,7 +56,7 @@ Other than my work at university with occasional teaching I'm proud to have work
       </div>
       <div class="paper-links">
       <a href="papers/T1D/T1D.pdf">Paper</a>
-      <a href="papers/RobustFeatureAustenit/bib.txt">BibTex</a>
+      <a href="papers/T1D/bib.txt">BibTex</a>
       </div>
     </td>
   </tr>
