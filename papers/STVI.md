@@ -3,7 +3,7 @@ layout: post
 title: Representing Objects in Video as Space-Time Volumes by Combining Top-Down and Bottom-Up Processes
 permalink: /STVI
 subheading: <b>Filip Ilic</b>, Axel Pinz 
-venue: 2020 IEEE Winter Conference on Applications of Computer Vision (WACV)
+venue: WACV
 exclude: true
 ---
 <div class="paper-links">

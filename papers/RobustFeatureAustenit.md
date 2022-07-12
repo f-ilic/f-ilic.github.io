@@ -3,7 +3,7 @@ layout: post
 title: A study on robust feature representations for grain density estimates in austenitic steel
 permalink: /RobustFeatureAustenit
 subheading: <b>Filip Ilic</b>, Marc Masana, Lea Bogensperger, Harald Ganster, Thomas Pock
-venue: TODO
+venue: OAGM
 exclude: true
 ---
 <div class="paper-links">
