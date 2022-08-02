@@ -16,29 +16,21 @@ If you're get more than 90% right, come to my poster stand and grab some sweets 
 The quiz below contains Appearance Free Action Videos from the 5 classes: 
 
 
-<table style='margin-bottom:0px' width="100%">
-  <tr>
-    <td width="20%"><video controls="" autoplay="" loop="" muted="" playsinline width="100%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_JumpingJack_g18_c02.mp4
-" type="video/mp4"/></video></td>
+<center>
+<video controls="" autoplay="" loop="" muted="" playsinline width="35%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_JumpingJack_g18_c02.mp4
+" type="video/mp4"/></video> <br>JumpingJack<br>
 
-    <td width="20%"><video controls="" autoplay="" loop="" muted="" playsinline width="100%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_Lunges_g24_c01.mp4" type="video/mp4"/></video></td>
-    
-    <td width="20%"><video controls="" autoplay="" loop="" muted="" playsinline width="100%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_PullUps_g19_c01.mp4" type="video/mp4"/></video></td>
+<video controls="" autoplay="" loop="" muted="" playsinline width="35%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_Lunges_g24_c01.mp4" type="video/mp4"/></video> <br>Lunges<br>
 
-    <td width="20%"><video controls="" autoplay="" loop="" muted="" playsinline width="100%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_PushUps_g05_c04.mp4" type="video/mp4"/></video></td>
+<video controls="" autoplay="" loop="" muted="" playsinline width="35%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_PullUps_g19_c01.mp4" type="video/mp4"/></video>
+<br>PullUps<br>
 
-    <td width="20%"><video controls="" autoplay="" loop="" muted="" playsinline width="100%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_Swing_g08_c03.mp4" type="video/mp4"/></video></td>
-  </tr>
-</table>
-<table style='margin-top:0px' width="100%">
-  <tr style='text-align: center; font-size:9pt'>
-    <td width="20%">JumpingJack</td>
-    <td width="20%">Lunges</td>
-    <td width="20%">PullUps</td>
-    <td width="20%">PushUps</td>
-    <td width="20%">Swing</td>
-  </tr>
-</table>
+<video controls="" autoplay="" loop="" muted="" playsinline width="35%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_PushUps_g05_c04.mp4" type="video/mp4"/></video>
+<br>PushUps<br>
+
+<video controls="" autoplay="" loop="" muted="" playsinline width="35%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_Swing_g08_c03.mp4" type="video/mp4"/></video>
+<br>Swing<br>
+</center>
 <hr>
 <br>
 <br>
