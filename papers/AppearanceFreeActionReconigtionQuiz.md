@@ -9,21 +9,14 @@ exclude: true
 
 
 <b>Is Appearance Free Action Recognition Possible?<br></b>
-If you're able to more than 90% right, come to my poster stand and get some sweets 🍬
+If you're get more than 90% right, come to my poster stand and grab some sweets 🍬
 
 <!-- HEY DONT CHEAT BY LOOKING AT THE CODE, YOU SNEAKY DEVIL -->
-
 <i>Primer:</i>
 The quiz below contains Appearance Free Action Videos from the 5 classes: 
 
-<table width="100%">
-  <tr style='text-align: center'>
-    <td>JumpingJack</td>
-    <td>Lunges</td>
-    <td>PullUps</td>
-    <td>PushUps</td>
-    <td>Swing</td>
-  </tr>
+
+<table style='margin-bottom:0px' width="100%">
   <tr>
     <td width="20%"><video controls="" autoplay="" loop="" muted="" playsinline width="100%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_JumpingJack_g18_c02.mp4
 " type="video/mp4"/></video></td>
@@ -36,10 +29,17 @@ The quiz below contains Appearance Free Action Videos from the 5 classes:
 
     <td width="20%"><video controls="" autoplay="" loop="" muted="" playsinline width="100%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_Swing_g08_c03.mp4" type="video/mp4"/></video></td>
   </tr>
-
 </table>
-
-
+<table style='margin-top:0px' width="100%">
+  <tr style='text-align: center; font-size:9pt'>
+    <td width="20%">JumpingJack</td>
+    <td width="20%">Lunges</td>
+    <td width="20%">PullUps</td>
+    <td width="20%">PushUps</td>
+    <td width="20%">Swing</td>
+  </tr>
+</table>
+<hr>
 <br>
 <br>
 <br>
@@ -70,8 +70,6 @@ The quiz below contains Appearance Free Action Videos from the 5 classes:
     text-align:left;
     display:inline-block;
 }
-
-
 </style>
 
 <script type='text/javascript'>
@@ -319,17 +317,6 @@ answers: {
 correctAnswer: "b" 
 }, 
 { 
-video: "../papers/AppearanceFreeActionReconigtion/quiz/data/v_Swing_g10_c01.mp4", 
-answers: { 
-                        a: "JumpingJack", 
-                        b: "Lunges", 
-                        c: "PullUps",
-                        d: "PushUps",
-                        e: "Swing" 
-                        }, 
-correctAnswer: "e" 
-}, 
-{ 
 video: "../papers/AppearanceFreeActionReconigtion/quiz/data/v_PullUps_g05_c01.mp4", 
 answers: { 
                         a: "JumpingJack", 
@@ -354,7 +341,7 @@ correctAnswer: "e"
  ];
 
   myQuestions.sort(() => Math.random() - 0.5); // shuffle questions around, ggwp javascript.
-  let numQuestionsShown = 10 // max 19
+  let numQuestionsShown = 10 // max 18
   myQuestions = myQuestions.slice(0, numQuestionsShown);
 
 
@@ -363,6 +350,5 @@ correctAnswer: "e"
   let currentSlide = 0;
   submitButton.addEventListener('click', showResults);
 })();
-
 </script>
 
