@@ -23,7 +23,7 @@ We show how to obtain a scalable representation of objects, which preserves thei
 <table>
 <tr>
 <td>
-  <video controls autoplay loop muted width="100%">
+  <video controls autoplay loop muted playsinline width="100%">
   <source  src="papers/STVI/girl.mp4" type="video/mp4">
 </video> 
 </td>
@@ -42,7 +42,7 @@ Object tracking and decomposition into parts: Our approach (right) bridges the c
 <table>
 <tr>
 <td>
-  <video controls autoplay loop muted width="100%">
+  <video controls autoplay loop muted playsinline width="100%">
     <source  src="papers/STVI/jumpingjack.mp4" type="video/mp4">
   </video> 
 </td>
@@ -60,7 +60,7 @@ Different object sclales: Space-Time Volumes of Interest extracted at increasing
 <tr>
 <td>
 <center>
-  <video controls autoplay loop muted width="50%">
+  <video controls autoplay loop muted playsinline width="50%">
     <source  src="papers/STVI/rollerblade.mp4" type="video/mp4">
   </video> 
 </center>
@@ -81,7 +81,7 @@ Viewer/Object-centered representation: The trajectory w.r.t. the observer is sho
 <tr>
 <td>
 <center>
-  <video controls autoplay loop muted width="60%">
+  <video controls autoplay loop muted playsinline width="60%">
     <source  src="papers/STVI/parts/DAVIS_parts.mp4" type="video/mp4">
   </video> 
 </center>

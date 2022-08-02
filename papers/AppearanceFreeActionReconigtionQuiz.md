@@ -9,7 +9,7 @@ exclude: true
 
 
 <b>Is Appearance Free Action Recognition Possible?<br></b>
-If you're get more than 90% right, come to my poster stand and grab some sweets 🍬
+If you get more than 90% right, come to my poster stand and grab some sweets 🍬
 
 <!-- HEY DONT CHEAT BY LOOKING AT THE CODE, YOU SNEAKY DEVIL -->
 <i>Primer:</i>
