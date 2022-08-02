@@ -17,19 +17,22 @@ The quiz below contains Appearance Free Action Videos from the 5 classes:
 
 
 <center>
-<video controls="" autoplay="" loop="" muted="" playsinline width="35%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_JumpingJack_g18_c02.mp4
-" type="video/mp4"/></video> <br>JumpingJack<br>
+JumpingJack<br>
+<video controls="" autoplay="" loop="" muted="" playsinline width="45%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_JumpingJack_g18_c02.mp4
+" type="video/mp4"/></video><br><br>
 
-<video controls="" autoplay="" loop="" muted="" playsinline width="35%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_Lunges_g24_c01.mp4" type="video/mp4"/></video> <br>Lunges<br>
+Lunges<br>
+<video controls="" autoplay="" loop="" muted="" playsinline width="45%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_Lunges_g24_c01.mp4" type="video/mp4"/></video> <br><br>
 
-<video controls="" autoplay="" loop="" muted="" playsinline width="35%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_PullUps_g19_c01.mp4" type="video/mp4"/></video>
-<br>PullUps<br>
+PullUps<br>
+<video controls="" autoplay="" loop="" muted="" playsinline width="45%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_PullUps_g19_c01.mp4" type="video/mp4"/></video><br><br>
 
-<video controls="" autoplay="" loop="" muted="" playsinline width="35%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_PushUps_g05_c04.mp4" type="video/mp4"/></video>
-<br>PushUps<br>
+PushUps<br>
+<video controls="" autoplay="" loop="" muted="" playsinline width="45%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_PushUps_g05_c04.mp4" type="video/mp4"/></video><br><br>
 
-<video controls="" autoplay="" loop="" muted="" playsinline width="35%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_Swing_g08_c03.mp4" type="video/mp4"/></video>
-<br>Swing<br>
+Swing<br>
+<video controls="" autoplay="" loop="" muted="" playsinline width="45%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_Swing_g08_c03.mp4" type="video/mp4"/></video><br><br>
+
 </center>
 <hr>
 <br>
