@@ -17,20 +17,20 @@ The quiz below contains Appearance Free Action Videos from the 5 classes:
 
 
 <center>
-JumpingJack<br>
+<p style="margin-bottom:2px">JumpingJack</p>
 <video controls="" autoplay="" loop="" muted="" playsinline width="45%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_JumpingJack_g18_c02.mp4
 " type="video/mp4"/></video><br><br>
 
-Lunges<br>
+<p style="margin-bottom:2px">Lunges</p>
 <video controls="" autoplay="" loop="" muted="" playsinline width="45%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_Lunges_g24_c01.mp4" type="video/mp4"/></video> <br><br>
 
-PullUps<br>
+<p style="margin-bottom:2px">PullUps</p>
 <video controls="" autoplay="" loop="" muted="" playsinline width="45%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_PullUps_g19_c01.mp4" type="video/mp4"/></video><br><br>
 
-PushUps<br>
+<p style="margin-bottom:2px">PushUps</p>
 <video controls="" autoplay="" loop="" muted="" playsinline width="45%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_PushUps_g05_c04.mp4" type="video/mp4"/></video><br><br>
 
-Swing<br>
+<p style="margin-bottom:2px">Swing</p>
 <video controls="" autoplay="" loop="" muted="" playsinline width="45%"><source src="../papers/AppearanceFreeActionReconigtion/quiz/primer/v_Swing_g08_c03.mp4" type="video/mp4"/></video><br><br>
 
 </center>
@@ -57,6 +57,12 @@ Swing<br>
 
 
 <style>
+h2 {
+    font-size:16pt;
+}
+p {
+  font-size:12pt;
+}
 .buttongroup button{
     font-size:22pt;
 }
@@ -64,6 +70,9 @@ Swing<br>
     font-size:16pt;
     text-align:left;
     display:inline-block;
+}
+.answers label:hover{
+text-decoration:underline;
 }
 </style>
 
@@ -92,7 +101,7 @@ Swing<br>
           `
           <div class="slide"> 
           <center>
-            <div class="ressource"><video controls="" autoplay="" loop="" muted="" playsinline width="85%"><source src="${currentQuestion.video}" type="video/mp4" /></video></div>
+            <div class="ressource"><video controls="" autoplay="" loop="" muted="" playsinline width="55%"><source src="${currentQuestion.video}" type="video/mp4" /></video></div>
             <table><div class="answers"> ${answers.join("")} </div></table>
             </center>
           </div>

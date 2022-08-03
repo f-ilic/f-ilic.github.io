@@ -18,3 +18,9 @@ To test locally run the command
 ```
 bundle exec jekyll serve
 ```
+
+22.04, do this:
+
+```
+bundle add webrick
+```
