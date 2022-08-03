@@ -101,7 +101,7 @@ text-decoration:underline;
           `
           <div class="slide"> 
           <center>
-            <div class="ressource"><video controls="" autoplay="" loop="" muted="" playsinline width="55%"><source src="${currentQuestion.video}" type="video/mp4" /></video></div>
+            <div class="ressource"><video controls="" autoplay="" loop="" muted="" playsinline width="85%"><source src="${currentQuestion.video}" type="video/mp4" /></video></div>
             <table><div class="answers"> ${answers.join("")} </div></table>
             </center>
           </div>
