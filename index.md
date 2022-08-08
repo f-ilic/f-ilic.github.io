@@ -33,34 +33,13 @@ My research interests revolve around <u>Action recognition & Spatio-Temporal Mod
       </div>
       </div>
       <div class="paper-links">
-      <a href="AppearanceFreeActionRecognition">Project Page</a>
+      <a href="./AppearanceFreeActionRecognition">Project Page</a>
       <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition">Code</a>
       <a href="https://f-ilic.github.io/AppearanceFreeActionRecognition/quiz">Quiz</a>
-      <!-- <a href="papers/AppearanceFreeActionRecognition/AppearanceFreeActionRecognition.pdf">Paper</a> -->
-      <!-- <a href="papers/AppearanceFreeActionRecognition/bib.txt">BibTex</a> -->
       </div>
     </td>
   </tr>
 </table>
-
-<!-- <table>
-  <tr>
-    <td width="10%"><div class="badge">OAGM</div></td>
-    <td width="90%">  
-      <div class="paper-info">
-      <div class="paper-head">
-        <span class="paper-title">On the Influence of Beta Cell Granule Counting for Classification in Type 1 Diabetes</span>
-        <span class="paper-authors">Lea Bogensperger, Marc Masana, <b>Filip Ilic</b>, Dagmar Kolb, Thomas Pock</span>
-        <span class="paper-published">2021 Computer Vision and Pattern Analysis Across Domains</span>
-      </div>
-      </div>
-      <div class="paper-links">
-      <a href="papers/T1D/T1D.pdf">Paper</a>
-      <a href="papers/T1D/bib.txt">BibTex</a>
-      </div>
-    </td>
-  </tr>
-</table> -->
 
 <table>
   <tr>
@@ -77,7 +56,6 @@ My research interests revolve around <u>Action recognition & Spatio-Temporal Mod
       <a href="/RobustFeatureAustenit">Project Page</a>
       <a href="https://github.com/f-ilic/RobustFeatureAustenit">Code</a>
       <a href="papers/RobustFeatureAustenit/ilic21RobustFeatureAustenit.pdf">Paper</a>
-      <a href="papers/RobustFeatureAustenit/bib.txt">BibTex</a>
       </div>
     </td>
   </tr>
@@ -98,7 +76,6 @@ My research interests revolve around <u>Action recognition & Spatio-Temporal Mod
       <div class="paper-links">
       <a href="/STVI">Project Page</a>
       <a href="papers/STVI/ilic20stvi.pdf">Paper</a>
-      <a href="papers/STVI/bib.txt">BibTex</a>
       </div>
     </td>
   </tr>

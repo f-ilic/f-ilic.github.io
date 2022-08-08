@@ -9,7 +9,6 @@ exclude: true
 <div class="paper-links">
 <a href="papers/STVI/ilic20stvi.pdf">Paper</a>
 <a href="papers/STVI/poster.pdf">Poster</a>
-<a href="papers/STVI/bib.txt">BibTex</a>
 <a href="https://drive.google.com/open?id=1-I8f44UddQZBbYDT9ravd-ueAiKqxV68">DAVIS Parts Dataset</a>
 </div>
 <br>
@@ -93,3 +92,15 @@ The DAVIS Parts Dataset contains a varity of densely annotated objects and their
 </td>
 </tr>
 </table>
+
+
+# Cite
+```bibtex
+@InProceedings{ilic20wacv,
+author = {Ilic, Filip and Pinz, Axel},
+title = {Representing Objects in Video as Space-Time Volumes by Combining Top-Down and Bottom-Up Processes},
+booktitle = {The IEEE Winter Conference on Applications of Computer Vision (WACV)},
+month = {March},
+year = {2020}
+} 
+```
