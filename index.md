@@ -35,6 +35,7 @@ My research interests revolve around <u>Action recognition & Spatio-Temporal Mod
       <div class="paper-links">
       <a href="./AppearanceFreeActionRecognition">Project Page</a>
       <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition">Code</a>
+      <a href="https://arxiv.org/pdf/2207.06261.pdf">Paper</a>
       <a href="https://f-ilic.github.io/AppearanceFreeActionRecognition/quiz">Quiz</a>
       </div>
     </td>

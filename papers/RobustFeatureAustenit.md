@@ -14,7 +14,7 @@ exclude: true
 <br>
 
 <center>
-<img src="papers/RobustFeatureAustenit/poster.png" width='95%' style="border: 2px solid #555;">
+<img src="papers/RobustFeatureAustenit/poster.png" width='95%' style="border: 1px solid black;">
 </center>
 
 <br>

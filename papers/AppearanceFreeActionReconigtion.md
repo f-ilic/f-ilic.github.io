@@ -9,8 +9,8 @@ exclude: true
 
 <div class="paper-links">
 <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition">Code</a>
-<a href="https://f-ilic.github.io/AppearanceFreeActionRecognition/quiz">Quiz</a>
 <a href="https://arxiv.org/pdf/2207.06261.pdf">Paper</a>
+<a href="https://f-ilic.github.io/AppearanceFreeActionRecognition/quiz">Quiz</a>
 </div>
 <br>
 
@@ -22,7 +22,7 @@ exclude: true
 
 <style>
 video {
-      border: 1px solid black;
+      /* border: 1px solid black; */
 
 }
 img.poster{
@@ -42,10 +42,11 @@ img.poster{
 </style>
 
 # Overview
-We investigate 11 state-of-the-art action recognition networks with respect to their performance on a dataset where no static information is present. The video shows random noise animated with motion extracted from real human motion (the UCF101 dataset). We find that no network inherently learns a dynamics representation that equals optical flow, with respect to performance.
 <video controls autoplay loop muted playsinline width="100%" >
   <source  src="../papers/AppearanceFreeActionReconigtion/demo.mp4">
 </video> 
+<br>
+We investigate state-of-the-art action recognition networks with respect to their performance on a dataset where no static information is present. The video shows random noise animated with motion extracted from real human motion (the UCF101 dataset). We find that optical flow, or a similarly descriptive representation, is not an emergent property of any of the tested action recognition architectures.
 <br>
 
 
@@ -83,20 +84,27 @@ contains any static discriminatory information in AFD; the action is only encode
 </center>
 
 We provide the AFD101 dataset based on UCF101, and also the necessary tools to generate other appearance free videos.
-For details, code, and data see the github page. We also perform a user study, showing that human participants perform much better than current networks. Userstudy code is also in the github repo, and a quick quiz demo is also online:
+For details, code, and data see the github page. We also perform a user study, showing that human participants perform much better than current networks. Userstudy code is also in the github repo, and a quick quiz demo is also online.
 <div class="paper-links">
 <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition">Code</a>
 <a href="https://f-ilic.github.io/AppearanceFreeActionRecognition/quiz">Quiz</a>
 </div>
 <br>
 
+<video controls autoplay loop muted playsinline width="100%" >
+  <source  src="../papers/AppearanceFreeActionReconigtion/generate.mp4">
+</video> 
+<br>
+
 # Findings
 
-We introduce a new Two-Stream architecture built on tried and tested priciples in action recognition. Furthermore we employ a state of the art optical flow estimator to generate a rich dynamics representation that outperforms all others on Appearance Free Data, and closes the gap to human performance significantly.
+We introduce a new Two-Stream architecture built on tried and tested priciples in action recognition. 
 <center>
 <img src='../papers/AppearanceFreeActionReconigtion/schematic.png' width='60%;'>
 </center>
-For details, see our paper:
+We employ a state of the art optical flow estimator to generate a rich dynamics representation that outperforms all others on Appearance Free Data, and closes the gap to human performance significantly.
+
+For details, see our paper.
 <div class="paper-links">
 <a href="https://arxiv.org/pdf/2207.06261.pdf">Paper</a>
 </div>

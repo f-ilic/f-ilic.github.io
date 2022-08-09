@@ -1,6 +1,9 @@
 import os 
 from os.path import join
 
+# convert all .avi files to mp4
+# for i in *.avi; do ffmpeg -i "$i" "${i%.*}.mp4"; done
+
 mapping = {"a": "JumpingJack", "b": "Lunges", "c": "PullUps", "d": "PushUps", "e": "Swing"}
 rev_mapping = {v:k for k,v in mapping.items()}
 
