@@ -7,17 +7,16 @@ venue: ECCV
 exclude: true
 ---
 
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
 <div class="paper-links">
 <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition">Code</a>
 <a href="https://arxiv.org/pdf/2207.06261.pdf">Paper</a>
 <a href="https://f-ilic.github.io/AppearanceFreeActionRecognition/quiz">Quiz</a>
 </div>
 <br>
-
-
-
-
-
+<a class="github-button" href="https://github.com/f-ilic/AppearanceFreeActionRecognition" data-icon="octicon-star" data-show-count="true" aria-label="Star f-ilic/AppearanceFreeActionRecognition on GitHub">Star</a>
 
 
 <style>
