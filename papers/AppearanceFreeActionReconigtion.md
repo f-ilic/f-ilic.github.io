@@ -18,33 +18,33 @@ exclude: true
 <br>
 <a class="github-button" href="https://github.com/f-ilic/AppearanceFreeActionRecognition" data-icon="octicon-star" data-show-count="true" aria-label="Star f-ilic/AppearanceFreeActionRecognition on GitHub">Star</a>
 
-
 <style>
-video {
-      /* border: 1px solid black; */
-
+  .video-container {
+  position: relative;
+  padding-bottom: 56.25%;
 }
-img.poster{
-  /* max-width:80%;
-  max-height:80%;
+
+.video-container iframe {
   position: absolute;
-  display:block;
-  margin: auto;
+  top: 0;
   left: 0;
-  right: 0;
-  text-align: center; */
-  z-index: 1;
-  border: 1px solid black;
-
+  width: 100%;
+  height: 100%;
 }
-
 </style>
 
-# Overview
-<video controls autoplay loop muted playsinline width="100%" >
-  <source  src="../papers/AppearanceFreeActionReconigtion/demo.mp4">
-</video> 
+<!-- https://youtu.be/QOGZ6RDLTE8 -->
+<div class="video-container">
+  <iframe
+    src="https://www.youtube.com/embed/QOGZ6RDLTE8"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+    allowfullscreen></iframe>
+</div>
 <br>
+
+# Overview
+
 We investigate state-of-the-art action recognition networks with respect to their performance on a dataset where no static information is present. The video shows random noise animated with motion extracted from real human motion (the UCF101 dataset). We find that optical flow, or a similarly descriptive representation, is not an emergent property of any of the tested action recognition architectures.
 <br>
 
@@ -62,38 +62,10 @@ The Appearance Free Dataset (AFD) is an extension to a widely used action recogn
 disentangles static and dynamic video components. In particular, no single frame
 contains any static discriminatory information in AFD; the action is only encoded in the temporal dimension.
 
-<center>
-  <video controls autoplay loop muted playsinline width="49%">
-  <source  src="../papers/AppearanceFreeActionReconigtion/BoxingPunchingBag.mp4" type="video/mp4">
-</video> 
-
-<video controls autoplay loop muted playsinline width="49%">
-  <source  src="../papers/AppearanceFreeActionReconigtion/TrampolineJumping.mp4" type="video/mp4">
-</video> 
-
-  <video controls autoplay loop muted playsinline width="49%">
-  <source  src="../papers/AppearanceFreeActionReconigtion/JumpingJack.mp4" type="video/mp4">
-</video> 
-
-<video controls autoplay loop muted playsinline width="49%">
-  <source  src="../papers/AppearanceFreeActionReconigtion/HulaHoop.mp4" type="video/mp4">
-</video>
-
-
-</center>
 
 We provide the AFD101 dataset based on UCF101, and also the necessary tools to generate other appearance free videos.
 For details, code, and data see the github page. We also perform a user study, showing that human participants perform much better than current networks. Userstudy code is also in the github repo, and a quick quiz demo is also online.
-<div class="paper-links">
-<a href="https://github.com/f-ilic/AppearanceFreeActionRecognition">Code</a>
-<a href="https://f-ilic.github.io/AppearanceFreeActionRecognition/quiz">Quiz</a>
-</div>
-<br>
 
-<video controls autoplay loop muted playsinline width="100%" >
-  <source  src="../papers/AppearanceFreeActionReconigtion/generate.mp4">
-</video> 
-<br>
 
 # Findings
 
@@ -101,18 +73,10 @@ We introduce a new Two-Stream architecture built on tried and tested priciples i
 <center>
 <img src='../papers/AppearanceFreeActionReconigtion/schematic.png' width='60%;'>
 </center>
-We employ a state of the art optical flow estimator to generate a rich dynamics representation that outperforms all others on Appearance Free Data, and closes the gap to human performance significantly.
-
-For details, see our paper.
-<div class="paper-links">
-<a href="https://arxiv.org/pdf/2207.06261.pdf">Paper</a>
-</div>
-
-
-
-
-
 <br>
+We employ a state of the art optical flow estimator to generate a rich dynamics representation that outperforms all others on Appearance Free Data, and closes the gap to human performance significantly.
+<br>
+
 
 # Cite
 ```bibtex
@@ -124,6 +88,6 @@ month={October},
 year={2022},
 }
 ```
-<img class='poster' src='../papers/AppearanceFreeActionReconigtion/poster.png'>
+<!-- <img class='poster' src='../papers/AppearanceFreeActionReconigtion/poster.png'> -->
 
 <br>
