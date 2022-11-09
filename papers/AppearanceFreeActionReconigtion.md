@@ -91,10 +91,11 @@ We provide the AFD101 dataset based on UCF101, and also the necessary tools to g
 For details, code, and data see the github page. We also perform a user study, showing that human participants perform much better than current networks. Userstudy code is also in the github repo, and a quick quiz demo is also online.
 
 <br>
-We want to highlight the similarity - at least in spirit - to perceptual organization experiments of simple movements performed by psychologist Gunnar Johansson (<a href="https://link.springer.com/article/10.3758/bf03212378">1973 Paper</a>).
+We want to highlight the similarity - at least in spirit - to perceptual organization experiments of simple movements performed by psychologist Gunnar Johansson <a href="https://link.springer.com/article/10.3758/bf03212378"> <abbr title="Johansson, Gunnar. Visual perception of biological motion and a model for its analysis. Perception & psychophysics 14.2 (1973): 201-211.">[Ref]</abbr></a>.
+
 
 <video controls autoplay loop muted playsinline width="100%">
-  <source  src="../papers/AppearanceFreeActionReconigtion/walkingdots.mp4" type="video/mp4">
+<source  src="../papers/AppearanceFreeActionReconigtion/walkingdots.mp4" type="video/mp4">
 </video> 
 <a href="https://www.youtube.com/watch?v=wG_U5m4FShs">Credit</a>
 
