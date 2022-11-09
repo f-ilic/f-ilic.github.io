@@ -33,21 +33,12 @@ exclude: true
 }
 </style>
 
-<!-- https://youtu.be/QOGZ6RDLTE8 -->
-<div class="video-container">
-  <iframe
-    src="https://www.youtube.com/embed/QOGZ6RDLTE8"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope;"
-    allowfullscreen></iframe>
-</div>
-<br>
+
 
 # Overview
 
 We investigate state-of-the-art action recognition networks with respect to their performance on a dataset where no static information is present. The video shows random noise animated with motion extracted from real human motion (the UCF101 dataset). We find that optical flow, or a similarly descriptive representation, is not an emergent property of any of the tested action recognition architectures.
 <br>
-
 
 
 # Motivation
@@ -62,6 +53,39 @@ The Appearance Free Dataset (AFD) is an extension to a widely used action recogn
 disentangles static and dynamic video components. In particular, no single frame
 contains any static discriminatory information in AFD; the action is only encoded in the temporal dimension.
 
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <img src="../papers/AppearanceFreeActionReconigtion/JumpingJack.gif" style="width:100%">
+    <div class="text">Jumping Jacks</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="../papers/AppearanceFreeActionReconigtion/TableTennisShot.gif" style="width:100%">
+    <div class="text">Table Tennis</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="../papers/AppearanceFreeActionReconigtion/CleanAndJerk.gif" style="width:100%">
+    <div class="text">Weightlifting</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+<br>
+<br>
 
 We provide the AFD101 dataset based on UCF101, and also the necessary tools to generate other appearance free videos.
 For details, code, and data see the github page. We also perform a user study, showing that human participants perform much better than current networks. Userstudy code is also in the github repo, and a quick quiz demo is also online.
@@ -76,6 +100,11 @@ We introduce a new Two-Stream architecture built on tried and tested priciples i
 <br>
 We employ a state of the art optical flow estimator to generate a rich dynamics representation that outperforms all others on Appearance Free Data, and closes the gap to human performance significantly.
 <br>
+<br>
+
+
+
+
 
 
 # Cite
@@ -88,6 +117,136 @@ month={October},
 year={2022},
 }
 ```
-<!-- <img class='poster' src='../papers/AppearanceFreeActionReconigtion/poster.png'> -->
 
 <br>
+<br>
+<br>
+
+
+# Video Summary
+
+<div class="video-container">
+  <iframe
+    src="https://www.youtube.com/embed/QOGZ6RDLTE8"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+    allowfullscreen></iframe>
+</div>
+
+<br>
+
+<style>
+  * {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 25px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  /* animation-name: fade; */
+  /* animation-duration: 1.5s; */
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+</style>
+
+
+<script>
+  let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
