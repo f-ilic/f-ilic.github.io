@@ -34,6 +34,44 @@ exclude: true
 </style>
 
 
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides1 fade">
+    <center>
+
+    <img src="../papers/AppearanceFreeActionReconigtion/BaseballPitch.gif" style="height:228px">
+    <div class="text">Baseball Pitch</div>
+    </center>
+
+  </div>
+
+  <div class="mySlides1 fade">
+    <center>
+    <img src="../papers/AppearanceFreeActionReconigtion/ApplyEyeMakeup.gif" style="height:228px">
+    </center>
+    <div class="text">Apply Eye Makeup</div>
+  </div>
+
+  <div class="mySlides1 fade">
+    <center>
+    <img src="../papers/AppearanceFreeActionReconigtion/HulaHoop.gif" style="height:228px">
+    </center>
+    <div class="text">HulaHoop</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+<br>
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="myDots1 dot" onclick="currentSlide(1, 0)"></span>
+  <span class="myDots1 dot" onclick="currentSlide(2, 0)"></span>
+  <span class="myDots1 dot" onclick="currentSlide(3, 0)"></span>
+</div>
+<br>
 
 # Overview
 
@@ -57,32 +95,32 @@ contains any static discriminatory information in AFD; the action is only encode
 <div class="slideshow-container">
 
   <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
+  <div class="mySlides2 fade">
     <img src="../papers/AppearanceFreeActionReconigtion/JumpingJack.gif" style="width:100%">
     <div class="text">Jumping Jacks</div>
   </div>
 
-  <div class="mySlides fade">
+  <div class="mySlides2 fade">
     <img src="../papers/AppearanceFreeActionReconigtion/TableTennisShot.gif" style="width:100%">
     <div class="text">Table Tennis</div>
   </div>
 
-  <div class="mySlides fade">
+  <div class="mySlides2 fade">
     <img src="../papers/AppearanceFreeActionReconigtion/CleanAndJerk.gif" style="width:100%">
     <div class="text">Weightlifting</div>
   </div>
 
   <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
 </div>
 <br>
 
 <!-- The dots/circles -->
 <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="myDots2 dot" onclick="currentSlide(1, 1)"></span>
+  <span class="myDots2 dot" onclick="currentSlide(2, 1)"></span>
+  <span class="myDots2 dot" onclick="currentSlide(3, 1)"></span>
 </div>
 <br>
 <br>
@@ -165,13 +203,14 @@ year={2022},
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
+  /* width: auto; */
   margin-top: -22px;
   padding: 16px;
   color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
+  font-size: 24px;
+  /* transition: 0.6s ease; */
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
@@ -184,7 +223,9 @@ year={2022},
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(233,233,233,0.8);
+  text-decoration: none;
+
 }
 
 /* Caption text */
@@ -231,32 +272,40 @@ year={2022},
 
 
 <script>
-  let slideIndex = 1;
-showSlides(slideIndex);
+let slideIndex = [1,1];
+let dotIndex = [1,1];
+/* Class the members of each slideshow group with different CSS classes */
+let slideId = ["mySlides1", "mySlides2"];
+let dotId = ["myDots1", "myDots2"];
+showSlides(1, 0);
+showSlides(1, 1);
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
 
 // Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function currentSlide(n, no) {
+  showSlides(slideIndex[no] = n, no);
 }
 
-function showSlides(n) {
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
   let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  let x = document.getElementsByClassName(slideId[no]);
+  let dots = document.getElementsByClassName(dotId[no]);
+
+  if (n > x.length) {slideIndex[no] = 1}
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
+    // alert(dots.length)
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  x[slideIndex[no]-1].style.display = "block";
+  dots[slideIndex[no]-1].className += " active";
+
 }
 </script>
