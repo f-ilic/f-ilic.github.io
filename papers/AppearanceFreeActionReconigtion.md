@@ -7,6 +7,20 @@ venue: ECCV
 exclude: true
 ---
 
+<!-- <script
+  defer
+  src="https://unpkg.com/img-comparison-slider@7/dist/index.js"
+></script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/img-comparison-slider@7/dist/styles.css"
+/> -->
+
+<!-- <img-comparison-slider>
+  <img slot="first" src="../papers/AppearanceFreeActionReconigtion/JumpingJack.png" />
+  <img slot="second" src="../papers/AppearanceFreeActionReconigtion/JumpingJack.gif" />
+</img-comparison-slider> -->
+
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
