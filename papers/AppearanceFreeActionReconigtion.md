@@ -331,13 +331,3 @@ function showSlides(n, no) {
 
 }
 </script>
-# Cite
-```bibtex
-@InProceedings{ilic22appearancefree,
-title={Is Appearance Free Action Recognition Possible?},
-author={Ilic, Filip and Pock, Thomas and Wildes, Richard P.},
-booktitle={European Conference on Computer Vision (ECCV)},
-month={October},
-year={2022},
-}
-```
