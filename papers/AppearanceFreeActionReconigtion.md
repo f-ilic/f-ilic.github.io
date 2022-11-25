@@ -173,11 +173,6 @@ We employ a state of the art optical flow estimator to generate a rich dynamics 
 <br>
 <br>
 
-
-
-
-
-
 # Cite
 ```bibtex
 @InProceedings{ilic22appearancefree,
