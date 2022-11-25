@@ -20,14 +20,15 @@ exclude: true
   <img slot="first" src="../papers/AppearanceFreeActionReconigtion/JumpingJack.png" />
   <img slot="second" src="../papers/AppearanceFreeActionReconigtion/JumpingJack.gif" />
 </img-comparison-slider> -->
-
 <!-- Place this tag in your head or just before your close body tag. -->
+
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <div class="paper-links">
 <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition">Code</a>
 <a href="https://arxiv.org/pdf/2207.06261.pdf">Paper</a>
 <a href="https://f-ilic.github.io/AppearanceFreeActionRecognition/quiz">Quiz</a>
+<a style='float:right' href='/'>Back to homepage</a>
 </div>
 <br>
 <a class="github-button" href="https://github.com/f-ilic/AppearanceFreeActionRecognition" data-icon="octicon-star" data-show-count="true" aria-label="Star f-ilic/AppearanceFreeActionRecognition on GitHub">Star</a>
@@ -53,11 +54,16 @@ exclude: true
   <!-- Full-width images with number and caption text -->
   <div class="mySlides1 fade">
     <center>
-
     <img src="../papers/AppearanceFreeActionReconigtion/BaseballPitch.gif" style="height:228px">
     <div class="text">Baseball Pitch</div>
     </center>
+  </div>
 
+  <div class="mySlides1 fade">
+    <center>
+    <img src="../papers/AppearanceFreeActionReconigtion/PommelHorse.gif" style="height:228px">
+    </center>
+    <div class="text">Pommel Horse</div>
   </div>
 
   <div class="mySlides1 fade">
@@ -69,12 +75,17 @@ exclude: true
 
   <div class="mySlides1 fade">
     <center>
+    <img src="../papers/AppearanceFreeActionReconigtion/Basketball.gif" style="height:228px">
+    </center>
+    <div class="text">Basketball</div>
+  </div>
+
+  <div class="mySlides1 fade">
+    <center>
     <img src="../papers/AppearanceFreeActionReconigtion/HulaHoop.gif" style="height:228px">
     </center>
     <div class="text">HulaHoop</div>
   </div>
-
-  <!-- Next and previous buttons -->
   <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
   <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
 </div>
@@ -84,6 +95,8 @@ exclude: true
   <span class="myDots1 dot" onclick="currentSlide(1, 0)"></span>
   <span class="myDots1 dot" onclick="currentSlide(2, 0)"></span>
   <span class="myDots1 dot" onclick="currentSlide(3, 0)"></span>
+  <span class="myDots1 dot" onclick="currentSlide(4, 0)"></span>
+  <span class="myDots1 dot" onclick="currentSlide(5, 0)"></span>
 </div>
 <br>
 
@@ -113,18 +126,14 @@ contains any static discriminatory information in AFD; the action is only encode
     <img src="../papers/AppearanceFreeActionReconigtion/JumpingJack.gif" style="width:100%">
     <div class="text">Jumping Jacks</div>
   </div>
-
   <div class="mySlides2 fade">
     <img src="../papers/AppearanceFreeActionReconigtion/TableTennisShot.gif" style="width:100%">
     <div class="text">Table Tennis</div>
   </div>
-
   <div class="mySlides2 fade">
     <img src="../papers/AppearanceFreeActionReconigtion/CleanAndJerk.gif" style="width:100%">
     <div class="text">Weightlifting</div>
   </div>
-
-  <!-- Next and previous buttons -->
   <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
 </div>
@@ -216,7 +225,7 @@ year={2022},
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 47%;
   /* width: auto; */
   margin-top: -22px;
   padding: 16px;
@@ -322,3 +331,13 @@ function showSlides(n, no) {
 
 }
 </script>
+# Cite
+```bibtex
+@InProceedings{ilic22appearancefree,
+title={Is Appearance Free Action Recognition Possible?},
+author={Ilic, Filip and Pock, Thomas and Wildes, Richard P.},
+booktitle={European Conference on Computer Vision (ECCV)},
+month={October},
+year={2022},
+}
+```
