@@ -95,7 +95,7 @@ We investigate state-of-the-art action recognition networks with respect to thei
 
 # Motivation
 
-Related work has shown often that static biases in action recognitino datasets and therefore also in the trained models exist.
+Related work has shown often that static biases in action recognition datasets and therefore also in the trained models exist.
 A simple experiment demonstrates that singleframe classification performance of a ResNet50 on UCF101 frames yields 65.6% Top-1 accuracy.
 <img src='../papers/AppearanceFreeActionReconigtion/ucf101singleframe.png'>
 
@@ -239,7 +239,6 @@ year={2022},
 .prev:hover, .next:hover {
   background-color: rgba(233,233,233,0.8);
   text-decoration: none;
-
 }
 
 /* Caption text */
@@ -252,7 +251,6 @@ year={2022},
   width: 100%;
   text-align: center;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-
 }
 
 
@@ -265,11 +263,12 @@ year={2022},
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  /* transition: background-color 0.6s ease; */
 }
 
 .active, .dot:hover {
   background-color: #717171;
+  box-shadow: 0 0 0 0 #fff;
 }
 
 /* Fading animation */
