@@ -185,9 +185,6 @@ year={2022},
 ```
 
 <br>
-<br>
-<br>
-
 
 # Video Summary
 
