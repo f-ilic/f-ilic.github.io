@@ -27,13 +27,12 @@ scholar_username: W56GwcAAAAAJ
 google_analytics: UA-135499587-1
 github: [metadata]
 
-# includes:
-# - papers
 
 collections:
-  category:
+  misc:
     output: true
-    permalink: /:collection/:name/
+
+
 
 exclude: [vendor]
 

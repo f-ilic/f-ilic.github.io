@@ -6,29 +6,12 @@ subheading: <b>Filip Ilic</b>, Thomas Pock, Richard P. Wildes
 venue: ECCV
 exclude: true
 ---
-
-<!-- <script
-  defer
-  src="https://unpkg.com/img-comparison-slider@7/dist/index.js"
-></script>
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/img-comparison-slider@7/dist/styles.css"
-/> -->
-
-<!-- <img-comparison-slider>
-  <img slot="first" src="../papers/AppearanceFreeActionReconigtion/JumpingJack.png" />
-  <img slot="second" src="../papers/AppearanceFreeActionReconigtion/JumpingJack.gif" />
-</img-comparison-slider> -->
-<!-- Place this tag in your head or just before your close body tag. -->
-
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <div class="paper-links">
 <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition">Code</a>
 <a href="https://arxiv.org/pdf/2207.06261.pdf">Paper</a>
 <a href="https://f-ilic.github.io/AppearanceFreeActionRecognition/quiz">Quiz</a>
-<a style='float:right' href='/'>Back to homepage</a>
 </div>
 <br>
 <a class="github-button" href="https://github.com/f-ilic/AppearanceFreeActionRecognition" data-icon="octicon-star" data-show-count="true" aria-label="Star f-ilic/AppearanceFreeActionRecognition on GitHub">Star</a>
@@ -186,20 +169,20 @@ year={2022},
 
 <br>
 
-# Video Summary
+<!-- # Video Summary -->
 
-<div class="video-container">
+<!-- <div class="video-container">
   <iframe
     src="https://www.youtube.com/embed/QOGZ6RDLTE8"
     frameborder="0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope;"
     allowfullscreen></iframe>
-</div>
+</div> -->
 
 <br>
 
 <style>
-  * {box-sizing:border-box}
+  /* * {box-sizing:border-box} */
 
 /* Slideshow container */
 .slideshow-container {

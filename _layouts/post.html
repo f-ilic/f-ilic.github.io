@@ -1,13 +1,17 @@
 ---
 layout: default
 ---
+
 <div class="item-wrapper">
-      <div class="item">
-            <div class="upper-row">
-                <center><h0>{{page.title}}</h0></center>
-            </div>
-            <hr style="margin-bottom: 20px;">
-            {{content}}
-          </div>
-      </div>
+    <div class="item">
+        <div class="upper-row">
+            <h2>{{ page.title }}</h2>
+        </div>
+        <hr style="margin-bottom: 20px;">
+        <div class="paper-links">
+            <a style='float:right' href='/'>Back to homepage</a>
+        </div>
+        {{content}}
+    </div>
+</div>
 <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>

@@ -10,7 +10,6 @@ exclude: true
 <a href="papers/STVI/ilic20stvi.pdf">Paper</a>
 <a href="papers/STVI/poster.pdf">Poster</a>
 <a href="https://drive.google.com/open?id=1-I8f44UddQZBbYDT9ravd-ueAiKqxV68">DAVIS Parts Dataset</a>
-<a style='float:right' href='/'>Back to homepage</a>
 </div>
 <br>
 
