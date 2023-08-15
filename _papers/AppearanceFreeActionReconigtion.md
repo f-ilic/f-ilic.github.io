@@ -4,14 +4,16 @@ title: Is Appearance Free Action Recognition Possible?
 permalink: /AppearanceFreeActionRecognition
 subheading: <b>Filip Ilic</b>, Thomas Pock, Richard P. Wildes
 venue: ECCV
-exclude: true
+published: 2022 European Conference on Computer Vision
+paper: https://arxiv.org/pdf/2207.06261.pdf
+code: https://github.com/f-ilic/AppearanceFreeActionRecognition
+date: 2022-01-01  
 ---
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <div class="paper-links">
 <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition">Code</a>
 <a href="https://arxiv.org/pdf/2207.06261.pdf">Paper</a>
-<a href="https://f-ilic.github.io/AppearanceFreeActionRecognition/quiz">Quiz</a>
 </div>
 <br>
 <a class="github-button" href="https://github.com/f-ilic/AppearanceFreeActionRecognition" data-icon="octicon-star" data-show-count="true" aria-label="Star f-ilic/AppearanceFreeActionRecognition on GitHub">Star</a>

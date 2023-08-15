@@ -29,6 +29,9 @@ github: [metadata]
 
 
 collections:
+  papers:
+    output: true
+    sort_by: date
   misc:
     output: true
 

@@ -4,7 +4,10 @@ title: A study on robust feature representations for grain density estimates in 
 permalink: /RobustFeatureAustenit
 subheading: <b>Filip Ilic</b>, Marc Masana, Lea Bogensperger, Harald Ganster, Thomas Pock
 venue: OAGM
-exclude: true
+published: 2021 Computer Vision and Pattern Analysis Across Domains
+paper: papers/RobustFeatureAustenit/ilic21RobustFeatureAustenit.pdf
+code: https://github.com/f-ilic/RobustFeatureAustenit
+date: 2021-01-01  
 ---
 <div class="paper-links">
 <a href="https://github.com/f-ilic/RobustFeatureAustenit">Code</a>
