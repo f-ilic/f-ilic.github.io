@@ -5,6 +5,7 @@ permalink: /misc/keyboard
 subheading: System wide key remapping on Linux and MacOS
 ---
 
+
 Text navigation without having to constantly move my hands off keyboard to the mouse is important to me.
 To achieve this I'll show you how to remap your capslock key to do something useful, i.e. an additional modifier key.
 
@@ -12,19 +13,23 @@ The goal is to set up capslock as a modifier key so **j,k,l,i** + **capslock** a
 
 # Linux 
 ---
+**TLDR:**
+If you just want the files and a readme: <a href="https://gist.github.com/f-ilic/5d14f13f2b6d7237eac255cbd9498466">My Keyboard Remapping Gist </a>
+
+
 There are multiple ways to go around setting caps as a modifier.
 Your options are:
+* **Define a new keyboard xkb layout.** <-  *What this post describes*
 * let your Desktop Environment handle it
     * *Keyboard > Layout > Options > Key to choose 3rd level* (in Gnome / KDE as of 2022)
 * set it manually with the command ```setxkbmap -option "lv3:caps_switch"```.
-* Define a new keyboard xkb layout. <-  **What this post describes**
 
 
 If you want to familiarize yourself even more with xkb I suggest:
 * <a href="https://wiki.archlinux.org/index.php/X_keyboard_extension">Arch Wiki xkb</a>
 * <a href="https://medium.com/@damko/a-simple-humble-but-comprehensive-guide-to-xkb-for-linux-6f1ad5e13450">Medium Post</a>
 
-Long story short; A xkb layout defines what symbol is registered when you press a key. 
+Long story short; A xkb layout defines what key-code is registered when you press a key. 
 The file that defines that layout is in my case ```/usr/share/X11/xkb/symbols/us```.
 
 <span style="color:red">**CAUTION!**</span>
@@ -38,7 +43,7 @@ The xkb file contains entries that look like this:
 
 ```{[Key, Key + Shift, Key + level3 modifier, Key + level3 modifier + Shift]}```
 
-If you already set capslock to act as the level3 modifier, and now only need to insert the desired functionality into the corresponding entries.
+If you already set capslock to act as the level3 modifier, you only need to insert the desired functionality into the corresponding entries.
 ```
 key <AD07> {[u,U,Home,Home]};
 key <AD08> {[i,I,Up,Up]};
@@ -51,18 +56,82 @@ key <AC10> {[semicolon,colon,Delete,Delete]};
 key <SPCE> {[space,space,Return,nobreakspace]};
 ```
 
+To apply the changes either log off and in, or run `setxkbmap -layout us` in a terminal.
 
-**TLDR:**
-If you just want the complete package to copy: <a href="https://gist.github.com/f-ilic/5d14f13f2b6d7237eac255cbd9498466">Keyboard Remapping Gist </a>
+Some sleep issues exist that results in the key repeat rate being set back to default; the fix is easy:
+
+```
+# Set the repeat on for the remapped keys in /usr/share/X11/xkb/
+xset r 65 # space 
+
+xset r 30 # u
+xset r 31 # i
+xset r 32 # o
+
+xset r 43 # h
+xset r 44 # j
+xset r 45 # k
+xset r 46 # l
+xset r 47 # ;
+```
+
+All of the details are explained in <a href="https://gist.github.com/f-ilic/5d14f13f2b6d7237eac255cbd9498466">My Keyboard Remapping Gist </a>.
+Set the repeat rate script as a startup script, so that at every login it is triggered.
 
 # MacOS
 ---
 
-If you're using MacOS, one way to do the same it is to rebind the capslock key to a modifier key with <a href="https://www.hammerspoon.org/">Hammerspoon</a>. Hammerspoon is a program that exposes the system API to a lua scripting engine, in which you can then catch keypresses and send other sigals instead.
+If you're using MacOS, one way to do the same it is to use <a href="https://www.hammerspoon.org/">Hammerspoon</a>. Hammerspoon is a program that exposes the system API to a lua scripting engine, in which you can then catch keypresses and send other sigals instead.
 
-The following script should get you started:
+The following script should get you started.
+Put this in your  `~/.hammerspoon/init.lua`
+```
+local function pressFn(mods, key)
+	if key == nil then
+		key = mods
+		mods = {}
+	end
+
+	return function() hs.eventtap.keyStroke(mods, key, 1000) end
+end
+
+local function remap(mods, key, pressFn)
+	hs.hotkey.bind(mods, key, pressFn, nil, pressFn)	
+end
+
+remap({'alt'}, 'j', pressFn('left'))
+remap({'alt'}, 'k', pressFn('down'))
+remap({'alt'}, 'i', pressFn('up'))
+remap({'alt'}, 'l', pressFn('right'))
+remap({'alt', 'shift'}, 'j', pressFn({'shift'}, 'left'))
+remap({'alt', 'shift'}, 'k', pressFn({'shift'}, 'down'))
+remap({'alt', 'shift'}, 'i', pressFn({'shift'}, 'up'))
+remap({'alt', 'shift'}, 'l', pressFn({'shift'}, 'right'))
+
+remap({'alt'}, 'o', pressFn({'ctrl'}, 'e'))
+remap({'alt'}, 'u', pressFn({'ctrl'}, 'a'))
+remap({'alt', 'shift'}, 'o', pressFn({'ctrl shift'}, 'e'))
+remap({'alt', 'shift'}, 'u', pressFn({'ctrl shift'}, 'a'))
+
+-- remap({'alt', 'cmd'}, 'l', pressFn({'cmd'},'right'))
+-- remap({'alt', 'cmd'}, 'j',  pressFn({'cmd'},'left'))
+-- remap({'alt', 'cmd', 'shift'}, 'l', pressFn({'shift', 'cmd'}, 'right'))
+-- remap({'alt', 'cmd' ,'shift'}, 'j',  pressFn({'shift', 'cmd'}, 'left'))
+
+remap({'alt', 'cmd'}, 'i', pressFn('pageup'))
+remap({'alt', 'cmd'}, 'k', pressFn('pagedown'))
+remap({'alt', 'cmd', 'shift'}, 'i', pressFn({'shift'}, 'pageup'))
+remap({'alt', 'cmd', 'shift'}, 'k', pressFn({'shift'}, 'pagedown'))
+
+remap({'alt'}, 'h', pressFn('delete'))
+remap({'alt'}, ';', pressFn('forwarddelete'))
+
+remap({'alt', 'cmd'}, ';', pressFn({'cmd'}, 'delete'))
+remap({'alt'}, 'space', pressFn('return'))
+```
 <a class="boxed" href="/posts/keyboard/hammerspoon_cfg.txt">Hammerspoon config</a>
 
+MacOS allows you to rebind `capslock` to any other modifier key. I personally set it to `alt`, but its not necessary to do.
 
 *Note*: In macOS home/end/PgUp/PgDown does not behave like in Linux and Windows. Much of that functionality revolves around the `cmd` modifier key.
 However MacOS uses the emacs keystrokes `ctrl + a`, or `ctrl + e` for home/end. So we just bind the appropriate keys to these keystrokes.

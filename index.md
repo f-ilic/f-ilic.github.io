@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: Homepage
 permalink: /
 published: true
@@ -11,12 +11,12 @@ order: 1
 ## Mini-CV 
 ---
 <p>
-PhD Student at <a href="https://www.tugraz.at/institute/icg/research/team-pock">Vision, Learning & Optimization Group - ICG - TU Graz</a><br>
+PhD at <a href="https://www.tugraz.at/institute/icg/research/team-pock">Vision, Learning & Optimization Group - ICG - TU Graz </a><br>
 <!-- Thesis: Action recognition & Spatio-Temporal Modeling<br> -->
 
-Visiting Researcher at <a href='https://vision.eecs.yorku.ca/main/'>Center for Vision Research - Lassonde, York University - Toronto</a> <br>
+Visiting Researcher at <a href='https://vision.eecs.yorku.ca/main/'>Center for Vision Research - York University - Toronto</a> <br>
 
-Technical Student at <a href='https://cms.cern/'>CMS Experiment, CERN - Geneva</a> <br>
+Technical Student at <a href='https://cms.cern/'>CMS Experiment - CERN - Geneva</a> <br>
 
 <br>
 

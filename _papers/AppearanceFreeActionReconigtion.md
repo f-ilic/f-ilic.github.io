@@ -11,13 +11,9 @@ date: 2022-01-01
 ---
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-<div class="paper-links">
-<a href="https://github.com/f-ilic/AppearanceFreeActionRecognition">Code</a>
-<a href="https://arxiv.org/pdf/2207.06261.pdf">Paper</a>
-</div>
-<br>
+<div style="display: flex; justify-content: flex-end">
 <a class="github-button" href="https://github.com/f-ilic/AppearanceFreeActionRecognition" data-icon="octicon-star" data-show-count="true" aria-label="Star f-ilic/AppearanceFreeActionRecognition on GitHub">Star</a>
-
+</div>
 <style>
   .video-container {
   position: relative;
@@ -85,20 +81,16 @@ date: 2022-01-01
 </div>
 <br>
 
-# Overview
 
 We investigate state-of-the-art action recognition networks with respect to their performance on a dataset where no static information is present. The video shows random noise animated with motion extracted from real human motion (the UCF101 dataset). We find that optical flow, or a similarly descriptive representation, is not an emergent property of any of the tested action recognition architectures.
 <br>
 
-
-# Motivation
 
 Related work has shown often that static biases in action recognition datasets and therefore also in the trained models exist.
 A simple experiment demonstrates that singleframe classification performance of a ResNet50 on UCF101 frames yields 65.6% Top-1 accuracy.
 <img src='../papers/AppearanceFreeActionReconigtion/ucf101singleframe.png'>
 
 <br>
-# Appearance Free Dataset
 The Appearance Free Dataset (AFD) is an extension to a widely used action recognition dataset that
 disentangles static and dynamic video components. In particular, no single frame
 contains any static discriminatory information in AFD; the action is only encoded in the temporal dimension.
@@ -146,8 +138,6 @@ We want to highlight the similarity - at least in spirit - to perceptual organiz
 <a href="https://www.youtube.com/watch?v=wG_U5m4FShs">Credit</a>
 
 
-
-# Findings
 
 We introduce a new Two-Stream architecture built on tried and tested priciples in action recognition. 
 <center>

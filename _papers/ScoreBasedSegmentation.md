@@ -4,6 +4,7 @@ title: Score-Based Generative Models for Medical Image Segmentation using Signed
 subheading: Lea Bogensperger, Dominik Narnhofer, <b>Filip Ilic</b>, Thomas Pock
 venue: GCPR
 published: 2023 German Conference on Computer Vision
-paper: https://openaccess.thecvf.com/content/WACV2023/papers/Lindner_Lightweight_Video_Denoising_Using_Aggregated_Shifted_Window_Attention_WACV_2023_paper.pdf
+paper: https://arxiv.org/pdf/2303.05966.pdf
+code: https://github.com/leabogensperger/generative-segmentation-sdf
 date: 2023-01-01  
 ---

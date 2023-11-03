@@ -26,6 +26,9 @@ $purple-dark: hsl(300, 63%, 36%);
 $purple-mid:  hsl(300, 63%, 69%);
 $purple-light:hsl(300, 63%, 91%);
 
+$hn-orange: #ff6600;
+$hn-beige: #f6f6ef;
+
 $grey-mid: rgb(172, 172, 172);
 
 $gradient-primary:  $blue-dark;
@@ -179,7 +182,7 @@ font-size: 20px;
 #header-description {
     color:white;
     display: block;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 #header-description-cv {
@@ -205,7 +208,7 @@ font-size: 20px;
   }
 
 body {
-    font-size: 14px;
+    font-size: 16px;
     color: $grey-color-dark; 
   }
 
@@ -292,5 +295,5 @@ h2{
     vertical-align: top;
     font-size: 10pt;
     font-weight: lighter;
-    font-family: monospace;
+    font-family: monospace ;
   }

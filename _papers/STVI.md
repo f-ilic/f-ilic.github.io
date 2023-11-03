@@ -9,13 +9,6 @@ published: 2020 Winter Conference on Applications of Computer Vision
 paper: papers/STVI/ilic20stvi.pdf
 date: 2020-01-01  
 ---
-<div class="paper-links">
-<a href="papers/STVI/ilic20stvi.pdf">Paper</a>
-<a href="papers/STVI/poster.pdf">Poster</a>
-<a href="https://drive.google.com/open?id=1-I8f44UddQZBbYDT9ravd-ueAiKqxV68">DAVIS Parts Dataset</a>
-</div>
-<br>
-
 
 We show how to obtain a scalable representation of objects, which preserves their decomposition into parts. For that we extract features from appearance and motion cues, select the appropriate scale in spatio-temporal Gaussian scale space and perform clustering.
 

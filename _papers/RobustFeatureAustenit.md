@@ -9,12 +9,6 @@ paper: papers/RobustFeatureAustenit/ilic21RobustFeatureAustenit.pdf
 code: https://github.com/f-ilic/RobustFeatureAustenit
 date: 2021-01-01  
 ---
-<div class="paper-links">
-<a href="https://github.com/f-ilic/RobustFeatureAustenit">Code</a>
-<a href="papers/RobustFeatureAustenit/ilic21RobustFeatureAustenit.pdf">Paper</a>
-<a href="papers/RobustFeatureAustenit/poster.pdf">Poster</a>
-</div>
-<br>
 
 <center>
 <img src="papers/RobustFeatureAustenit/poster.png" width='95%' style="border: 1px solid black;">
