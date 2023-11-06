@@ -28,9 +28,6 @@ Follow these links for understanding!
 The goal of this page is to show in a structured way an introduction on how to work with points, lines, and motors in PGA.
 We will start with simple points, and lines, and will conclude our journey with a working rasterizer using only projective geometric algebra.
 
-
-
-
 We can then implement a camera center (`eye_point`).
 calcualte the intersection of every ray with the projection plane.
 If that ray is hit we color that point black. 
@@ -57,73 +54,133 @@ here is the divider
 </pre>
 
 <center><div id="finalized"></div></center>
-and here another
+<details>
+<summary>Full Code: Motor + Rasterization</summary>
+<pre class="prettyprint">
+var canvas = document.getElementById('rasterize');
+Algebra(3, 0, 1, () => {
+    var point = (x, y, z) => 1e123 + x * 1e012 + y * 1e013 + z * 1e023;
+    var rotor = (l, a) => Math.cos(a / 2) + Math.sin(a / 2) * l.Normalized;
+    var points = [point(.5, -.2, 1.3),  point(-.6, -.2, 2), point(.3, .6, 1.7) ];
+    var eye_point = point(0, 0, 0);
+    var ray = eye_point & point(0, 0, 1)
+    var image_plane = ray << point(0, 0, 1)
 
+    var points_norm = points.map(element => element.Normalized);
+    var volume_total = points_norm[0] & points_norm[1] & points_norm[2] & eye_point
+    var project_to_image = (pt) => (eye_point & pt )^ image_plane 
+    
+    var proj_v0 = (eye_point & points[0]) ^ image_plane
+    var proj_v1 = (eye_point & points[1]) ^ image_plane
+    var proj_v2 = (eye_point & points[2]) ^ image_plane
+    var proj_l0 = proj_v0 & proj_v1
+    var proj_l1 = proj_v1 & proj_v2
+    var proj_l2 = proj_v2 & proj_v0
+    
+    canvas.appendChild(this.graph(()=>{
+        var time=Math.abs((performance.now() / 1000))
+        var rasterized = []
+        for(var x=-1; x<=1; x+=0.05){
+        for(var y=-1; y<=1; y+=0.05){
+            var image_plane_point = point(x, y, 1);
+            var current_ray = image_plane_point & eye_point
+            
+            var oriented0 = current_ray & (points[0]&points[1])
+            var oriented1 = current_ray & (points[1]&points[2])
+            var oriented2 = current_ray & (points[2]&points[0])
+            var color = 0xffffff;
+            
+            if(oriented0.s<0 && oriented1.s<0 && oriented2.s<0){
+                color = 0x000000;
+                rasterized.push(color);
+                rasterized.push(project_to_image(image_plane_point))
+            }
 
-and here another
-
+        }
+        }
+        return [
+                0xff0000, points[0], 'V0',
+                0x0000ff, points[1], 'V1',
+                0x00ff00, points[2], 'V2',
+                0x888888, points,
+                0x000000, eye_point, 'E',
+                [point(-1, -1, 1), point(1, -1, 1)],
+                [point(-1, -1, 1), point(-1, 1, 1)],
+                [point(1, 1, 1), point(1, -1, 1)],
+                [point(1, 1, 1), point(-1, 1, 1)],
+                [point(-1, -1, 1), eye_point],
+                [point(1, -1, 1), eye_point],
+                [point(-1, 1, 1), eye_point],
+                [point(1, 1, 1), eye_point],
+                0xfcaf3e, point(0, 0, 1),
+        ].concat(rasterized);
+    },{animate:true,gl:false, grid:false}));
+});
+</pre>
+</details>
 
 <script>
-    var canvas = document.getElementById('rasterize');
-    Algebra(3, 0, 1, () => {
-        var point = (x, y, z) => 1e123 + x * 1e012 + y * 1e013 + z * 1e023;
-        var rotor = (l, a) => Math.cos(a / 2) + Math.sin(a / 2) * l.Normalized;
-        var points = [point(.5, -.2, 1.3),  point(-.6, -.2, 2), point(.3, .6, 1.7) ];
-        var eye_point = point(0, 0, 0);
-        var ray = eye_point & point(0, 0, 1)
-        var image_plane = ray << point(0, 0, 1)
+var canvas = document.getElementById('rasterize');
+Algebra(3, 0, 1, () => {
+    var point = (x, y, z) => 1e123 + x * 1e012 + y * 1e013 + z * 1e023;
+    var rotor = (l, a) => Math.cos(a / 2) + Math.sin(a / 2) * l.Normalized;
+    var points = [point(.5, -.2, 1.3),  point(-.6, -.2, 2), point(.3, .6, 1.7) ];
+    var eye_point = point(0, 0, 0);
+    var ray = eye_point & point(0, 0, 1)
+    var image_plane = ray << point(0, 0, 1)
 
-        var points_norm = points.map(element => element.Normalized);
-        var volume_total = points_norm[0] & points_norm[1] & points_norm[2] & eye_point
-        var project_to_image = (pt) => (eye_point & pt )^ image_plane 
-        
-        var proj_v0 = (eye_point & points[0]) ^ image_plane
-        var proj_v1 = (eye_point & points[1]) ^ image_plane
-        var proj_v2 = (eye_point & points[2]) ^ image_plane
-        var proj_l0 = proj_v0 & proj_v1
-        var proj_l1 = proj_v1 & proj_v2
-        var proj_l2 = proj_v2 & proj_v0
-        
-        canvas.appendChild(this.graph(()=>{
-            var time=Math.abs((performance.now() / 1000))
-            var rasterized = []
-            for(var x=-1; x<=1; x+=0.05){
-            for(var y=-1; y<=1; y+=0.05){
-                var image_plane_point = point(x, y, 1);
-                var current_ray = image_plane_point & eye_point
-                
-                var oriented0 = current_ray & (points[0]&points[1])
-                var oriented1 = current_ray & (points[1]&points[2])
-                var oriented2 = current_ray & (points[2]&points[0])
-                var color = 0xffffff;
-                
-                if(oriented0.s<0 && oriented1.s<0 && oriented2.s<0){
-                    color = 0x000000;
-                    rasterized.push(color);
-                    rasterized.push(project_to_image(image_plane_point))
-                }
+    var points_norm = points.map(element => element.Normalized);
+    var volume_total = points_norm[0] & points_norm[1] & points_norm[2] & eye_point
+    var project_to_image = (pt) => (eye_point & pt )^ image_plane 
+    
+    var proj_v0 = (eye_point & points[0]) ^ image_plane
+    var proj_v1 = (eye_point & points[1]) ^ image_plane
+    var proj_v2 = (eye_point & points[2]) ^ image_plane
+    var proj_l0 = proj_v0 & proj_v1
+    var proj_l1 = proj_v1 & proj_v2
+    var proj_l2 = proj_v2 & proj_v0
+    
+    canvas.appendChild(this.graph(()=>{
+        var time=Math.abs((performance.now() / 1000))
+        var rasterized = []
+        for(var x=-1; x<=1; x+=0.05){
+        for(var y=-1; y<=1; y+=0.05){
+            var image_plane_point = point(x, y, 1);
+            var current_ray = image_plane_point & eye_point
+            
+            var oriented0 = current_ray & (points[0]&points[1])
+            var oriented1 = current_ray & (points[1]&points[2])
+            var oriented2 = current_ray & (points[2]&points[0])
+            var color = 0xffffff;
+            
+            if(oriented0.s<0 && oriented1.s<0 && oriented2.s<0){
+                color = 0x000000;
+                rasterized.push(color);
+                rasterized.push(project_to_image(image_plane_point))
+            }
 
-            }
-            }
-            return [
-                    0xff0000, points[0], 'V0',
-                    0x0000ff, points[1], 'V1',
-                    0x00ff00, points[2], 'V2',
-                    0x888888, points,
-                    0x000000, eye_point, 'E',
-                    [point(-1, -1, 1), point(1, -1, 1)],
-                    [point(-1, -1, 1), point(-1, 1, 1)],
-                    [point(1, 1, 1), point(1, -1, 1)],
-                    [point(1, 1, 1), point(-1, 1, 1)],
-                    [point(-1, -1, 1), eye_point],
-                    [point(1, -1, 1), eye_point],
-                    [point(-1, 1, 1), eye_point],
-                    [point(1, 1, 1), eye_point],
-                    0xfcaf3e, point(0, 0, 1),
-            ].concat(rasterized);
-        },{animate:true,gl:false, grid:false}));
-    });
+        }
+        }
+        return [
+                0xff0000, points[0], 'V0',
+                0x0000ff, points[1], 'V1',
+                0x00ff00, points[2], 'V2',
+                0x888888, points,
+                0x000000, eye_point, 'E',
+                [point(-1, -1, 1), point(1, -1, 1)],
+                [point(-1, -1, 1), point(-1, 1, 1)],
+                [point(1, 1, 1), point(1, -1, 1)],
+                [point(1, 1, 1), point(-1, 1, 1)],
+                [point(-1, -1, 1), eye_point],
+                [point(1, -1, 1), eye_point],
+                [point(-1, 1, 1), eye_point],
+                [point(1, 1, 1), eye_point],
+                0xfcaf3e, point(0, 0, 1),
+        ].concat(rasterized);
+    },{animate:true,gl:false, grid:false}));
+});
 </script>
+
 <script>
 var canvas = document.getElementById('finalized');
 Algebra(3, 0, 1, () => {
@@ -229,15 +286,15 @@ Algebra(3, 0, 1, () => {
       [point(1, -1, 1), eye_point],
       [point(-1, 1, 1), eye_point],
       [point(1, 1, 1), eye_point],
-      [point(1,-2,1), point(-1,-2,1)],
-      [point(0,-2.1,1), point(0,-1.9,1)],
-      [point(-1,-2.2,1), point(-1,-1.8,1)],
-      [point(1,-2.2,1), point(1,-1.8,1)],
+      // [point(1,-2,1), point(-1,-2,1)],
+      // [point(0,-2.1,1), point(0,-1.9,1)],
+      // [point(-1,-2.2,1), point(-1,-1.8,1)],
+      // [point(1,-2.2,1), point(1,-1.8,1)],
       // control_plane_perp,
-      0xc800ff, rotation_control_point,
+      // 0xc800ff, rotation_control_point,
       // 0xc800ff, rotation_control_point&point(0,0,1),
     ].concat(rasterized);
-  }, { animate: true, gl: false, grid: false }));
+  }, { animate: true, gl: false, grid: false}));
 });
 
 </script>

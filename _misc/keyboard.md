@@ -76,7 +76,7 @@ xset r 47 # ;
 ```
 
 All of the details are explained in <a href="https://gist.github.com/f-ilic/5d14f13f2b6d7237eac255cbd9498466">My Keyboard Remapping Gist </a>.
-Set the repeat rate script as a startup script, so that at every login it is triggered.
+Set the repeat rate script as a startup script, so that it is triggered on login.
 
 # MacOS
 ---
@@ -131,7 +131,7 @@ remap({'alt'}, 'space', pressFn('return'))
 ```
 <a class="boxed" href="/posts/keyboard/hammerspoon_cfg.txt">Hammerspoon config</a>
 
-MacOS allows you to rebind `capslock` to any other modifier key. I personally set it to `alt`, but its not necessary to do.
+MacOS allows you to rebind `capslock` to any other modifier key in the keyboard settings. I personally set it to `alt`, but its not necessary to do.
 
 *Note*: In macOS home/end/PgUp/PgDown does not behave like in Linux and Windows. Much of that functionality revolves around the `cmd` modifier key.
 However MacOS uses the emacs keystrokes `ctrl + a`, or `ctrl + e` for home/end. So we just bind the appropriate keys to these keystrokes.
