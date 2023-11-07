@@ -10,11 +10,11 @@ subheading: Importance, Rejction, and Inversion Sampling
   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
-# Monte Carlo "Hello World": Estimating $$\pi$$
+# Monte Carlo "Hello World"
 ---
 As is tradition with all Monte Carlo intuition posts we start by estimating $$\pi$$ by throwing darts at a circle inscribed in a square.
 We chose a square with side lengths $$2$$, and inscribe a circle of radius $$1$$.
-We also have to assume that our thrown darts always hit inside of the square at a point $$\mathbf{p} = (x,y)$$, such that $$x$$ and $$y$$ are $$\textit{idd}$$ and drawn from a Uniform distribution $$\mathcal{U}$$.
+We also have to assume that our thrown darts always hit inside of the square at a point $$\mathbf{p} = (x,y)$$, such that $$x$$ and $$y$$ are $$\textit{iid}$$ and drawn from a Uniform distribution $$\mathcal{U}$$.
 
 
 So, this means we have the following statements to work with:
@@ -22,39 +22,60 @@ So, this means we have the following statements to work with:
 * Area of the square: $$A_\square=4$$
 * Area of the circle: $$A_o = \pi$$
 
-Graphically you can see that we are interested in finding the ratio between the hits in that lie within the circle and the total hits.
-
 The question boils down to:
 > Is the sampled point $$\mathbf{p} = (x,y)$$ inside of the the circle ($$x^2 + y^2 < 1$$)?
 
 
-This is rather simple to implement programmatically; In the following graphic points are shown as blue if they are inside of the circle, and red if they are outside.
-Another important observations, is that the number of samples $$\color{blue}{\#o}$$ approximate the area of the circle and $$\color{red}{\#\square} + \color{blue}{\#o}$$ are the total hits. More importantly this means the ratio of the red/blue points approaches the actual area of the circle/square.
+An important observation is that the the ratio of the areas of  of both  $$\frac{A_o}{A_\square}$$ is proportional to the ratio of sampled points, $$\textit{i.e.} \frac{\color{blue}{\#o}}{\color{red}{\#\square} + \color{blue}{\#o}}$$
+
 
 ![Estimating Pi](pi.gif)
 
-
 If we write down the ratios of the two areas we see that $$\frac{A_o}{A_\square} = \frac{\pi}{4}$$.
 This means that if we want to get an estimate for $$\pi$$ we just have to compute $$\hat{\pi} = 4\cdot\frac{\color{blue}{\#o}}{\color{red}{\#\square} + \color{blue}{\#o}}$$.
-Our estimate $$\hat{\pi}$$ and the error to real $$\pi$$ is shown on the right. You can see how the error decreases with increasing samples.
+The estimate $$\hat{\pi}$$ and the error of our estimate is shown in the right plot. You can see how the error decreases as we increase the number of samples.
 
-This little toy example is of course only used for illustrative purposes, but intuitively introduces important concepts such as _Rejection Sampling_ which we will discuss later from a more theoretical point of view.
+This little toy example is of course only usefull for illustrative purposes, but introduces important concepts such as _Rejection Sampling_ which we will discuss later from a more theoretical point of view.
 
 # What are Monte Carlo methods for?
 ---
 
 
+
+
+
+
 Goal: calculate $$\mathop{\mathbb{E}}[f(x)] = \int f(x)~p(x)~d{x}$$
+
+
+<input type="checkbox" id="toggleImages"> Show Expectation
+<div>
+<img src="fp.png" id="fp" alt="fp">
+<img src="expectation.png" id="expectation" alt="expectation" style="display:none;">
+</div>
+
+In general hard / impossible to compute the full $$p(x)f(x)$$ -> **We can not compute the integral this way**
+
 
 Idea: approximate it with $$\mathbb{E}[f(x)] \approx \underbrace{\frac{1}{N} \sum_{i=1}^N(f(x_i))}_{s}, ~~~\text{where  } x_i \sim p(x)$$
 
-In general hard / impossible to compute the full $$p(x)f(x)$$ -> **We can not compute the integral this way**
+
+<!-- ![expectation](expectation.png) -->
+
 
 
 
 Width = $$2 \sqrt(\mathbb{V}_p[s])$$
 
 $$\mathbb{V}_p[s] = \frac{1}{N}\mathbb{V}_p[f(x)]\qquad$$   -> **Variance Decreases with number of samples!**
+
+
+![expectation](expectation.gif)
+
+
+
+
+
 
 
 # Central Limit Theorem
@@ -86,6 +107,10 @@ $$\mathbb{V}_p[f(x)] = \frac{\sigma^2_f}{N} = \mathcal{O} \frac{1}{N}\qquad$$   
 
 # Sampling
 ---
+
+> Anyone who considers arithmetical methods of producing random digits is, of course, in a state of sin.
+> --- Von Neumann (1951)
+
 * How do we sample from arbitrary distributions?
 * How did I produce the $$p(x)$$ samples in the examples above?
 
@@ -93,16 +118,42 @@ $$\mathbb{V}_p[f(x)] = \frac{\sigma^2_f}{N} = \mathcal{O} \frac{1}{N}\qquad$$   
 ## Rejection Sampling 
 
 
+
+
+We can sample any functional form which we can evaluate such as for example a gaussian.
+We do not need to know how to sample from a gaussian, but just from a uniform distribution $$\mathcal{U_{[0,1]}}$$.
+
+![Rejection Sampling gif](rejection.png)
+
+
 Basic Idea same as the $$\pi$$ example!
+
+The downsides are pretty evident; you need to know _something_ about the underlying function that you want to sample from.
+It also struggles with inefficiency, if the envelope is chosen badly.
+
+Choosing better fitting evelopes can dramatically increase the runtime of such methods.
+Another thing to consider is that the examples shown here are 1Dimensional. This class of problems generally does not scale nicely with increasing dimensionality, _i.e._ suffers from [Curse of Dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality).
+
+What this means, is that we need to be smarter about it! Rejection sampling alone, for many problems does not suffice, but is always something to keep in the back of your mind.
+
+
+![Rejection Sampling](rejection_sampling.png)
+
 
 1) Take a distribution $Env$ that we know how to sample from (Uniform 😬)
 2) Scale it so it covers the target distribution
 3) Sample from $Env$ and reject them if they in the gray area!
 
 
+
+
 ## Inversion Sampling
 
 **PDF** *(Probability Density Function)*
+
+
+![pdf cdf](pdf_cdf.png)
+
 
 $$
 f_X(x) = \begin{cases}
@@ -128,12 +179,33 @@ F_X(x) &= P(X \leq x) = \int_{-\infty}^x f_X(x)~dx =  \int_{-\infty}^0 f_X(x)~dx
 \end{aligned}
 $$
 
+
+
 $$
 \begin{aligned}
 P(1 < X < 3) &= P(X \leq 3) - P(X \leq 1)\\
              &=F_X(3) - F_X(1)
 \end{aligned}
 $$
+
+In the end this leaves us with a rather elegant solution, such that we only need to evaluate $$F_X$$ at two points to get the area under the curve of $$f(x)$$
+
+
+
+
+
+![inversion sampling](inversion.gif)
+So again just by knowing how to sample from $$\mathcal{U_{[0,1]}}$$ and the CDF we can draw samples from the PDF. _Pretty Cool!_
+
+
+
+* You need access to the CDF
+    * Often times this is possible in the real world; think physical experiments
+* Elegent solution that does not do any *unneccessary* computation
+* Does not scale well to higher dimensions
+
+
+
 
 # Importance Sampling
 
@@ -163,6 +235,9 @@ $$
 \mathbb{E}_q \left[\frac{p(x)}{q(x)} f(x) \right] \approx \underbrace{\frac{1}{N} \sum_{i=1}^N\frac{p(x_i)}{q(x_i)} f(x_i)}_{r}
 \end{aligned}
 $$
+
+![importance sampling](importance.gif)
+
 
 
 ## Convergence
@@ -205,3 +280,21 @@ DETAILS
 The only real difference is that the notebook is interactive; feel free to tinker with it and let me know if you create some additional nice visualizations.*
 
 ---
+
+<!-- JAVSCRIPT STUFF -->
+
+<script>
+const toggleImagesCheckbox = document.getElementById('toggleImages');
+const image1 = document.getElementById('fp');
+const image2 = document.getElementById('expectation');
+
+toggleImagesCheckbox.addEventListener('change', function () {
+    if (toggleImagesCheckbox.checked) {
+    image1.style.display = 'none';
+    image2.style.display = 'block';
+    } else {
+    image1.style.display = 'block';
+    image2.style.display = 'none';
+    }
+});
+</script>
