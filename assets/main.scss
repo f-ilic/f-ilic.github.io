@@ -30,6 +30,7 @@ $hn-orange: #ff6600;
 $hn-beige: #f6f6ef;
 
 $grey-mid: rgb(172, 172, 172);
+$grey-light: rgb(246, 248, 250);
 
 $gradient-primary:  $blue-dark;
 $gradient-secondary:  $teal-mid;
@@ -302,6 +303,13 @@ h2{
   @media screen and (prefers-color-scheme: light) {
       body {
           background-color: white;
-          color: black;
+          color: $grey-color-dark;
       }
     }
+
+// @media (prefers-color-scheme: dark) {
+//     body {
+//         background-color: rgb(206, 206, 206);
+//             color: $grey-color-dark;
+//     }
+// }
