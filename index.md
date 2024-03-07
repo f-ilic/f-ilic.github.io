@@ -54,8 +54,8 @@ Technical Student at <a href='https://cms.cern/'>CMS Experiment - CERN - Geneva<
 </table>    
 {% endfor %}
 
-
-## Various tinkering
+<!-- 
+## Miscellaneous
 ---
 
 {% for post in site.misc %}
@@ -72,4 +72,4 @@ Technical Student at <a href='https://cms.cern/'>CMS Experiment - CERN - Geneva<
     </td>
   </tr>
 </table>  
-{% endfor %}
+{% endfor %} -->

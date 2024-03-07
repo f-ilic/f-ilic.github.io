@@ -251,8 +251,9 @@ body {
         padding-top: 0.15rem;
         font-size: 10pt;
         color: $teal-dark;
-        border-radius: .2rem;
+        // border-radius: .rem;
         display: inline-block;
+        // border-color: $grey-mid;
 }
 .paper-links a:hover{
     // color: var(--global-text-color);
@@ -262,7 +263,7 @@ body {
     padding-top: 0.15rem;
     font-size: 10pt;
     background-color: $teal-light;
-    border-radius: .2rem;
+    // border-radius: .2rem;
     display: inline-block;
     // text-decoration: none;
 }
@@ -288,7 +289,7 @@ h2{
     background-color:$teal-mid;
     padding-left: 1rem;
     padding-right: 1rem;
-    border-radius: .125rem;
+    // border-radius: .125rem;
     -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
     display: inline-block;
@@ -297,3 +298,10 @@ h2{
     font-weight: lighter;
     font-family: monospace ;
   }
+
+  @media screen and (prefers-color-scheme: light) {
+      body {
+          background-color: white;
+          color: black;
+      }
+    }

@@ -48,10 +48,10 @@ This little toy example is of course only usefull for illustrative purposes, but
 Goal: calculate $$\mathop{\mathbb{E}}[f(x)] = \int f(x)~p(x)~d{x}$$
 
 
-<input type="checkbox" id="toggleImages"> Show Expectation
+<input type="checkbox" id="toggleImages"> Show Expectation <i>(CLICK ME!)</i>
 <div>
-<img src="fp.png" id="fp" alt="fp">
-<img src="expectation.png" id="expectation" alt="expectation" style="display:none;">
+<img src="fp.svg" id="fp" alt="fp">
+<img src="expectation.svg" id="expectation" alt="expectation" style="display:none;">
 </div>
 
 In general hard / impossible to compute the full $$p(x)f(x)$$ -> **We can not compute the integral this way**
@@ -123,7 +123,7 @@ $$\mathbb{V}_p[f(x)] = \frac{\sigma^2_f}{N} = \mathcal{O} \frac{1}{N}\qquad$$   
 We can sample any functional form which we can evaluate such as for example a gaussian.
 We do not need to know how to sample from a gaussian, but just from a uniform distribution $$\mathcal{U_{[0,1]}}$$.
 
-![Rejection Sampling gif](rejection.png)
+![Rejection Sampling gif](rejection.svg)
 
 
 Basic Idea same as the $$\pi$$ example!
@@ -137,7 +137,7 @@ Another thing to consider is that the examples shown here are 1Dimensional. This
 What this means, is that we need to be smarter about it! Rejection sampling alone, for many problems does not suffice, but is always something to keep in the back of your mind.
 
 
-![Rejection Sampling](rejection_sampling.png)
+![Rejection Sampling](rejection_sampling.svg)
 
 
 1) Take a distribution $Env$ that we know how to sample from (Uniform 😬)
@@ -152,7 +152,7 @@ What this means, is that we need to be smarter about it! Rejection sampling alon
 **PDF** *(Probability Density Function)*
 
 
-![pdf cdf](pdf_cdf.png)
+![pdf cdf](pdf_cdf.svg)
 
 
 $$

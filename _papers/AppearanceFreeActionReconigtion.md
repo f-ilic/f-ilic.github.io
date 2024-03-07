@@ -11,7 +11,7 @@ date: 2022-01-01
 ---
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-<div style="display: flex; justify-content: flex-end">
+<div style="display: flex; justify-content: flex-start">
 <a class="github-button" href="https://github.com/f-ilic/AppearanceFreeActionRecognition" data-icon="octicon-star" data-show-count="true" aria-label="Star f-ilic/AppearanceFreeActionRecognition on GitHub">Star</a>
 </div>
 <style>
@@ -88,6 +88,8 @@ We investigate state-of-the-art action recognition networks with respect to thei
 
 Related work has shown often that static biases in action recognition datasets and therefore also in the trained models exist.
 A simple experiment demonstrates that singleframe classification performance of a ResNet50 on UCF101 frames yields 65.6% Top-1 accuracy.
+<br>
+
 <img src='../papers/AppearanceFreeActionReconigtion/ucf101singleframe.png'>
 
 <br>
@@ -124,7 +126,6 @@ contains any static discriminatory information in AFD; the action is only encode
 </div>
 <br>
 <br>
-
 We provide the AFD101 dataset based on UCF101, and also the necessary tools to generate other appearance free videos.
 For details, code, and data see the github page. We also perform a user study, showing that human participants perform much better than current networks. Userstudy code is also in the github repo, and a quick quiz demo is also online.
 
@@ -140,8 +141,10 @@ We want to highlight the similarity - at least in spirit - to perceptual organiz
 
 
 We introduce a new Two-Stream architecture built on tried and tested priciples in action recognition. 
+<br>
+<br>
 <center>
-<img src='../papers/AppearanceFreeActionReconigtion/schematic.png' width='60%;'>
+<img src='../papers/AppearanceFreeActionReconigtion/schematic.png' width='90%;'>
 </center>
 <br>
 We employ a state of the art optical flow estimator to generate a rich dynamics representation that outperforms all others on Appearance Free Data, and closes the gap to human performance significantly.
@@ -160,16 +163,6 @@ year={2022},
 ```
 
 <br>
-
-<!-- # Video Summary -->
-
-<!-- <div class="video-container">
-  <iframe
-    src="https://www.youtube.com/embed/QOGZ6RDLTE8"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope;"
-    allowfullscreen></iframe>
-</div> -->
 
 <br>
 
@@ -195,25 +188,23 @@ year={2022},
   top: 47%;
   /* width: auto; */
   margin-top: -22px;
-  padding: 16px;
+  padding: 12px;
   color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
   font-weight: bold;
-  font-size: 24px;
-  /* transition: 0.6s ease; */
-  border-radius: 0 3px 3px 0;
+  font-size: 32px;
   user-select: none;
 }
 
 /* Position the "next button" to the right */
 .next {
   right: 0;
-  border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(233,233,233,0.8);
+  background-color: rgba(233,233,233,0.4);
   text-decoration: none;
 }
 
