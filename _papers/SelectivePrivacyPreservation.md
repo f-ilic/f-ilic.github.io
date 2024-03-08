@@ -24,12 +24,10 @@ We show that it is not necessary to train action recognition and privacy network
 
 
 
-<center>
-<img src='../papers/SelectivePrivacyPreservation/saliency.png' width='100%;'>
-</center>
+<video controls autoplay loop muted playsinline width="100%">
+  <source  src="../papers/SelectivePrivacyPreservation/saliencyn.mp4" type="video/mp4">
+</video> 
 <br>
-
-
 
 Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum Lore ipsum  
 
