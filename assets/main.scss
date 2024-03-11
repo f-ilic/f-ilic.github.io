@@ -6,19 +6,7 @@
 //  ---------------- Colors
 
 
-// @media screen and (prefers-color-scheme: light) {
-//     body {
-//         background-color: white;
-//         color: $grey-color-dark;
-//     }
-// }
 
-// @media (prefers-color-scheme: dark) {
-//     body {
-//         background-color: rgb(0, 0, 0);
-//             color: white;
-//     }
-// }
 
 $blue-dark: hsl(220, 64%, 36%);
 $blue-mid: hsl(220, 63%, 60%);
@@ -35,6 +23,8 @@ $grey-light: $grey-color-light;
 
 $gradient-primary: $blue-dark;
 $gradient-secondary: $teal-mid;
+
+$wrapper-bg: white;
 
 
 //  ---------------- Paragraphs and Headings
@@ -257,30 +247,23 @@ body {
 }
 
 .paper-links a {
-    // color: var(--global-text-color);
     border: 1px solid;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.15rem;
     font-size: 10pt;
     color: $teal-dark;
-    // border-radius: .rem;
     display: inline-block;
-    // border-color: $grey-mid;
-    // border-color: $grey-color-dark;
 }
 
 .paper-links a:hover {
-    // color: var(--global-text-color);
     border: 1px solid;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.15rem;
     font-size: 10pt;
     background-color: $teal-light;
-    // border-radius: .2rem;
     display: inline-block;
-    // text-decoration: none;
 }
 
 h0 {
@@ -299,7 +282,7 @@ h2 {
 }
 
 .wrapper {
-    background-color: white;
+    background-color: $wrapper-bg;
     border-style: solid;
     border-color: $grey-light;
     border-radius: 0.5rem;
@@ -388,5 +371,19 @@ h2 {
 .active,
 .dot:hover {
     background-color: $grey-mid;
-    box-shadow: 0 0 0 0 white;
+    box-shadow: 0 0 0 0 $wrapper-bg;
 }
+
+
+// @media screen and (prefers-color-scheme: light) {
+// }
+
+// @media (prefers-color-scheme: dark) {
+//     body {
+//         background-color: $grey-mid;
+//         color: white;
+//     }
+//     .wrapper {
+//         background-color: $teal-mid;
+//     }
+// }
