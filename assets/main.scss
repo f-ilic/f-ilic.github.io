@@ -29,6 +29,11 @@ $wrapper-bg: white;
 
 //  ---------------- Paragraphs and Headings
 
+abbr {
+    transition-delay: 0s;
+    transition: 0s opacity;
+}
+
 table td {
     border: none;
     vertical-align: top;

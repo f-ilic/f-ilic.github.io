@@ -82,8 +82,11 @@ date: 2022-01-01
 <br>
 
 
+**Can Neural Networks recognize actions solely from the temporal dynamics?**
 We investigate state-of-the-art action recognition networks with respect to their performance on a dataset where no static information is present. The video shows random noise animated with motion extracted from real human motion (the UCF101 dataset). We find that optical flow, or a similarly descriptive representation, is <u>not an emergent property</u> of any of the tested <u>action recognition architectures</u>.
 <br>
+
+---
 
 
 Related work has shown often that static biases in action recognition datasets and therefore also in the trained models exist.
@@ -137,7 +140,7 @@ We also perform a user study, showing that human participants can detect the mot
 It's also possible to start with different noise patters, and animate it with the same dynamics.
 ![Userstudy](../papers/AppearanceFreeActionReconigtion/PommelHorse.gif)
 
-Using sparse noise we can create videos that evoke a similarity - at least in spirit - to perceptual organization experiments of simple movements performed by psychologist Gunnar Johansson <a href="https://link.springer.com/article/10.3758/bf03212378"> <abbr title="Johansson, Gunnar. Visual perception of biological motion and a model for its analysis. Perception & psychophysics 14.2 (1973): 201-211.">[`Ref`]</abbr></a>.
+Using sparse noise, we can create videos that evoke a similarity, at least in spirit, to the perceptual organization experiments of simple movements performed by psychologist Gunnar Johansson <a href="https://link.springer.com/article/10.3758/bf03212378"> <abbr title="Johansson, Gunnar. Visual perception of biological motion and a model for its analysis. Perception & psychophysics 14.2 (1973): 201-211.">[`Ref`]</abbr></a>.
 
 <video controls autoplay loop muted playsinline width="100%">
 <source  src="../papers/AppearanceFreeActionReconigtion/walkingdots.mp4" type="video/mp4">
@@ -171,9 +174,6 @@ month={October},
 year={2022},
 }
 ```
-
-<br>
-<br>
 
 <script>
 let slideIndex = [1,1];
