@@ -81,7 +81,7 @@ date: 2022-01-01
 </div>
 <br>
 
-
+x
 **Can Neural Networks recognize actions solely from the temporal dynamics?**
 We investigate state-of-the-art action recognition networks with respect to their performance on a dataset where no static information is present. The video shows random noise animated with motion extracted from real human motion (the UCF101 dataset). We find that optical flow, or a similarly descriptive representation, is <u>not an emergent property</u> of any of the tested <u>action recognition architectures</u>.
 <br>
@@ -137,8 +137,15 @@ We also perform a user study, showing that human participants can detect the mot
 ![Userstudy](../papers/AppearanceFreeActionReconigtion/confusion.png)
 
 <br>
-It's also possible to start with different noise patters, and animate it with the same dynamics.
-![Userstudy](../papers/AppearanceFreeActionReconigtion/PommelHorse.gif)
+It's also possible to start with different noise, such as sparse noise, and still descern moving shapes.
+
+<table>
+<tr>
+<td> <img src="../papers/AppearanceFreeActionReconigtion/sparse/jumpingjack.gif">  </td>
+<td> <img src="../papers/AppearanceFreeActionReconigtion/sparse/pushup.gif">  </td>
+<td> <img src="../papers/AppearanceFreeActionReconigtion/sparse/pullups.gif">  </td>
+</tr>
+</table>
 
 Using sparse noise, we can create videos that evoke a similarity, at least in spirit, to the perceptual organization experiments of simple movements performed by psychologist Gunnar Johansson <a href="https://link.springer.com/article/10.3758/bf03212378"> <abbr title="Johansson, Gunnar. Visual perception of biological motion and a model for its analysis. Perception & psychophysics 14.2 (1973): 201-211.">[`Ref`]</abbr></a>.
 
