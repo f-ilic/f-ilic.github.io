@@ -81,7 +81,6 @@ date: 2022-01-01
 </div>
 <br>
 
-x
 **Can Neural Networks recognize actions solely from the temporal dynamics?**
 We investigate state-of-the-art action recognition networks with respect to their performance on a dataset where no static information is present. The video shows random noise animated with motion extracted from real human motion (the UCF101 dataset). We find that optical flow, or a similarly descriptive representation, is <u>not an emergent property</u> of any of the tested <u>action recognition architectures</u>.
 <br>
@@ -137,7 +136,7 @@ We also perform a user study, showing that human participants can detect the mot
 ![Userstudy](../papers/AppearanceFreeActionReconigtion/confusion.png)
 
 <br>
-It's also possible to start with different noise, such as sparse noise, and still descern moving shapes.
+It's also possible to start with different noise (e.g. sparse) and still descern moving shapes.
 
 <table>
 <tr>
@@ -147,27 +146,27 @@ It's also possible to start with different noise, such as sparse noise, and stil
 </tr>
 </table>
 
-Using sparse noise, we can create videos that evoke a similarity, at least in spirit, to the perceptual organization experiments of simple movements performed by psychologist Gunnar Johansson <a href="https://link.springer.com/article/10.3758/bf03212378"> <abbr title="Johansson, Gunnar. Visual perception of biological motion and a model for its analysis. Perception & psychophysics 14.2 (1973): 201-211.">[`Ref`]</abbr></a>.
+Using sparse noise, we can create videos that evoke a familiarity, at least in spirit, to the perceptual organization experiments of simple movements performed by psychologist Gunnar Johansson <a href="https://link.springer.com/article/10.3758/bf03212378"> <abbr title="Johansson, Gunnar. Visual perception of biological motion and a model for its analysis. Perception & psychophysics 14.2 (1973): 201-211.">[`Ref`]</abbr></a>.
 
 <video controls autoplay loop muted playsinline width="100%">
 <source  src="../papers/AppearanceFreeActionReconigtion/walkingdots.mp4" type="video/mp4">
 </video> 
-<a href="https://www.youtube.com/watch?v=wG_U5m4FShs">[`Credit`]</a>
+Video modified from: <a href="https://www.youtube.com/watch?v=wG_U5m4FShs">[`Credit`]</a>
 
 
 ---
 
 One of our contributions is to show how to build a (new) Two-Stream architecture in a pricipled manner, to encourage a robust modeling of the temporal dimension.
+We call it <b>Explicit-Two-Stream</b>, as one stream <u>explicitly</u> models temporal correlations through the use of RAFT blocks.
 <br>
 <br>
 
 
 ![Schematic](../papers/AppearanceFreeActionReconigtion/schematic.png)
 
-
-![Userstudy](../papers/AppearanceFreeActionReconigtion/results.png)
+![Results](../papers/AppearanceFreeActionReconigtion/results.png)
 <br>
-We employ a state of the art optical flow estimator to generate a rich dynamics representation that outperforms all others on Appearance Free Data, and closes the gap to human performance significantly.
+This design choise for our network allows for a rich dynamics representation that outperforms other methods on Appearance Free Data. We show that it closes the gap to human performance on Appearance Free Data significantly.
 <br>
 <br>
 
