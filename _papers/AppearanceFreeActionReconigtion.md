@@ -70,7 +70,7 @@ date: 2022-01-01
   <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
   <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
 </div>
-<br>
+<p>
 <!-- The dots/circles -->
 <div style="text-align:center">
   <span class="myDots1 dot" onclick="currentSlide(1, 0)"></span>
@@ -79,7 +79,7 @@ date: 2022-01-01
   <span class="myDots1 dot" onclick="currentSlide(4, 0)"></span>
   <span class="myDots1 dot" onclick="currentSlide(5, 0)"></span>
 </div>
-<br>
+</p>
 
 **Can Neural Networks recognize actions solely from the temporal dynamics?**
 We investigate state-of-the-art action recognition networks with respect to their performance on a dataset where no static information is present. The video shows random noise animated with motion extracted from real human motion (the UCF101 dataset). We find that optical flow, or a similarly descriptive representation, is <u>not an emergent property</u> of any of the tested <u>action recognition architectures</u>.
@@ -116,16 +116,14 @@ The Appearance Free Dataset (AFD) disentangles static and dynamic video componen
   <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
 </div>
-<br>
-
+<p>
 <!-- The dots/circles -->
 <div style="text-align:center">
   <span class="myDots2 dot" onclick="currentSlide(1, 1)"></span>
   <span class="myDots2 dot" onclick="currentSlide(2, 1)"></span>
   <span class="myDots2 dot" onclick="currentSlide(3, 1)"></span>
 </div>
-<br>
-<br>
+</p>
 
 ---
 
@@ -170,6 +168,8 @@ This design choise for our network allows for a rich dynamics representation tha
 <br>
 <br>
 
+
+---
 # Cite
 ```bibtex
 @InProceedings{ilic22appearancefree,

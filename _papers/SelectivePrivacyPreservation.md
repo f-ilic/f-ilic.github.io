@@ -8,6 +8,7 @@ date: 2024-01-01
 paper: TODO
 code: https://github.com/f-ilic/SelectivePrivacyPreservation
 permalink: /SelectivePrivacyPreservation
+published: false
 ---
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <div style="display: flex; justify-content: flex-start">
@@ -15,6 +16,7 @@ permalink: /SelectivePrivacyPreservation
 </div>
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 
 <video controls autoplay loop muted playsinline width="100%">
   <source  src="../papers/SelectivePrivacyPreservation/teaser.mp4" type="video/mp4">
@@ -25,13 +27,9 @@ permalink: /SelectivePrivacyPreservation
 We show that it is not necessary to train action recognition and privacy networks in an adversarial fashion for effective obfuscation of privacy attributes while maintaining strong action recognition performance. We show that a system based on local privacy templates, deep features that capture <u>template semantics</u> and <u>selective noise obfuscation</u> that is animated with source video motion can uphold privacy without hindering action recognition. Our approach is unique compared to alternative recent approaches in terms of <u>interpretability</u>.
 
 ---
-
-The gist of our method is that we have templates that we match with DINO-ViT features to find saliency regions in the input video that we need to hide.
-
 ![alt text](../papers/SelectivePrivacyPreservation/method.png)
 
-In our particular case we manually select the DINO-ViT templates to correspond to `keys` extracted from the `11`th encoder block for maximal semantic meaning.
-The regions in the input image that correspond to the features are shown below.
+The gist of our method is that we have templates that we match with DINO-ViT features to find saliency regions in the input video that we need to hide. In particular we focus on enhancing privacy in action recognition systems through obfuscation of regions that match semantic templates. We create a template library of images, and spatial locations in these images $$ {\tau}_i \in \mathsf{T} $$, which correspond to regions to obfuscate. 
 
 <p>
 <center>
@@ -39,19 +37,18 @@ The regions in the input image that correspond to the features are shown below.
 </center>
 </p>
 
-<u>Choosing this Library of templates enables us now to create saliency maps, where regions that are similar to templates have high values.
-This manual choice of templates leads to interpretability by design to some extent as the results similarities will be close to concepts that were previously selected.
-We also hypothesise that it is possible to learn good feature descriptors or exemplar images and patches from which to extract good privacy preserving templates. </u>
+We use the keys of a DINO-ViT as the feature descriptors, as they accumulate contextual and semantic meaning, as depth increases in the Vision Transformer.
 
+---
 
+To decide how strong a particular patch needs to be obfuscated we use the (positive) cosine similarity between the templates and the image patches. 
 
-Our project focuses on enhancing privacy in action recognition systems through a carefully designed template selection process. We've developed a library of image patches, each representing different privacy-sensitive attributes like facial features and body parts. This library is the cornerstone of our method, allowing us to selectively obscure specific elements of an individual's identity that need protection.
+$$
+s_j = \frac{1}{|\tilde{\mathsf{T}}|} \sum_{i=1}^{|\tilde{\mathsf{T}}|} \max\left(0, \frac{ \langle \mathsf{K}(\tau_i), \mathsf{K}(I_j)\rangle}{\|\mathsf{K}(\tau_i)\|\|\mathsf{K}(I_j)\|}\right), \forall j \in \{1,..., m\}
+$$
 
-For template matching, we employ DINO-ViT features for their semantic accuracy. This enables our system to detect and match privacy-sensitive regions in video frames with our predefined templates accurately. The process is precise, ensuring that only targeted areas are obscured, thus preserving the necessary context for action recognition.
-
-This section includes embedded videos and images to illustrate the template selection and matching process. These examples provide a clear view of how our method effectively balances privacy preservation with the utility of action recognition technologies.
-
-
+The resulting saliency map is then bilinearly upscaled, to be of the same dimension as the input image.
+This process ensures that only targeted areas are obscured, thus preserving the, often critical, context for action recognition.
 
 <p>
 <video controls autoplay loop muted playsinline width="100%">
@@ -59,45 +56,62 @@ This section includes embedded videos and images to illustrate the template sele
 </video> 
 </p>
 
-<u>Identified regions that correlate highly with privacy relevant features must now be obfuscated.
-Our goal is to obfuscate only the relevant parts, in a manner that impacts the action recognition perforamnce as little as possible.
-For that we choose to obsucate with temporally consistent noise, such that action recognition networks are still able to extract some meaningful data from the dynamics in the video.</u>
+After selecting the appropriate templates, our system generates saliency maps by comparing these templates against each video frame. These maps highlight the regions that match our privacy-sensitive attributes, effectively pinpointing where obfuscation is needed.
+
+---
+
+Once we've identified these regions, we overlay temporally consistent noise on the input video, guided by the saliency maps.The key here is to maintain the integrity of the video's motion and overall context, crucial for action recognition, while effectively masking personal attributes. 
+
+Examples of such temporally consistent noise are found on the project page of [our previous work](/AppearanceFreeActionRecognition).
+Below we show examples of input video, motion consistent noise, the saliency maps, and the final masked output that is used in the action recognition networks.
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides1 fade">
+    <img src="../papers/SelectivePrivacyPreservation/composit/1.gif" style="width:100%">
+  </div>
+  <div class="mySlides1 fade">
+    <img src="../papers/SelectivePrivacyPreservation/composit/2.gif" style="width:100%">
+  </div>
+  <div class="mySlides1 fade">
+    <img src="../papers/SelectivePrivacyPreservation/composit/3.gif" style="width:100%">
+  </div>
+  <div class="mySlides1 fade">
+    <img src="../papers/SelectivePrivacyPreservation/composit/4.gif" style="width:100%">
+  </div>
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+<p>
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="myDots1 dot" onclick="currentSlide(1, 0)"></span>
+  <span class="myDots1 dot" onclick="currentSlide(2, 0)"></span>
+  <span class="myDots1 dot" onclick="currentSlide(3, 0)"></span>
+  <span class="myDots1 dot" onclick="currentSlide(4, 0)"></span>
+</div>
+</p>
 
 
 
-In our approach, the creation of saliency maps plays a pivotal role in identifying which areas within a video frame are privacy-sensitive and thus should be obscured. After selecting the appropriate templates, our system generates saliency maps by comparing these templates against each video frame. These maps highlight the regions that match our privacy-sensitive attributes, effectively pinpointing where obfuscation is needed.
-
-Once we've identified these regions, we employ a novel technique to overlay noise specifically on these salient areas. This process is guided by the saliency maps, ensuring that the noise application is both selective and precise. The key here is to maintain the integrity of the video's motion and overall context, crucial for action recognition, while effectively masking personal attributes. We leverage optical flow information from the source video to animate this noise, preserving the motion and dynamic aspects of the scene. This method allows us to achieve a fine balance: protecting privacy while retaining the video's utility for action recognition.
-
-Examples of such temporally consistent noise is shown below and is inspired by [our previous work](/AppearanceFreeActionRecognition).
-
-
-$$
-s_j = \frac{1}{|\tilde{\mathsf{T}}|} \sum_{i=1}^{|\tilde{\mathsf{T}}|} \max\left(0, \frac{ \langle \mathsf{K}(\tau_i), \mathsf{K}(I_j)\rangle}{\|\mathsf{K}(\tau_i)\|\|\mathsf{K}(I_j)\|}\right), \forall j \in \{1,..., m\}
-$$
-
-
-
-We compare across many different architectures and show that our relatively simple approach of finding similarities and masking it with temporally consistent noise works quite well across different datasets.
+We compare across 11 Action Reocgnition, and 6 Privacy Attribute Classification architectures; We show across all three tested datasets ([IPN](https://gibranbenitez.github.io/IPN_Hand/), [SBU](http://vision.cs.stonybrook.edu/~kiwon/Datasets/SBU_Kinect_Interactions/README.txt), [KTH](https://www.csc.kth.se/cvap/actions/)) that our relatively simple approach of finding similarities and masking it with temporally consistent noise works quite well and outperforms other approaches that require training for each specific architecutre.
 
 ![alt text](../papers/SelectivePrivacyPreservation/table.png)
 
-Our evaluation is such that we average overmultiple network architectures and report the average.
-
+<!-- <p>
 <table style="table-layout: fixed; width:100%">
 <tr>
 <td> <img src="../papers/SelectivePrivacyPreservation/ipn.gif">  </td>
-<td> <img src="../papers/SelectivePrivacyPreservation/sbu.gif">  </td>
 <td> <img src="../papers/SelectivePrivacyPreservation/kth.gif">  </td>
+<td> <img src="../papers/SelectivePrivacyPreservation/sbu.gif">  </td>
 </tr>
 </table>
+</p> -->
 
-
-![alt text](../papers/SelectivePrivacyPreservation/ablation.png)
-
-
+---
 # Cite
-
 ```bibtex
 @inproceedings{ilic2024selective,
 title={Selective, Interpretable and Motion Consistent Privacy Attribute Obfuscation for Action Recognition},
@@ -105,4 +119,44 @@ author={Ilic, Filip and Zhao, He and Pock, Thomas and Wildes, Richard P.},
 booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)},
 year={2024}
 }
-```
+``` 
+
+
+<script>
+let slideIndex = [1,1];
+let dotIndex = [1,1];
+/* Class the members of each slideshow group with different CSS classes */
+let slideId = ["mySlides1", "mySlides2"];
+let dotId = ["myDots1", "mySlides2"];
+showSlides(1, 0);
+showSlides(1, 1);
+
+
+// Thumbnail image controls
+function currentSlide(n, no) {
+  showSlides(slideIndex[no] = n, no);
+}
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  let i;
+  let x = document.getElementsByClassName(slideId[no]);
+  let dots = document.getElementsByClassName(dotId[no]);
+
+  if (n > x.length) {slideIndex[no] = 1}
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    // alert(dots.length)
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  x[slideIndex[no]-1].style.display = "block";
+  dots[slideIndex[no]-1].className += " active";
+
+}
+</script>

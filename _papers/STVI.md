@@ -10,10 +10,10 @@ paper: papers/STVI/ilic20stvi.pdf
 date: 2020-01-01  
 ---
 
-**We show how to combine low-level video segmentation, which often lack semantic knowledge, with a masking network to get the best of both worlds.**
 <!-- We show how to obtain a scalable representation of objects, which preserves their decomposition into parts. We extract features from appearance and motion, select the appropriate scale in spatio-temporal Gaussian scale space, and perform clustering. -->
 <video controls autoplay loop muted playsinline width="100%">  <source  src="papers/STVI/girl.mp4" type="video/mp4"></video>
-Object tracking and decomposition into parts: Our approach (right) bridges the conceptual gap between low-level video representations such as (left) TSPs  which tend to fall apart over time and do not model objects directly, and instance segmentation methods such as (center) Mask R-CNN  which lack a decomposition into parts, and temporal consistency. Our unsupervised approach is able to detect salient object parts based on motion and appearance.
+**We show how to combine low-level video segmentation, which often lack semantic knowledge, with a masking network to get the best of both worlds.**
+Object tracking and decomposition into parts: Our approach (right) bridges the conceptual gap between low-level video representations such as (left) Temporal Super-Pixels which tend to fall apart over time and do not model objects directly, and instance segmentation methods such as (center) Mask R-CNN  which lack a decomposition into parts, and temporal consistency. Our unsupervised approach is able to detect salient object parts based on motion and appearance.
 
 ---
 
@@ -40,6 +40,8 @@ Viewer/Object-centered representation: The trajectory w.r.t. the observer is sho
 <center><video controls autoplay loop muted playsinline width="100%"><source  src="papers/STVI/parts/DAVIS_parts.mp4" type="video/mp4"></video></center>
 The DAVIS Parts Dataset contains a varity of densely annotated objects and their parts. We envision this dataset being used for object part tracking and detection.
 
+
+---
 # Cite
 ```bibtex
 @InProceedings{ilic20wacv,
