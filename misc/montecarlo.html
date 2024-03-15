@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang=" en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/main.css">
+</head><body>
+
+  <header><center>
+  <table id="me-container" style="border: none;">
+      <tr style="border: none;">
+        <td style="border: none; width:40%;" align="left">
+          <a title="Homepage" href="/"><img src="/assets/facepic_rect.jpg" class='circle-img' align="right"></a>
+        </td>
+        <td style="border: none; width:60%;" align="left">
+          <div id='header-name'>
+            Filip Ilic
+          </div>
+          <div id='header-description'>
+          PhD student at TUGraz<br>
+          Computer Vision & Machine Learning<br>
+          </div><a title="Email" href="mailto:filip.ilic@icg.tugraz.at"><img class="svg-social-icon" src="/assets/social-icons/email.svg" /></a><a title="Github" href="https://github.com/f-ilic"><img class="svg-social-icon" src="/assets/social-icons/github.svg" /></a><a title="LinkedIn" href="https://www.linkedin.com/in/filip-ilic-82a898185"><img class="svg-social-icon" src="/assets/social-icons/linkedin.svg" /></a><a title="Google Scholar" href="https://scholar.google.com/citations?user=W56GwcAAAAAJ"><img class="svg-social-icon" src="/assets/social-icons/google_scholar.svg" /></a></td>
+      </tr>
+  </table> 
+</center></header>
+
+  <center>
+    <!--<nav-ul>
+<nav-li>
+      <a class="nav-elem" href="/">Homepage</a>
+</nav-li></nav-ul>
+-->
+  </center>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      <br>
+<div class="item-wrapper">
+    <table>
+        <tr>
+            <td width="100%" style="padding: 0px">
+                <div class="paper-info">
+                    <div class="paper-head">
+                        <span class="paper-title">A visual introduction to Monte Carlo Sampling</span>
+                        <span class="paper-authors">Importance, Rejction, and Inversion Sampling</span>
+                        <span class="paper-published"></span>
+                    </div>
+                </div>
+                <div class="paper-links">
+                    
+                    
+                </div>
+            </td>
+        </tr>
+    </table>
+    <!-- <hr style="margin-bottom: 50px;"> -->
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<h1 id="monte-carlo-hello-world">Monte Carlo “Hello World”</h1>
+<hr />
+<p>As is tradition with all Monte Carlo intuition posts we start by estimating \(\pi\) by throwing darts at a circle inscribed in a square.
+We chose a square with side lengths \(2\), and inscribe a circle of radius \(1\).
+We also have to assume that our thrown darts always hit inside of the square at a point \(\mathbf{p} = (x,y)\), such that \(x\) and \(y\) are \(\textit{iid}\) and drawn from a Uniform distribution \(\mathcal{U}\).</p>
+
+<p>So, this means we have the following statements to work with:</p>
+<ul>
+  <li>The point \(\mathbf{p}\) \((x,y) \sim \mathcal{U}_{[-1,1]}.\)</li>
+  <li>Area of the square: \(A_\square=4\)</li>
+  <li>Area of the circle: \(A_o = \pi\)</li>
+</ul>
+
+<p>The question boils down to:</p>
+<blockquote>
+  <p>Is the sampled point \(\mathbf{p} = (x,y)\) inside of the the circle (\(x^2 + y^2 &lt; 1\))?</p>
+</blockquote>
+
+<p>An important observation is that the the ratio of the areas of  of both  \(\frac{A_o}{A_\square}\) is proportional to the ratio of sampled points, \(\textit{i.e.} \frac{\color{blue}{\#o}}{\color{red}{\#\square} + \color{blue}{\#o}}\)</p>
+
+<p><img src="pi.gif" alt="Estimating Pi" /></p>
+
+<p>If we write down the ratios of the two areas we see that \(\frac{A_o}{A_\square} = \frac{\pi}{4}\).
+This means that if we want to get an estimate for \(\pi\) we just have to compute \(\hat{\pi} = 4\cdot\frac{\color{blue}{\#o}}{\color{red}{\#\square} + \color{blue}{\#o}}\).
+The estimate \(\hat{\pi}\) and the error of our estimate is shown in the right plot. You can see how the error decreases as we increase the number of samples.</p>
+
+<p>This little toy example is of course only usefull for illustrative purposes, but introduces important concepts such as <em>Rejection Sampling</em> which we will discuss later from a more theoretical point of view.</p>
+
+<h1 id="what-are-monte-carlo-methods-for">What are Monte Carlo methods for?</h1>
+<hr />
+
+<p>Goal: calculate \(\mathop{\mathbb{E}}[f(x)] = \int f(x)~p(x)~d{x}\)</p>
+
+<p><input type="checkbox" id="toggleImages" /> Show Expectation <i>(CLICK ME!)</i></p>
+<div>
+<img src="fp.svg" id="fp" alt="fp" />
+<img src="expectation.svg" id="expectation" alt="expectation" style="display:none;" />
+</div>
+
+<p>In general hard / impossible to compute the full \(p(x)f(x)\) -&gt; <strong>We can not compute the integral this way</strong></p>
+
+<p>Idea: approximate it with \(\mathbb{E}[f(x)] \approx \underbrace{\frac{1}{N} \sum_{i=1}^N(f(x_i))}_{s}, ~~~\text{where  } x_i \sim p(x)\)</p>
+
+<!-- ![expectation](expectation.png) -->
+
+<p>Width = \(2 \sqrt(\mathbb{V}_p[s])\)</p>
+
+<p>\(\mathbb{V}_p[s] = \frac{1}{N}\mathbb{V}_p[f(x)]\qquad\)   -&gt; <strong>Variance Decreases with number of samples!</strong></p>
+
+<p><img src="expectation.gif" alt="expectation" /></p>
+
+<h1 id="central-limit-theorem">Central Limit Theorem</h1>
+
+\[s \rightarrow \mathcal{N}(\sigma, \mu^2) 
+\begin{cases} 
+\mu &amp;= \mathbb{E}[f(x)]\\
+\sigma^2 &amp;= \frac{1}{N} \mathbb{V}[f(x)]
+\end{cases}\]
+
+<p>In reality you only get one sampling of $s$!</p>
+
+<h1 id="convergence">Convergence</h1>
+
+<p>\(\mathbb{E}_p[f(x)] = \int p(x) f(x) dx\qquad\)   <strong>Unbiased Estimator</strong></p>
+
+<p>\(\mathbb{V}_p[f(x)] = \frac{\sigma^2_f}{N} = \mathcal{O} \frac{1}{N}\qquad\)   <strong>Independent of dimension d</strong></p>
+
+<h1 id="sampling">Sampling</h1>
+<hr />
+
+<blockquote>
+  <p>Anyone who considers arithmetical methods of producing random digits is, of course, in a state of sin.
+— Von Neumann (1951)</p>
+</blockquote>
+
+<ul>
+  <li>How do we sample from arbitrary distributions?</li>
+  <li>How did I produce the \(p(x)\) samples in the examples above?</li>
+</ul>
+
+<h2 id="rejection-sampling">Rejection Sampling</h2>
+
+<p>We can sample any functional form which we can evaluate such as for example a gaussian.
+We do not need to know how to sample from a gaussian, but just from a uniform distribution \(\mathcal{U_{[0,1]}}\).</p>
+
+<p><img src="rejection.svg" alt="Rejection Sampling gif" /></p>
+
+<p>Basic Idea same as the \(\pi\) example!</p>
+
+<p>The downsides are pretty evident; you need to know <em>something</em> about the underlying function that you want to sample from.
+It also struggles with inefficiency, if the envelope is chosen badly.</p>
+
+<p>Choosing better fitting evelopes can dramatically increase the runtime of such methods.
+Another thing to consider is that the examples shown here are 1Dimensional. This class of problems generally does not scale nicely with increasing dimensionality, <em>i.e.</em> suffers from <a href="https://en.wikipedia.org/wiki/Curse_of_dimensionality">Curse of Dimensionality</a>.</p>
+
+<p>What this means, is that we need to be smarter about it! Rejection sampling alone, for many problems does not suffice, but is always something to keep in the back of your mind.</p>
+
+<p><img src="rejection_sampling.svg" alt="Rejection Sampling" /></p>
+
+<p>1) Take a distribution $Env$ that we know how to sample from (Uniform 😬)
+2) Scale it so it covers the target distribution
+3) Sample from $Env$ and reject them if they in the gray area!</p>
+
+<h2 id="inversion-sampling">Inversion Sampling</h2>
+
+<p><strong>PDF</strong> <em>(Probability Density Function)</em></p>
+
+<p><img src="pdf_cdf.svg" alt="pdf cdf" /></p>
+
+\[f_X(x) = \begin{cases}
+   0,&amp; x &lt;  0\\
+   e^{-x},        &amp; x \geq 0
+\end{cases}
+\qquad
+\begin{aligned}
+P(1 &lt; X &lt; 3) &amp;= \int_1^3 f_X(x) dx \\
+             &amp;= \int_1^3 e^{-x} dx \\
+             &amp;= e^{-1} - e^{-3}
+\end{aligned}\]
+
+<p><strong>CDF</strong> <em>(Cumulative Density Function)</em></p>
+
+\[\begin{aligned}
+F_X(x) &amp;= P(X \leq x) = \int_{-\infty}^x f_X(x)~dx =  \int_{-\infty}^0 f_X(x)~dx +  \int_{0}^x f_X(x)~dx \\
+       &amp;= \int_{0}^x f_X(x)~dx \\
+       &amp;= \int_{0}^x e^{-x}~dx \\
+       &amp;= 1-e^{-x} \\
+\end{aligned}\]
+
+\[\begin{aligned}
+P(1 &lt; X &lt; 3) &amp;= P(X \leq 3) - P(X \leq 1)\\
+             &amp;=F_X(3) - F_X(1)
+\end{aligned}\]
+
+<p>In the end this leaves us with a rather elegant solution, such that we only need to evaluate \(F_X\) at two points to get the area under the curve of \(f(x)\)</p>
+
+<p><img src="inversion.gif" alt="inversion sampling" />
+So again just by knowing how to sample from \(\mathcal{U_{[0,1]}}\) and the CDF we can draw samples from the PDF. <em>Pretty Cool!</em></p>
+
+<ul>
+  <li>You need access to the CDF
+    <ul>
+      <li>Often times this is possible in the real world; think physical experiments</li>
+    </ul>
+  </li>
+  <li>Elegent solution that does not do any <em>unneccessary</em> computation</li>
+  <li>Does not scale well to higher dimensions</li>
+</ul>
+
+<h1 id="importance-sampling">Importance Sampling</h1>
+
+<p>The problem: \(f(x)\) is large <strong>only</strong> in regions where \(p(x)\) is small.
+The variance \(\mathbb{V}\) for different evaluations of \(\mathbb{E}_p\) is large.</p>
+
+<h1 id="remember">Remember:</h1>
+
+<p>\(\mathop{\mathbb{E}}[f(x)]\) is what we want to approxmiate</p>
+
+\[\begin{aligned}
+\mathop{\mathbb{E_p}}[f(x)] &amp;= \int p(x)~f(x)~dx  \qquad | \text{multiply by } \frac{q(x)}{q(x)}\\
+                          &amp;= \int q(x) \left[\frac{p(x)}{q(x)}  f(x) \right] dx \\
+                          &amp;= \mathbb{E}_q \left[\frac{p(x)}{q(x)} f(x) \right]
+\end{aligned}\]
+
+<h2 id="we-can-estimate-this-with-samples-x_i-sim-q">We can estimate this with samples \(x_i \sim q\)</h2>
+
+\[\begin{aligned}
+\mathbb{E}_q \left[\frac{p(x)}{q(x)} f(x) \right] \approx \underbrace{\frac{1}{N} \sum_{i=1}^N\frac{p(x_i)}{q(x_i)} f(x_i)}_{r}
+\end{aligned}\]
+
+<p><img src="importance.gif" alt="importance sampling" /></p>
+
+<h2 id="convergence-1">Convergence</h2>
+
+<p>Unbiased \(\mathbb{E}_q[r] = \mathbb{E}_p[f(x)]\)</p>
+
+<p>Same or better variance \(\mathbb{V}_q[r] = \frac{1}{N} \mathbb{V}_q \left[\frac{p(x)}{q(x)} f(x) \right]\)</p>
+<ul>
+  <li>choose \(q\) such that \(\mathbb{V}_q \left[\frac{p(x)}{q(x)} f(x) \right] &lt; \mathbb{V}_p[f(x)]\)</li>
+</ul>
+
+<p>We can achieve this by chosing \(q(x)\) to be high were \(\|p(x)f(x)\|\) is high.</p>
+
+<h3 id="further-reading">Further Reading</h3>
+<hr />
+
+<p>INTRO</p>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=Em6mQQy4wYA">Intro by Ian Murray</a></li>
+  <li><a href="https://www.youtube.com/watch?v=_v4Eb09qp7Q">Another intro by Ian Murray</a></li>
+  <li><a href="https://arxiv.org/pdf/1701.02434.pdf">Betancourt, Introduction to Hamiltonian Monte Carlo</a></li>
+  <li><a href="https://probml.github.io/pml-book/book2.html#toc">Murphy, Advanced Topics in Probabilistic ML, Chapters 11 &amp; 12</a></li>
+</ul>
+
+<p>DETAILS</p>
+<ul>
+  <li><a href="https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf">Bishop online</a></li>
+  <li><a href="https://vknight.org/blog/posts/galton-board/">Galton board as a Markov Chain</a></li>
+  <li><a href="https://www.youtube.com/watch?v=Vd21DUyVccA&amp;ab_channel=Anthroporraistes">Inversion / Box Muller</a></li>
+  <li><a href="https://www.youtube.com/watch?v=C3p2wI4RAi8&amp;ab_channel=MutualInformation">Monte Carlo with Math</a></li>
+  <li><a href="https://www.youtube.com/watch?v=N-bI-Dsm-rw&amp;ab_channel=MolloyMaths">Deriving the Normal Distribution Probability Density Function Formula</a></li>
+  <li><a href="http://www.cs.cmu.edu/~aarti/Class/10701_Spring14/slides/MCMC.pdf">MCMC slides (nice overview)</a></li>
+  <li><a href="https://user.math.uni-bremen.de/dickhaus/downloads/Methoden-WS1213/mcmc.pdf">German MCMC slides (mathy)</a></li>
+  <li>Another nice slide set on Monte Carlo + MCMC + MH algorithm:
+    <ul>
+      <li><a href="https://www.sas.upenn.edu/~jesusfv/LectureNotes_5_montecarlo.pdf">MC</a></li>
+      <li><a href="https://www.sas.upenn.edu/~jesusfv/LectureNotes_6_mcmc.pdf">MCMC</a></li>
+      <li><a href="https://www.sas.upenn.edu/~jesusfv/LectureNotes_7_MH.pdf">MH</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<p><em>Most of this page is built based from my <a href="https://github.com/f-ilic/cib_seminar">MCMC intro jupyter notebook</a>.
+The only real difference is that the notebook is interactive; feel free to tinker with it and let me know if you create some additional nice visualizations.</em></p>
+
+<hr />
+
+<!-- JAVSCRIPT STUFF -->
+
+<script>
+const toggleImagesCheckbox = document.getElementById('toggleImages');
+const image1 = document.getElementById('fp');
+const image2 = document.getElementById('expectation');
+
+toggleImagesCheckbox.addEventListener('change', function () {
+    if (toggleImagesCheckbox.checked) {
+    image1.style.display = 'none';
+    image2.style.display = 'block';
+    } else {
+    image1.style.display = 'block';
+    image2.style.display = 'none';
+    }
+});
+</script>
+
+
+</div>
+<a class="u-url" href="/misc/montecarlo" hidden></a>
+    </div>
+  </main><footer class="site-footer" >
+        <center>
+        <div class="footnotesize" >
+            <!-- Coded and designed with ❤️<br> -->
+            Updated March 2024
+        </div>
+    </center>
+</footer>
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-135499587-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+<!-- End Google Analytics -->
+    </body>
+
+</html>

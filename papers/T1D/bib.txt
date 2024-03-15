@@ -1,0 +1,8 @@
+@inproceedings{bogensperger2022influence,
+  title={On the Influence of Beta Cell Granule Counting for Classification in Type 1 Diabetes},
+  author={Bogensperger, Lea and Masana, Marc and Ilic, Filip and Kolb, Dagmar and Pieber, Thomas R and Pock, Thomas},
+  booktitle={OAGM Workshop 2021: Computer Vision and Pattern Analysis Across Domains},
+  pages={45--50},
+  year={2022},
+  organization={Verlag der Technischen Universit{\"a}t Graz}
+}

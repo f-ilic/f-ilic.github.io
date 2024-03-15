@@ -1,0 +1,6 @@
+@inproceedings{ilic21oagm,
+  title={A study on robust feature representations for grain density estimates in austenitic steel},
+  author={Ilic, Filip and Masana, Marc and Bogensperger, Lea and Ganster, Harald and Pock, Thomas},
+  booktitle={Proc. Workshop of the Austrian Association for Pattern Recognition (AAPR/OAGM)},
+  year={2021}
+}

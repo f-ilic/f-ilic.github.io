@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang=" en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/main.css">
+</head><body>
+
+  <header><center>
+  <table id="me-container" style="border: none;">
+      <tr style="border: none;">
+        <td style="border: none; width:40%;" align="left">
+          <a title="Homepage" href="/"><img src="/assets/facepic_rect.jpg" class='circle-img' align="right"></a>
+        </td>
+        <td style="border: none; width:60%;" align="left">
+          <div id='header-name'>
+            Filip Ilic
+          </div>
+          <div id='header-description'>
+          PhD student at TUGraz<br>
+          Computer Vision & Machine Learning<br>
+          </div><a title="Email" href="mailto:filip.ilic@icg.tugraz.at"><img class="svg-social-icon" src="/assets/social-icons/email.svg" /></a><a title="Github" href="https://github.com/f-ilic"><img class="svg-social-icon" src="/assets/social-icons/github.svg" /></a><a title="LinkedIn" href="https://www.linkedin.com/in/filip-ilic-82a898185"><img class="svg-social-icon" src="/assets/social-icons/linkedin.svg" /></a><a title="Google Scholar" href="https://scholar.google.com/citations?user=W56GwcAAAAAJ"><img class="svg-social-icon" src="/assets/social-icons/google_scholar.svg" /></a></td>
+      </tr>
+  </table> 
+</center></header>
+
+  <center>
+    <!--<nav-ul>
+<nav-li>
+      <a class="nav-elem" href="/">Homepage</a>
+</nav-li></nav-ul>
+-->
+  </center>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      <br>
+<div class="item-wrapper">
+    <table>
+        <tr>
+            <td width="100%" style="padding: 0px">
+                <div class="paper-info">
+                    <div class="paper-head">
+                        <span class="paper-title">Representing Objects in Video as Space-Time Volumes by Combining Top-Down and Bottom-Up Processes</span>
+                        <span class="paper-authors"><b>Filip Ilic</b>, Axel Pinz</span>
+                        <span class="paper-published">2020 Winter Conference on Applications of Computer Vision</span>
+                    </div>
+                </div>
+                <div class="paper-links">
+                    
+                    
+                    <a href="papers/STVI/ilic20stvi.pdf">Paper</a>
+                    
+                </div>
+            </td>
+        </tr>
+    </table>
+    <!-- <hr style="margin-bottom: 50px;"> -->
+    <!-- We show how to obtain a scalable representation of objects, which preserves their decomposition into parts. We extract features from appearance and motion, select the appropriate scale in spatio-temporal Gaussian scale space, and perform clustering. -->
+<video controls="" autoplay="" loop="" muted="" playsinline="" width="100%">  <source src="papers/STVI/girl.mp4" type="video/mp4" /></video>
+<p><strong>We show how to combine low-level video segmentation, which often lack semantic knowledge, with a masking network to get the best of both worlds.</strong>
+Object tracking and decomposition into parts: Our approach (right) bridges the conceptual gap between low-level video representations such as (left) Temporal Super-Pixels which tend to fall apart over time and do not model objects directly, and instance segmentation methods such as (center) Mask R-CNN  which lack a decomposition into parts, and temporal consistency. Our unsupervised approach is able to detect salient object parts based on motion and appearance.</p>
+
+<hr />
+
+<p><br /></p>
+<video controls="" autoplay="" loop="" muted="" playsinline="" width="100%"> <source src="papers/STVI/jumpingjack.mp4" type="video/mp4" /> </video>
+<p>Different object sclales: Space-Time Volumes of Interest extracted at increasing spatial and temporal scales from a jumping-jack sequence. Note how finer scales capture more detail at the cost of temporal and spatial coherence, whereas coarser scales model more fundamental patterns.</p>
+
+<p><br />
+<img src="../papers/STVI/slices.png" alt="Slices" />
+The extracted representation is inherently a volumetric one, allowing us to slice along any of the axis.
+This can reveal interesting details such as the tube in the center image formed by the oscillating motion of the legs.</p>
+
+<p><br /></p>
+<center><video controls="" autoplay="" loop="" muted="" playsinline="" width="70%"><source src="papers/STVI/rollerblade.mp4" type="video/mp4" /></video> </center>
+<p>Viewer/Object-centered representation: The trajectory w.r.t. the observer is shown on the left. The relative motion of object parts w.r.t. the object centroid is shown on the right. This is useful because objects are represented as the sum of their parts, and not just as instance masks.</p>
+
+<h2 id="supplement">Supplement</h2>
+<hr />
+
+<center><video controls="" autoplay="" loop="" muted="" playsinline="" width="100%"><source src="papers/STVI/parts/DAVIS_parts.mp4" type="video/mp4" /></video></center>
+<p>The DAVIS Parts Dataset contains a varity of densely annotated objects and their parts. We envision this dataset being used for object part tracking and detection.</p>
+
+<hr />
+<h1 id="cite">Cite</h1>
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@InProceedings</span><span class="p">{</span><span class="nl">ilic20wacv</span><span class="p">,</span>
+<span class="na">author</span> <span class="p">=</span> <span class="s">{Ilic, Filip and Pinz, Axel}</span><span class="p">,</span>
+<span class="na">title</span> <span class="p">=</span> <span class="s">{Representing Objects in Video as Space-Time Volumes by Combining Top-Down and Bottom-Up Processes}</span><span class="p">,</span>
+<span class="na">booktitle</span> <span class="p">=</span> <span class="s">{The IEEE Winter Conference on Applications of Computer Vision (WACV)}</span><span class="p">,</span>
+<span class="na">month</span> <span class="p">=</span> <span class="s">{March}</span><span class="p">,</span>
+<span class="na">year</span> <span class="p">=</span> <span class="s">{2020}</span>
+<span class="p">}</span> 
+</code></pre></div></div>
+
+</div>
+<a class="u-url" href="/STVI" hidden></a>
+    </div>
+  </main><footer class="site-footer" >
+        <center>
+        <div class="footnotesize" >
+            <!-- Coded and designed with ❤️<br> -->
+            Updated March 2024
+        </div>
+    </center>
+</footer>
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-135499587-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+<!-- End Google Analytics -->
+    </body>
+
+</html>
