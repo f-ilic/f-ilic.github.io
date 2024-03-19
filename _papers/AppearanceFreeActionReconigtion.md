@@ -92,11 +92,15 @@ Related work has shown often that static biases in action recognition datasets a
 A simple experiment demonstrates that singleframe classification performance of a ResNet50 on UCF101 frames yields 65.6% Top-1 accuracy.
 <br>
 
+<p>
+<center><em>Action Recognition is sometimes possible from a single frame; Is this a problem?</em></center>
 <img src='../papers/AppearanceFreeActionReconigtion/ucf101singleframe.png'>
+</p>
 
 <br>
 The Appearance Free Dataset (AFD) disentangles static and dynamic video components. In particular, <u>no single frame contains any static discriminatory information</u> in AFD; the action is only encoded in the temporal dimension.
 
+<center><em>Examples of Appearance Free Videos</em></center>
 <!-- Slideshow container -->
 <div class="slideshow-container">
 
@@ -131,11 +135,14 @@ AFD101 is based on UCF101. We provide code and other necessary tools to generate
 
 We also perform a user study, showing that human participants can detect the motion from the animated noise patter, and perform much better than current networks. The top row shows human performance on "normal" videos, and the bottom row on our "noisy" videos.
 
+<center><em>Usestudy: Regular Videos (Top) vs Appearance Free (Bottom)<br>Our Userstudy shows that people can identify actions from anmiated noise. </em></center>
+
 ![Userstudy](../papers/AppearanceFreeActionReconigtion/confusion.png)
 
 <br>
 It's also possible to start with different noise (e.g. sparse) and still descern moving shapes.
 
+<center><em>Animated Sparse Noise</em></center>
 <table>
 <tr>
 <td> <img src="../papers/AppearanceFreeActionReconigtion/sparse/jumpingjack.gif">  </td>
@@ -146,9 +153,12 @@ It's also possible to start with different noise (e.g. sparse) and still descern
 
 Using sparse noise, we can create videos that evoke a familiarity, at least in spirit, to the perceptual organization experiments of simple movements performed by psychologist Gunnar Johansson <a href="https://link.springer.com/article/10.3758/bf03212378"> <abbr title="Johansson, Gunnar. Visual perception of biological motion and a model for its analysis. Perception & psychophysics 14.2 (1973): 201-211.">[`Ref`]</abbr></a>.
 
+<p>
+<center><em>Visual perception of biological motion; Johansson Gunnar (1973)</em></center>
 <video controls autoplay loop muted playsinline width="100%">
 <source  src="../papers/AppearanceFreeActionReconigtion/walkingdots.mp4" type="video/mp4">
 </video> 
+</p>
 Video modified from: <a href="https://www.youtube.com/watch?v=wG_U5m4FShs">[`Credit`]</a>
 
 
@@ -159,6 +169,7 @@ We call it <b>Explicit-Two-Stream</b>, as one stream <u>explicitly</u> models te
 <br>
 <br>
 
+<center><em>Our proposed Network Architecture</em></center>
 
 ![Schematic](../papers/AppearanceFreeActionReconigtion/schematic.png)
 

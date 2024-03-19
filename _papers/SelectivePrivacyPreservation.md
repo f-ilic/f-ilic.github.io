@@ -8,7 +8,6 @@ date: 2024-01-01
 paper: TODO
 code: https://github.com/f-ilic/SelectivePrivacyPreservation
 permalink: /SelectivePrivacyPreservation
-published: false
 ---
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <div style="display: flex; justify-content: flex-start">
@@ -27,11 +26,16 @@ published: false
 We show that it is not necessary to train action recognition and privacy networks in an adversarial fashion for effective obfuscation of privacy attributes while maintaining strong action recognition performance. We show that a system based on local privacy templates, deep features that capture <u>template semantics</u> and <u>selective noise obfuscation</u> that is animated with source video motion can uphold privacy without hindering action recognition. Our approach is unique compared to alternative recent approaches in terms of <u>interpretability</u>.
 
 ---
+
+
+<center><em>Overview of our Method</em></center>
+
 ![alt text](../papers/SelectivePrivacyPreservation/method.png)
 
-The gist of our method is that we have templates that we match with DINO-ViT features to find saliency regions in the input video that we need to hide. In particular we focus on enhancing privacy in action recognition systems through obfuscation of regions that match semantic templates. We create a template library of images, and spatial locations in these images $$ {\tau}_i \in \mathsf{T} $$, which correspond to regions to obfuscate. 
+Our method uses templates that we match with DINO-ViT features to find salient regions in video that we need to obfuscate. We create a template library of images, and spatial locations in these images $$ {\tau}_i \in \mathsf{T} $$, which correspond to regions that ought to be obfuscated. In our particular usecase this means regions that can be used to infer labels pertaining to privacy (Skintone, Haircolor, Gender, ...).
 
 <p>
+<center><em>ViT-Tokens: Manually Selected Template Features</em></center>
 <center>
 <img src="../papers/SelectivePrivacyPreservation/templates.png" style="width:80%">
 </center>
@@ -51,12 +55,13 @@ The resulting saliency map is then bilinearly upscaled, to be of the same dimens
 This process ensures that only targeted areas are obscured, thus preserving the, often critical, context for action recognition.
 
 <p>
+<center><em>Saliency Maps of individual templates matched across 4 input videos</em></center>
 <video controls autoplay loop muted playsinline width="100%">
   <source  src="../papers/SelectivePrivacyPreservation/saliency.mp4" type="video/mp4">
 </video> 
 </p>
 
-After selecting the appropriate templates, our system generates saliency maps by comparing these templates against each video frame. These maps highlight the regions that match our privacy-sensitive attributes, effectively pinpointing where obfuscation is needed.
+These maps highlight the regions that match our privacy-sensitive attributes, effectively pinpointing where obfuscation is needed.
 
 ---
 
@@ -65,6 +70,7 @@ Once we've identified these regions, we overlay temporally consistent noise on t
 Examples of such temporally consistent noise are found on the project page of [our previous work](/AppearanceFreeActionRecognition).
 Below we show examples of input video, motion consistent noise, the saliency maps, and the final masked output that is used in the action recognition networks.
 
+<center><em>Examples of intermediate results, and the final obfuscated output.</em></center>
 <!-- Slideshow container -->
 <div class="slideshow-container">
 
