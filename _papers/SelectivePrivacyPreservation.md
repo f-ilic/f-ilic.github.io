@@ -5,7 +5,7 @@ subheading: <b>Filip Ilic</b>, He Zhao, Thomas Pock, Richard Wildes
 venue: CVPR
 published: 2024 Conference on Computer Vision and Pattern Recognition
 date: 2024-01-01  
-paper: TODO
+paper: https://arxiv.org/pdf/2403.12710.pdf
 code: https://github.com/f-ilic/SelectivePrivacyPreservation
 permalink: /SelectivePrivacyPreservation
 ---
