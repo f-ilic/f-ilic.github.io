@@ -43,6 +43,20 @@ table td {
     font-size: 9pt;
 }
 
+a {
+    text-decoration: none;
+    /* Remove underline */
+    // color: initial;
+    /* Use default text color */
+}
+
+/* Style for links when hovering */
+a:hover {
+    color: orange;
+    text-decoration: none;
+    /* Change color to orange */
+}
+
 table {
     border: none;
 }
@@ -258,7 +272,7 @@ body {
     padding-right: 1rem;
     padding-top: 0.15rem;
     font-size: 10pt;
-    color: $teal-dark;
+    // color: $teal-dark;
     display: inline-block;
     // position: absolute;
     // bottom: 0;
@@ -270,7 +284,8 @@ body {
     padding-right: 1rem;
     padding-top: 0.15rem;
     font-size: 10pt;
-    background-color: $teal-light;
+    // background-color: $teal-light;
+    color: orange;
     display: inline-block;
 }
 
