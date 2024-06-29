@@ -29,8 +29,21 @@ Technical Student at <a href='https://cms.cern/'>CMS Experiment - CERN - Geneva<
 {% for paper in site.papers reversed%}
 <table>
   <tr>
-    <td width="10%"><div class="badge">{{paper.venue}}</div></td>
-    <td width="90%" style="padding: 0px">  
+    <!-- <td width="25%"><div class="badge">{{paper.venue}}</div></td> -->
+      <td width="35%">
+      {% assign file_extension = paper.teaser | split: '.' | last | downcase %}
+      {% if file_extension == "mp4" or file_extension == "webm" or file_extension == "ogg" %}
+    <video autoplay loop muted playsinline style="width: 100%;">
+      <source src="{{ paper.teaser }}" type="video/{{ file_extension }}">
+      Your browser does not support the video tag.
+    </video>
+  {% elsif file_extension == "gif" or file_extension == "jpg" or file_extension == "jpeg" or file_extension == "png" %}
+    <img src="{{ paper.teaser }}" style="width: 100%;">
+  {% else %}
+    <p>Unsupported media type.</p>
+  {% endif %}
+  </td>
+    <td width="65%" style="padding: 0px">  
       <div class="paper-info">
       <div class="paper-head">
         <span class="paper-title">{{paper.title}}</span>
@@ -52,6 +65,7 @@ Technical Student at <a href='https://cms.cern/'>CMS Experiment - CERN - Geneva<
     </td>
   </tr>
 </table>    
+<hr>
 {% endfor %}
 
 <!-- 

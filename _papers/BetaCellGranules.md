@@ -6,4 +6,5 @@ venue: OAGM
 published: 2021 Computer Vision and Pattern Analysis Across Domains
 paper: papers/T1D/T1D.pdf
 date: 2021-01-01  
+teaser: papers/T1D/teaser.png
 ---

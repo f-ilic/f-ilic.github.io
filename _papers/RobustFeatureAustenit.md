@@ -8,6 +8,7 @@ published: 2021 Computer Vision and Pattern Analysis Across Domains
 paper: papers/RobustFeatureAustenit/ilic21RobustFeatureAustenit.pdf
 code: https://github.com/f-ilic/RobustFeatureAustenit
 date: 2021-01-01  
+teaser: papers/RobustFeatureAustenit/teaser.png
 ---
 
 <center>

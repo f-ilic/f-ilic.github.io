@@ -211,8 +211,9 @@ hr {
 }
 
 body {
-    font-size: 16px;
+    font-size: 14px;
     color: $grey-color-dark;
+    font-family: 'Helvetica';//,'Helvetica', 'Arial', sans-serif;
 }
 
 
@@ -259,6 +260,8 @@ body {
     font-size: 10pt;
     color: $teal-dark;
     display: inline-block;
+    // position: absolute;
+    // bottom: 0;
 }
 
 .paper-links a:hover {

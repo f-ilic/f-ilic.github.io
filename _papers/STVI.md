@@ -8,6 +8,7 @@ exclude: true
 published: 2020 Winter Conference on Applications of Computer Vision
 paper: papers/STVI/ilic20stvi.pdf
 date: 2020-01-01  
+teaser: papers/STVI/teaser.mp4
 ---
 
 <!-- We show how to obtain a scalable representation of objects, which preserves their decomposition into parts. We extract features from appearance and motion, select the appropriate scale in spatio-temporal Gaussian scale space, and perform clustering. -->

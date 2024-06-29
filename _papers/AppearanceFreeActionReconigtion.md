@@ -8,6 +8,7 @@ published: 2022 European Conference on Computer Vision
 paper: https://arxiv.org/pdf/2207.06261.pdf
 code: https://github.com/f-ilic/AppearanceFreeActionRecognition
 date: 2022-01-01  
+teaser: papers/AppearanceFreeActionReconigtion/PommelHorse.gif
 ---
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 

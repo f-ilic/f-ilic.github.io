@@ -8,6 +8,7 @@ date: 2024-01-01
 paper: https://arxiv.org/pdf/2403.12710.pdf
 code: https://github.com/f-ilic/SelectivePrivacyPreservation
 permalink: /SelectivePrivacyPreservation
+teaser: papers/SelectivePrivacyPreservation/saliency_teaser.mp4
 ---
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <div style="display: flex; justify-content: flex-start">
