@@ -202,6 +202,11 @@ table td { border: none; vertical-align: top; }
 
 .footnotesize { font-size: 9pt; }
 
+a { text-decoration: none; /* Remove underline */ /* Use default text color */ }
+
+/* Style for links when hovering */
+a:hover { color: orange; text-decoration: none; /* Change color to orange */ }
+
 table { border: none; }
 
 tr.no-bottom-border td { border-bottom: none; }
@@ -268,9 +273,9 @@ body { font-size: 14px; color: #424242; font-family: 'Helvetica'; }
 
 .paper-info .section { margin-top: 10px; font-style: italic; display: block; }
 
-.paper-links a { border: 1px solid; padding-left: 1rem; padding-right: 1rem; padding-top: 0.15rem; font-size: 10pt; color: #356a7e; display: inline-block; }
+.paper-links a { border: 1px solid; padding-left: 1rem; padding-right: 1rem; padding-top: 0.15rem; font-size: 10pt; display: inline-block; }
 
-.paper-links a:hover { border: 1px solid; padding-left: 1rem; padding-right: 1rem; padding-top: 0.15rem; font-size: 10pt; background-color: #c9e0e8; display: inline-block; }
+.paper-links a:hover { border: 1px solid; padding-left: 1rem; padding-right: 1rem; padding-top: 0.15rem; font-size: 10pt; color: orange; display: inline-block; }
 
 h0 { display: inline; font-size: 22pt; }
 
