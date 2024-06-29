@@ -254,7 +254,7 @@ hr { height: 1px; border: none; background-color: #acacac; margin-bottom: 16px; 
 
 .svg-icon circle { stroke: #4691f6; stroke-width: 1; }
 
-body { font-size: 16px; color: #424242; }
+body { font-size: 14px; color: #424242; font-family: 'Helvetica'; }
 
 .content-container { padding: 100px; }
 
