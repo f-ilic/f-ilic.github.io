@@ -65,7 +65,6 @@ Technical Student at <a href='https://cms.cern/'>CMS Experiment - CERN - Geneva<
     </td>
   </tr>
 </table>    
-<hr>
 {% endfor %}
 
 <!-- 
