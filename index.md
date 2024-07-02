@@ -8,7 +8,7 @@ order: 1
 
 
 
-## Mini-CV 
+## About
 ---
 <p>
 PhD at <a href="https://www.tugraz.at/institute/icg/research/team-pock">Vision, Learning & Optimization Group - ICG - TU Graz </a><br>
