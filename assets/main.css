@@ -225,15 +225,15 @@ hr { height: 1px; border: none; background-color: #acacac; margin-bottom: 16px; 
 
 ​ .svg-icon { vertical-align: middle; }
 
-.svg-social-icon { width: 24px; height: 24px; margin: 5px; opacity: 0.8; border: 2px solid white; border-radius: 50%; border-color: rgba(255, 255, 255, 0.5); transition: background-color .05s, transform .05s ease-in-out; }
+.svg-social-icon { width: 24px; height: 24px; margin: 5px; opacity: 0.8; border: 2px solid white; border-radius: 50%; border-color: rgba(0, 0, 0, 0.05); transition: background-color .05s, transform .05s ease-in-out; }
 
-.svg-social-icon:hover { opacity: 1; transform: scale(1.2); border-color: white; transition: background-color .05s, transform .05s ease-in-out; }
+.svg-social-icon:hover { opacity: 1; transform: scale(1.2); border-color: orange; transition: background-color .05s, transform .05s ease-in-out; }
 
-.circle-img { border-radius: 70%; border: 3px solid white; max-width: 110; max-height: 110px; width: auto; height: auto; border-color: rgba(255, 255, 255, 0.5); transition: transform .1s ease-in-out; }
+.circle-img { border-radius: 70%; border: 3px solid white; max-width: 110; max-height: 110px; width: auto; height: auto; border-color: rgba(0, 0, 0, 0.05); transition: transform .1s ease-in-out; }
 
-.circle-img-cv { border-radius: 70%; border: 4px solid white; display: block; max-width: 120px; max-height: 120px; width: auto; height: auto; border-color: rgba(255, 255, 255, 0.5); transition: transform .1s ease-in-out; }
+.circle-img-cv { border-radius: 70%; border: 4px solid white; display: block; max-width: 120px; max-height: 120px; width: auto; height: auto; border-color: orange; transition: transform .1s ease-in-out; }
 
-.circle-img:hover { border-radius: 70%; width: auto; height: auto; border-color: white; transition: transform .1s ease-in-out; }
+.circle-img:hover { border-radius: 70%; width: auto; height: auto; border-color: orange; transition: transform .1s ease-in-out; }
 
 .subheading { font-size: 10pt; margin-bottom: 10px; color: #356a7e; }
 
@@ -243,13 +243,15 @@ hr { height: 1px; border: none; background-color: #acacac; margin-bottom: 16px; 
 
 .active:hover { box-shadow: 0 2px 0 0 #214897; }
 
-#me-container { background: linear-gradient(120deg, #214897, #4489a2); }
+#me-container { background: linear-gradient(120deg, white, white); padding-bottom: 0px; margin-bottom: 0px; }
 
-#header-name { color: white; font-weight: bold; font-size: 20px; }
+header { background-color: white; border-style: solid; border-color: #e8e8e8; border-width: 1px; margin-bottom: 0px; }
+
+#header-name { color: #424242; font-weight: bold; font-size: 20px; font-family: monospace; }
 
 #header-name-cv { color: #424242; font-weight: bold; font-size: 20px; }
 
-#header-description { color: white; display: block; font-weight: normal; }
+#header-description { color: #424242; display: block; font-weight: normal; font-family: monospace; }
 
 #header-description-cv { color: #424242; display: block; font-weight: bold; }
 
@@ -283,7 +285,7 @@ h1 { display: inline; font-size: 14pt; }
 
 h2 { display: inline; font-size: 12pt; }
 
-.wrapper { background-color: white; border-style: solid; border-color: #e8e8e8; border-radius: 0.5rem; border-width: 1px; }
+.wrapper { background-color: white; border-style: solid; border-color: #e8e8e8; border-width: 1px; }
 
 .badge { color: #fff !important; background-color: #4489a2; padding-left: 1rem; padding-right: 1rem; -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); display: inline-block; vertical-align: top; font-size: 10pt; font-weight: lighter; font-family: monospace; }
 
