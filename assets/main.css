@@ -243,17 +243,19 @@ hr { height: 1px; border: none; background-color: #acacac; margin-bottom: 16px; 
 
 .active:hover { box-shadow: 0 2px 0 0 #214897; }
 
-#me-container { background: linear-gradient(120deg, white, white); padding-bottom: 0px; margin-bottom: 0px; }
+#me-container { background: white; padding-bottom: 0px; margin-bottom: 0px; }
 
 header { background-color: white; border-style: solid; border-color: #e8e8e8; border-width: 1px; margin-bottom: 0px; }
 
-#header-name { color: #424242; font-weight: bold; font-size: 20px; font-family: monospace; }
+#header-name { color: #424242; font-size: 24px; font-family: monospace; }
 
 #header-name-cv { color: #424242; font-weight: bold; font-size: 20px; }
 
 #header-description { color: #424242; display: block; font-weight: normal; font-family: monospace; }
 
 #header-description-cv { color: #424242; display: block; font-weight: bold; }
+
+code { font-size: 12px; }
 
 .svg-icon { width: 1em; height: 1em; }
 
@@ -269,9 +271,9 @@ body { font-size: 14px; color: #424242; font-family: 'Helvetica'; }
 
 .paper-info .paper-title { display: block; font-weight: bold; }
 
-.paper-info .paper-authors { display: block; color: #356a7e; font-size: 10pt; }
+.paper-info .paper-authors { display: block; font-size: 10pt; }
 
-.paper-info .paper-published { display: block; font-size: 10pt; }
+.paper-info .paper-published { display: block; color: #356a7e; font-size: 10pt; }
 
 .paper-info .section { margin-top: 10px; font-style: italic; display: block; }
 
@@ -287,7 +289,7 @@ h2 { display: inline; font-size: 12pt; }
 
 .wrapper { background-color: white; border-style: solid; border-color: #e8e8e8; border-width: 1px; }
 
-.badge { color: #fff !important; background-color: #4489a2; padding-left: 1rem; padding-right: 1rem; -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); display: inline-block; vertical-align: top; font-size: 10pt; font-weight: lighter; font-family: monospace; }
+.badge { color: #fff !important; background-color: #4489a2; border: solid 1px; border-color: black; padding-left: 0.5em; padding-right: 0.5em; margin-left: -5px; margin-top: -5px; display: inline-block; vertical-align: top; font-size: 10pt; font-weight: lighter; font-family: monospace; position: absolute; }
 
 /* Slideshow container */
 .slideshow-container { max-width: 1000px; position: relative; margin: auto; }
