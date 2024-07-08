@@ -11,7 +11,7 @@ order: 1
 ## About
 ---
 <p>
-My interests are Computer Vision and Machine Learning. I investigated the modeling and importance of the temporal component in deep video understanding models during my PhD. However, I was also lucky enough to have wonderful collaborators and projects that allowed me to work on other topics such as denoising, representation learning, and implicit neural representations.
+My interests are Computer Vision and Machine Learning. I investigated motion in videos — its modeling and importance — in deep video understanding models during my PhD. However, I was also lucky enough to have wonderful collaborators and projects that allowed me to work on other topics such as denoising, representation learning, and implicit neural representations.
 </p>
 
 <p>
