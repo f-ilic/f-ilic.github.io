@@ -11,6 +11,13 @@ order: 1
 ## About
 ---
 <p>
+My interests are Computer Vision and Machine Learning. I investigated the modeling and importance of the temporal component in deep video understanding models during my PhD. However, I was also lucky enough to have wonderful collaborators and projects that allowed me to work on other topics such as denoising, representation learning, and implicit neural representations.
+</p>
+
+<p>
+Before that, I worked on my other passion: High Energy Physics and related monitoring tools at CERN for the CMS experiment.
+</p>
+<p>
 PhD at <a href="https://www.tugraz.at/institute/icg/research/team-pock">Vision, Learning & Optimization Group - ICG - TU Graz </a><br>
 <!-- Thesis: Action recognition & Spatio-Temporal Modeling<br> -->
 

@@ -263,6 +263,7 @@ body {
     // font-size: 12pt;
     display: block;
     font-weight: bold;
+    margin-bottom: 0.5em;
 }
 
 
@@ -295,6 +296,7 @@ body {
     display: inline-block;
     // position: absolute;
     // bottom: 0;
+    margin-top: 0.5em;
 }
 
 .paper-links a:hover {
@@ -303,9 +305,10 @@ body {
     padding-right: 1rem;
     padding-top: 0.15rem;
     font-size: 10pt;
-    // background-color: $teal-light;
+    background-color: $wrapper-bg;
     color: orange;
     display: inline-block;
+    margin-top: 0.5em;
 }
 
 h0 {
@@ -334,6 +337,7 @@ h2 {
 .badge {
     color: #fff !important;
     background-color: $teal-mid;
+    // background-color: orange;
     border: solid 1px;
     border-color: black;
     // background-color: red;
@@ -346,9 +350,9 @@ h2 {
     display: inline-block;
     // display: absolute;
     vertical-align: top;
-    font-size: 10pt;
-    font-weight: lighter;
-    font-family: monospace;
+    font-size: 8pt;
+    // font-weight: lighter;
+    font-family: "Monaco";
     position:absolute;
     // transform: rotate(-45deg);
 }
