@@ -3,14 +3,18 @@ layout: post
 title: Toy Rasterizer with Projective Geometric Algebra (PGA)
 permalink: /misc/pgarasterizer
 subheading: Vectors, Bivectors, Rotors and Motors in Javascript
+# published: true
+teaser: misc/pga/pgaanim.mp4
+venue: Interactive demos
 ---
 
 
 <!-- <script SRC="https://unpkg.com/ganja.js"></script> -->
-<script src="ganja.js"></script>
+<script src="pga/ganja.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 ganja.js project page [here](https://enkimute.github.io/) and demos [here](https://enkimute.github.io/ganja.js/examples/coffeeshop.html) 
+
 
 # Clifford Algebra
 
@@ -29,7 +33,7 @@ The goal of this page is to show in a structured way an introduction on how to w
 We will start with simple points, and lines, and will conclude our journey with a working rasterizer using only projective geometric algebra.
 
 We can then implement a camera center (`eye_point`).
-calcualte the intersection of every ray with the projection plane.
+calculate the intersection of every ray with the projection plane.
 If that ray is hit we color that point black. 
 This already gives us the shape of the object.
 
@@ -42,7 +46,13 @@ This already gives us the shape of the object.
     var image_plane = ray << point(0, 0, 1)
 </pre>
 <center><div id="rasterize"></div></center>
-here is the divider
+
+
+So now we have rasterized the triangle defined by v0 v1 and v2 on the screen.
+Next we extend the triangle into a pyramid, essentially 4 triangles that all share a point at the top.
+
+Additionally instead of just performing a yes/no check if a ray hits a triangle and coloring the point black if it does hit the triangle, we now also assign a color the the point based on the distance to the edges. The vertex colors are shown in the top canvas.
+**Dont forget that the canvas is interactive.** You can drag the camera center $$E$$ with you mouse, and you can drag the view camera as well.
 
 <pre class="prettyprint">
     var point = (x, y, z) => 1e123 + x * 1e012 + y * 1e013 + z * 1e023;
@@ -298,3 +308,16 @@ Algebra(3, 0, 1, () => {
 });
 
 </script>
+
+I find it fascinating how elegantly linear algebra and concepts that we have learned starting in school such as normal vectors and bivectors are in many cases a much more natural way to express orientation and direction than what we are genearally used to.
+This toy rasterizer example written in ganja.js serves as a nice self contained example to maybe get someone interested in this branch of math.
+
+All of the example code that is shown can be pasted into the ganja.js playground and exected there.
+Don't hesitate to send me a link or some code if you build something cool, if this post served as any sort of inspiration to get your own little toy example running!
+
+If you want to try to incorporate Clifford algebra and other related concepts in your high performance code there a are a few really neat c++ and rust implemntations of PGA. The most notable is probably klein (link here).
+
+The bivector.net website is generally up to date with this type of stuff and should be your go-to reference, for all things PGA.
+
+---
+<a href="https://bivector.net/"><img src="pga/cheatsheet.png"></a>

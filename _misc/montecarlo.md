@@ -3,6 +3,9 @@ layout: post
 title: A visual introduction to Monte Carlo Sampling
 permalink: /misc/montecarlo
 subheading: Importance, Rejction, and Inversion Sampling
+teaser: misc/montecarlo/teaser.gif
+# published: true
+venue: 10 minute read
 ---
 
 
@@ -23,13 +26,14 @@ So, this means we have the following statements to work with:
 * Area of the circle: $$A_o = \pi$$
 
 The question boils down to:
-> Is the sampled point $$\mathbf{p} = (x,y)$$ inside of the the circle ($$x^2 + y^2 < 1$$)?
+*Is the sampled point $$\mathbf{p} = (x,y)$$ inside of the the circle ($$x^2 + y^2 < 1$$)?*
 
 
 An important observation is that the the ratio of the areas of  of both  $$\frac{A_o}{A_\square}$$ is proportional to the ratio of sampled points, $$\textit{i.e.} \frac{\color{blue}{\#o}}{\color{red}{\#\square} + \color{blue}{\#o}}$$
 
 
-![Estimating Pi](pi.gif)
+<img src="pi.gif" style='border: 1px solid #E8E8E8'>
+<!-- ![Estimating Pi](pi.gif) -->
 
 If we write down the ratios of the two areas we see that $$\frac{A_o}{A_\square} = \frac{\pi}{4}$$.
 This means that if we want to get an estimate for $$\pi$$ we just have to compute $$\hat{\pi} = 4\cdot\frac{\color{blue}{\#o}}{\color{red}{\#\square} + \color{blue}{\#o}}$$.
@@ -50,7 +54,7 @@ Goal: calculate $$\mathop{\mathbb{E}}[f(x)] = \int f(x)~p(x)~d{x}$$
 
 <input type="checkbox" id="toggleImages"> Show Expectation <i>(CLICK ME!)</i>
 <div>
-<img src="fp.svg" id="fp" alt="fp">
+<img src="fp.svg" id="fp" alt="fp" style='border: 1px solid #E8E8E8'>
 <img src="expectation.svg" id="expectation" alt="expectation" style="display:none;">
 </div>
 
@@ -70,12 +74,7 @@ Width = $$2 \sqrt(\mathbb{V}_p[s])$$
 $$\mathbb{V}_p[s] = \frac{1}{N}\mathbb{V}_p[f(x)]\qquad$$   -> **Variance Decreases with number of samples!**
 
 
-![expectation](expectation.gif)
-
-
-
-
-
+<img src="expectation.gif" style='border: 1px solid #E8E8E8'>
 
 
 # Central Limit Theorem
@@ -123,7 +122,8 @@ $$\mathbb{V}_p[f(x)] = \frac{\sigma^2_f}{N} = \mathcal{O} \frac{1}{N}\qquad$$   
 We can sample any functional form which we can evaluate such as for example a gaussian.
 We do not need to know how to sample from a gaussian, but just from a uniform distribution $$\mathcal{U_{[0,1]}}$$.
 
-![Rejection Sampling gif](rejection.svg)
+<!-- ![Rejection Sampling gif]() -->
+<img src="rejection.svg" style='border: 1px solid #E8E8E8'>
 
 
 Basic Idea same as the $$\pi$$ example!
@@ -137,8 +137,8 @@ Another thing to consider is that the examples shown here are 1Dimensional. This
 What this means, is that we need to be smarter about it! Rejection sampling alone, for many problems does not suffice, but is always something to keep in the back of your mind.
 
 
-![Rejection Sampling](rejection_sampling.svg)
-
+<!-- ![Rejection Sampling](rejection_sampling.svg) -->
+<img src="rejection_sampling.svg" style='border: 1px solid #E8E8E8'>
 
 1) Take a distribution $Env$ that we know how to sample from (Uniform 😬)
 2) Scale it so it covers the target distribution
@@ -152,8 +152,8 @@ What this means, is that we need to be smarter about it! Rejection sampling alon
 **PDF** *(Probability Density Function)*
 
 
-![pdf cdf](pdf_cdf.svg)
-
+<!-- ![pdf cdf](pdf_cdf.svg) -->
+<img src="pdf_cdf.svg" style='border: 1px solid #E8E8E8'>
 
 $$
 f_X(x) = \begin{cases}
@@ -194,7 +194,9 @@ In the end this leaves us with a rather elegant solution, such that we only need
 
 
 
-![inversion sampling](inversion.gif)
+<!-- ![inversion sampling](inversion.gif) -->
+<img src="inversion.gif" style='border: 1px solid #E8E8E8'>
+
 So again just by knowing how to sample from $$\mathcal{U_{[0,1]}}$$ and the CDF we can draw samples from the PDF. _Pretty Cool!_
 
 
@@ -236,7 +238,8 @@ $$
 \end{aligned}
 $$
 
-![importance sampling](importance.gif)
+<!-- ![importance sampling](importance.gif) -->
+<img src="importance.gif" style='border: 1px solid #E8E8E8'>
 
 
 
@@ -247,20 +250,19 @@ Unbiased $$\mathbb{E}_q[r] = \mathbb{E}_p[f(x)]$$
 Same or better variance $$\mathbb{V}_q[r] = \frac{1}{N} \mathbb{V}_q \left[\frac{p(x)}{q(x)} f(x) \right]$$
 * choose $$q$$ such that $$\mathbb{V}_q \left[\frac{p(x)}{q(x)} f(x) \right] < \mathbb{V}_p[f(x)]$$
 
-We can achieve this by chosing $$q(x)$$ to be high were $$\|p(x)f(x)\|$$ is high.
+We can achieve this by choosing $$q(x)$$ to be high were $$\|p(x)f(x)\|$$ is high.
 
-
-### Further Reading
 --- 
 
+### Further Reading
 
-INTRO
+Intro
 * [Intro by Ian Murray](https://www.youtube.com/watch?v=Em6mQQy4wYA)
 * [Another intro by Ian Murray](https://www.youtube.com/watch?v=_v4Eb09qp7Q)
 * [Betancourt, Introduction to Hamiltonian Monte Carlo](https://arxiv.org/pdf/1701.02434.pdf)
 * [Murphy, Advanced Topics in Probabilistic ML, Chapters 11 & 12](https://probml.github.io/pml-book/book2.html#toc)
 
-DETAILS
+Details
 * [Bishop online](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
 * [Galton board as a Markov Chain](https://vknight.org/blog/posts/galton-board/)
 * [Inversion / Box Muller](https://www.youtube.com/watch?v=Vd21DUyVccA&ab_channel=Anthroporraistes)

@@ -75,22 +75,36 @@ Technical Student at <a href='https://cms.cern/'>CMS Experiment - CERN - Geneva<
 </table>    
 {% endfor %}
 
-<!-- 
-## Miscellaneous
+
+## Misc.
 ---
 
 {% for post in site.misc %}
 <table>
   <tr>
-    <td width="100%" style="padding: 0px">  
+    <td width="55%" style="padding: 0px">  
       <div class="paper-info">
       <div class="paper-head">
       <a href="{{ post.url | relative_url }}"></a>
         <span class="paper-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
-        <span class="paper-published">{{ post.subheading }}</span>
+        <span class="paper-author">{{ post.subheading }}</span>
       </div>
       </div>
     </td>
+        <td width="45%">
+      <div class="badge">{{post.venue}}</div>
+      {% assign file_extension = post.teaser | split: '.' | last | downcase %}
+      {% if file_extension == "mp4" or file_extension == "webm" or file_extension == "ogg" %}
+    <video autoplay loop muted playsinline style="width: 100%;">
+      <source src="{{ post.teaser }}" type="video/{{ file_extension }}">
+      Your browser does not support the video tag.
+    </video>
+  {% elsif file_extension == "gif" or file_extension == "jpg" or file_extension == "jpeg" or file_extension == "png" %}
+    <img src="{{ post.teaser }}" style="width: 100%;">
+  {% else %}
+    <p>Unsupported media type.</p>
+  {% endif %}
+  </td>
   </tr>
 </table>  
-{% endfor %} -->
+{% endfor %}

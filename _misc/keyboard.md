@@ -3,19 +3,22 @@ layout: post
 title: Remapping keys
 permalink: /misc/keyboard
 subheading: System wide key remapping on Linux and MacOS
+venue: Instructions
+teaser: misc/keyboard/keyboard.jpg
 ---
 
 
 Text navigation without having to constantly move my hands off keyboard to the mouse is important to me.
-To achieve this I'll show you how to remap your capslock key to do something useful, i.e. an additional modifier key.
+To achieve this we will remap the capslock key to do something useful, i.e. an additional modifier key.
+My particular goal is to set up capslock as a modifier key so **j,k,l,i** + **capslock** act as though **left,down,right, up** were pressed. Same for **Home, End, Backspace, Delete, Return**, with some other keys in the same area. 
 
-The goal is to set up capslock as a modifier key so **j,k,l,i** + **capslock** act as though **left,down,right, up** were pressed. Same for **Home, End, Backspace, Delete, Return**, with some other keys in the same area. 
+A gist that you can just download and run, which will put everything where it should be is here: <a href="https://gist.github.com/f-ilic/5d14f13f2b6d7237eac255cbd9498466">My Keyboard Remapping Gist </a>.
+The following post, is just going to explain how to go about remapping keys very deep in Linux, and a more elegant solution in MacOs.
+
+
 
 # Linux 
 ---
-**TLDR:**
-If you just want the files and a readme: <a href="https://gist.github.com/f-ilic/5d14f13f2b6d7237eac255cbd9498466">My Keyboard Remapping Gist </a>
-
 
 There are multiple ways to go around setting caps as a modifier.
 Your options are:
@@ -75,7 +78,6 @@ xset r 46 # l
 xset r 47 # ;
 ```
 
-All of the details are explained in <a href="https://gist.github.com/f-ilic/5d14f13f2b6d7237eac255cbd9498466">My Keyboard Remapping Gist </a>.
 Set the repeat rate script as a startup script, so that it is triggered on login.
 
 # MacOS
@@ -129,7 +131,6 @@ remap({'alt'}, ';', pressFn('forwarddelete'))
 remap({'alt', 'cmd'}, ';', pressFn({'cmd'}, 'delete'))
 remap({'alt'}, 'space', pressFn('return'))
 ```
-<a class="boxed" href="/posts/keyboard/hammerspoon_cfg.txt">Hammerspoon config</a>
 
 MacOS allows you to rebind `capslock` to any other modifier key in the keyboard settings. I personally set it to `alt`, but its not necessary to do.
 

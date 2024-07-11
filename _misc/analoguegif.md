@@ -2,5 +2,7 @@
 layout: post
 title: The Analogue gif
 permalink: /misc/analoguegif
-subheading: A cute present, or a demo piece on the perception of temporal consistency
+subheading: A demo piece on the perception of temporal consistency
+teaser: misc/analoguegif/teaser.mp4
+venue: Instructions
 ---
