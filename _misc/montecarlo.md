@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A visual introduction to Monte Carlo sampling
-permalink: /misc/montecarlo
+permalink: /montecarlo
 subheading: A visual and theoretical introduction to Monte Carlo sampling methods, emphasizing their utility in approximating expectations and integrations where direct computation is challenging. We take a closer look at Importance, Rejection, and Inversion Sampling.
 teaser: misc/montecarlo/teaser.gif
 # published: true

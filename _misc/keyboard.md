@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Remapping keys
-permalink: /misc/keyboard
+permalink: /keyboard
 subheading: System wide key remapping on Linux and MacOS
 venue: Nerd Alert
 teaser: misc/keyboard/keyboard.jpg

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A DIY Galton Board
-permalink: /misc/galtonboard
+permalink: /galtonboard
 subheading: Random Walks, Central Limits, and a sneaky Gaussian
 published: false
 venue: Physicalization

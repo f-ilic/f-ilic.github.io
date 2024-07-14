@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A Toy Rasterizer with Projective Geometric Algebra (PGA)
-permalink: /misc/pgarasterizer
+permalink: /pgarasterizer
 subheading: Vectors, Bivectors, Rotors and Motors in Javascript
 published: false
 teaser: misc/pga/pgaanim.mp4

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Analogue GIF
-permalink: /misc/analoguegif
+permalink: /analoguegif
 subheading: A demo piece on the perception of temporal consistency.<br>The analogue GIF explores human perception of motion from static noise patterns, revealing that effective motion detection persists even with imperfect image alignment. It also shows how robust our visual processing abilities are.
 teaser: misc/analoguegif/teaser.mp4
 venue: Physicalization
