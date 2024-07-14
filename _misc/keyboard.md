@@ -3,8 +3,9 @@ layout: post
 title: Remapping keys
 permalink: /misc/keyboard
 subheading: System wide key remapping on Linux and MacOS
-venue: Instructions
+venue: Nerd Alert
 teaser: misc/keyboard/keyboard.jpg
+date: 2020-01-01
 ---
 
 
@@ -13,7 +14,7 @@ To achieve this we will remap the capslock key to do something useful, i.e. an a
 My particular goal is to set up capslock as a modifier key so **j,k,l,i** + **capslock** act as though **left,down,right, up** were pressed. Same for **Home, End, Backspace, Delete, Return**, with some other keys in the same area. 
 
 A gist that you can just download and run, which will put everything where it should be is here: <a href="https://gist.github.com/f-ilic/5d14f13f2b6d7237eac255cbd9498466">My Keyboard Remapping Gist </a>.
-The following post, is just going to explain how to go about remapping keys very deep in Linux, and a more elegant solution in MacOs.
+The following post, is just going to explain how to go about remapping on the keycode level in Linux, and a userspace solution in MacOs that uses a Lua engine to expose parts of the system API.
 
 
 

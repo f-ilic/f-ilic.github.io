@@ -255,15 +255,26 @@ body {
 }
 
 //  ---------------- Published Paper Stuff
+
+.icon-size {
+    height: 1.5em;
+    /* Sets the height to match the font size of the surrounding text */
+    width: auto;
+    /* Keeps the width proportional to the new height */
+    vertical-align: middle;
+    /* Aligns the middle of the image with the middle of the text */
+}
+
 .paper-info .paper-head {
     margin-bottom: 0px;
 }
 
 .paper-info .paper-title {
-    // font-size: 12pt;
+    font-size: 12pt;
     display: block;
-    font-weight: bold;
+    // font-weight: bold;
     margin-bottom: 0.5em;
+    margin-top:0.5em;
 }
 
 
@@ -275,7 +286,8 @@ body {
 
 .paper-info .paper-published {
     display: block;
-    color: $teal-dark;
+    // color: $teal-dark;
+    // font-style: italic;
     font-size: 10pt;
 }
 
@@ -287,8 +299,8 @@ body {
 }
 
 .paper-links a {
-    border: 1px solid;
-    padding-left: 1rem;
+    // border: 1px solid;
+    // padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.15rem;
     font-size: 10pt;
@@ -297,11 +309,12 @@ body {
     // position: absolute;
     // bottom: 0;
     margin-top: 0.5em;
+    // color: $grey-dark;
 }
 
 .paper-links a:hover {
-    border: 1px solid;
-    padding-left: 1rem;
+    // border: 1px solid;
+    // padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.15rem;
     font-size: 10pt;

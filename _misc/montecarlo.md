@@ -1,11 +1,12 @@
 ---
 layout: post
-title: A visual introduction to Monte Carlo Sampling
+title: A visual introduction to Monte Carlo sampling
 permalink: /misc/montecarlo
-subheading: Importance, Rejction, and Inversion Sampling
+subheading: A visual and theoretical introduction to Monte Carlo sampling methods, emphasizing their utility in approximating expectations and integrations where direct computation is challenging. We take a closer look at Importance, Rejection, and Inversion Sampling.
 teaser: misc/montecarlo/teaser.gif
 # published: true
-venue: 10 minute read
+venue: Teaching
+date: 2024-02-01
 ---
 
 
@@ -15,7 +16,7 @@ venue: 10 minute read
 
 # Monte Carlo "Hello World"
 ---
-As is tradition with all Monte Carlo intuition posts we start by estimating $$\pi$$ by throwing darts at a circle inscribed in a square.
+We'll start with an intuitive example of estimating $$\pi$$ by throwing darts at a circle inscribed in a square.
 We chose a square with side lengths $$2$$, and inscribe a circle of radius $$1$$.
 We also have to assume that our thrown darts always hit inside of the square at a point $$\mathbf{p} = (x,y)$$, such that $$x$$ and $$y$$ are $$\textit{iid}$$ and drawn from a Uniform distribution $$\mathcal{U}$$.
 
@@ -44,40 +45,41 @@ This little toy example is of course only usefull for illustrative purposes, but
 # What are Monte Carlo methods for?
 ---
 
-
-
-
-
-
-Goal: calculate $$\mathop{\mathbb{E}}[f(x)] = \int f(x)~p(x)~d{x}$$
-
+Monte Carlo(MC) methods can be used to estimate the Expectation $$\mathbb{E}$$ of functions that might be probabilistic in nature, i.e., calculating $$\mathop{\mathbb{E}}[f(x)] = \int f(x)~p(x)~d{x}$$.
 
 <input type="checkbox" id="toggleImages"> Show Expectation <i>(CLICK ME!)</i>
 <div>
 <img src="fp.svg" id="fp" alt="fp" style='border: 1px solid #E8E8E8'>
-<img src="expectation.svg" id="expectation" alt="expectation" style="display:none;">
+<img src="expectation.svg" id="expectation" alt="expectation" style="border: 1px solid #E8E8E8; display:none;">
 </div>
 
-In general hard / impossible to compute the full $$p(x)f(x)$$ -> **We can not compute the integral this way**
+We have to keep in mind that for some problems its is intractable to compute the expression of interest, $$p(x)f(x)$$. And have to resort to some clever way of estimating the expectation.
 
+The idea behind MC is to approximate the expectation as 
 
-Idea: approximate it with $$\mathbb{E}[f(x)] \approx \underbrace{\frac{1}{N} \sum_{i=1}^N(f(x_i))}_{s}, ~~~\text{where  } x_i \sim p(x)$$
+$$\mathbb{E}[f(x)] \approx \underbrace{\frac{1}{N} \sum_{i=1}^N(f(x_i))}_{s}, ~~~\text{where  } x_i \sim p(x)$$
 
 
 <!-- ![expectation](expectation.png) -->
 
 
+From this formulation it is possible to derive a few interesting things that lead straight to the desirable property of *more samples => less variance in the estimation*.
+<!-- Width = $$2 \sqrt(\mathbb{V}_p[s])$$ -->
 
 
-Width = $$2 \sqrt(\mathbb{V}_p[s])$$
+$$\mathbb{V}_p[s] = \frac{1}{N}\mathbb{V}_p[f(x)]\qquad$$  
 
-$$\mathbb{V}_p[s] = \frac{1}{N}\mathbb{V}_p[f(x)]\qquad$$   -> **Variance Decreases with number of samples!**
 
+This, in effect means that the variance decreases with the number of samples, as is also shown in the figure below. 
+What you can see in the figure below is drawing a point $$x$$ from the $$p(x)$$ and multiplying it with $$f$$ evaluated at $$x$$.
+In the animation the resulting $$y$$ is then projected back on the $$y$$ axis to show the fluctuation of expectation.
 
 <img src="expectation.gif" style='border: 1px solid #E8E8E8'>
 
 
-# Central Limit Theorem
+# Central Limit Theorem and Convergence
+Following our observations from above it is possible to show the convergence by using the central limit theorem.
+The formulas are only shown here for completeness. For the derivation check the resources at the bottom.
 
 $$
 s \rightarrow \mathcal{N}(\sigma, \mu^2) 
@@ -87,17 +89,12 @@ s \rightarrow \mathcal{N}(\sigma, \mu^2)
 \end{cases}
 $$
 
+<!-- In reality you only get one sampling of $$s$$ ! -->
 
-
-In reality you only get one sampling of $s$!
-
-
-
-
-
-# Convergence
 
 $$\mathbb{E}_p[f(x)] = \int p(x) f(x) dx\qquad$$   **Unbiased Estimator**
+
+
 
 $$\mathbb{V}_p[f(x)] = \frac{\sigma^2_f}{N} = \mathcal{O} \frac{1}{N}\qquad$$   **Independent of dimension d**
 
@@ -110,50 +107,63 @@ $$\mathbb{V}_p[f(x)] = \frac{\sigma^2_f}{N} = \mathcal{O} \frac{1}{N}\qquad$$   
 > Anyone who considers arithmetical methods of producing random digits is, of course, in a state of sin.
 > --- Von Neumann (1951)
 
-* How do we sample from arbitrary distributions?
-* How did I produce the $$p(x)$$ samples in the examples above?
+Above we glossed over the fact that it is unclear how one can sample from $$p(x)$$. This section will try to solve that confusion.
+More concretely we will also discuss how we can sample from arbitrary distributions, and we will discover that as long as we get a source of entropy (or a pseudo-random number generator) that can generate a Uniform distribution, other distributions become feasible.
 
+<!-- * How do we sample from arbitrary distributions?
+* How did I produce the $$p(x)$$ samples in the examples above? -->
 
 ## Rejection Sampling 
 
-
-
-
-We can sample any functional form which we can evaluate such as for example a gaussian.
-We do not need to know how to sample from a gaussian, but just from a uniform distribution $$\mathcal{U_{[0,1]}}$$.
+The collary of the above statement is that we can sample any functional form which we can evaluate. An example of such a functional is, for example a gaussian.
+We do not need to know how to sample from a gaussian directly, and will use, as mentioned the Uniform distribution $$\mathcal{U_{[0,1]}}$$.
 
 <!-- ![Rejection Sampling gif]() -->
 <img src="rejection.svg" style='border: 1px solid #E8E8E8'>
 
+The basic idea is similar to the example of estimating $$\pi$$ with the dart board, and is visualized above.
+Sample from your Uniform distribution an $$x$$ and $$y$$ coordinate for a point, and check if it is above or below the gaussian function, our $$f$$.
+If the sample is outside of the gaussian, color it red, otherwise give it a nice blue color. Now reject those red samples and if you got a blue samples, et voila, you just sampled from a gaussian.
 
-Basic Idea same as the $$\pi$$ example!
-
-The downsides are pretty evident; you need to know _something_ about the underlying function that you want to sample from.
+The downsides are pretty evident; you need to know _something_ about the underlying function that you want to sample from, for example its spatial extent (the mathy term for that is *support*).
 It also struggles with inefficiency, if the envelope is chosen badly.
 
-Choosing better fitting evelopes can dramatically increase the runtime of such methods.
+Choosing better fitting envelopes can dramatically increase the runtime of such methods.
 Another thing to consider is that the examples shown here are 1Dimensional. This class of problems generally does not scale nicely with increasing dimensionality, _i.e._ suffers from [Curse of Dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality).
 
 What this means, is that we need to be smarter about it! Rejection sampling alone, for many problems does not suffice, but is always something to keep in the back of your mind.
 
+The summary so far:
+* Take a distribution Envelope that we know how to sample from (Uniform 😬)
+* Scale it so it covers the target distribution
+* Sample from Envelope and reject them if they in the gray area!
 
-<!-- ![Rejection Sampling](rejection_sampling.svg) -->
 <img src="rejection_sampling.svg" style='border: 1px solid #E8E8E8'>
 
-1) Take a distribution $Env$ that we know how to sample from (Uniform 😬)
-2) Scale it so it covers the target distribution
-3) Sample from $Env$ and reject them if they in the gray area!
+
+Note that this is by FAR not the most effective way to sample from a gaussian. 
+Other methods such as Box Muller transform or the Ziggurat algorithm are more efficient for generating samples from a Gaussian distribution. These methods utilize transformations that directly produce values from the desired Gaussian distribution without the need for a rejection step, making them faster and more resource-efficient, especially in cases where high-dimensional data is involved.
+
+The Box-Muller transform starts with two independent uniformly distributed random variables \( U_1, U_2 \) on the interval \( [0, 1] \). It then transforms these into two independent normal random variables \( Z_0 \) and \( Z_1 \) using the following equations:
+
+$$ Z_0 = \sqrt{-2 \log(U_1)} \cos(2\pi U_2) $$
+
+
+$$Z_1 = \sqrt{-2 \log(U_1)} \sin(2\pi U_2)$$
+
+Here, $$ \sqrt{-2 \log(U_1)} $$ changes the radial distribution to fit a normal distribution, and $$ \cos(2\pi U_2) $$ and $$\sin(2\pi U_2)$$ distribute this value evenly along the circumference of a circle, ensuring the resulting variables are normally distributed due to the circular symmetry of the Gaussian function.
+
+<!-- ![Rejection Sampling](rejection_sampling.svg) -->
 
 
 
 
 ## Inversion Sampling
 
-**PDF** *(Probability Density Function)*
+A quick refresher on what a **PDF** (Probability Density Function) is (Left in the Figure):
 
-
-<!-- ![pdf cdf](pdf_cdf.svg) -->
 <img src="pdf_cdf.svg" style='border: 1px solid #E8E8E8'>
+A PDF can give us the probability for a range. In the example above we're given the function $$e^{-x}$$, and want to compute the probability of choosing a value between 1, and 3, given the PDF. This, as you might remember, is done through integration.
 
 $$
 f_X(x) = \begin{cases}
@@ -168,7 +178,7 @@ P(1 < X < 3) &= \int_1^3 f_X(x) dx \\
 \end{aligned}
 $$
 
-**CDF** *(Cumulative Density Function)*
+The **CDF** (Cumulative Density Function), shown in the right plot, allows us to get to the same result without laborious integration.
 
 $$
 \begin{aligned}
@@ -179,7 +189,7 @@ F_X(x) &= P(X \leq x) = \int_{-\infty}^x f_X(x)~dx =  \int_{-\infty}^0 f_X(x)~dx
 \end{aligned}
 $$
 
-
+We just evaluate the antiderivative (*Stammfunktion*) at 1, and 3; subtract one from the other, and we're done:
 
 $$
 \begin{aligned}
@@ -188,39 +198,36 @@ P(1 < X < 3) &= P(X \leq 3) - P(X \leq 1)\\
 \end{aligned}
 $$
 
-In the end this leaves us with a rather elegant solution, such that we only need to evaluate $$F_X$$ at two points to get the area under the curve of $$f(x)$$
-
-
-
+In the end this leaves us with a rather elegant solution, such that we only need to evaluate $$F_X$$ at two points to get the area under the curve of $$f(x)$$.
 
 
 <!-- ![inversion sampling](inversion.gif) -->
+
+In physics and other sciences it is often easier to measure the CDF of a series of events and intractable or impossible to truly observe the PDF.
+However with inversion sampling there's a cool trick:
+We sample uniformly along the $$y$$-axis of the CDF, and project the samples down on the $$x$$ axis:
 <img src="inversion.gif" style='border: 1px solid #E8E8E8'>
+This gives us samples, which can then be again transformed into a PDF with kernel density estimation methods for example.
 
-So again just by knowing how to sample from $$\mathcal{U_{[0,1]}}$$ and the CDF we can draw samples from the PDF. _Pretty Cool!_
+So summarizing: just by knowing how to sample from $$\mathcal{U_{[0,1]}}$$ and the CDF we can draw samples from the PDF. Cool!
 
-
-
+Some considerations:
 * You need access to the CDF
     * Often times this is possible in the real world; think physical experiments
 * Elegent solution that does not do any *unneccessary* computation
-* Does not scale well to higher dimensions
+* Unfortunately this does not scale well to higher dimensions
 
-
+This *not scaling well to higher dimensions* is unfortunately a recurring theme, and is just due to the fact that in higher dimensions any PDF is mostly 0 everywhere. Sad.
 
 
 # Importance Sampling
+The last sampling strategy that we will look at is importance sampling.
+It tries to deal with the following problem: assume that $$p(x)$$ is small in regions where $$f(x)$$ is large.
+When you sample these large values of $$f(x)$$ will be chosen very rarely, as the probability at that point is low. However _if_ a value is chosen the Expectation suddenly jumps more that you might expect. This sudden jump can be described by the Variance $$\mathbb{V}$$.
+Importance sampling is a way to decrease the variance $$\mathbb{V}$$ in such scenarios.
 
-
-The problem: $$f(x)$$ is large **only** in regions where $$p(x)$$ is small.
-The variance $$\mathbb{V}$$ for different evaluations of $$\mathbb{E}_p$$ is large.
-
-
-
-
-# Remember: 
-
-$$\mathop{\mathbb{E}}[f(x)]$$ is what we want to approxmiate
+Remember that we want to approximate $$\mathop{\mathbb{E}}[f(x)]$$.
+We will introduce a secondary distribution $$q(x)$$:
 
 $$
 \begin{aligned}
@@ -230,7 +237,9 @@ $$
 \end{aligned}
 $$
 
-## We can estimate this with samples $$x_i \sim q$$
+The nice thing here is that we can estimate this with samples $$x_i \sim q$$
+
+A visual representation of direct and importance sampling is shown below. We can see that they converge to the same Expectation, but that the Variance is much smaller.
 
 $$
 \begin{aligned}
@@ -251,6 +260,7 @@ Same or better variance $$\mathbb{V}_q[r] = \frac{1}{N} \mathbb{V}_q \left[\frac
 * choose $$q$$ such that $$\mathbb{V}_q \left[\frac{p(x)}{q(x)} f(x) \right] < \mathbb{V}_p[f(x)]$$
 
 We can achieve this by choosing $$q(x)$$ to be high were $$\|p(x)f(x)\|$$ is high.
+However, knowing where  $$\|p(x)f(x)\|$$ is large is not always easy, so choosing an appropriate $$q(x)$$ might be difficult; *oh well*.
 
 --- 
 

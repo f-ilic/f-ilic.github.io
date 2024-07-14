@@ -17,6 +17,8 @@ teaser: papers/RobustFeatureAustenit/teaser.png
 
 <br>
 # Cite
+---
+
 ```bibtex
 @inproceedings{ilic21oagm,
   title={A study on robust feature representations for grain density estimates in austenitic steel},

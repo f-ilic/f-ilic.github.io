@@ -2,7 +2,7 @@
 layout: post
 title: Is Appearance Free Action Recognition Possible?
 permalink: /AppearanceFreeActionRecognition
-subheading: <b>Filip Ilic</b>, Thomas Pock, Richard P. Wildes
+subheading: <b>Filip Ilic</b>, Thomas Pock, Richard Wildes
 venue: ECCV
 published: 2022 European Conference on Computer Vision
 paper: https://arxiv.org/pdf/2207.06261.pdf
@@ -86,8 +86,8 @@ teaser: papers/AppearanceFreeActionReconigtion/PommelHorse.gif
 We investigate state-of-the-art action recognition networks with respect to their performance on a dataset where no static information is present. The video shows random noise animated with motion extracted from real human motion (the UCF101 dataset). We find that optical flow, or a similarly descriptive representation, is <u>not an emergent property</u> of any of the tested <u>action recognition architectures</u>.
 <br>
 
+# Motivation
 ---
-
 
 Related work has shown often that static biases in action recognition datasets and therefore also in the trained models exist.
 A simple experiment demonstrates that singleframe classification performance of a ResNet50 on UCF101 frames yields 65.6% Top-1 accuracy.
@@ -130,6 +130,7 @@ The Appearance Free Dataset (AFD) disentangles static and dynamic video componen
 </div>
 </p>
 
+# Psychophysical Study
 ---
 
 AFD101 is based on UCF101. We provide code and other necessary tools to generate other appearance free videos.
@@ -163,8 +164,8 @@ Using sparse noise, we can create videos that evoke a familiarity, at least in s
 Video modified from: <a href="https://www.youtube.com/watch?v=wG_U5m4FShs">[`Credit`]</a>
 
 
+# Proposed Architecture
 ---
-
 One of our contributions is to show how to build a (new) Two-Stream architecture in a pricipled manner, to encourage a robust modeling of the temporal dimension.
 We call it <b>Explicit-Two-Stream</b>, as one stream <u>explicitly</u> models temporal correlations through the use of RAFT blocks.
 <br>
@@ -181,8 +182,8 @@ This design choise for our network allows for a rich dynamics representation tha
 <br>
 
 
----
 # Cite
+---
 ```bibtex
 @InProceedings{ilic22appearancefree,
 title={Is Appearance Free Action Recognition Possible?},

@@ -9,23 +9,26 @@ layout: default
             <td width="100%" style="padding: 0px">
                 <div class="paper-info">
                     <div class="paper-head">
-                        <span class="paper-title">{{page.title}}</span>
+                        <!-- <span class="paper-title">{{page.title}}</span> -->
+                        <h1>{{page.title}}</h1>
+                        <hr>
                         <span class="paper-authors">{{page.subheading}}</span>
                         <span class="paper-published">{{page.published}}</span>
                     </div>
                 </div>
                 <div class="paper-links">
                     {% if page.code != nil %}
-                    <a href="{{ page.code }}">Code</a>
+                    <a href="{{ page.code }}"><img src="assets/icons/file-code-svgrepo-com.svg"
+                            class='icon-size'>Code</a>
                     {% endif %}
                     {% if page.paper != nil %}
-                    <a href="{{ page.paper }}">Paper</a>
+                    <a href="{{ page.paper }}"><img src="assets/icons/file-bookmark-alt-svgrepo-com.svg"
+                            class='icon-size'>Paper</a>
                     {% endif %}
                 </div>
             </td>
         </tr>
     </table>
-    <!-- <hr style="margin-bottom: 50px;"> -->
     {{content}}
 </div>
 <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
