@@ -67,10 +67,9 @@ These gifs show the qualitative similarities between the real world model, and t
   }
 </style>
 
-<div class="image-container">
-  <img src="../misc/densepacking/real/annealing_real.gif" alt="Real Annealing Image">
-  <img src="../misc/densepacking/sim/annealing_sim.gif" alt="Simulated Annealing Image">
-</div>
+<center>
+<img src="../misc/densepacking/combined/compare.gif" width="95%">
+</center>
 <br>
 In case the gifs are not synchronized, just reload the page. That should make them sync once you have them in cache.
 
