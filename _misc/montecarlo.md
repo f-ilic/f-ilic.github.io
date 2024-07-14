@@ -262,9 +262,9 @@ Same or better variance $$\mathbb{V}_q[r] = \frac{1}{N} \mathbb{V}_q \left[\frac
 We can achieve this by choosing $$q(x)$$ to be high were $$\|p(x)f(x)\|$$ is high.
 However, knowing where  $$\|p(x)f(x)\|$$ is large is not always easy, so choosing an appropriate $$q(x)$$ might be difficult; *oh well*.
 
---- 
 
-### Further Reading
+# Further Reading
+--- 
 
 Intro
 * [Intro by Ian Murray](https://www.youtube.com/watch?v=Em6mQQy4wYA)

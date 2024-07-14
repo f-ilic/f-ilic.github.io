@@ -80,7 +80,7 @@ Technical Student at <a href='https://cms.cern/'>CMS Experiment - CERN - Geneva<
 {% endfor %}
 
 
-## Misc.
+## Miscellaneous
 ---
 
 {% for post in site.misc reversed%}

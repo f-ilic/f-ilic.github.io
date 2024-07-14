@@ -18,7 +18,7 @@ teaser: papers/SelectivePrivacyPreservation/saliency_teaser.mp4
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 
-<video controls autoplay loop muted playsinline width="100%">
+<video autoplay loop muted playsinline width="100%">
   <source  src="../papers/SelectivePrivacyPreservation/teaser.mp4" type="video/mp4">
 </video> 
 <br>
@@ -57,7 +57,7 @@ This process ensures that only targeted areas are obscured, thus preserving the,
 
 <p>
 <center><em>Saliency Maps of individual templates matched across 4 input videos</em></center>
-<video controls autoplay loop muted playsinline width="100%">
+<video autoplay loop muted playsinline width="100%">
   <source  src="../papers/SelectivePrivacyPreservation/saliency.mp4" type="video/mp4">
 </video> 
 </p>

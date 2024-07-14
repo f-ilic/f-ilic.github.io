@@ -17,14 +17,7 @@ date: 2021-01-01
 # Introduction
 ---
 
-<!-- * worked on project estimating the graindensity in steel
-* annealing (and alloy composition) play a major part in the formation of the grain sizes
-* an intuitive explaination is that quick quentching freezes the chaotic structures in place
-* however slowly reheating and annealling the steel gives each atom (or sphere in this model) enough energy to find its lowest energy state, which can be this grid of spheres
-* In this model annealing is simmulated by tapping on the glass, introducing more energy.
-* Funnily enough at around the same time i created this model a popular youtuber steve mold did a video on this same phenomenon. Check it out, its really cool. -->
-
-In the world of metallurgy, the characteristics of steel can be significantly influenced by the processes it undergoes during and after its production. One such process is annealing, which plays a pivotal role in determining the grain density within steel. A project I worked on,<a href="/RobustFeatureAustenit"> link here</a>, focused on estimating this grain density and unraveling the effects of annealing alongside the alloy composition.
+In the world of metallurgy, the characteristics of steel can be significantly influenced by the processes it undergoes during and after its production. One such process is annealing, which plays a pivotal role in determining the grain density within steel. A project I worked on,<a href="/RobustFeatureAustenit"> linked here</a>, focused on estimating this grain density of steel from microscopy images. Many of the samples only different in their annealing process, even though they qualitatively looked vastly different.
 
 Annealing is essentially a heat treatment process where steel is heated to a high temperature and then cooled slowly. This method is crucial because it affects the microstructure and, thus, the physical properties of the steel. The primary reason for annealing steel is to soften it, relieve internal stresses, and improve its ductility and toughness.
 
@@ -33,6 +26,11 @@ To understand this better, consider the process of quick quenching, which rapidl
 # Simulating Dense Packing in 2D
 ---
 
+I built a small simulation of the packing problem with spheres.
+It covers the essential parts that are needed to show how artifacts, introduced during the chaotic settling of the spheres in a non-expanding container. The simulation, written in <a href='https://brm.io/matter-js/'>Matter.js</a>, adheres to friction, interaction of different masses, and rolling. One thing to note is that I've chosen rather small simulation timesteps, as otherwise the whole system becomes unstable.
+
+Anyway, you should give it a try, and jiggle the particles once they have settled.
+You will observe that the initial formation and settling results in rather small coherent patches, the grains in the example of steel plasticity.
 
 <div id="simulation-wrapper" style="width: 80%; margin: auto; height: 400px;">
     <canvas id="simulation"></canvas>
@@ -44,14 +42,70 @@ To understand this better, consider the process of quick quenching, which rapidl
 <button id="jiggleLargeButton">Earthquake Jiggle</button>
 </center>
 
+<br>
+Compare the results that you get with and without annealing, i.e. only earthquake jiggle vs. earthquake jiggle and then repeatedly, while the balls are still settling, small and medium jiggles, simulating a steady stream of kinetic energy, allowing the particles to find their ground state.
 
-# The Model
+
+# Qualitative Comparison
 ---
-In an attempt to simulate the annealing process in a more visual and interactive way, I incorporated a method in my model that involves ‘tapping’ on the glass. This action introduces additional energy into the system, mimicking the real-life process of heating the steel, which energizes the atoms to find their optimal arrangement.
 
-Interestingly, around the same time I was developing this model, popular YouTuber Steve Mould released a video discussing a similar phenomenon. His engaging and educational content adds another layer of understanding to this complex process, and I highly recommend checking out his video for a dynamic explanation of how annealing impacts material properties.
+This simulation also matches qualitative results that are observed using my little toy model.
+In the physical model the annealing is simulated by tapping on the glass itself.
 
-This project not only highlighted the crucial role of annealing in controlling the properties of steel but also brought an abstract concept to life, allowing for a more tangible grasp of the intricate dance of atoms that determines the strength and flexibility of one of our most used materials.
+These gifs show the qualitative similarities between the real world model, and the simulation.
+
+<style>
+  .image-container {
+    display: flex;   /* Use flexbox to align images */
+    justify-content: center; /* Center align the images horizontally */
+    align-items: center; /* Align the images vertically to ensure they are at the same height */
+  }
+  .image-container img {
+    max-height: 200px; /* Set a maximum height for all images */
+    width: auto;  /* Maintain the aspect ratio */
+    margin: 0 10px; /* Add horizontal padding between images */
+  }
+</style>
+
+<div class="image-container">
+  <img src="real/annealing_real.gif" alt="Real Annealing Image">
+  <img src="sim/annealing_sim.gif" alt="Simulated Annealing Image">
+</div>
+<br>
+In case the gifs are not synchronized, just reload the page. That should make them sync once you have them in cache.
+
+The first and the last frame of the animation above are shown now, so that it easier to see the emerging structural similarities.
+
+<table>
+    <tr style="background-color: white;">
+    <td><img src="real/first_frame.png" alt="Image 1" style="width:100%;"></td>
+    <td><img src="real/last_frame.png" alt="Image 2" style="width:100%;"></td>
+    </tr>
+    <tr style="background-color: white;">
+    <td><img src="sim/0001.png" alt="Image 1" style="width:100%;"></td>
+    <td><img src="sim/0011.png" alt="Image 2" style="width:100%;"></td>
+    </tr>
+  <tr style="background-color: white;">
+    <td style="text-align:center;"><b>Not Annealed</b> </td>
+    <td style="text-align:center;"><b>Annealed </b></td>
+  </tr>
+</table>
+
+# Final Remarks
+---
+If you wish to build your own model there's a few things you could take away without having to make the same mistakes as I did.
+The steel bearings that I bought are 2mm in diameter, and are made of steel. When you invariably drop a 2kg bag of it on the floor, resist the urge to use a magnet to gather them. Magnetization is a real concern, especially once you put them between an isolating material such as plastic glass.
+
+While on the topic of glass: definitely use acrylic glass, and not polycarbonate. While polycarbonate is much cheaper it also discolors and scratches much easier. Additionally bending polycarbonate by applying heat is more difficult. Get acrylic, it is amazing; the steel bearings do not scratch it, it can be broken very cleanly, and can be burnished with a handheld torch at the edges along which it was broken. 
+Acrylic glass is manufactured using an extrusion or casting process, and the price between the two varies drastically. I have not found any significant differences between the two for this type of project.
+
+# Further Reading
+---
+
+* Interestingly, around the same time I was building my physical model, popular YouTuber Steve Mould released a video,<a href="https://www.youtube.com/watch?v=xuL2yT-B2TM"> linked here</a>, discussing the same topic.
+* <a href="https://en.wikipedia.org/wiki/Circle_packing">Wikipedia Circle Packing</a>
+* <a href="https://www.gorillasun.de/blog/a-simple-solution-for-shape-packing-in-2d/">Generative Art with Circle Packing</a>
+* <a href="http://datagenetics.com/blog/june32014/index.html">Optimal Packing in 2D, and 3D</a>
 
 
 <script>
@@ -177,7 +231,7 @@ document.getElementById('jiggleSmallButton').addEventListener('click', function(
     for (var i = 0; i < bodies.length; i++) {
         var body = bodies[i];
         if (!body.isStatic) {  // Only apply to non-static bodies (i.e., your circles)
-            var forceMagnitude = 0.01 * body.mass;  // Scale the force by the body's mass
+            var forceMagnitude = 0.02 * body.mass;  // Scale the force by the body's mass
 
             // Apply force vector with random direction and fixed magnitude
             Matter.Body.applyForce(body, body.position, {
