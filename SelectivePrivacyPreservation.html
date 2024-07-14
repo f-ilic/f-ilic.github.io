@@ -40,23 +40,26 @@
             <td width="100%" style="padding: 0px">
                 <div class="paper-info">
                     <div class="paper-head">
-                        <span class="paper-title">Selective, Interpretable, and Motion Consistent Privacy Attribute Obfuscation for Action Recognition</span>
+                        <!-- <span class="paper-title">Selective, Interpretable, and Motion Consistent Privacy Attribute Obfuscation for Action Recognition</span> -->
+                        <h1>Selective, Interpretable, and Motion Consistent Privacy Attribute Obfuscation for Action Recognition</h1>
+                        <hr>
                         <span class="paper-authors"><b>Filip Ilic</b>, He Zhao, Thomas Pock, Richard Wildes</span>
                         <span class="paper-published">2024 Conference on Computer Vision and Pattern Recognition</span>
                     </div>
                 </div>
                 <div class="paper-links">
                     
-                    <a href="https://github.com/f-ilic/SelectivePrivacyPreservation">Code</a>
+                    <a href="https://github.com/f-ilic/SelectivePrivacyPreservation"><img src="assets/icons/file-code-svgrepo-com.svg"
+                            class='icon-size'>Code</a>
                     
                     
-                    <a href="https://arxiv.org/pdf/2403.12710.pdf">Paper</a>
+                    <a href="https://arxiv.org/pdf/2403.12710.pdf"><img src="assets/icons/file-bookmark-alt-svgrepo-com.svg"
+                            class='icon-size'>Paper</a>
                     
                 </div>
             </td>
         </tr>
     </table>
-    <!-- <hr style="margin-bottom: 50px;"> -->
     <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
 
 <div style="display: flex; justify-content: flex-start">
@@ -65,7 +68,7 @@
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<video controls="" autoplay="" loop="" muted="" playsinline="" width="100%">
+<video autoplay="" loop="" muted="" playsinline="" width="100%">
   <source src="../papers/SelectivePrivacyPreservation/teaser.mp4" type="video/mp4" />
 </video>
 <p><br /></p>
@@ -73,9 +76,9 @@
 <p><strong>The goal is to hide privacy relevant attributes without action recognition performance dropping.</strong>
 We show that it is not necessary to train action recognition and privacy networks in an adversarial fashion for effective obfuscation of privacy attributes while maintaining strong action recognition performance. We show that a system based on local privacy templates, deep features that capture <u>template semantics</u> and <u>selective noise obfuscation</u> that is animated with source video motion can uphold privacy without hindering action recognition. Our approach is unique compared to alternative recent approaches in terms of <u>interpretability</u>.</p>
 
+<!-- <center><em>Overview of our Method</em></center> -->
+<h1 id="overview">Overview</h1>
 <hr />
-
-<center><em>Overview of our Method</em></center>
 
 <p><img src="../papers/SelectivePrivacyPreservation/method.png" alt="alt text" /></p>
 
@@ -90,6 +93,7 @@ We show that it is not necessary to train action recognition and privacy network
 
 <p>We use the keys of a DINO-ViT as the feature descriptors, as they accumulate contextual and semantic meaning, as depth increases in the Vision Transformer.</p>
 
+<h1 id="saliency-computation">Saliency Computation</h1>
 <hr />
 
 <p>To decide how strong a particular patch needs to be obfuscated we use the (positive) cosine similarity between the templates and the image patches.</p>
@@ -101,13 +105,14 @@ This process ensures that only targeted areas are obscured, thus preserving the,
 
 <p>
 <center><em>Saliency Maps of individual templates matched across 4 input videos</em></center>
-<video controls="" autoplay="" loop="" muted="" playsinline="" width="100%">
+<video autoplay="" loop="" muted="" playsinline="" width="100%">
   <source src="../papers/SelectivePrivacyPreservation/saliency.mp4" type="video/mp4" />
 </video> 
 </p>
 
 <p>These maps highlight the regions that match our privacy-sensitive attributes, effectively pinpointing where obfuscation is needed.</p>
 
+<h1 id="temporally-consistent-masking">Temporally Consistent Masking</h1>
 <hr />
 
 <p>Once we’ve identified these regions, we overlay temporally consistent noise on the input video, guided by the saliency maps.The key here is to maintain the integrity of the video’s motion and overall context, crucial for action recognition, while effectively masking personal attributes.</p>
@@ -145,6 +150,8 @@ Below we show examples of input video, motion consistent noise, the saliency map
 </div>
 </p>
 
+<h1 id="results">Results</h1>
+<hr />
 <p>We compare across 11 Action Reocgnition, and 6 Privacy Attribute Classification architectures; We show across all three tested datasets (<a href="https://gibranbenitez.github.io/IPN_Hand/">IPN</a>, <a href="http://vision.cs.stonybrook.edu/~kiwon/Datasets/SBU_Kinect_Interactions/README.txt">SBU</a>, <a href="https://www.csc.kth.se/cvap/actions/">KTH</a>) that our relatively simple approach of finding similarities and masking it with temporally consistent noise works quite well and outperforms other approaches that require training for each specific architecutre.</p>
 
 <p><img src="../papers/SelectivePrivacyPreservation/table.png" alt="alt text" /></p>
@@ -159,8 +166,8 @@ Below we show examples of input video, motion consistent noise, the saliency map
 </table>
 </p> -->
 
-<hr />
 <h1 id="cite">Cite</h1>
+<hr />
 <div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">ilic2024selective</span><span class="p">,</span>
 <span class="na">title</span><span class="p">=</span><span class="s">{Selective, Interpretable and Motion Consistent Privacy Attribute Obfuscation for Action Recognition}</span><span class="p">,</span>
 <span class="na">author</span><span class="p">=</span><span class="s">{Ilic, Filip and Zhao, He and Pock, Thomas and Wildes, Richard P.}</span><span class="p">,</span>

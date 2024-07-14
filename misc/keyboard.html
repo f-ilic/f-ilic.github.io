@@ -40,7 +40,9 @@
             <td width="100%" style="padding: 0px">
                 <div class="paper-info">
                     <div class="paper-head">
-                        <span class="paper-title">Remapping keys</span>
+                        <!-- <span class="paper-title">Remapping keys</span> -->
+                        <h1>Remapping keys</h1>
+                        <hr>
                         <span class="paper-authors">System wide key remapping on Linux and MacOS</span>
                         <span class="paper-published"></span>
                     </div>
@@ -52,16 +54,15 @@
             </td>
         </tr>
     </table>
-    <!-- <hr style="margin-bottom: 50px;"> -->
     <p>Text navigation without having to constantly move my hands off keyboard to the mouse is important to me.
-To achieve this I’ll show you how to remap your capslock key to do something useful, i.e. an additional modifier key.</p>
+To achieve this we will remap the capslock key to do something useful, i.e. an additional modifier key.
+My particular goal is to set up capslock as a modifier key so <strong>j,k,l,i</strong> + <strong>capslock</strong> act as though <strong>left,down,right, up</strong> were pressed. Same for <strong>Home, End, Backspace, Delete, Return</strong>, with some other keys in the same area.</p>
 
-<p>The goal is to set up capslock as a modifier key so <strong>j,k,l,i</strong> + <strong>capslock</strong> act as though <strong>left,down,right, up</strong> were pressed. Same for <strong>Home, End, Backspace, Delete, Return</strong>, with some other keys in the same area.</p>
+<p>A gist that you can just download and run, which will put everything where it should be is here: <a href="https://gist.github.com/f-ilic/5d14f13f2b6d7237eac255cbd9498466">My Keyboard Remapping Gist </a>.
+The following post, is just going to explain how to go about remapping on the keycode level in Linux, and a userspace solution in MacOs that uses a Lua engine to expose parts of the system API.</p>
 
 <h1 id="linux">Linux</h1>
 <hr />
-<p><strong>TLDR:</strong>
-If you just want the files and a readme: <a href="https://gist.github.com/f-ilic/5d14f13f2b6d7237eac255cbd9498466">My Keyboard Remapping Gist </a></p>
 
 <p>There are multiple ways to go around setting caps as a modifier.
 Your options are:</p>
@@ -127,8 +128,7 @@ xset r 46 # l
 xset r 47 # ;
 </code></pre></div></div>
 
-<p>All of the details are explained in <a href="https://gist.github.com/f-ilic/5d14f13f2b6d7237eac255cbd9498466">My Keyboard Remapping Gist </a>.
-Set the repeat rate script as a startup script, so that it is triggered on login.</p>
+<p>Set the repeat rate script as a startup script, so that it is triggered on login.</p>
 
 <h1 id="macos">MacOS</h1>
 <hr />
@@ -180,7 +180,6 @@ remap({'alt'}, ';', pressFn('forwarddelete'))
 remap({'alt', 'cmd'}, ';', pressFn({'cmd'}, 'delete'))
 remap({'alt'}, 'space', pressFn('return'))
 </code></pre></div></div>
-<p><a class="boxed" href="/posts/keyboard/hammerspoon_cfg.txt">Hammerspoon config</a></p>
 
 <p>MacOS allows you to rebind <code class="language-plaintext highlighter-rouge">capslock</code> to any other modifier key in the keyboard settings. I personally set it to <code class="language-plaintext highlighter-rouge">alt</code>, but its not necessary to do.</p>
 

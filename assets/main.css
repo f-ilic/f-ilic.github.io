@@ -267,19 +267,21 @@ body { font-size: 14px; color: #424242; font-family: 'Helvetica'; }
 
 .content-container { padding: 100px; }
 
+.icon-size { height: 1.5em; /* Sets the height to match the font size of the surrounding text */ width: auto; /* Keeps the width proportional to the new height */ vertical-align: middle; /* Aligns the middle of the image with the middle of the text */ }
+
 .paper-info .paper-head { margin-bottom: 0px; }
 
-.paper-info .paper-title { display: block; font-weight: bold; margin-bottom: 0.5em; }
+.paper-info .paper-title { font-size: 12pt; display: block; margin-bottom: 0.5em; margin-top: 0.5em; }
 
 .paper-info .paper-authors { display: block; font-size: 10pt; }
 
-.paper-info .paper-published { display: block; color: #356a7e; font-size: 10pt; }
+.paper-info .paper-published { display: block; font-size: 10pt; }
 
 .paper-info .section { margin-top: 10px; font-style: italic; display: block; }
 
-.paper-links a { border: 1px solid; padding-left: 1rem; padding-right: 1rem; padding-top: 0.15rem; font-size: 10pt; display: inline-block; margin-top: 0.5em; }
+.paper-links a { padding-right: 1rem; padding-top: 0.15rem; font-size: 10pt; display: inline-block; margin-top: 0.5em; }
 
-.paper-links a:hover { border: 1px solid; padding-left: 1rem; padding-right: 1rem; padding-top: 0.15rem; font-size: 10pt; background-color: white; color: orange; display: inline-block; margin-top: 0.5em; }
+.paper-links a:hover { padding-right: 1rem; padding-top: 0.15rem; font-size: 10pt; background-color: white; color: orange; display: inline-block; margin-top: 0.5em; }
 
 h0 { display: inline; font-size: 22pt; }
 

@@ -40,23 +40,26 @@
             <td width="100%" style="padding: 0px">
                 <div class="paper-info">
                     <div class="paper-head">
-                        <span class="paper-title">Is Appearance Free Action Recognition Possible?</span>
-                        <span class="paper-authors"><b>Filip Ilic</b>, Thomas Pock, Richard P. Wildes</span>
+                        <!-- <span class="paper-title">Is Appearance Free Action Recognition Possible?</span> -->
+                        <h1>Is Appearance Free Action Recognition Possible?</h1>
+                        <hr>
+                        <span class="paper-authors"><b>Filip Ilic</b>, Thomas Pock, Richard Wildes</span>
                         <span class="paper-published">2022 European Conference on Computer Vision</span>
                     </div>
                 </div>
                 <div class="paper-links">
                     
-                    <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition">Code</a>
+                    <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition"><img src="assets/icons/file-code-svgrepo-com.svg"
+                            class='icon-size'>Code</a>
                     
                     
-                    <a href="https://arxiv.org/pdf/2207.06261.pdf">Paper</a>
+                    <a href="https://arxiv.org/pdf/2207.06261.pdf"><img src="assets/icons/file-bookmark-alt-svgrepo-com.svg"
+                            class='icon-size'>Paper</a>
                     
                 </div>
             </td>
         </tr>
     </table>
-    <!-- <hr style="margin-bottom: 50px;"> -->
     <script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
 
 <div style="display: flex; justify-content: flex-start">
@@ -132,6 +135,7 @@
 We investigate state-of-the-art action recognition networks with respect to their performance on a dataset where no static information is present. The video shows random noise animated with motion extracted from real human motion (the UCF101 dataset). We find that optical flow, or a similarly descriptive representation, is <u>not an emergent property</u> of any of the tested <u>action recognition architectures</u>.
 <br /></p>
 
+<h1 id="motivation">Motivation</h1>
 <hr />
 
 <p>Related work has shown often that static biases in action recognition datasets and therefore also in the trained models exist.
@@ -175,6 +179,7 @@ The Appearance Free Dataset (AFD) disentangles static and dynamic video componen
 </div>
 </p>
 
+<h1 id="psychophysical-study">Psychophysical Study</h1>
 <hr />
 
 <p>AFD101 is based on UCF101. We provide code and other necessary tools to generate other appearance free videos.</p>
@@ -207,8 +212,8 @@ It’s also possible to start with different noise (e.g. sparse) and still desce
 </p>
 <p>Video modified from: <a href="https://www.youtube.com/watch?v=wG_U5m4FShs">[<code class="language-plaintext highlighter-rouge">Credit</code>]</a></p>
 
+<h1 id="proposed-architecture">Proposed Architecture</h1>
 <hr />
-
 <p>One of our contributions is to show how to build a (new) Two-Stream architecture in a pricipled manner, to encourage a robust modeling of the temporal dimension.
 We call it <b>Explicit-Two-Stream</b>, as one stream <u>explicitly</u> models temporal correlations through the use of RAFT blocks.
 <br />
@@ -224,8 +229,8 @@ This design choise for our network allows for a rich dynamics representation tha
 <br />
 <br /></p>
 
-<hr />
 <h1 id="cite">Cite</h1>
+<hr />
 <div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@InProceedings</span><span class="p">{</span><span class="nl">ilic22appearancefree</span><span class="p">,</span>
 <span class="na">title</span><span class="p">=</span><span class="s">{Is Appearance Free Action Recognition Possible?}</span><span class="p">,</span>
 <span class="na">author</span><span class="p">=</span><span class="s">{Ilic, Filip and Pock, Thomas and Wildes, Richard P.}</span><span class="p">,</span>
