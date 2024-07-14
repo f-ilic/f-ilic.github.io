@@ -8,10 +8,10 @@ teaser: misc/densepacking/teaser.gif
 date: 2021-01-01  
 ---
 
-<script src="matter.js"></script>
+<script src="../misc/densepacking/matter.js"></script>
 
 <center>
-  <img  src="teaser.gif">
+  <img  src="../misc/densepacking/teaser.gif">
 </center>
 
 # Introduction
@@ -68,8 +68,8 @@ These gifs show the qualitative similarities between the real world model, and t
 </style>
 
 <div class="image-container">
-  <img src="real/annealing_real.gif" alt="Real Annealing Image">
-  <img src="sim/annealing_sim.gif" alt="Simulated Annealing Image">
+  <img src="../misc/densepacking/real/annealing_real.gif" alt="Real Annealing Image">
+  <img src="../misc/densepacking/sim/annealing_sim.gif" alt="Simulated Annealing Image">
 </div>
 <br>
 In case the gifs are not synchronized, just reload the page. That should make them sync once you have them in cache.
@@ -78,12 +78,12 @@ The first and the last frame of the animation above are shown now, so that it ea
 
 <table>
     <tr style="background-color: white;">
-    <td><img src="real/first_frame.png" alt="Image 1" style="width:100%;"></td>
-    <td><img src="real/last_frame.png" alt="Image 2" style="width:100%;"></td>
+    <td><img src="../misc/densepacking/real/first_frame.png" alt="Image 1" style="width:100%;"></td>
+    <td><img src="../misc/densepacking/real/last_frame.png" alt="Image 2" style="width:100%;"></td>
     </tr>
     <tr style="background-color: white;">
-    <td><img src="sim/0001.png" alt="Image 1" style="width:100%;"></td>
-    <td><img src="sim/0011.png" alt="Image 2" style="width:100%;"></td>
+    <td><img src="../misc/densepacking/sim/0001.png" alt="Image 1" style="width:100%;"></td>
+    <td><img src="../misc/densepacking/sim/0011.png" alt="Image 2" style="width:100%;"></td>
     </tr>
   <tr style="background-color: white;">
     <td style="text-align:center;"><b>Not Annealed</b> </td>
