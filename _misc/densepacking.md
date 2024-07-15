@@ -8,7 +8,7 @@ teaser: misc/densepacking/teaser.gif
 date: 2021-01-01  
 ---
 
-<script src="../misc/densepacking/matter.js"></script>
+<script src="../libs/matter.js"></script>
 
 <center>
   <img  src="../misc/densepacking/teaser.gif">
