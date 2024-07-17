@@ -11,7 +11,7 @@ date: 2021-01-01
 <script src="../libs/matter.js"></script>
 
 <center>
-  <img  src="../misc/densepacking/teaser.gif">
+  <img  src="../misc/densepacking/teaser.gif" style='border: 1px solid black'>
 </center>
 
 # Introduction
@@ -71,7 +71,6 @@ These gifs show the qualitative similarities between the real world model, and t
 <img src="../misc/densepacking/combined/compare.gif" width="95%">
 </center>
 <br>
-In case the gifs are not synchronized, just reload the page. That should make them sync once you have them in cache.
 
 The first and the last frame of the animation above are shown now, so that it easier to see the emerging structural similarities.
 
@@ -90,13 +89,25 @@ The first and the last frame of the animation above are shown now, so that it ea
   </tr>
 </table>
 
-# Final Remarks
+# Remarks on building your own
 ---
 If you wish to build your own model there's a few things you could take away without having to make the same mistakes as I did.
 The steel bearings that I bought are 2mm in diameter, and are made of steel. When you invariably drop a 2kg bag of it on the floor, resist the urge to use a magnet to gather them. Magnetization is a real concern, especially once you put them between an isolating material such as plastic glass.
 
 While on the topic of glass: definitely use acrylic glass, and not polycarbonate. While polycarbonate is much cheaper it also discolors and scratches much easier. Additionally bending polycarbonate by applying heat is more difficult. Get acrylic, it is amazing; the steel bearings do not scratch it, it can be broken very cleanly, and can be burnished with a handheld torch at the edges along which it was broken. 
 Acrylic glass is manufactured using an extrusion or casting process, and the price between the two varies drastically. I have not found any significant differences between the two for this type of project.
+
+It is important that the steel balls are essentially only allowed to move in 2D.
+If they can stack, even slightly, behind each other you will run into a lot of issues such as the glass bending outwards, and potentially breaking.
+For my model I used 3mm thick acrylic glass for the front and backplate, and 2mm acrylic glass that was cut to form the frame that is sandwiched between the 3mm plates.
+The ballbearing are 2mm and the frame-plate is 2mm. To reduce the scarping, I placed washers that I cut from regular PET bottle plastic between the bolts that hold everything together.
+
+Regarding the bolts: It is important that the clamping force of the plates is distributed evenly. In general this means more bolts = less pressure on a single spot = better. You can see the effects of the clamping around the bolts where individual balls sometimes get stuck, as the bolt is squeezing the acrylic *just* a little too tight and reduces the tolerances enough for it to be an issue.
+
+To properly see the formation of the grains, I added a frosted acrylic film that diffuses light. The dispersion in combination with a flashlight that is placed behind the prop, reveals the created structures really well.
+
+If you make your own, let me know <a title="Email" href="mailto:{{ site.email }}"><img class="svg-social-icon" src="{{"../assets/social-icons/email.svg"}}" /></a>
+I'd be very happy to see your designs.
 
 # Further Reading
 ---
@@ -126,6 +137,10 @@ var wrapper = document.getElementById('simulation-wrapper');
 var width = wrapper.offsetWidth;
 var height = wrapper.offsetHeight;
 
+// Calculate radius based on canvas size
+var baseRadius = 1.2*Math.min(width, height) / 100; // Example: makes the radius 2% of the smaller dimension
+
+
 // get the canvas element and set its dimensions
 var canvas = document.getElementById('simulation');
 canvas.width = width;
@@ -145,25 +160,25 @@ var render = Render.create({
 });
 
 // Adding walls
-var ground = Bodies.rectangle(width / 2, height, width, 2, {
+var ground = Bodies.rectangle(width / 2, height, width, 10, {
     isStatic: true,
     render: {
         fillStyle: '#E8E8E8'  // Set the color of the rectangle
     }
 });
-var ceiling = Bodies.rectangle(width / 2, 0, width, 2, {
+var ceiling = Bodies.rectangle(width / 2, 0, width, 10, {
     isStatic: true,
     render: {
         fillStyle: '#E8E8E8'
     }
 });
-var leftWall = Bodies.rectangle(0, height / 2, 2, height, {
+var leftWall = Bodies.rectangle(0, height / 2, 10, height, {
     isStatic: true,
     render: {
         fillStyle: '#E8E8E8'
     }
 });
-var rightWall = Bodies.rectangle(width, height / 2, 2, height, {
+var rightWall = Bodies.rectangle(width, height / 2, 10, height, {
     isStatic: true,
     render: {
         fillStyle: '#E8E8E8'
@@ -176,7 +191,7 @@ Composite.add(engine.world, [ground, ceiling, leftWall, rightWall]);
 // Add circles with lower restitution and added friction
 const totalCircles = 2000;
 for (let i = 0; i < totalCircles; i++) {
-    var radius = 5;
+    var radius = baseRadius;
 
     var circle = Bodies.circle(
         Math.random() * (width - 2 * radius) + radius, 

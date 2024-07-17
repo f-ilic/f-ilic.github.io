@@ -21,7 +21,7 @@ Object tracking and decomposition into parts: Our approach (right) bridges the c
 
 <br>
 <video autoplay loop muted playsinline width="100%"> <source  src="papers/STVI/jumpingjack.mp4" type="video/mp4"> </video>
-Different object sclales: Space-Time Volumes of Interest extracted at increasing spatial and temporal scales from a jumping-jack sequence. Note how finer scales capture more detail at the cost of temporal and spatial coherence, whereas coarser scales model more fundamental patterns.
+Different object scales: Space-Time Volumes of Interest extracted at increasing spatial and temporal scales from a jumping-jack sequence. Note how finer scales capture more detail at the cost of temporal and spatial coherence, whereas coarser scales model more fundamental patterns.
 
 <br>
 ![Slices](../papers/STVI/slices.png)
