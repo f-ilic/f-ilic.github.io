@@ -128,7 +128,6 @@ I had the best results in using a little more wood glue than needed so that ther
 If you make your own, let me know <a title="Email" href="mailto:{{ site.email }}"><img class="svg-social-icon" src="{{"../assets/social-icons/email.svg"}}" /></a>
 I'd be very happy to see your designs.
 
-
 # Further Reading
 ---
 * [Wikipedia: Galton Board](https://en.wikipedia.org/wiki/Galton_board)

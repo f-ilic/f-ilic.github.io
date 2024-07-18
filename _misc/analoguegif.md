@@ -53,8 +53,41 @@ Just by cranking the handle slower you can adjust the frame rate itself, and can
         </td>
     </tr>
 </table>
+
 <br>
 
 # An explanation by analogy
 ---
 
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  canvas {
+    /* border: 1px solid black; */
+  }
+</style>
+<center>
+<div>
+rotate<br>
+    <button id="rotateBtnsub">-</button>
+    <input type="range" id="rotateSlider" min="-5" max="5" value="0" step="0.1" style="width: 100px;">
+    <button id="rotateBtnadd">+</button>
+</div>
+<div>
+    scale<br>
+    <button id="scaleBtnsub">-</button>
+    <input type="range" id="scaleSlider" min="0.9" max="1" value="1" step="0.001" style="width:100px;" orient="vertical">
+    <button id="scaleBtnadd">+</button>
+</div>
+<br><br>
+<canvas id="canvas" width="400" height="400"></canvas>
+<br>
+<div>
+<button id="resetBtn">Reset</button>
+</div>
+</center>
+<script src="../misc/analoguegif/circlepattern.js">
