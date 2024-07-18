@@ -15,7 +15,7 @@ My interests are Computer Vision and Machine Learning. I investigated motion in 
 </p>
 
 <p>
-Before that, I worked on my other passion: High Energy Physics and related monitoring tools at CERN for the CMS experiment.
+Before that, I worked at CERN for the CMS experiment on performance critical monitoring and analysis software.
 </p>
 <p>
 PhD at <a href="https://www.tugraz.at/institute/icg/research/team-pock">Vision, Learning & Optimization Group - ICG - TU Graz </a><br>

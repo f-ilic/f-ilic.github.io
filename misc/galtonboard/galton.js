@@ -36,10 +36,10 @@ var render = Render.create({
 
 // Adding walls and funnel
 var walls = [
-    Bodies.rectangle(width / 2, height, width, 20, { isStatic: true, render: { fillStyle: '#E8E8E8', } }),
-    Bodies.rectangle(width / 2, 0, width, 20, { isStatic: true, render: { fillStyle: '#fafafa' } }),
-    Bodies.rectangle(0, height / 2, 20, height, { isStatic: true, render: { fillStyle: '#fafafa' } }),
-    Bodies.rectangle(width, height / 2, 20, height, { isStatic: true, render: { fillStyle: '#fafafa' } })
+    Bodies.rectangle(width / 2, height, width, 27, { isStatic: true, render: { fillStyle: '#E8E8E8', } }),
+    Bodies.rectangle(width / 2, 0, width, 27, { isStatic: true, render: { fillStyle: '#fafafa' } }),
+    Bodies.rectangle(0, height / 2, 27, height, { isStatic: true, render: { fillStyle: '#fafafa' } }),
+    Bodies.rectangle(width, height / 2, 27, height, { isStatic: true, render: { fillStyle: '#fafafa' } })
 ];
 Composite.add(engine.world, walls);
 
