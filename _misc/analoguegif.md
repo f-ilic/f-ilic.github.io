@@ -59,35 +59,99 @@ Just by cranking the handle slower you can adjust the frame rate itself, and can
 # An explanation by analogy
 ---
 
-<style>
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
-  canvas {
-    /* border: 1px solid black; */
-  }
-</style>
+Visual perception is a complex process where the brain interprets and makes sense of the visual stimuli it receives. An intriguing way to explore this phenomenon is through the study of patterns created from simple elements under transformation. An example of this is seen in experiments involving random dot patterns. In these experiments, a field of randomly distributed dots is created, and then a copy of this field is made. The duplicate is then rotated to various degrees relative to the original. 
+The emerging patterns are called Glass patterns, first studied by <a href="https://ui.adsabs.harvard.edu/abs/1969Natur.223..578G/abstract">Leon Glass</a>, provides valuable insights into how the human visual system detects and interprets structure.
+
+
+
+
+
 <center>
-<div>
-rotate<br>
-    <button id="rotateBtnsub">-</button>
-    <input type="range" id="rotateSlider" min="-5" max="5" value="0" step="0.1" style="width: 100px;">
-    <button id="rotateBtnadd">+</button>
-</div>
-<div>
-    scale<br>
-    <button id="scaleBtnsub">-</button>
-    <input type="range" id="scaleSlider" min="0.9" max="1" value="1" step="0.001" style="width:100px;" orient="vertical">
-    <button id="scaleBtnadd">+</button>
-</div>
-<br><br>
-<canvas id="canvas" width="400" height="400"></canvas>
-<br>
-<div>
-<button id="resetBtn">Reset</button>
+<div style="display: flex; align-items: flex-start;">
+    <div style="margin-right: 100px;">
+        <div>
+            rotate<br>
+            <input type="range" id="rotateSlider" class="vertical-slider" min="-5" max="5" value="0" step="0.1" style="width: 100px;">
+        </div>
+        <div>
+            scale<br>
+            <input type="range" id="scaleSlider" class="vertical-slider" min="0.9" max="1" value="1" step="0.001" style="width: 100px;">
+        </div>
+        <div>
+            x-offset<br>
+            <input type="range" id="xOffsetSlider" class="vertical-slider" min="-10" max="10" value="0" step="0.1" style="width: 100px;">
+        </div>
+        <div>
+            y-offset<br>
+            <input type="range" id="yOffsetSlider" class="vertical-slider" min="-10" max="10" value="0" step="0.1" style="width: 100px;">
+        </div>
+        <button id="resetBtn">Reset</button>
+    </div>
+    <canvas id="canvas0" width="400" height="400"></canvas>
 </div>
 </center>
+<br>
+
+
+<center>
+Rotation
+<div>
+<canvas width=85 height=85 id="glassRotation1"></canvas>
+<canvas width=85 height=85 id="glassRotation2"></canvas>
+<canvas width=85 height=85 id="glassRotation3"></canvas>
+<canvas width=85 height=85 id="glassRotation4"></canvas>
+<canvas width=85 height=85 id="glassRotation5"></canvas>
+<canvas width=85 height=85 id="glassRotation6"></canvas>
+</div>
+</center>
+
+<center>
+Scaling
+<div>
+<canvas width=85 height=85 id="glassScale1"></canvas>
+<canvas width=85 height=85 id="glassScale2"></canvas>
+<canvas width=85 height=85 id="glassScale3"></canvas>
+<canvas width=85 height=85 id="glassScale4"></canvas>
+<canvas width=85 height=85 id="glassScale5"></canvas>
+<canvas width=85 height=85 id="glassScale6"></canvas>
+</div>
+</center>
+
+<center>
+Scaling + Rotation
+<div>
+<canvas width=85 height=85 id="glassScaleRot1"></canvas>
+<canvas width=85 height=85 id="glassScaleRot2"></canvas>
+<canvas width=85 height=85 id="glassScaleRot3"></canvas>
+<canvas width=85 height=85 id="glassScaleRot4"></canvas>
+<canvas width=85 height=85 id="glassScaleRot5"></canvas>
+<canvas width=85 height=85 id="glassScaleRot6"></canvas>
+</div>
+</center>
+
+<center>
+Scaling + Translation
+<div>
+<canvas width=85 height=85 id="glassScaleTrans1"></canvas>
+<canvas width=85 height=85 id="glassScaleTrans2"></canvas>
+<canvas width=85 height=85 id="glassScaleTrans3"></canvas>
+<canvas width=85 height=85 id="glassScaleTrans4"></canvas>
+<canvas width=85 height=85 id="glassScaleTrans5"></canvas>
+<canvas width=85 height=85 id="glassScaleTrans6"></canvas>
+</div>
+</center>
+
+<center>
+Rotation + Translation
+<div>
+<canvas width=85 height=85 id="glassRotationTrans1"></canvas>
+<canvas width=85 height=85 id="glassRotationTrans2"></canvas>
+<canvas width=85 height=85 id="glassRotationTrans3"></canvas>
+<canvas width=85 height=85 id="glassRotationTrans4"></canvas>
+<canvas width=85 height=85 id="glassRotationTrans5"></canvas>
+<canvas width=85 height=85 id="glassRotationTrans6"></canvas>
+</div>
+</center>
+
+
 <script src="../misc/analoguegif/circlepattern.js">

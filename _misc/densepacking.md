@@ -106,7 +106,8 @@ If they can stack, even slightly, behind each other you will run into a lot of i
 For my model I used 3mm thick acrylic glass for the front and backplate, and 2mm acrylic glass that was cut to form the frame that is sandwiched between the 3mm plates.
 The ballbearing are 2mm and the frame-plate is 2mm. To reduce the scarping, I placed washers that I cut from regular PET bottle plastic between the bolts that hold everything together.
 
-Weight plays an important part in the equation: I first built a larger model that weight about 4 kilos. While it does produce prettier patterns, its impractical. You cannot tip it directly because the weight of the balls bulges the (polycarbonate) glass, which in turn allows the spheres to stack in 3D. You would have to use *much* thicker acrylic glass, which you then cannot break easily without specialized tools such as a laser cutter.
+Weight plays a significant role in the design: I initially constructed a larger model weighing about 4 kilograms. Although this model produced more attractive patterns, it proved to be impractical. You cannot simply tip it because the weight of the balls causes the polycarbonate glass to bulge. This deformation allows the spheres to stack in 3D. To prevent this, you would need to use much thicker acrylic glass, which is difficult to break or cut without specialized tools like a laser cutter.
+
 <center>
 <video autoplay loop muted playsinline  width="80%" style='border: 1px solid black'> <source  src="../misc/densepacking/large.mp4" type="video/mp4"> </video>
 </center>
