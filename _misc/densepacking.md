@@ -31,7 +31,7 @@ To understand this better, consider the process of quick quenching, which rapidl
 ---
 
 I built a small simulation of the packing problem with spheres.
-It covers the essential parts that are needed to show how artifacts, introduced during the chaotic settling of the spheres in a non-expanding container. The simulation, written in <a href='https://brm.io/matter-js/'>Matter.js</a>, adheres to friction, interaction of different masses, and rolling. One thing to note is that I've chosen rather small simulation timesteps, as otherwise the whole system becomes unstable.
+It covers the essential parts that are needed to show how artifacts are introduced during the chaotic settling of the spheres in a non-expanding container are. The simulation, written in <a href='https://brm.io/matter-js/'>Matter.js</a>, adheres to friction, interaction of different masses, and rolling. One thing to note is that I've chosen rather small simulation timesteps, as otherwise the whole system becomes unstable.
 
 Anyway, you should give it a try, and jiggle the particles once they have settled.
 You will observe that the initial formation and settling results in rather small coherent patches, the grains in the example of steel plasticity.

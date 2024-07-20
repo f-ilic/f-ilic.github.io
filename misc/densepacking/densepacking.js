@@ -8,7 +8,7 @@ var Engine = Matter.Engine,
 // create an engine
 var engine = Engine.create({
     timing: {
-        timeScale: 0.2
+        timeScale: 0.3
     }
 });
 // get the wrapper element and its dimensions
@@ -34,7 +34,7 @@ var render = Render.create({
         height: height,
         wireframes: false,
         background: '#fafafa',
-        // pixelRatio: window.devicePixelRatio // Adjust pixel ratio for sharpness
+        pixelRatio: window.devicePixelRatio // Adjust pixel ratio for sharpness
     }
 });
 

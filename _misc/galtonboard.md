@@ -26,7 +26,7 @@ A Galton Board is a vertical board with a series of pegs arranged in a lattice. 
 
 
 Below is a simulation of a Galton Board that I wrote in <a href='https://brm.io/matter-js/'>Matter.js</a>. <button onclick="resetSimulation()">Run Simulation</button>
-<div id="simulation-wrapper" style="width: 600px; margin: auto; height: 900px;">
+<div id="simulation-wrapper" style="width: 400px; margin: auto; height: 600px;">
     <canvas id="simulation" style="border: solid 1px black;"></canvas>
 </div>
 <br>
@@ -37,7 +37,7 @@ The distribution of balls resembles that of a Gaussian, for both the simulated a
 
 # Mechanics of the Galton Board
 ---
-
+Let's look at the idealized version of it first:
 When a ball hits a peg, it has an equal probability of deflecting to the left or right. This process can be modeled as a series of Bernoulli trials, where each trial has two possible outcomes: left or right. See also: <a href="https://en.wikipedia.org/wiki/Random_walk">Random Walk</a>.
 
 If a ball encounters $$ n $$ pegs, it will make $$ n $$ decisions. The final position of the ball will be the result of the cumulative sum of these left and right deflections.
