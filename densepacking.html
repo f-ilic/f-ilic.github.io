@@ -54,18 +54,22 @@
             </td>
         </tr>
     </table>
-    <script src="../misc/densepacking/matter.js"></script>
+    <script src="../libs/matter.js"></script>
 
 <center>
-  <img src="../misc/densepacking/teaser.gif" />
+  <img src="../misc/densepacking/teaser.gif" style="border: 1px solid black" />
 </center>
 
 <h1 id="introduction">Introduction</h1>
 <hr />
 
-<p>In the world of metallurgy, the characteristics of steel can be significantly influenced by the processes it undergoes during and after its production. One such process is annealing, which plays a pivotal role in determining the grain density within steel. A project I worked on,<a href="/RobustFeatureAustenit"> linked here</a>, focused on estimating this grain density of steel from microscopy images. Many of the samples only different in their annealing process, even though they qualitatively looked vastly different.</p>
+<p>In the world of metallurgy, the characteristics of steel can be significantly influenced by the processes it undergoes during and after its production. One such process is annealing, which plays a pivotal role in determining the grain density within steel. A project I worked on,<a href="/RobustFeatureAustenit"> linked here</a>, focused on estimating this grain density of steel from microscopy images. Similar alloys can look vastly different based on their annealing duration.</p>
 
-<p>Annealing is essentially a heat treatment process where steel is heated to a high temperature and then cooled slowly. This method is crucial because it affects the microstructure and, thus, the physical properties of the steel. The primary reason for annealing steel is to soften it, relieve internal stresses, and improve its ductility and toughness.</p>
+<center>
+<img src="../misc/densepacking/samplessmall.png" width="100%" />
+</center>
+<p><br />
+Annealing is essentially a heat treatment process where steel is heated to a high temperature and then cooled slowly. This method is crucial because it affects the microstructure and, thus, the physical properties of the steel. The primary reason for annealing steel is to soften it, relieve internal stresses, and improve its ductility and toughness.</p>
 
 <p>To understand this better, consider the process of quick quenching, which rapidly cools the steel. This method tends to “freeze” the chaotic structures within the metal, trapping various forms of imperfections. On the other hand, slowly reheating and annealing the steel allows the atoms—modeled as spheres in this scenario—to gain enough energy to move and settle into their lowest energy state. This state often resembles a well-organized grid of spheres.</p>
 
@@ -115,8 +119,7 @@ In the physical model the annealing is simulated by tapping on the glass itself.
 <center>
 <img src="../misc/densepacking/combined/compare.gif" width="95%" />
 </center>
-<p><br />
-In case the gifs are not synchronized, just reload the page. That should make them sync once you have them in cache.</p>
+<p><br /></p>
 
 <p>The first and the last frame of the animation above are shown now, so that it easier to see the emerging structural similarities.</p>
 
@@ -135,13 +138,31 @@ In case the gifs are not synchronized, just reload the page. That should make th
   </tr>
 </table>
 
-<h1 id="final-remarks">Final Remarks</h1>
+<h1 id="remarks-on-building-your-own">Remarks on building your own</h1>
 <hr />
 <p>If you wish to build your own model there’s a few things you could take away without having to make the same mistakes as I did.
 The steel bearings that I bought are 2mm in diameter, and are made of steel. When you invariably drop a 2kg bag of it on the floor, resist the urge to use a magnet to gather them. Magnetization is a real concern, especially once you put them between an isolating material such as plastic glass.</p>
 
 <p>While on the topic of glass: definitely use acrylic glass, and not polycarbonate. While polycarbonate is much cheaper it also discolors and scratches much easier. Additionally bending polycarbonate by applying heat is more difficult. Get acrylic, it is amazing; the steel bearings do not scratch it, it can be broken very cleanly, and can be burnished with a handheld torch at the edges along which it was broken. 
 Acrylic glass is manufactured using an extrusion or casting process, and the price between the two varies drastically. I have not found any significant differences between the two for this type of project.</p>
+
+<p>It is important that the steel balls are essentially only allowed to move in 2D.
+If they can stack, even slightly, behind each other you will run into a lot of issues such as the glass bending outwards, and potentially breaking.
+For my model I used 3mm thick acrylic glass for the front and backplate, and 2mm acrylic glass that was cut to form the frame that is sandwiched between the 3mm plates.
+The ballbearing are 2mm and the frame-plate is 2mm. To reduce the scarping, I placed washers that I cut from regular PET bottle plastic between the bolts that hold everything together.</p>
+
+<p>Weight plays a significant role in the design: I initially constructed a larger model weighing about 4 kilograms. Although this model produced more attractive patterns, it proved to be impractical. You cannot simply tip it because the weight of the balls causes the polycarbonate glass to bulge. This deformation allows the spheres to stack in 3D. To prevent this, you would need to use much thicker acrylic glass, which is difficult to break or cut without specialized tools like a laser cutter.</p>
+
+<center>
+<video autoplay="" loop="" muted="" playsinline="" width="80%" style="border: 1px solid black"> <source src="../misc/densepacking/large.mp4" type="video/mp4" /> </video>
+</center>
+<p><br />
+Regarding the bolts: It is important that the clamping force of the plates is distributed evenly. In general this means more bolts = less pressure on a single spot = better. You can see the effects of the clamping around the bolts where individual balls sometimes get stuck, as the bolt is squeezing the acrylic <em>just</em> a little too tight and reduces the tolerances enough for it to be an issue.</p>
+
+<p>To properly see the formation of the grains, I added a frosted acrylic film on the backplate that diffuses light. The dispersion in combination with a flashlight that is placed behind the prop, reveals the created structures really well.</p>
+
+<p>If you make your own, let me know <a title="Email" href="mailto:filip.ilic@icg.tugraz.at"><img class="svg-social-icon" src="../assets/social-icons/email.svg" /></a>
+I’d be very happy to see your designs.</p>
 
 <h1 id="further-reading">Further Reading</h1>
 <hr />
@@ -153,199 +174,53 @@ Acrylic glass is manufactured using an extrusion or casting process, and the pri
   <li><a href="http://datagenetics.com/blog/june32014/index.html">Optimal Packing in 2D, and 3D</a></li>
 </ul>
 
-<script>
-// module aliases
-var Engine = Matter.Engine,
-    Render = Matter.Render,
-    Runner = Matter.Runner,
-    Bodies = Matter.Bodies,
-    Composite = Matter.Composite;
+<table>
+    <tr>
+        <td width="35%">
+            <div class="badge">OAGM</div>
+            
+            
+            <img src="papers/RobustFeatureAustenit/teaser.png" style="width: 100%;" />
+            
+        </td>
+        <td width="65%" style="padding: 0px">
+            <div class="paper-info">
+                <div class="paper-head">
+                    
+                    <span class="paper-title"><a href="/RobustFeatureAustenit">A study on robust feature representations for grain density estimates in austenitic steel</a></span>
+                    
+                    <span class="paper-authors"><b>Filip Ilic</b>, Marc Masana, Lea Bogensperger, Harald Ganster, Thomas Pock</span>
+                    <span class="paper-published">2021 Computer Vision and Pattern Analysis Across Domains</span>
+                </div>
+            </div>
+            <div class="paper-links">
+                
+                <a href="/RobustFeatureAustenit"><img src="assets/icons/file-info-alt-svgrepo-com.svg" class="icon-size" />Project Page</a>
+                
+                
+                <a href="https://github.com/f-ilic/RobustFeatureAustenit"><img src="assets/icons/file-code-svgrepo-com.svg" class="icon-size" />Code</a>
+                
+                
+                <a href="papers/RobustFeatureAustenit/ilic21RobustFeatureAustenit.pdf"><img src="assets/icons/file-bookmark-alt-svgrepo-com.svg" class="icon-size" />Paper</a>
+                
+            </div>
+        </td>
+    </tr>
+</table>
 
-// create an engine
-var engine = Engine.create({
-    timing: {
-        timeScale: 0.2
-    }
-});
-// get the wrapper element and its dimensions
-var wrapper = document.getElementById('simulation-wrapper');
-var width = wrapper.offsetWidth;
-var height = wrapper.offsetHeight;
-
-// get the canvas element and set its dimensions
-var canvas = document.getElementById('simulation');
-canvas.width = width;
-canvas.height = height;
-
-// create a renderer
-var render = Render.create({
-    canvas: canvas,
-    engine: engine,
-    options: {
-        width: width,
-        height: height,
-        wireframes: false,
-        background: '#fafafa',
-        pixelRatio: window.devicePixelRatio // Adjust pixel ratio for sharpness
-    }
-});
-
-// Adding walls
-var ground = Bodies.rectangle(width / 2, height, width, 2, {
-    isStatic: true,
-    render: {
-        fillStyle: '#E8E8E8'  // Set the color of the rectangle
-    }
-});
-var ceiling = Bodies.rectangle(width / 2, 0, width, 2, {
-    isStatic: true,
-    render: {
-        fillStyle: '#E8E8E8'
-    }
-});
-var leftWall = Bodies.rectangle(0, height / 2, 2, height, {
-    isStatic: true,
-    render: {
-        fillStyle: '#E8E8E8'
-    }
-});
-var rightWall = Bodies.rectangle(width, height / 2, 2, height, {
-    isStatic: true,
-    render: {
-        fillStyle: '#E8E8E8'
-    }
-});
-
-// Add walls to the world
-Composite.add(engine.world, [ground, ceiling, leftWall, rightWall]);
-
-// Add circles with lower restitution and added friction
-const totalCircles = 2000;
-for (let i = 0; i < totalCircles; i++) {
-    var radius = 5;
-
-    var circle = Bodies.circle(
-        Math.random() * (width - 2 * radius) + radius, 
-        Math.random() * (height - 2 * radius) + radius, 
-        radius,
-        {
-            restitution: 0.2,  // much lower restitution
-            friction: 4,    // add some friction to reduce sliding
-            frictionAir: 0.01, // add air resistance
-            render: {
-                fillStyle: 'red',
-                strokeStyle: 'white', 
-                // lineWidth: 1
-            }
-        }
-    );
-    Composite.add(engine.world, circle);
-}
-
-// run the renderer
-Render.run(render);
-
-// create runner
-var runner = Runner.create();
-
-// run the engine
-Runner.run(runner, engine);
-
-// Handle window resizing or changes in the div size
-window.addEventListener('resize', function() {
-    var width = wrapper.offsetWidth;
-    var height = wrapper.offsetHeight;
-    canvas.width = width;
-    canvas.height = height;
-    render.options.width = width;
-    render.options.height = height;
-    // Update walls
-    Matter.Body.setPosition(ground, { x: width / 2, y: height });
-    Matter.Body.setPosition(ceiling, { x: width / 2, y: 0 });
-    Matter.Body.setPosition(leftWall, { x: 0, y: height / 2 });
-    Matter.Body.setPosition(rightWall, { x: width, y: height / 2 });
-    Render.lookAt(render, {
-        min: { x: 0, y: 0 },
-        max: { x: width, y: height }
-    });
-});
-
-document.getElementById('jiggleSmallButton').addEventListener('click', function() {
-    var bodies = Composite.allBodies(engine.world);
-
-    for (var i = 0; i < bodies.length; i++) {
-        var body = bodies[i];
-        if (!body.isStatic) {  // Only apply to non-static bodies (i.e., your circles)
-            var forceMagnitude = 0.02 * body.mass;  // Scale the force by the body's mass
-
-            // Apply force vector with random direction and fixed magnitude
-            Matter.Body.applyForce(body, body.position, {
-                x: (forceMagnitude + Math.random() * forceMagnitude) * (Math.random() < 0.5 ? -1 : 1),
-                y: (forceMagnitude + Math.random() * forceMagnitude) * (Math.random() < 0.5 ? -1 : 1)
-            });
-        }
-    }
-});
-
-document.getElementById('jiggleMediumButton').addEventListener('click', function() {
-    var bodies = Composite.allBodies(engine.world);
-
-    for (var i = 0; i < bodies.length; i++) {
-        var body = bodies[i];
-        if (!body.isStatic) {  // Only apply to non-static bodies (i.e., your circles)
-            var forceMagnitude = 0.08 * body.mass;  // Scale the force by the body's mass
-
-            // Apply force vector with random direction and fixed magnitude
-            Matter.Body.applyForce(body, body.position, {
-                x: (forceMagnitude + Math.random() * forceMagnitude) * (Math.random() < 0.5 ? -1 : 1),
-                y: (forceMagnitude + Math.random() * forceMagnitude) * (Math.random() < 0.5 ? -1 : 1)
-            });
-        }
-    }
-});
-
-document.getElementById('jiggleLargeButton').addEventListener('click', function() {
-    var bodies = Composite.allBodies(engine.world);
-
-    for (var i = 0; i < bodies.length; i++) {
-        var body = bodies[i];
-        if (!body.isStatic) {  // Only apply to non-static bodies (i.e., your circles)
-            var forceMagnitude = 0.15 * body.mass;  // Scale the force by the body's mass
-
-            // Apply force vector with random direction and fixed magnitude
-            Matter.Body.applyForce(body, body.position, {
-                x: (forceMagnitude + Math.random() * forceMagnitude) * (Math.random() < 0.5 ? -1 : 1),
-                y: (forceMagnitude + Math.random() * forceMagnitude) * (Math.random() < 0.5 ? -1 : 1)
-            });
-        }
-    }
-});
+<script src="../misc/densepacking/densepacking.js">
 </script>
-
 
 </div>
 <a class="u-url" href="/densepacking" hidden></a>
     </div>
-  </main><footer class="site-footer" >
-        <center>
-        <div class="footnotesize" >
+  </main><footer class="site-footer">
+    <center>
+        <div class="footnotesize">
             <!-- Coded and designed with ❤️<br> -->
             Updated July 2024
         </div>
     </center>
-</footer>
-
-<!-- Google Analytics -->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    
-    ga('create', 'UA-135499587-1', 'auto');
-    ga('send', 'pageview');
-    </script>
-<!-- End Google Analytics -->
-    </body>
+</footer></body>
 
 </html>

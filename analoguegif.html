@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang=" en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/main.css">
+</head><body>
+  <header><!-- <center> -->
+  <table id="me-container" style="border: none;">
+      <tr style="border: none;">
+        <td style="border: none; width:40%;" align="left">
+          <a title="Homepage" href="/"><img src="/assets/facepic_rect.jpg" class='circle-img' align="right"></a>
+        </td>
+        <td style="border: none; width:60%;" align="left">
+          <div id='header-name'>
+            Filip Ilic
+          </div>
+          <div id='header-description'>
+          PhD student at TUGraz<br>
+          Computer Vision & Machine Learning<br>
+          </div><a title="Email" href="mailto:filip.ilic@icg.tugraz.at"><img class="svg-social-icon" src="/assets/social-icons/email.svg" /></a><a title="Github" href="https://github.com/f-ilic"><img class="svg-social-icon" src="/assets/social-icons/github.svg" /></a><a title="LinkedIn" href="https://www.linkedin.com/in/filip-ilic-82a898185"><img class="svg-social-icon" src="/assets/social-icons/linkedin.svg" /></a><a title="Google Scholar" href="https://scholar.google.com/citations?user=W56GwcAAAAAJ"><img class="svg-social-icon" src="/assets/social-icons/google_scholar.svg" /></a></td>
+      </tr>
+  </table> 
+<!-- </center> --></header>
+
+  <center>
+    <!--<nav-ul>
+<nav-li>
+      <a class="nav-elem" href="/">Homepage</a>
+</nav-li></nav-ul>
+-->
+  </center>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      <br>
+<div class="item-wrapper">
+    <table>
+        <tr>
+            <td width="100%" style="padding: 0px">
+                <div class="paper-info">
+                    <div class="paper-head">
+                        <!-- <span class="paper-title">The Analogue GIF</span> -->
+                        <h1>The Analogue GIF</h1>
+                        <hr>
+                        <span class="paper-authors">A demo piece on the perception of temporal consistency.<br>The analogue GIF explores human perception of motion from static noise patterns, revealing that effective motion detection persists even with imperfect image alignment. It also shows how robust our visual processing abilities are.</span>
+                        <span class="paper-published"></span>
+                    </div>
+                </div>
+                <div class="paper-links">
+                    
+                    
+                </div>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript" id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<video autoplay="" loop="" muted="" playsinline="" width="100%" style="border: 1px solid black">
+  <source src="../misc/analoguegif/teaser.mp4" type="video/mp4" />
+</video>
+<p><br /></p>
+<h1 id="motivation">Motivation</h1>
+<hr />
+<p>I built an analogue GIF in conjunction with a paper that I wrote, <a href="/AppearanceFreeActionRecognition">linked here</a>.
+In the paper we investigated if humans can perceive motion even if it is only encoded in otherwise static noise. Turns out people can perceive it quite well!</p>
+
+<p>However, I was still curious if this might only be due to the fact that on a computer screen all pixels are always in perfect alignment when it switches from one frame to the next.
+So I built this little analogue GIF machine in which you can play the same noise patterns printed (and laminated) on paper, where alignment is never perfect.</p>
+
+<p>From it you can hopefully see that there is some motion happening (jumping jack).
+It is quite a bit harder to make out on the recording of the analogue GIF, than it is in real life. I assume that this is due to a few things like the compression that is happening when you film noise, some glaring from the illumination, and the rotational speed with which the GIF is played not matching the actual frame-rate at which the camera is recording.</p>
+
+<h1 id="the-model">The Model</h1>
+<hr />
+<p>The full contraption is rather sturdy and works pretty well. 
+The two wooden bars at to top and bottom of the frame are added such that the laminated paper can build some pressure like a spring during the rotation. Once the rotational angle of the spool exceeds the grip of the wooden bar, the paper flips rather fast due to the stored spring energy. This is important to reduce the time in which the paper is obstructing the view of the paper behind it. A few of my early prototypes were prematurely tossed before I realized that this was a significant factor, <em>whops</em>.</p>
+
+<p>I built three ‘rolls’ that show a different action being performed. Each GIF is edited such that it loops with a period of 24 frames, which coincides with the number of images on the roll. This means, that 1 rotation per second is equivalent to playing the video at 24 frames per second (fps).
+Just by cranking the handle slower you can adjust the frame rate itself, and can see how your perception of motion does break somewhere around the \(\sim\) 5 fps marks.</p>
+<center>
+<img src="../misc/analoguegif/rolls.png" width="100%" style="border: 1px solid black" />
+</center>
+<p><br /></p>
+
+<table style="width: 100%; border-collapse: separate; border-spacing: 15px 0;">
+    <tr>
+        <td style="width: 33.333%; text-align: center;">
+            <img src="../misc/analoguegif/rolls/squats.gif" alt="Squats" style="width: auto; height: 30vw; max-height: 250px;" />
+        </td>
+        <td style="width: 33.333%; text-align: center;">
+            <img src="../misc/analoguegif/rolls/jumpingjack.gif" alt="Table Tennis" style="width: auto; height: 30vw; max-height: 250px;" />
+        </td>
+        <td style="width: 33.333%; text-align: center;">
+            <img src="../misc/analoguegif/rolls/tabletennis.gif" alt="Jumping Jack" style="width: auto; height: 30vw; max-height: 250px;" />
+        </td>
+    </tr>
+</table>
+
+<p><br /></p>
+
+<h1 id="random-dot-patterns">Random Dot Patterns</h1>
+<hr />
+
+<p>Visual perception is a complex process where the brain interprets and makes sense of the visual stimuli it receives. An intriguing way to explore this phenomenon is through the study of patterns created from simple elements under transformation. An example of this is seen in experiments involving random dot patterns. In these experiments, a field of randomly distributed dots is created, and then a copy of this field is made. The duplicate is then rotated to various degrees relative to the original. 
+The emerging patterns are called Glass patterns, first studied by <a href="https://ui.adsabs.harvard.edu/abs/1969Natur.223..578G/abstract">Leon Glass in 1969</a>, provides valuable insights into how the human visual system detects and interprets structure.
+<br /></p>
+
+<p>Here I am showing just a few of the visually interesting displacements and transformations of the pattern, on top of an identical stationary pattern.
+In short; what you see is your brain finding correspondences among the two patterns which result in these spiral and 3D effects you see.</p>
+<center>
+Rotation
+<div>
+<canvas width="85" height="85" id="glassRotation1"></canvas>
+<canvas width="85" height="85" id="glassRotation2"></canvas>
+<canvas width="85" height="85" id="glassRotation3"></canvas>
+<canvas width="85" height="85" id="glassRotation4"></canvas>
+<canvas width="85" height="85" id="glassRotation5"></canvas>
+<canvas width="85" height="85" id="glassRotation6"></canvas>
+</div>
+</center>
+
+<center>
+Scaling
+<div>
+<canvas width="85" height="85" id="glassScale1"></canvas>
+<canvas width="85" height="85" id="glassScale2"></canvas>
+<canvas width="85" height="85" id="glassScale3"></canvas>
+<canvas width="85" height="85" id="glassScale4"></canvas>
+<canvas width="85" height="85" id="glassScale5"></canvas>
+<canvas width="85" height="85" id="glassScale6"></canvas>
+</div>
+</center>
+
+<center>
+Scaling + Rotation
+<div>
+<canvas width="85" height="85" id="glassScaleRot1"></canvas>
+<canvas width="85" height="85" id="glassScaleRot2"></canvas>
+<canvas width="85" height="85" id="glassScaleRot3"></canvas>
+<canvas width="85" height="85" id="glassScaleRot4"></canvas>
+<canvas width="85" height="85" id="glassScaleRot5"></canvas>
+<canvas width="85" height="85" id="glassScaleRot6"></canvas>
+</div>
+</center>
+
+<center>
+Scaling + Translation
+<div>
+<canvas width="85" height="85" id="glassScaleTrans1"></canvas>
+<canvas width="85" height="85" id="glassScaleTrans2"></canvas>
+<canvas width="85" height="85" id="glassScaleTrans3"></canvas>
+<canvas width="85" height="85" id="glassScaleTrans4"></canvas>
+<canvas width="85" height="85" id="glassScaleTrans5"></canvas>
+<canvas width="85" height="85" id="glassScaleTrans6"></canvas>
+</div>
+</center>
+
+<center>
+Rotation + Translation
+<div>
+<canvas width="85" height="85" id="glassRotationTrans1"></canvas>
+<canvas width="85" height="85" id="glassRotationTrans2"></canvas>
+<canvas width="85" height="85" id="glassRotationTrans3"></canvas>
+<canvas width="85" height="85" id="glassRotationTrans4"></canvas>
+<canvas width="85" height="85" id="glassRotationTrans5"></canvas>
+<canvas width="85" height="85" id="glassRotationTrans6"></canvas>
+</div>
+</center>
+
+<p><br />
+However I believe to truly understand how individual transformation change the perception of the pattern it is important to play around with it.
+For that reason I built an interactive demo that allows you to rotate, scale, and translate the pattern.</p>
+
+<center>
+<div style="display: flex; align-items: flex-start;">
+    <div style="margin-right: 100px;">
+        <div>
+            rotate<br />
+            <input type="range" id="rotateSlider" class="vertical-slider" min="-5" max="5" value="0" step="0.1" style="width: 100px;" />
+        </div>
+        <div>
+            scale<br />
+            <input type="range" id="scaleSlider" class="vertical-slider" min="0.9" max="1" value="1" step="0.001" style="width: 100px;" />
+        </div>
+        <div>
+            x-offset<br />
+            <input type="range" id="xOffsetSlider" class="vertical-slider" min="-10" max="10" value="0" step="0.1" style="width: 100px;" />
+        </div>
+        <div>
+            y-offset<br />
+            <input type="range" id="yOffsetSlider" class="vertical-slider" min="-10" max="10" value="0" step="0.1" style="width: 100px;" />
+        </div>
+        <button id="resetBtn">Reset</button>
+    </div>
+    <canvas id="canvas0" width="400" height="400"></canvas>
+</div>
+</center>
+<p><br /></p>
+
+<p>The connection between Glass patterns and motion-induced animations becomes especially evident when considering their limitations. For example, a Glass pattern that is rotated excessively becomes unrecognizable—the brain can no longer match the transformed pattern with its original, leading to a breakdown in perceived structure. Similarly, in the case of animated random dot patterns, reducing the frame rate below a certain threshold causes the perception of motion to falter. Both scenarios illustrate the limits of our visual perception and its dependency on certain thresholds of change, whether they be spatial or temporal.</p>
+
+<style>
+  .center-content {
+    text-align: center;
+  }
+  .center-content .item {
+    display: inline-block; /* Aligns items horizontally */
+    margin-right: 20px; /* Space between each item */
+    margin-bottom: 20px; /* Space between rows */
+  }
+  .center-content .item:last-child {
+    margin-right: 0; /* No space on the right for the last item */
+  }
+  .caption {
+    margin-bottom: 5px; /* Space between the caption and the image/canvas */
+    font-size: 14px; /* Caption text size */
+  }
+</style>
+
+<div class="center-content">
+  <!-- Canvas with captions -->
+  <div>
+    <div class="item">
+      <div class="caption">2° Rotation</div>
+      <canvas width="200" height="200" id="glassOverRotate1"></canvas>
+    </div>
+    <div class="item">
+      <div class="caption">3° Rotation</div>
+      <canvas width="200" height="200" id="glassOverRotate2"></canvas>
+    </div>
+    <div class="item">
+      <div class="caption">10° Rotation</div>
+      <canvas width="200" height="200" id="glassOverRotate3"></canvas>
+    </div>
+  </div>
+
+  <!-- Images with captions -->
+  <div>
+    <div class="item">
+      <div class="caption">24 FPS</div>
+      <img src="../misc/analoguegif/fps/pushup24.gif" width="200" height="200" />
+    </div>
+    <div class="item">
+      <div class="caption">6 FPS</div>
+      <img src="../misc/analoguegif/fps/pushup6.gif" width="200" height="200" />
+    </div>
+    <div class="item">
+      <div class="caption">2 FPS</div>
+      <img src="../misc/analoguegif/fps/pushup2.gif" width="200" height="200" />
+    </div>
+  </div>
+</div>
+
+<p>This analogy between Glass patterns and motion-induced animations in random dot patterns suggests a broader principle at play: our visual system’s ability to interpret and make sense of patterns relies on coherent changes within recognizable limits. When these limits are exceeded—be it through excessive rotation or insufficient frame rates—our ability to perceive continuity and structure breaks down. This insight not only enriches our understanding of visual perception but also underscores the importance of parameters like alignment and frame rate in influencing how effectively we can perceive and interpret motion and transformations in visual patterns.</p>
+
+<h1 id="further-reading">Further Reading</h1>
+<hr />
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=QAja2jp1VjE">Tadashi Tokieda &amp; Numberphile: Freaky Dot Patterns</a></li>
+</ul>
+
+<table>
+    <tr>
+        <td width="35%">
+            <div class="badge">ECCV</div>
+            
+            
+            <img src="papers/AppearanceFreeActionReconigtion/PommelHorse.gif" style="width: 100%;" />
+            
+        </td>
+        <td width="65%" style="padding: 0px">
+            <div class="paper-info">
+                <div class="paper-head">
+                    
+                    <span class="paper-title"><a href="/AppearanceFreeActionRecognition">Is Appearance Free Action Recognition Possible?</a></span>
+                    
+                    <span class="paper-authors"><b>Filip Ilic</b>, Thomas Pock, Richard Wildes</span>
+                    <span class="paper-published">2022 European Conference on Computer Vision</span>
+                </div>
+            </div>
+            <div class="paper-links">
+                
+                <a href="/AppearanceFreeActionRecognition"><img src="assets/icons/file-info-alt-svgrepo-com.svg" class="icon-size" />Project Page</a>
+                
+                
+                <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition"><img src="assets/icons/file-code-svgrepo-com.svg" class="icon-size" />Code</a>
+                
+                
+                <a href="https://arxiv.org/pdf/2207.06261.pdf"><img src="assets/icons/file-bookmark-alt-svgrepo-com.svg" class="icon-size" />Paper</a>
+                
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script src="../misc/analoguegif/circlepattern.js">
+</script>
+
+</div>
+<a class="u-url" href="/analoguegif" hidden></a>
+    </div>
+  </main><footer class="site-footer">
+    <center>
+        <div class="footnotesize">
+            <!-- Coded and designed with ❤️<br> -->
+            Updated July 2024
+        </div>
+    </center>
+</footer></body>
+
+</html>
