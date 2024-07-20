@@ -17,7 +17,7 @@ var width = wrapper.offsetWidth;
 var height = wrapper.offsetHeight;
 
 // Calculate radius based on canvas size
-var baseRadius = 1.2*Math.min(width, height) / 100; // Example: makes the radius 2% of the smaller dimension
+var baseRadius = 1.2 * Math.min(width, height) / 100; // Example: makes the radius 2% of the smaller dimension
 
 
 // get the canvas element and set its dimensions
@@ -34,7 +34,7 @@ var render = Render.create({
         height: height,
         wireframes: false,
         background: '#fafafa',
-        pixelRatio: window.devicePixelRatio // Adjust pixel ratio for sharpness
+        // pixelRatio: window.devicePixelRatio // Adjust pixel ratio for sharpness
     }
 });
 
@@ -73,8 +73,8 @@ for (let i = 0; i < totalCircles; i++) {
     var radius = baseRadius;
 
     var circle = Bodies.circle(
-        Math.random() * (width - 2 * radius) + radius, 
-        Math.random() * (height - 2 * radius) + radius, 
+        Math.random() * (width - 2 * radius) + radius,
+        Math.random() * (height - 2 * radius) + radius,
         radius,
         {
             restitution: 0.2,  // much lower restitution
@@ -82,7 +82,7 @@ for (let i = 0; i < totalCircles; i++) {
             frictionAir: 0.01, // add air resistance
             render: {
                 fillStyle: 'red',
-                strokeStyle: 'white', 
+                strokeStyle: 'white',
                 // lineWidth: 1
             }
         }
@@ -100,7 +100,7 @@ var runner = Runner.create();
 Runner.run(runner, engine);
 
 // Handle window resizing or changes in the div size
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
     var width = wrapper.offsetWidth;
     var height = wrapper.offsetHeight;
     canvas.width = width;
@@ -118,7 +118,7 @@ window.addEventListener('resize', function() {
     });
 });
 
-document.getElementById('jiggleSmallButton').addEventListener('click', function() {
+document.getElementById('jiggleSmallButton').addEventListener('click', function () {
     var bodies = Composite.allBodies(engine.world);
 
     for (var i = 0; i < bodies.length; i++) {
@@ -135,7 +135,7 @@ document.getElementById('jiggleSmallButton').addEventListener('click', function(
     }
 });
 
-document.getElementById('jiggleMediumButton').addEventListener('click', function() {
+document.getElementById('jiggleMediumButton').addEventListener('click', function () {
     var bodies = Composite.allBodies(engine.world);
 
     for (var i = 0; i < bodies.length; i++) {
@@ -152,7 +152,7 @@ document.getElementById('jiggleMediumButton').addEventListener('click', function
     }
 });
 
-document.getElementById('jiggleLargeButton').addEventListener('click', function() {
+document.getElementById('jiggleLargeButton').addEventListener('click', function () {
     var bodies = Composite.allBodies(engine.world);
 
     for (var i = 0; i < bodies.length; i++) {
