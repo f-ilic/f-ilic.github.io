@@ -36,7 +36,7 @@ It covers the essential parts that are needed to show how artifacts, introduced 
 Anyway, you should give it a try, and jiggle the particles once they have settled.
 You will observe that the initial formation and settling results in rather small coherent patches, the grains in the example of steel plasticity.
 
-<div id="simulation-wrapper" style="width: 80%; margin: auto; height: 400px;">
+<div id="simulation-wrapper" style="width: 600px; margin: auto; height: 400px;">
     <canvas id="simulation"></canvas>
 </div>
 <br>
