@@ -3,7 +3,10 @@ var Engine = Matter.Engine,
     Render = Matter.Render,
     Runner = Matter.Runner,
     Bodies = Matter.Bodies,
-    Composite = Matter.Composite;
+    Composite = Matter.Composite,
+    Common = Matter.Common,
+    MouseConstraint = Matter.MouseConstraint,
+    Mouse = Matter.Mouse;
 
 // create an engine
 var engine = Engine.create({
@@ -66,6 +69,25 @@ var rightWall = Bodies.rectangle(width, height / 2, 10, height, {
 
 // Add walls to the world
 Composite.add(engine.world, [ground, ceiling, leftWall, rightWall]);
+
+
+// add mouse control
+var mouse = Mouse.create(render.canvas),
+    mouseConstraint = MouseConstraint.create(engine, {
+        mouse: mouse,
+        constraint: {
+            stiffness: 0.2,
+            render: {
+                visible: false
+            }
+        }
+    });
+
+Composite.add(engine.world, mouseConstraint);
+
+// keep the mouse in sync with rendering
+render.mouse = mouse;
+
 
 // Add circles with lower restitution and added friction
 const totalCircles = 2000;
