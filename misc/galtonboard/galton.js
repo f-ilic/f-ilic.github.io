@@ -5,8 +5,10 @@ var Engine = Matter.Engine,
     Composite = Matter.Composite,
     Body = Matter.Body;
 
+const baseWidth = 600;
+const baseHeight = 900;
 
-var ballradius = 2
+
 // Create an engine
 var engine = Engine.create({ timing: { timeScale: 1 } });
 
@@ -14,6 +16,11 @@ var engine = Engine.create({ timing: { timeScale: 1 } });
 var wrapper = document.getElementById('simulation-wrapper');
 var width = wrapper.offsetWidth;
 var height = wrapper.offsetHeight;
+var scaleFactor = Math.min(width / baseWidth, height / baseHeight);
+
+
+var ballradius = 2.5 * scaleFactor
+
 
 // Get the canvas element and set its dimensions
 var canvas = document.getElementById('simulation');
@@ -35,13 +42,15 @@ var render = Render.create({
 });
 
 // Adding walls and funnel
+var wallThickness = 20 * scaleFactor;
 var walls = [
-    Bodies.rectangle(width / 2, height, width, 27, { isStatic: true, render: { fillStyle: '#E8E8E8', } }),
-    Bodies.rectangle(width / 2, 0, width, 27, { isStatic: true, render: { fillStyle: '#fafafa' } }),
-    Bodies.rectangle(0, height / 2, 27, height, { isStatic: true, render: { fillStyle: '#fafafa' } }),
-    Bodies.rectangle(width, height / 2, 27, height, { isStatic: true, render: { fillStyle: '#fafafa' } })
+    Bodies.rectangle(width / 2, height, width, wallThickness, { isStatic: true, render: { fillStyle: '#E8E8E8' } }),
+    Bodies.rectangle(width / 2, 0, width, wallThickness, { isStatic: true, render: { fillStyle: '#fafafa' } }),
+    Bodies.rectangle(0, height / 2, wallThickness, height, { isStatic: true, render: { fillStyle: '#fafafa' } }),
+    Bodies.rectangle(width, height / 2, wallThickness, height, { isStatic: true, render: { fillStyle: '#fafafa' } })
 ];
 Composite.add(engine.world, walls);
+
 
 // Adding funnel
 
@@ -51,7 +60,7 @@ const rowsOfPegs = 15;
 const startingY = height * 0.38;
 const pegHeight = height / 2;
 const spacingY = pegHeight / rowsOfPegs;
-const pegRadius = 5;
+const pegRadius = 5 * scaleFactor;
 for (let row = 0; row < rowsOfPegs; row++) {
 
     if (row < rowsOfPegs - 2) {
@@ -77,7 +86,7 @@ for (let row = 0; row < rowsOfPegs; row++) {
                 width / 2 + (col - row / 2) * spacingY,
                 height - 10,
                 4,
-                350,
+                350 * scaleFactor,
                 {
                     isStatic: true, render: {
                         fillStyle: '#fafafa',
@@ -89,7 +98,7 @@ for (let row = 0; row < rowsOfPegs; row++) {
     }
 }
 
-var funnelR = Bodies.trapezoid(width, height / 3, 80, 450, -8, {
+var funnelR = Bodies.trapezoid(width, height / 3, 80 * scaleFactor, 450 * scaleFactor, -8, {
     isStatic: true, render: {
         fillStyle: '#E8E8E8', strokeStyle: 'black',
         lineWidth: 3,
@@ -97,7 +106,7 @@ var funnelR = Bodies.trapezoid(width, height / 3, 80, 450, -8, {
 });
 Body.rotate(funnelR, Math.PI / 2);
 
-var funnelL = Bodies.trapezoid(0, height / 3, 80, 450, -8, {
+var funnelL = Bodies.trapezoid(0, height / 3, 80 * scaleFactor, 450 * scaleFactor, -8, {
     isStatic: true, render: {
         fillStyle: '#E8E8E8', strokeStyle: 'black',
         lineWidth: 3,
