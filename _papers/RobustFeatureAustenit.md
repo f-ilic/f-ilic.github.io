@@ -27,3 +27,10 @@ teaser: papers/RobustFeatureAustenit/teaser.png
   year={2021}
 }
 ```
+
+# Further Reading
+---
+
+{% for post in site.misc reversed %}
+  {% include post_table.html title="Dense packing with spheres" %}
+{% endfor %}

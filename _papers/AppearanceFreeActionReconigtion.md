@@ -157,7 +157,7 @@ Using sparse noise, we can create videos that evoke a familiarity, at least in s
 
 <p>
 <center><em>Visual perception of biological motion; Johansson Gunnar (1973)</em></center>
-<video controls autoplay loop muted playsinline width="100%">
+<video autoplay loop muted playsinline width="100%">
 <source  src="../papers/AppearanceFreeActionReconigtion/walkingdots.mp4" type="video/mp4">
 </video> 
 </p>
@@ -182,6 +182,7 @@ This design choise for our network allows for a rich dynamics representation tha
 <br>
 
 
+
 # Cite
 ---
 ```bibtex
@@ -193,6 +194,21 @@ month={October},
 year={2022},
 }
 ```
+
+
+# Further Reading
+---
+
+{% for paper in site.papers reversed %}
+  {% include paper_table.html title="Is Appearance Free Action Recognition Possible?" %}
+{% endfor %}
+
+{% for post in site.misc reversed %}
+  {% include post_table.html title="The Analogue GIF" %}
+{% endfor %}
+
+
+
 
 <script>
 let slideIndex = [1,1];

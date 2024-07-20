@@ -94,7 +94,15 @@ createNoiseWithinCircle(); // Create noise once
 draw(); // Initial draw
 
 
-function initializeCanvas(canvasId, rotation, scale, xOff, yOff) {
+function mulberry32(seed) {
+    return function () {
+        var t = seed += 0x6D2B79F5;
+        t = Math.imul(t ^ t >>> 15, t | 1);
+        t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    }
+}
+function initializeCanvas(canvasId, rotation, scale, xOff, yOff, seed = 42) {
     let canvas = document.getElementById(canvasId);
     let ctx = canvas.getContext('2d');
     let bufferCanvas = document.createElement('canvas');
@@ -111,7 +119,7 @@ function initializeCanvas(canvasId, rotation, scale, xOff, yOff) {
     let scaleFactor = scale;
     let xOffset = xOff;
     let yOffset = yOff;
-
+    let random = mulberry32(seed); // Initialize PRNG with the seed
 
     function createNoiseWithinCircle() {
         bufferCtx.fillStyle = 'rgba(255, 255, 255, 0.5)';
@@ -122,8 +130,8 @@ function initializeCanvas(canvasId, rotation, scale, xOff, yOff) {
         bufferCtx.clip();
 
         for (let i = 0; i < Math.PI * radius * radius * noiselevel; i++) {
-            const angle = Math.random() * Math.PI * 2;
-            const r = radius * Math.sqrt(Math.random());
+            const angle = random() * Math.PI * 2; // Use seeded random number for angle
+            const r = radius * Math.sqrt(random()); // Use seeded random number for radius
             const x = centerX + r * Math.cos(angle);
             const y = centerY + r * Math.sin(angle);
             bufferCtx.fillStyle = 'black';
@@ -188,3 +196,8 @@ initializeCanvas('glassRotationTrans3', 8, 1.0, -2, 0);
 initializeCanvas('glassRotationTrans4', 8, 1.0, 1, 0);
 initializeCanvas('glassRotationTrans5', 8, 1.0, 0, 0);
 initializeCanvas('glassRotationTrans6', 8, 1.0, 1, 0);
+
+
+initializeCanvas('glassOverRotate1', 2, 1.0, 0, 0);
+initializeCanvas('glassOverRotate2', 3, 1.0, 0, 0);
+initializeCanvas('glassOverRotate3', 10, 1.0, 0, 0);

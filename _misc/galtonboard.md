@@ -104,7 +104,10 @@ There are of course some caveats; in the real world and even in the particle sim
 I have yet to see the proper math discussed that deals with the actual trajectory that balls take in an un-idealized scenario, i.e. skipping layers, unfair left-right distributions on individual pegs due to imperfect alignment and so on. I might investigate this at a different time; however that would require building a more robust simulation engine. The implementation that you see on this page required some fine-tuning regarding friction, stiction, and air resistance. Choosing either parameter wrong results in unpredictable behavior.
 
 Reality and simulation differ from the view of a layer wise random walk:
-Not all balls start at the central peg! Take a close look at the physical model, and you will see that the balls start from around 4-5 pegs on their downwards journey. This is not too bad, however, because if we assume that the initial arrangement of balls was left-right symmetric the same number of balls start their journey at -2 as do start their journey at +2 (w.r.t. the first layer peg order where 0 denotes the center). Since, the left side cancels out with the right side, it boils down to a sum of gaussians over the 0th layer pegs - which is again a gaussian! Funny how that works out.
+Not all balls start at the central peg! Take a close look at the physical model, and you will see that the balls start from around 4-5 pegs on their downwards journey. This is not too bad, however, because if we assume that the initial arrangement of balls was left-right symmetric the same number of balls start their journey at -2 as do start their journey at +2 (w.r.t. the first layer peg order where 0 denotes the center). Since, the left side cancels out with the right side, it boils down to a sum of gaussians over the 0th layer pegs - which is again a gaussian.
+This is, at least currently, my attempt of an explanation.
+
+Thats it for now; I plant to investigate the physics and math behind how a non-idealized Galton board works in the future.
 
 # Remarks on building your own
 ---

@@ -21,7 +21,7 @@ date: 2022-09-01
 I built an analogue GIF in conjunction with a paper that I wrote, <a href='/AppearanceFreeActionRecognition'>linked here</a>.
 In the paper we investigated if humans can perceive motion even if it is only encoded in otherwise static noise. Turns out people can perceive it quite well!
 
-However, i was still curious if this might only be due to the fact that on a computer screen all pixels are always in perfect alignment when it switches from one frame to the next.
+However, I was still curious if this might only be due to the fact that on a computer screen all pixels are always in perfect alignment when it switches from one frame to the next.
 So I built this little analogue GIF machine in which you can play the same noise patterns printed (and laminated) on paper, where alignment is never perfect.
 
 From it you can hopefully see that there is some motion happening (jumping jack).
@@ -56,43 +56,16 @@ Just by cranking the handle slower you can adjust the frame rate itself, and can
 
 <br>
 
-# An explanation by analogy
+
+# Random Dot Patterns
 ---
 
 Visual perception is a complex process where the brain interprets and makes sense of the visual stimuli it receives. An intriguing way to explore this phenomenon is through the study of patterns created from simple elements under transformation. An example of this is seen in experiments involving random dot patterns. In these experiments, a field of randomly distributed dots is created, and then a copy of this field is made. The duplicate is then rotated to various degrees relative to the original. 
-The emerging patterns are called Glass patterns, first studied by <a href="https://ui.adsabs.harvard.edu/abs/1969Natur.223..578G/abstract">Leon Glass</a>, provides valuable insights into how the human visual system detects and interprets structure.
-
-
-
-
-
-<center>
-<div style="display: flex; align-items: flex-start;">
-    <div style="margin-right: 100px;">
-        <div>
-            rotate<br>
-            <input type="range" id="rotateSlider" class="vertical-slider" min="-5" max="5" value="0" step="0.1" style="width: 100px;">
-        </div>
-        <div>
-            scale<br>
-            <input type="range" id="scaleSlider" class="vertical-slider" min="0.9" max="1" value="1" step="0.001" style="width: 100px;">
-        </div>
-        <div>
-            x-offset<br>
-            <input type="range" id="xOffsetSlider" class="vertical-slider" min="-10" max="10" value="0" step="0.1" style="width: 100px;">
-        </div>
-        <div>
-            y-offset<br>
-            <input type="range" id="yOffsetSlider" class="vertical-slider" min="-10" max="10" value="0" step="0.1" style="width: 100px;">
-        </div>
-        <button id="resetBtn">Reset</button>
-    </div>
-    <canvas id="canvas0" width="400" height="400"></canvas>
-</div>
-</center>
+The emerging patterns are called Glass patterns, first studied by <a href="https://ui.adsabs.harvard.edu/abs/1969Natur.223..578G/abstract">Leon Glass in 1969</a>, provides valuable insights into how the human visual system detects and interprets structure.
 <br>
 
-
+Here I am showing just a few of the visually interesting displacements and transformations of the pattern, on top of an identical stationary pattern.
+In short; what you see is your brain finding correspondences among the two patterns which result in these spiral and 3D effects you see.
 <center>
 Rotation
 <div>
@@ -153,5 +126,98 @@ Rotation + Translation
 </div>
 </center>
 
+<br>
+However I believe to truly understand how individual transformation change the perception of the pattern it is important to play around with it.
+For that reason I built an interactive demo that allows you to rotate, scale, and translate the pattern.
+
+<center>
+<div style="display: flex; align-items: flex-start;">
+    <div style="margin-right: 100px;">
+        <div>
+            rotate<br>
+            <input type="range" id="rotateSlider" class="vertical-slider" min="-5" max="5" value="0" step="0.1" style="width: 100px;">
+        </div>
+        <div>
+            scale<br>
+            <input type="range" id="scaleSlider" class="vertical-slider" min="0.9" max="1" value="1" step="0.001" style="width: 100px;">
+        </div>
+        <div>
+            x-offset<br>
+            <input type="range" id="xOffsetSlider" class="vertical-slider" min="-10" max="10" value="0" step="0.1" style="width: 100px;">
+        </div>
+        <div>
+            y-offset<br>
+            <input type="range" id="yOffsetSlider" class="vertical-slider" min="-10" max="10" value="0" step="0.1" style="width: 100px;">
+        </div>
+        <button id="resetBtn">Reset</button>
+    </div>
+    <canvas id="canvas0" width="400" height="400"></canvas>
+</div>
+</center>
+<br>
+
+The connection between Glass patterns and motion-induced animations becomes especially evident when considering their limitations. For example, a Glass pattern that is rotated excessively becomes unrecognizable—the brain can no longer match the transformed pattern with its original, leading to a breakdown in perceived structure. Similarly, in the case of animated random dot patterns, reducing the frame rate below a certain threshold causes the perception of motion to falter. Both scenarios illustrate the limits of our visual perception and its dependency on certain thresholds of change, whether they be spatial or temporal.
+
+<style>
+  .center-content {
+    text-align: center;
+  }
+  .center-content .item {
+    display: inline-block; /* Aligns items horizontally */
+    margin-right: 20px; /* Space between each item */
+    margin-bottom: 20px; /* Space between rows */
+  }
+  .center-content .item:last-child {
+    margin-right: 0; /* No space on the right for the last item */
+  }
+  .caption {
+    margin-bottom: 5px; /* Space between the caption and the image/canvas */
+    font-size: 14px; /* Caption text size */
+  }
+</style>
+
+<div class="center-content">
+  <!-- Canvas with captions -->
+  <div>
+    <div class="item">
+      <div class="caption">2° Rotation</div>
+      <canvas width="200" height="200" id="glassOverRotate1"></canvas>
+    </div>
+    <div class="item">
+      <div class="caption">3° Rotation</div>
+      <canvas width="200" height="200" id="glassOverRotate2"></canvas>
+    </div>
+    <div class="item">
+      <div class="caption">10° Rotation</div>
+      <canvas width="200" height="200" id="glassOverRotate3"></canvas>
+    </div>
+  </div>
+
+  <!-- Images with captions -->
+  <div>
+    <div class="item">
+      <div class="caption">24 FPS</div>
+      <img src="../misc/analoguegif/fps/pushup24.gif" width="200" height="200">
+    </div>
+    <div class="item">
+      <div class="caption">6 FPS</div>
+      <img src="../misc/analoguegif/fps/pushup6.gif" width="200" height="200">
+    </div>
+    <div class="item">
+      <div class="caption">2 FPS</div>
+      <img src="../misc/analoguegif/fps/pushup2.gif" width="200" height="200">
+    </div>
+  </div>
+</div>
+
+This analogy between Glass patterns and motion-induced animations in random dot patterns suggests a broader principle at play: our visual system’s ability to interpret and make sense of patterns relies on coherent changes within recognizable limits. When these limits are exceeded—be it through excessive rotation or insufficient frame rates—our ability to perceive continuity and structure breaks down. This insight not only enriches our understanding of visual perception but also underscores the importance of parameters like alignment and frame rate in influencing how effectively we can perceive and interpret motion and transformations in visual patterns.
+
+# Further Reading
+---
+* [Tadashi Tokieda & Numberphile: Freaky Dot Patterns](https://www.youtube.com/watch?v=QAja2jp1VjE)
+
+{% for paper in site.papers reversed %}
+  {% include paper_table.html title="Is Appearance Free Action Recognition Possible?" %}
+{% endfor %}
 
 <script src="../misc/analoguegif/circlepattern.js">

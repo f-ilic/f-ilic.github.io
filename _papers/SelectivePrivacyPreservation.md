@@ -132,6 +132,14 @@ year={2024}
 }
 ``` 
 
+# Further Reading
+---
+
+{% for paper in site.papers reversed %}
+  {% include paper_table.html title="Is Appearance Free Action Recognition Possible?" %}
+  {% include paper_table.html title="Representing Objects in Video as Space-Time Volumes by Combining Top-Down and Bottom-Up Processes" %}
+{% endfor %}
+
 
 <script>
 let slideIndex = [1,1];

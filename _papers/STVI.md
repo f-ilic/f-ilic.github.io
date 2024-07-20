@@ -32,7 +32,7 @@ This can reveal interesting details such as the tube in the center image formed 
 
 
 <br>
-<center><video controls autoplay loop muted playsinline width="70%"><source  src="papers/STVI/rollerblade.mp4" type="video/mp4"></video> </center>
+<center><video autoplay loop muted playsinline width="70%"><source  src="papers/STVI/rollerblade.mp4" type="video/mp4"></video> </center>
 Viewer/Object-centered representation: The trajectory w.r.t. the observer is shown on the left. The relative motion of object parts w.r.t. the object centroid is shown on the right. This is useful because objects are represented as the sum of their parts, and not just as instance masks.
 
 

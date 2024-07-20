@@ -33,82 +33,19 @@ Technical Student at <a href='https://cms.cern/'>CMS Experiment - CERN - Geneva<
 ## Publications
 ---
 
-{% for paper in site.papers reversed%}
-<table>
-  <tr>
-    <!-- <td width="5%"><div class="badge">{{paper.venue}}</div></td> -->
-      <td width="35%">
-      <div class="badge">{{paper.venue}}</div>
-      {% assign file_extension = paper.teaser | split: '.' | last | downcase %}
-      {% if file_extension == "mp4" or file_extension == "webm" or file_extension == "ogg" %}
-    <video autoplay loop muted playsinline style="width: 100%;">
-      <source src="{{ paper.teaser }}" type="video/{{ file_extension }}">
-      Your browser does not support the video tag.
-    </video>
-  {% elsif file_extension == "gif" or file_extension == "jpg" or file_extension == "jpeg" or file_extension == "png" %}
-    <img src="{{ paper.teaser }}" style="width: 100%;">
-  {% else %}
-    <p>Unsupported media type.</p>
-  {% endif %}
-  </td>
-    <td width="65%" style="padding: 0px">  
-      <div class="paper-info">
-      <div class="paper-head">
-      {% if paper.permalink != nil %}
-        <span class="paper-title"><a href="{{ paper.url }}">{{paper.title}}</a></span>
-      {% else %}
-        <span class="paper-title"><a href="{{ paper.paper }}">{{paper.title}}</a></span>
-      {% endif %}
-        <span class="paper-authors">{{paper.subheading}}</span>
-        <span class="paper-published">{{paper.published}}</span>
-      </div>
-      </div>
-      <div class="paper-links">
-        {% if paper.permalink != nil %}
-          <a href="{{ paper.url }}"><img src="assets/icons/file-info-alt-svgrepo-com.svg" class='icon-size'>Project Page</a>
-        {% endif %}
-        {% if paper.code != nil %}
-          <a href="{{ paper.code }}"><img src="assets/icons/file-code-svgrepo-com.svg" class='icon-size'>Code</a>
-        {% endif %}
-        {% if paper.paper != nil %}
-          <a href="{{ paper.paper }}"><img src="assets/icons/file-bookmark-alt-svgrepo-com.svg" class='icon-size'>Paper</a>
-        {% endif %}
-      </div>
-    </td>
-  </tr>
-</table>    
+
+{% for paper in site.papers reversed %}
+  {% include paper_table.html title=paper.title %}
 {% endfor %}
+
+
+
 
 
 ## Miscellaneous
 ---
 
-{% for post in site.misc reversed%}
-<table>
-  <tr>
-        <td width="35%">
-      <div class="badge">{{post.venue}}</div>
-      {% assign file_extension = post.teaser | split: '.' | last | downcase %}
-      {% if file_extension == "mp4" or file_extension == "webm" or file_extension == "ogg" %}
-    <video autoplay loop muted playsinline style="width: 100%;">
-      <source src="{{ post.teaser }}" type="video/{{ file_extension }}">
-      Your browser does not support the video tag.
-    </video>
-  {% elsif file_extension == "gif" or file_extension == "jpg" or file_extension == "jpeg" or file_extension == "png" %}
-    <img src="{{ post.teaser }}" style="width: 100%;">
-  {% else %}
-    <p>Unsupported media type.</p>
-  {% endif %}
-  </td>
-      <td width="65%" style="padding: 0px">  
-      <div class="paper-info">
-      <div class="paper-head">
-      <a href="{{ post.url | relative_url }}"></a>
-        <span class="paper-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
-        <span class="paper-author">{{ post.subheading }}</span>
-      </div>
-      </div>
-    </td>
-  </tr>
-</table>  
+
+{% for post in site.misc reversed %}
+  {% include post_table.html title=post.title %}
 {% endfor %}
