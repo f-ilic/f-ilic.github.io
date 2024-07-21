@@ -69,10 +69,19 @@ I built this Galton Board from a picture frame, some wood for the funnel, round 
 
 <p>A Galton Board is a vertical board with a series of pegs arranged in a lattice. Balls are dropped from the top, and as they fall, they encounter pegs that deflect them left or right. At the bottom, the balls collect in bins, forming a distribution that resembles the normal distribution.</p>
 
-<p>Below is a simulation of a Galton Board that I wrote in <a href="https://brm.io/matter-js/">Matter.js</a>. <button onclick="resetSimulation()">Run Simulation</button></p>
-<div id="simulation-wrapper" style="width: 400px; margin: auto; height: 600px;">
+<p>Below is a simulation of a Galton Board that I wrote in <a href="https://brm.io/matter-js/">Matter.js</a>. <button onclick="resetSimulation()">Run Simulation</button>
+<!-- <div id="simulation-wrapper" style="width: 400px; margin: auto; height: 600px;">
     <canvas id="simulation" style="border: solid 1px black;"></canvas>
+</div> --></p>
+
+<div style="display: flex; justify-content: center; width: 100%;">
+    <div id="simulation-wrapper" style="border: solid 1px black; position: relative; width: 60%; overflow: hidden;">
+        <div style="width: 100%; padding-top: 150%;">
+            <canvas id="simulation" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+        </div>
+    </div>
 </div>
+
 <p><br /></p>
 <center><button onclick="resetSimulation()">Reset Simulation</button></center>
 
