@@ -1,99 +1,3 @@
-let canvas = document.getElementById('canvas0');
-let ctx = canvas.getContext('2d');
-let bufferCanvas = document.createElement('canvas');
-let bufferCtx = bufferCanvas.getContext('2d');
-let width = canvas.width;
-let height = canvas.height;
-bufferCanvas.width = width;
-bufferCanvas.height = height;
-let centerX = width / 2;
-let centerY = height / 2;
-let radius = width / 2;
-let noiselevel = 0.10;
-let rotationAngle = 0;
-let scaleFactor = 1.0;
-let xOffset = 0;
-let yOffset = 0;
-
-
-function createNoiseWithinCircle() {
-    bufferCtx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-    bufferCtx.fillRect(0, 0, width, height);
-
-    bufferCtx.beginPath();
-    bufferCtx.arc(centerX, centerY, radius, 0, Math.PI * 2, false);
-    bufferCtx.clip();
-
-    for (let i = 0; i < Math.PI * radius * radius * noiselevel; i++) {
-        const angle = Math.random() * Math.PI * 2;
-        const r = radius * Math.sqrt(Math.random());
-        const x = centerX + r * Math.cos(angle);
-        const y = centerY + r * Math.sin(angle);
-        bufferCtx.fillStyle = 'black';
-        bufferCtx.fillRect(x, y, 1, 1);
-    }
-}
-
-function drawDisk(x, y, rotation, scale) {
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate(rotation * Math.PI / 180);
-    ctx.scale(scale, scale);
-    ctx.beginPath();
-    ctx.arc(0, 0, radius, 0, Math.PI * 2, false);
-    ctx.clip();
-    ctx.drawImage(bufferCanvas, -centerX, -centerY);
-    ctx.restore();
-}
-
-function draw() {
-    ctx.clearRect(0, 0, width, height);
-    drawDisk(centerX, centerY, 0, 1); // Draw bottom disk without rotation and scale
-    drawDisk(centerX + xOffset, centerY + yOffset, rotationAngle, scaleFactor); // Draw top disk with rotation and scale
-}
-
-// ROTATE
-document.getElementById('rotateSlider').addEventListener('input', () => {
-    rotationAngle = parseFloat(document.getElementById('rotateSlider').value);
-    draw();
-});
-
-
-// SCALE
-document.getElementById('scaleSlider').addEventListener('input', () => {
-    scaleFactor = parseFloat(document.getElementById('scaleSlider').value);
-    draw();
-});
-
-// X-OFFSET
-document.getElementById('xOffsetSlider').addEventListener('input', () => {
-    xOffset = parseFloat(document.getElementById('xOffsetSlider').value);
-    draw();
-});
-
-// Y-OFFSET
-document.getElementById('yOffsetSlider').addEventListener('input', () => {
-    yOffset = parseFloat(document.getElementById('yOffsetSlider').value);
-    draw();
-});
-
-// RESET
-document.getElementById('resetBtn').addEventListener('click', () => {
-    rotationAngle = 0;
-    scaleFactor = 1;
-    xOffset = 0;
-    yOffset = 0;
-    document.getElementById('rotateSlider').value = rotationAngle;
-    document.getElementById('scaleSlider').value = scaleFactor;
-    document.getElementById('xOffsetSlider').value = xOffset;
-    document.getElementById('yOffsetSlider').value = yOffset
-    draw();
-});
-
-createNoiseWithinCircle(); // Create noise once
-draw(); // Initial draw
-
-
 function mulberry32(seed) {
     return function () {
         var t = seed += 0x6D2B79F5;
@@ -102,7 +6,7 @@ function mulberry32(seed) {
         return ((t ^ t >>> 14) >>> 0) / 4294967296;
     }
 }
-function initializeCanvas(canvasId, rotation, scale, xOff, yOff, seed = 42) {
+function initializeCanvas(canvasId, rotation = 0, scale = 0, xOff = 0, yOff = 0, seed = 0, noise = 0.10) {
     let canvas = document.getElementById(canvasId);
     let ctx = canvas.getContext('2d');
     let bufferCanvas = document.createElement('canvas');
@@ -114,7 +18,7 @@ function initializeCanvas(canvasId, rotation, scale, xOff, yOff, seed = 42) {
     let centerX = width / 2;
     let centerY = height / 2;
     let radius = width / 2;
-    let noiselevel = 0.10;
+    let noiselevel = noise;
     let rotationAngle = rotation;
     let scaleFactor = scale;
     let xOffset = xOff;
@@ -161,6 +65,7 @@ function initializeCanvas(canvasId, rotation, scale, xOff, yOff, seed = 42) {
     draw(); // Initial draw
 }
 
+initializeCanvas('canvas0', 0, 1.0, 0, 0, 42, 0.01);
 initializeCanvas('glassRotation1', 0, 1.0, 0, 0);
 initializeCanvas('glassRotation2', 1, 1.0, 0, 0);
 initializeCanvas('glassRotation3', 2, 1.0, 0, 0);
@@ -198,6 +103,7 @@ initializeCanvas('glassRotationTrans5', 8, 1.0, 0, 0);
 initializeCanvas('glassRotationTrans6', 8, 1.0, 1, 0);
 
 
-initializeCanvas('glassOverRotate1', 2, 1.0, 0, 0);
-initializeCanvas('glassOverRotate2', 3, 1.0, 0, 0);
-initializeCanvas('glassOverRotate3', 10, 1.0, 0, 0);
+initializeCanvas('glassOverRotate1', 2, 1.0, 0, 0, 0);
+initializeCanvas('glassOverRotate2', 3, 1.0, 0, 0, 0);
+initializeCanvas('glassOverRotate3', 10, 1.0, 0, 0, 0);
+

@@ -36,8 +36,12 @@ It covers the essential parts that are needed to show how artifacts are introduc
 Anyway, you should give it a try, and jiggle the particles once they have settled.
 You will observe that the initial formation and settling results in rather small coherent patches, the grains in the example of steel plasticity.
 
-<div id="simulation-wrapper" style="width: 600px; margin: auto; height: 400px;">
-    <canvas id="simulation"></canvas>
+<div style="display: flex; justify-content: center; width: 100%;">
+    <div id="simulation-wrapper" style="border: solid 1px black; position: relative; width: 80%; overflow: hidden;">
+        <div style="width: 100%; padding-top: 66%;">
+            <canvas id="simulation" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+        </div>
+    </div>
 </div>
 <br>
 <center>
@@ -48,7 +52,6 @@ You will observe that the initial formation and settling results in rather small
 
 <br>
 Compare the results that you get with and without annealing, i.e. only earthquake jiggle vs. earthquake jiggle and then repeatedly, while the balls are still settling, small and medium jiggles, simulating a steady stream of kinetic energy, allowing the particles to find their ground state.
-
 
 # Qualitative Comparison
 ---

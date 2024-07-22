@@ -26,9 +26,15 @@ A Galton Board is a vertical board with a series of pegs arranged in a lattice. 
 
 
 Below is a simulation of a Galton Board that I wrote in <a href='https://brm.io/matter-js/'>Matter.js</a>. <button onclick="resetSimulation()">Run Simulation</button>
-<div id="simulation-wrapper" style="width: 400px; margin: auto; height: 600px;">
-    <canvas id="simulation" style="border: solid 1px black;"></canvas>
+<center>
+<div style="display: flex; justify-content: center; width: 50%;">
+    <div id="simulation-wrapper" style="border: solid 1px black; position: relative; width: 100%; overflow: hidden;">
+        <div style="width: 100%; padding-top: 150%;">
+            <canvas id="simulation" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+        </div>
+    </div>
 </div>
+</center>
 <br>
 <center><button onclick="resetSimulation()">Reset Simulation</button></center>
 
@@ -137,4 +143,4 @@ I'd be very happy to see your designs.
 * [Nice Ablation](https://galeascience.wordpress.com/2016/03/11/galtons-peg-board-and-the-central-limit-theorem/)
 
 <script src="../../libs/matter.js"></script>
-<script src="misc/galtonboard/galton.js"></script>
+<script src="../misc/galtonboard/galton.js"></script>
