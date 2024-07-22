@@ -6,7 +6,8 @@ function mulberry32(seed) {
         return ((t ^ t >>> 14) >>> 0) / 4294967296;
     }
 }
-function initializeCanvas(canvasId, rotation = 0, scale = 0, xOff = 0, yOff = 0, seed = 0, noise = 0.10) {
+
+function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 0, seed = 0, noise = 0.10, addEventListeners = false) {
     let canvas = document.getElementById(canvasId);
     let ctx = canvas.getContext('2d');
     let bufferCanvas = document.createElement('canvas');
@@ -26,6 +27,7 @@ function initializeCanvas(canvasId, rotation = 0, scale = 0, xOff = 0, yOff = 0,
     let random = mulberry32(seed); // Initialize PRNG with the seed
 
     function createNoiseWithinCircle() {
+        bufferCtx.clearRect(0, 0, width, height); // Clear the buffer canvas
         bufferCtx.fillStyle = 'rgba(255, 255, 255, 0.5)';
         bufferCtx.fillRect(0, 0, width, height);
 
@@ -61,18 +63,69 @@ function initializeCanvas(canvasId, rotation = 0, scale = 0, xOff = 0, yOff = 0,
         drawDisk(centerX + xOffset, centerY + yOffset, rotationAngle, scaleFactor); // Draw top disk with rotation and scale
     }
 
+    if (addEventListeners) {
+        // ROTATE
+        document.getElementById('rotateSlider').addEventListener('input', () => {
+            rotationAngle = parseFloat(document.getElementById('rotateSlider').value);
+            draw();
+        });
+
+        // SCALE
+        document.getElementById('scaleSlider').addEventListener('input', () => {
+            scaleFactor = parseFloat(document.getElementById('scaleSlider').value);
+            draw();
+        });
+
+        // X-OFFSET
+        document.getElementById('xOffsetSlider').addEventListener('input', () => {
+            xOffset = parseFloat(document.getElementById('xOffsetSlider').value);
+            draw();
+        });
+
+        // Y-OFFSET
+        document.getElementById('yOffsetSlider').addEventListener('input', () => {
+            yOffset = parseFloat(document.getElementById('yOffsetSlider').value);
+            draw();
+        });
+
+        // NOISE LEVEL
+        document.getElementById('noiseLevelSlider').addEventListener('input', () => {
+            noiselevel = parseFloat(document.getElementById('noiseLevelSlider').value);
+            createNoiseWithinCircle(); // Regenerate noise
+            draw();
+        });
+
+        // RESET
+        document.getElementById('resetBtn').addEventListener('click', () => {
+            rotationAngle = 0;
+            scaleFactor = 1;
+            xOffset = 0;
+            yOffset = 0;
+            noiselevel = noise; // Reset noise level to initial value
+            document.getElementById('rotateSlider').value = rotationAngle;
+            document.getElementById('scaleSlider').value = scaleFactor;
+            document.getElementById('xOffsetSlider').value = xOffset;
+            document.getElementById('yOffsetSlider').value = yOffset;
+            document.getElementById('noiseLevelSlider').value = noiselevel;
+            createNoiseWithinCircle(); // Regenerate noise
+            draw();
+        });
+    }
+
     createNoiseWithinCircle(); // Create noise once
     draw(); // Initial draw
 }
 
-initializeCanvas('canvas0', 0, 1.0, 0, 0, 42, 0.01);
+// Initialize canvas0 with event listeners
+initializeCanvas('canvas0', 0, 1.0, 0, 0, 42, 0.1, true);
+
+// Initialize other canvases without event listeners
 initializeCanvas('glassRotation1', 0, 1.0, 0, 0);
 initializeCanvas('glassRotation2', 1, 1.0, 0, 0);
 initializeCanvas('glassRotation3', 2, 1.0, 0, 0);
 initializeCanvas('glassRotation4', 3, 1.0, 0, 0);
 initializeCanvas('glassRotation5', 4, 1.0, 0, 0);
 initializeCanvas('glassRotation6', 6, 1.0, 0, 0);
-
 
 initializeCanvas('glassScale1', 0, 1.0, 0, 0);
 initializeCanvas('glassScale2', 0, 0.99, 0, 0);
@@ -102,8 +155,6 @@ initializeCanvas('glassRotationTrans4', 8, 1.0, 1, 0);
 initializeCanvas('glassRotationTrans5', 8, 1.0, 0, 0);
 initializeCanvas('glassRotationTrans6', 8, 1.0, 1, 0);
 
-
-initializeCanvas('glassOverRotate1', 2, 1.0, 0, 0, 0);
-initializeCanvas('glassOverRotate2', 3, 1.0, 0, 0, 0);
-initializeCanvas('glassOverRotate3', 10, 1.0, 0, 0, 0);
-
+initializeCanvas('glassOverRotate1', 2, 1.0, 0, 0);
+initializeCanvas('glassOverRotate2', 3, 1.0, 0, 0);
+initializeCanvas('glassOverRotate3', 10, 1.0, 0, 0);

@@ -149,6 +149,10 @@ For that reason I built an interactive demo that allows you to rotate, scale, an
             y-offset<br>
             <input type="range" id="yOffsetSlider" class="vertical-slider" min="-10" max="10" value="0" step="0.1" style="width: 100px;">
         </div>
+            <div>
+            noise-level<br>
+            <input type="range" id="noiseLevelSlider" class="vertical-slider" min="0.0" max="0.2" value="0.10" step="0.001" style="width: 100px;">
+        </div>
         <button id="resetBtn">Reset</button>
     </div>
     <canvas id="canvas0" width="400" height="400"></canvas>
