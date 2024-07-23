@@ -132,7 +132,7 @@ For that reason I built an interactive demo that allows you to rotate, scale, an
 
 <center>
 <div style="display: flex; align-items: flex-start;">
-    <div style="margin-right: 100px;">
+    <div style="margin-right: 40px;">
         <div>
             rotate<br>
             <input type="range" id="rotateSlider" class="vertical-slider" min="-5" max="5" value="0" step="0.1" style="width: 100px;">
@@ -151,18 +151,17 @@ For that reason I built an interactive demo that allows you to rotate, scale, an
         </div>
             <div>
             noise-level<br>
-            <input type="range" id="noiseLevelSlider" class="vertical-slider" min="0.0" max="0.2" value="0.10" step="0.001" style="width: 100px;">
+            <input type="range" id="noiseLevelSlider" class="vertical-slider" min="0.0001" max="0.2" value="0.10" step="0.001" style="width: 100px;">
         </div>
         <button id="resetBtn">Reset</button>
     </div>
     <div style="display: flex; justify-content: center; width: 80%;">
-    <div id="simulation-wrapper" style="border: solid 1px black; position: relative; width: 80%; overflow: hidden;">
+    <div id="simulation-wrapper" style="border: solid 1px #ebebeb; position: relative; width: 80%; overflow: hidden;">
         <div style="width: 100%; padding-top: 100%;">
             <canvas id="canvas0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
         </div>
     </div>
 </div>
-    <!-- <canvas id="canvas0" width="400" height="400"></canvas> -->
 </div>
 </center>
 <br>

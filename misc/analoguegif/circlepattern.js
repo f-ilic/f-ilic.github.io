@@ -14,12 +14,16 @@ function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 
     let bufferCtx = bufferCanvas.getContext('2d');
     let centerX = canvas.width / 2;
     let centerY = canvas.height / 2;
-    let radius = Math.min(canvas.width, canvas.height) / 2;
+    let radius = (Math.min(canvas.width, canvas.height) / 2);
     let noiselevel = noise;
     let rotationAngle = rotation;
     let scaleFactor = scale;
     let xOffset = xOff;
     let yOffset = yOff;
+    canvas.width = canvas.width; // Clear the canvas
+    canvas.height = canvas.height;
+    bufferCanvas.width = canvas.width;
+    bufferCanvas.height = canvas.height;
     let random = mulberry32(seed); // Initialize PRNG with the seed
 
     function updateCanvasSize() {
@@ -31,8 +35,6 @@ function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 
         draw(); // Redraw after resizing
     }
 
-    // window.addEventListener('resize', updateCanvasSize);
-    updateCanvasSize(); // Initial call to set sizes
 
     function createNoiseWithinCircle() {
         bufferCtx.clearRect(0, 0, canvas.width, canvas.height); // Clear the buffer canvas
@@ -75,6 +77,15 @@ function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 
     }
 
     if (addEventListeners) {
+
+        updateCanvasSize(); // Initial call to set sizes
+
+        window.addEventListener('resize', () => {
+            updateCanvasSize();
+            createNoiseWithinCircle(); // Regenerate noise
+            draw();
+        });
+
         // ROTATE
         document.getElementById('rotateSlider').addEventListener('input', () => {
             rotationAngle = parseFloat(document.getElementById('rotateSlider').value);
