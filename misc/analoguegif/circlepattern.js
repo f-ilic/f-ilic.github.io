@@ -12,13 +12,9 @@ function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 
     let ctx = canvas.getContext('2d');
     let bufferCanvas = document.createElement('canvas');
     let bufferCtx = bufferCanvas.getContext('2d');
-    let width = canvas.width;
-    let height = canvas.height;
-    bufferCanvas.width = width;
-    bufferCanvas.height = height;
-    let centerX = width / 2;
-    let centerY = height / 2;
-    let radius = width / 2;
+    let centerX = canvas.width / 2;
+    let centerY = canvas.height / 2;
+    let radius = Math.min(canvas.width, canvas.height) / 2;
     let noiselevel = noise;
     let rotationAngle = rotation;
     let scaleFactor = scale;
@@ -26,10 +22,22 @@ function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 
     let yOffset = yOff;
     let random = mulberry32(seed); // Initialize PRNG with the seed
 
+    function updateCanvasSize() {
+        const wrapper = document.getElementById('simulation-wrapper');
+        canvas.width = wrapper.offsetWidth;
+        canvas.height = wrapper.offsetHeight;
+        bufferCanvas.width = canvas.width;
+        bufferCanvas.height = canvas.height;
+        draw(); // Redraw after resizing
+    }
+
+    // window.addEventListener('resize', updateCanvasSize);
+    updateCanvasSize(); // Initial call to set sizes
+
     function createNoiseWithinCircle() {
-        bufferCtx.clearRect(0, 0, width, height); // Clear the buffer canvas
+        bufferCtx.clearRect(0, 0, canvas.width, canvas.height); // Clear the buffer canvas
         bufferCtx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-        bufferCtx.fillRect(0, 0, width, height);
+        bufferCtx.fillRect(0, 0, canvas.width, canvas.height);
 
         bufferCtx.beginPath();
         bufferCtx.arc(centerX, centerY, radius, 0, Math.PI * 2, false);
@@ -58,7 +66,10 @@ function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 
     }
 
     function draw() {
-        ctx.clearRect(0, 0, width, height);
+        centerX = canvas.width / 2;
+        centerY = canvas.height / 2;
+        radius = Math.min(canvas.width, canvas.height) / 2;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawDisk(centerX, centerY, 0, 1); // Draw bottom disk without rotation and scale
         drawDisk(centerX + xOffset, centerY + yOffset, rotationAngle, scaleFactor); // Draw top disk with rotation and scale
     }
@@ -118,6 +129,7 @@ function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 
 
 // Initialize canvas0 with event listeners
 initializeCanvas('canvas0', 0, 1.0, 0, 0, 42, 0.1, true);
+
 
 // Initialize other canvases without event listeners
 initializeCanvas('glassRotation1', 0, 1.0, 0, 0);

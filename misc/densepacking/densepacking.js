@@ -57,6 +57,9 @@ function initialize() {
 
     // Add event listeners for buttons
     addButtonEventListeners();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', resizeCanvas);
 }
 
 function updateDimensions(wrapper) {
@@ -126,8 +129,8 @@ function addMouseControl() {
 
 function addButtonEventListeners() {
     document.getElementById('jiggleSmallButton').addEventListener('click', () => jiggleCircles(0.02));
-    document.getElementById('jiggleMediumButton').addEventListener('click', () => jiggleCircles(0.03));
-    document.getElementById('jiggleLargeButton').addEventListener('click', () => jiggleCircles(0.06));
+    document.getElementById('jiggleMediumButton').addEventListener('click', () => jiggleCircles(0.028));
+    document.getElementById('jiggleLargeButton').addEventListener('click', () => jiggleCircles(0.05));
 }
 
 function jiggleCircles(forceMultiplier) {
@@ -144,6 +147,50 @@ function jiggleCircles(forceMultiplier) {
             });
         }
     }
+}
+
+function resizeCanvas() {
+    const wrapper = document.getElementById('simulation-wrapper');
+    const canvas = document.getElementById('simulation');
+
+    // Calculate new dimensions and scale factor
+    const oldWidth = render.options.width;
+    const oldHeight = render.options.height;
+
+    // Update dimensions and scale factor
+    updateDimensions(wrapper);
+
+    const newWidth = wrapper.offsetWidth;
+    const newHeight = wrapper.offsetHeight;
+
+    const widthScale = newWidth / oldWidth;
+    const heightScale = newHeight / oldHeight;
+
+    // Update canvas size
+    canvas.width = newWidth;
+    canvas.height = newHeight;
+
+    // Update render bounds
+    render.bounds.max.x = newWidth;
+    render.bounds.max.y = newHeight;
+    render.options.width = newWidth;
+    render.options.height = newHeight;
+    Matter.Render.setPixelRatio(render, window.devicePixelRatio);
+
+    // Scale all bodies
+    Composite.allBodies(engine.world).forEach(body => {
+        Body.scale(body, widthScale, heightScale);
+        Body.setPosition(body, {
+            x: body.position.x * widthScale,
+            y: body.position.y * heightScale
+        });
+    });
+
+    // Redraw the scene
+    Render.lookAt(render, {
+        min: { x: 0, y: 0 },
+        max: { x: newWidth, y: newHeight }
+    });
 }
 
 // Initialize the simulation

@@ -155,7 +155,14 @@ For that reason I built an interactive demo that allows you to rotate, scale, an
         </div>
         <button id="resetBtn">Reset</button>
     </div>
-    <canvas id="canvas0" width="400" height="400"></canvas>
+    <div style="display: flex; justify-content: center; width: 80%;">
+    <div id="simulation-wrapper" style="border: solid 1px black; position: relative; width: 80%; overflow: hidden;">
+        <div style="width: 100%; padding-top: 100%;">
+            <canvas id="canvas0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+        </div>
+    </div>
+</div>
+    <!-- <canvas id="canvas0" width="400" height="400"></canvas> -->
 </div>
 </center>
 <br>

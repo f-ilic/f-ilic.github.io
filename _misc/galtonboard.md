@@ -36,7 +36,7 @@ Below is a simulation of a Galton Board that I wrote in <a href='https://brm.io/
 </div>
 </center>
 <br>
-<center><button onclick="resetSimulation()">Reset Simulation</button></center>
+<center><button id="resetButton">Reset Simulation</button></center>
 
 <br>
 The distribution of balls resembles that of a Gaussian, for both the simulated and the real life version of the Galton Board. *Neat!* But why does that happen?

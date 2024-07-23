@@ -33,8 +33,8 @@ function initialize() {
         canvas: canvas,
         engine: engine,
         options: {
-            width: wrapper.offsetWidth,
-            height: wrapper.offsetHeight,
+            width: canvas.width,
+            height: canvas.height,
             wireframes: false,
             background: '#fafafa',
             pixelRatio: window.devicePixelRatio // Adjust pixel ratio for sharpness
@@ -57,6 +57,8 @@ function initialize() {
     // startPeriodicCheck();
     // Add event listener for reset button
     document.getElementById('resetButton').addEventListener('click', resetSimulation);
+
+    window.addEventListener('resize', resizeCanvas);
 }
 
 function updateDimensions(wrapper) {
@@ -85,7 +87,6 @@ function addMouseControl() {
     // Keep the mouse in sync with rendering
     render.mouse = mouse;
 }
-
 
 function addWalls() {
     const width = render.options.width;
@@ -180,7 +181,6 @@ function addCircles() {
             radius,
             {
                 label: "Ball",
-                // restitution: 0.7,
                 restitution: 0.89,
                 friction: 0.02 * scaleFactor,
                 frictionAir: 0.05 * (1 / scaleFactor),
@@ -206,16 +206,50 @@ function resetSimulation() {
     addCircles();
 }
 
-function startPeriodicCheck() {
-    const halfHeight = render.options.height * 0.7;
-    const checkevery = 2000; // in ms -> 2s
-    setInterval(() => {
-        const allBelowHalf = circles.every(circle => circle.position.y > halfHeight);
+function resizeCanvas() {
+    const wrapper = document.getElementById('simulation-wrapper');
+    const canvas = document.getElementById('simulation');
 
-        if (allBelowHalf) {
-            Runner.stop(runner);
-        }
-    }, checkevery);
+    // Calculate new dimensions and scale factor
+    const oldWidth = render.options.width;
+    const oldHeight = render.options.height;
+
+    // Update dimensions and scale factor
+    updateDimensions(wrapper);
+
+    const newWidth = wrapper.offsetWidth;
+    const newHeight = wrapper.offsetHeight;
+
+    const widthScale = newWidth / oldWidth;
+    const heightScale = newHeight / oldHeight;
+
+    // Update canvas size
+    canvas.width = newWidth;
+    canvas.height = newHeight;
+
+    // Update render bounds
+    render.bounds.max.x = newWidth;
+    render.bounds.max.y = newHeight;
+    render.options.width = newWidth;
+    render.options.height = newHeight;
+    Matter.Render.setPixelRatio(render, window.devicePixelRatio);
+
+    // Adjust the walls and pegs
+    Composite.allBodies(engine.world).forEach(body => {
+        const scaleX = newWidth / oldWidth;
+        const scaleY = newHeight / oldHeight;
+        Body.scale(body, scaleX, scaleY);
+        Body.setPosition(body, {
+            x: body.position.x * scaleX,
+            y: body.position.y * scaleY
+        });
+    });
+
+    // Redraw the scene
+    // Render.lookAt(render, {
+    //     min: { x: 0, y: 0 },
+    //     max: { x: newWidth, y: newHeight }
+    // });
 }
 
 // Initialize the simulation
