@@ -75,16 +75,16 @@ In short; what you see is your brain finding correspondences among the two patte
     }
 
     .canvas-container canvas {
-        width: 12%; /* Adjust percentage as needed */
+        width: 14%; /* Adjust percentage as needed */
         height: auto;
-        max-width: 85px; /* Set the maximum width to the original size */
+        /* max-width: 85px; Set the maximum width to the original size */
         margin: 5px;
     }
 </style>
 
 <center>
 Rotation
-<div>
+<div >
 <div class="canvas-container">
   <canvas width=85 height=85 id="glassRotation1"></canvas>
   <canvas width=85 height=85 id="glassRotation2"></canvas>
