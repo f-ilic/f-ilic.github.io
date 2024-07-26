@@ -66,21 +66,41 @@ The emerging patterns are called Glass patterns, first studied by <a href="https
 
 Here I am showing just a few of the visually interesting displacements and transformations of the pattern, on top of an identical stationary pattern.
 In short; what you see is your brain finding correspondences among the two patterns which result in these spiral and 3D effects you see.
+
+<style>
+    .canvas-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .canvas-container canvas {
+        width: 12%; /* Adjust percentage as needed */
+        height: auto;
+        max-width: 85px; /* Set the maximum width to the original size */
+        margin: 5px;
+    }
+</style>
+
 <center>
 Rotation
 <div>
-<canvas width=85 height=85 id="glassRotation1"></canvas>
-<canvas width=85 height=85 id="glassRotation2"></canvas>
-<canvas width=85 height=85 id="glassRotation3"></canvas>
-<canvas width=85 height=85 id="glassRotation4"></canvas>
-<canvas width=85 height=85 id="glassRotation5"></canvas>
-<canvas width=85 height=85 id="glassRotation6"></canvas>
+<div class="canvas-container">
+  <canvas width=85 height=85 id="glassRotation1"></canvas>
+  <canvas width=85 height=85 id="glassRotation2"></canvas>
+  <canvas width=85 height=85 id="glassRotation3"></canvas>
+  <canvas width=85 height=85 id="glassRotation4"></canvas>
+  <canvas width=85 height=85 id="glassRotation5"></canvas>
+  <canvas width=85 height=85 id="glassRotation6"></canvas>
+</div>
 </div>
 </center>
 
 <center>
 Scaling
 <div>
+<div class="canvas-container">
+
 <canvas width=85 height=85 id="glassScale1"></canvas>
 <canvas width=85 height=85 id="glassScale2"></canvas>
 <canvas width=85 height=85 id="glassScale3"></canvas>
@@ -88,11 +108,15 @@ Scaling
 <canvas width=85 height=85 id="glassScale5"></canvas>
 <canvas width=85 height=85 id="glassScale6"></canvas>
 </div>
+
+</div>
 </center>
 
 <center>
 Scaling + Rotation
 <div>
+<div class="canvas-container">
+
 <canvas width=85 height=85 id="glassScaleRot1"></canvas>
 <canvas width=85 height=85 id="glassScaleRot2"></canvas>
 <canvas width=85 height=85 id="glassScaleRot3"></canvas>
@@ -100,11 +124,15 @@ Scaling + Rotation
 <canvas width=85 height=85 id="glassScaleRot5"></canvas>
 <canvas width=85 height=85 id="glassScaleRot6"></canvas>
 </div>
+
+</div>
 </center>
 
 <center>
 Scaling + Translation
 <div>
+<div class="canvas-container">
+
 <canvas width=85 height=85 id="glassScaleTrans1"></canvas>
 <canvas width=85 height=85 id="glassScaleTrans2"></canvas>
 <canvas width=85 height=85 id="glassScaleTrans3"></canvas>
@@ -112,17 +140,22 @@ Scaling + Translation
 <canvas width=85 height=85 id="glassScaleTrans5"></canvas>
 <canvas width=85 height=85 id="glassScaleTrans6"></canvas>
 </div>
+
+</div>
 </center>
 
 <center>
 Rotation + Translation
 <div>
+<div class="canvas-container">
+
 <canvas width=85 height=85 id="glassRotationTrans1"></canvas>
 <canvas width=85 height=85 id="glassRotationTrans2"></canvas>
 <canvas width=85 height=85 id="glassRotationTrans3"></canvas>
 <canvas width=85 height=85 id="glassRotationTrans4"></canvas>
 <canvas width=85 height=85 id="glassRotationTrans5"></canvas>
 <canvas width=85 height=85 id="glassRotationTrans6"></canvas>
+</div>
 </div>
 </center>
 
@@ -170,25 +203,40 @@ The connection between Glass patterns and motion-induced animations becomes espe
 
 <style>
   .center-content {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .center-content .item {
-    display: inline-block; /* Aligns items horizontally */
-    margin-right: 20px; /* Space between each item */
+
+  .row {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    justify-content: center;
+    gap: 20px; /* Space between items */
     margin-bottom: 20px; /* Space between rows */
   }
-  .center-content .item:last-child {
-    margin-right: 0; /* No space on the right for the last item */
+
+  .item {
+    flex: 1 1 auto; /* Flex items grow and shrink as needed */
+    max-width: 200px; /* Maximum width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
   }
+
   .caption {
     margin-bottom: 5px; /* Space between the caption and the image/canvas */
     font-size: 14px; /* Caption text size */
+    text-align: center;
+  }
+
+  .item canvas, .item img {
+    width: 100%; /* Make the canvas and image take up the full width of their container */
+    height: auto; /* Maintain aspect ratio */
   }
 </style>
 
 <div class="center-content">
-  <!-- Canvas with captions -->
-  <div>
+  <!-- First row of canvas with captions -->
+  <div class="row">
     <div class="item">
       <div class="caption">2° Rotation</div>
       <canvas width="200" height="200" id="glassOverRotate1"></canvas>
@@ -203,8 +251,8 @@ The connection between Glass patterns and motion-induced animations becomes espe
     </div>
   </div>
 
-  <!-- Images with captions -->
-  <div>
+  <!-- Second row of images with captions -->
+  <div class="row">
     <div class="item">
       <div class="caption">24 FPS</div>
       <img src="../misc/analoguegif/fps/pushup24.gif" width="200" height="200">
