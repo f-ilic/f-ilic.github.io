@@ -200,7 +200,7 @@ year={2022},
 ---
 
 {% for paper in site.papers reversed %}
-  {% include paper_table.html title="Is Appearance Free Action Recognition Possible?" %}
+  {% include paper_table.html title="Selective, Interpretable, and Motion Consistent Privacy Attribute Obfuscation for Action Recognition" %}
 {% endfor %}
 
 {% for post in site.misc reversed %}
