@@ -217,7 +217,7 @@ tr.no-bottom-border td { border-bottom: none; }
 
 hr { height: 1px; border: none; background-color: #acacac; margin-bottom: 16px; }
 
-.site-footer { border-top: 1px solid #e8e8e8; padding: 10px; background-color: white; font-family: 'Linux Biolinum', sans-serif; }
+.site-footer { border-top: 1px solid #e8e8e8; padding: 10px; background-color: white; font-family: 'Roboto', sans-serif; }
 
 .site-footer .alignleft { float: left; width: 33.33333%; text-align: left; }
 
@@ -249,7 +249,7 @@ hr { height: 1px; border: none; background-color: #acacac; margin-bottom: 16px; 
 
 header { background-color: white; border-style: solid; border-color: #e8e8e8; border-width: 1px; margin-bottom: 0px; }
 
-#header-name { color: #424242; font-size: 24px; font-family: 'Linux Biolinum', serif; }
+#header-name { color: #424242; font-size: 24px; font-family: 'Roboto', sans-serif; }
 
 #header-name-cv { color: #424242; font-weight: bold; font-size: 20px; }
 
@@ -265,13 +265,13 @@ code { font-size: 12px; }
 
 .svg-icon circle { stroke: #4691f6; stroke-width: 1; }
 
-body { font-size: 16px; color: #424242; font-family: 'Linux Biolinum', san-serif; }
+body { font-size: 11pt; color: #424242; font-family: 'Roboto', sans-serif; font-weight: 300; }
 
-h0 { display: inline; font-size: 22pt; }
+h0 { display: inline; font-size: 22pt; font-weight: 300; }
 
-h1 { display: inline; font-size: 15pt; }
+h1 { display: inline; font-size: 13pt; font-weight: 300; }
 
-h2 { display: inline; font-size: 12pt; }
+h2 { display: inline; font-size: 12pt; font-weight: 300; }
 
 .content-container { padding: 100px; }
 
@@ -279,21 +279,21 @@ h2 { display: inline; font-size: 12pt; }
 
 .paper-info .paper-head { margin-bottom: 0px; }
 
-.paper-info .paper-title { font-size: 14pt; display: block; margin-bottom: 0.5em; margin-top: 0.5em; }
+.paper-info .paper-title { font-size: 12pt; display: block; margin-bottom: 0.5em; margin-top: 0.5em; }
 
-.paper-info .paper-authors { display: block; font-size: 12pt; }
+.paper-info .paper-authors { display: block; font-size: 10pt; }
 
-.paper-info .paper-published { display: block; font-size: 12pt; }
+.paper-info .paper-published { display: block; font-size: 10pt; }
 
 .paper-info .section { margin-top: 10px; font-style: italic; display: block; }
 
-.paper-links a { padding-right: 1rem; padding-top: 0.15rem; font-size: 12pt; display: inline-block; margin-top: 0.5em; }
+.paper-links a { padding-right: 1rem; padding-top: 0.15rem; font-size: 10pt; display: inline-block; margin-top: 0.5em; }
 
-.paper-links a:hover { padding-right: 1rem; padding-top: 0.15rem; font-size: 12pt; background-color: white; color: orange; display: inline-block; margin-top: 0.5em; }
+.paper-links a:hover { padding-right: 1rem; padding-top: 0.15rem; font-size: 10pt; background-color: white; color: orange; display: inline-block; margin-top: 0.5em; }
 
 .wrapper { background-color: white; border-style: solid; border-color: #e8e8e8; border-width: 1px; }
 
-.badge { color: #fff !important; background-color: #4489a2; border: solid 1px; border-color: black; padding-left: 0.5em; padding-right: 0.5em; margin-left: -5px; margin-top: -5px; display: inline-block; vertical-align: top; font-size: 10pt; font-family: monospace; position: absolute; }
+.badge { color: #fff !important; background-color: #4489a2; border: solid 1px; border-color: black; padding-left: 0.5em; padding-right: 0.5em; margin-left: -5px; margin-top: -5px; display: inline-block; vertical-align: top; font-size: 10pt; font-weight: 300; position: absolute; }
 
 /* Slideshow container */
 .slideshow-container { max-width: 1000px; position: relative; margin: auto; }
