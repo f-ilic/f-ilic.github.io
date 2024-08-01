@@ -4,14 +4,14 @@ title: Dense packing with spheres
 permalink: /densepacking
 subheading: A model for grain formation in steel, and other packing problems.<br>Built with acrylic glass and steel ball bearings. 
 venue: Physicalization
-teaser: misc/densepacking/teaser.gif
+teaser: misc/densepacking/teaser.mp4
 date: 2021-01-01  
 ---
 
 <script src="../libs/matter.js"></script>
 
 <center>
-  <img  src="../misc/densepacking/teaser.gif" style='border: 1px solid black'>
+  <img  src="../misc/densepacking/teaser.mp4" style='border: 1px solid black'>
 </center>
 
 # Introduction
