@@ -196,16 +196,18 @@ table td { border: 1px solid #e8e8e8; }
 .highlight .vi { color: #008080; }
 .highlight .il { color: #099; }
 
+@font-face { font-family: 'Linux Biolinum'; src: url("/fonts/Linux-Biolinum.woff") format("woff"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'Linux Libertine'; src: url("/fonts/LinLibertine_DR.woff") format("woff"); font-weight: normal; font-style: normal; }
 abbr { transition-delay: 0s; transition: 0s opacity; }
 
 table td { border: none; vertical-align: top; }
 
 .footnotesize { font-size: 9pt; }
 
-a { text-decoration: none; /* Remove underline */ /* Use default text color */ }
+a { text-decoration: none; }
 
 /* Style for links when hovering */
-a:hover { color: orange; text-decoration: none; /* Change color to orange */ }
+a:hover { color: orange; text-decoration: none; }
 
 table { border: none; }
 
@@ -215,7 +217,7 @@ tr.no-bottom-border td { border-bottom: none; }
 
 hr { height: 1px; border: none; background-color: #acacac; margin-bottom: 16px; }
 
-.site-footer { border-top: 1px solid #e8e8e8; padding: 10px; background-color: white; }
+.site-footer { border-top: 1px solid #e8e8e8; padding: 10px; background-color: white; font-family: 'Linux Biolinum', sans-serif; }
 
 .site-footer .alignleft { float: left; width: 33.33333%; text-align: left; }
 
@@ -247,11 +249,11 @@ hr { height: 1px; border: none; background-color: #acacac; margin-bottom: 16px; 
 
 header { background-color: white; border-style: solid; border-color: #e8e8e8; border-width: 1px; margin-bottom: 0px; }
 
-#header-name { color: #424242; font-size: 24px; font-family: monospace; }
+#header-name { color: #424242; font-size: 24px; font-family: 'Linux Biolinum', serif; }
 
 #header-name-cv { color: #424242; font-weight: bold; font-size: 20px; }
 
-#header-description { color: #424242; display: block; font-weight: normal; font-family: monospace; }
+#header-description { color: #424242; display: block; font-weight: normal; font-family: 'Linux Biolinum', serif; }
 
 #header-description-cv { color: #424242; display: block; font-weight: bold; }
 
@@ -263,31 +265,31 @@ code { font-size: 12px; }
 
 .svg-icon circle { stroke: #4691f6; stroke-width: 1; }
 
-body { font-size: 14px; color: #424242; font-family: 'Helvetica'; }
-
-.content-container { padding: 100px; }
-
-.icon-size { height: 1.5em; /* Sets the height to match the font size of the surrounding text */ width: auto; /* Keeps the width proportional to the new height */ vertical-align: middle; /* Aligns the middle of the image with the middle of the text */ }
-
-.paper-info .paper-head { margin-bottom: 0px; }
-
-.paper-info .paper-title { font-size: 12pt; display: block; margin-bottom: 0.5em; margin-top: 0.5em; }
-
-.paper-info .paper-authors { display: block; font-size: 10pt; }
-
-.paper-info .paper-published { display: block; font-size: 10pt; }
-
-.paper-info .section { margin-top: 10px; font-style: italic; display: block; }
-
-.paper-links a { padding-right: 1rem; padding-top: 0.15rem; font-size: 10pt; display: inline-block; margin-top: 0.5em; }
-
-.paper-links a:hover { padding-right: 1rem; padding-top: 0.15rem; font-size: 10pt; background-color: white; color: orange; display: inline-block; margin-top: 0.5em; }
+body { font-size: 16px; color: #424242; font-family: 'Linux Biolinum', san-serif; }
 
 h0 { display: inline; font-size: 22pt; }
 
-h1 { display: inline; font-size: 14pt; }
+h1 { display: inline; font-size: 15pt; }
 
 h2 { display: inline; font-size: 12pt; }
+
+.content-container { padding: 100px; }
+
+.icon-size { height: 1.5em; width: auto; vertical-align: middle; }
+
+.paper-info .paper-head { margin-bottom: 0px; }
+
+.paper-info .paper-title { font-size: 14pt; display: block; margin-bottom: 0.5em; margin-top: 0.5em; }
+
+.paper-info .paper-authors { display: block; font-size: 12pt; }
+
+.paper-info .paper-published { display: block; font-size: 12pt; }
+
+.paper-info .section { margin-top: 10px; font-style: italic; display: block; }
+
+.paper-links a { padding-right: 1rem; padding-top: 0.15rem; font-size: 12pt; display: inline-block; margin-top: 0.5em; }
+
+.paper-links a:hover { padding-right: 1rem; padding-top: 0.15rem; font-size: 12pt; background-color: white; color: orange; display: inline-block; margin-top: 0.5em; }
 
 .wrapper { background-color: white; border-style: solid; border-color: #e8e8e8; border-width: 1px; }
 
