@@ -249,7 +249,7 @@ hr { height: 1px; border: none; background-color: #acacac; margin-bottom: 16px; 
 
 header { background-color: white; border-style: solid; border-color: #e8e8e8; border-width: 1px; margin-bottom: 0px; }
 
-#header-name { color: #424242; font-size: 24px; font-family: 'Roboto', sans-serif; }
+#header-name { color: #424242; font-size: 24px; font-family: 'Linux Biolinum', serif; }
 
 #header-name-cv { color: #424242; font-weight: bold; font-size: 20px; }
 
@@ -293,7 +293,7 @@ h2 { display: inline; font-size: 12pt; font-weight: 300; }
 
 .wrapper { background-color: white; border-style: solid; border-color: #e8e8e8; border-width: 1px; }
 
-.badge { color: #fff !important; background-color: #4489a2; border: solid 1px; border-color: black; padding-left: 0.5em; padding-right: 0.5em; margin-left: -5px; margin-top: -5px; display: inline-block; vertical-align: top; font-size: 10pt; font-weight: 300; position: absolute; }
+.badge { color: #fff !important; background-color: #4489a2; border: solid 1px; border-color: black; padding-left: 0.5em; padding-right: 0.5em; margin-left: -5px; margin-top: -5px; display: inline-block; vertical-align: top; font-size: 10pt; font-family: 'Linux Biolinum', sans-serif; position: absolute; }
 
 /* Slideshow container */
 .slideshow-container { max-width: 1000px; position: relative; margin: auto; }
