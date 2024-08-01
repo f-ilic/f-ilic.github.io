@@ -8,7 +8,7 @@ order: 1
 
 
 
-## About
+# About
 ---
 <p>
 My interests are Computer Vision and Machine Learning. I investigated motion in videos — its modeling and importance — in deep video understanding models during my PhD with my supervisors Thomas Pock, and Richard Wildes. Additionally, I was also lucky enough to have wonderful collaborators and projects that allowed me to work on other topics such as denoising, generative modeling, and implicit neural representations.
@@ -30,7 +30,7 @@ Technical Student at <a href='https://cms.cern/'>CMS Experiment - CERN - Geneva<
 </p>
 
 
-## Publications
+# Publications
 ---
 
 
@@ -42,7 +42,7 @@ Technical Student at <a href='https://cms.cern/'>CMS Experiment - CERN - Geneva<
 
 
 
-## Miscellaneous
+# Miscellaneous
 ---
 
 

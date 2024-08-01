@@ -5,6 +5,19 @@
 @import "minima";
 //  ---------------- Colors
 
+@font-face {
+    font-family: 'Linux Biolinum';
+    src: url('/fonts/Linux-Biolinum.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Linux Libertine';
+    src: url('/fonts/LinLibertine_DR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $blue-dark: hsl(220, 64%, 36%);
 $blue-mid: hsl(220, 63%, 60%);
 $blue-light: hsl(220, 63%, 91%);
@@ -46,16 +59,12 @@ table td {
 
 a {
     text-decoration: none;
-    /* Remove underline */
-    // color: initial;
-    /* Use default text color */
 }
 
 /* Style for links when hovering */
 a:hover {
     color: orange;
     text-decoration: none;
-    /* Change color to orange */
 }
 
 table {
@@ -82,6 +91,7 @@ hr {
     border-top: 1px solid $grey-light;
     padding: 10px;
     background-color: $wrapper-bg;
+    font-family: 'Linux Biolinum', sans-serif;
 }
 
 .site-footer .alignleft {
@@ -200,7 +210,8 @@ header {
     color: $grey-color-dark;
     // font-weight: bold;
     font-size: 24px;
-    font-family: monospace;
+    // font-family: monospace;
+    font-family: 'Linux Biolinum', serif;
 }
 
 #header-name-cv {
@@ -214,7 +225,8 @@ header {
     color: $grey-color-dark;
     display: block;
     font-weight: normal;
-    font-family: monospace;
+    // font-family: monospace;
+    font-family: 'Linux Biolinum', serif;
 }
 
 #header-description-cv {
@@ -244,9 +256,25 @@ code {
 }
 
 body {
-    font-size: 14px;
+    font-size: 16px;
     color: $grey-color-dark;
-    font-family: 'Helvetica';//,'Helvetica', 'Arial', sans-serif;
+    font-family: 'Linux Biolinum', san-serif;
+    // font-family: Helvetica, sans-serif;
+}
+
+h0 {
+    display: inline;
+    font-size: 22pt;
+}
+
+h1 {
+    display: inline;
+    font-size: 15pt;
+}
+
+h2 {
+    display: inline;
+    font-size: 12pt;
 }
 
 
@@ -258,11 +286,8 @@ body {
 
 .icon-size {
     height: 1.5em;
-    /* Sets the height to match the font size of the surrounding text */
     width: auto;
-    /* Keeps the width proportional to the new height */
     vertical-align: middle;
-    /* Aligns the middle of the image with the middle of the text */
 }
 
 .paper-info .paper-head {
@@ -270,9 +295,8 @@ body {
 }
 
 .paper-info .paper-title {
-    font-size: 12pt;
+    font-size: 14pt;
     display: block;
-    // font-weight: bold;
     margin-bottom: 0.5em;
     margin-top:0.5em;
 }
@@ -281,14 +305,14 @@ body {
 .paper-info .paper-authors {
     display: block;
     // color: $teal-dark;
-    font-size: 10pt;
+    font-size: 12pt;
 }
 
 .paper-info .paper-published {
     display: block;
     // color: $teal-dark;
     // font-style: italic;
-    font-size: 10pt;
+    font-size: 12pt;
 }
 
 .paper-info .section {
@@ -299,75 +323,46 @@ body {
 }
 
 .paper-links a {
-    // border: 1px solid;
-    // padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.15rem;
-    font-size: 10pt;
-    // color: $teal-dark;
+    font-size: 12pt;
     display: inline-block;
-    // position: absolute;
-    // bottom: 0;
     margin-top: 0.5em;
-    // color: $grey-dark;
 }
 
 .paper-links a:hover {
-    // border: 1px solid;
-    // padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 0.15rem;
-    font-size: 10pt;
+    font-size: 12pt;
     background-color: $wrapper-bg;
     color: orange;
     display: inline-block;
     margin-top: 0.5em;
 }
 
-h0 {
-    display: inline;
-    font-size: 22pt;
-}
-
-h1 {
-    display: inline;
-    font-size: 14pt;
-}
-
-h2 {
-    display: inline;
-    font-size: 12pt;
-}
 
 .wrapper {
     background-color: $wrapper-bg;
     border-style: solid;
     border-color: $grey-light;
-    // border-radius: 0.5rem;
     border-width: 1px;
 }
 
 .badge {
     color: #fff !important;
     background-color: $teal-mid;
-    // background-color: orange;
+    // background-color: #1756a9;
     border: solid 1px;
     border-color: black;
-    // background-color: red;
     padding-left: 0.5em;
     padding-right: 0.5em;
     margin-left: -5px;
     margin-top: -5px;
-    // -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    // box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     display: inline-block;
-    // display: absolute;
     vertical-align: top;
     font-size: 10pt;
-    // font-weight: lighter;
     font-family: monospace;
     position:absolute;
-    // transform: rotate(-45deg);
 }
 
 
@@ -439,17 +434,3 @@ h2 {
     background-color: $grey-mid;
     box-shadow: 0 0 0 0 $wrapper-bg;
 }
-
-// @media screen and (prefers-color-scheme: light) {
-// }
-
-// @media (prefers-color-scheme: dark) {
-//     body {
-//         background-color: $grey-dark;
-//         color: rgb(171, 171, 171);
-//     }
-//     .wrapper {
-//         background-color: $grey-dark;
-//     }
-    
-// }
