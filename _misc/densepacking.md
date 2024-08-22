@@ -11,7 +11,7 @@ date: 2021-01-01
 <script src="../libs/matter.js"></script>
 
 <center>
-  <img  src="../misc/densepacking/teaser.mp4" style='border: 1px solid black'>
+  <video autoplay loop muted playsinline src="../misc/densepacking/teaser.mp4" style='border: 1px solid black'></video>
 </center>
 
 # Introduction
