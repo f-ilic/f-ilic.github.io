@@ -4,6 +4,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/assets/main.css">
+
+    <!--  THIS AVOIDS FLASHING OF CONTENT WHEN THE THEME IS APPLIED -->
+    <style>
+      /* Optional: hide content until the theme is applied */
+      body {
+        visibility: hidden;
+      }
+    </style>
+    
+    <script>
+      (function () {
+        const scheme = localStorage.getItem('color-scheme') || 'auto';
+
+        // Apply the saved color scheme immediately
+        if (scheme === 'light') {
+          document.documentElement.classList.add('light-mode');
+        } else if (scheme === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+        }
+
+        // Remove hidden styling after color scheme is applied
+        document.addEventListener("DOMContentLoaded", function () {
+          document.body.style.visibility = 'visible';
+        });
+      })();
+    </script>
+
 </head><body>
 
   <header><!-- <center> -->
@@ -19,7 +46,62 @@
           <div id='header-description'>
           PhD student at TUGraz<br>
           Computer Vision & Machine Learning<br>
-          </div><a title="Email" href="mailto:filip.ilic@tugraz.at"><img class="svg-social-icon" src="/assets/social-icons/email.svg" /></a><a title="Github" href="https://github.com/f-ilic"><img class="svg-social-icon" src="/assets/social-icons/github.svg" /></a><a title="LinkedIn" href="https://www.linkedin.com/in/filip-ilic-82a898185"><img class="svg-social-icon" src="/assets/social-icons/linkedin.svg" /></a><a title="Google Scholar" href="https://scholar.google.com/citations?user=W56GwcAAAAAJ"><img class="svg-social-icon" src="/assets/social-icons/google_scholar.svg" /></a></td>
+          </div><a title="Email" href="mailto:filip.ilic@tugraz.at">
+    <img class="svg-social-icon email-icon" alt="Email Icon" />
+</a><a title="Github" href="https://github.com/f-ilic">
+    <img class="svg-social-icon github-icon"/>
+</a><a title="LinkedIn" href="https://www.linkedin.com/in/filip-ilic-82a898185">
+    <img class="svg-social-icon linkedin-icon"/></a><a title="Google Scholar"  href="https://scholar.google.com/citations?user=W56GwcAAAAAJ">
+    <img class="svg-social-icon googlescholar-icon"/>
+</a><!-- These are the color toggles -->
+<fieldset class="toggle-group" id="colorScheme">
+    <label>
+        <input type="radio" name="color-scheme" value="light" id="color-scheme-light" data-sr >
+        Light
+    </label>
+    <label>
+        <input type="radio" name="color-scheme" value="light dark" data-sr checked>
+        System
+    </label>
+    <label>
+        <input type="radio" name="color-scheme" value="dark" id="color-scheme-dark" data-sr>
+        Dark
+    </label>
+</fieldset>
+</div>
+
+<script>
+    // Listen for changes on the radio buttons and save the value to localStorage
+    const colorScheme = document.getElementById('colorScheme');
+    colorScheme.addEventListener('change', event => {
+        localStorage.setItem('color-scheme', event.target.value);
+        applyColorScheme(event.target.value); // Apply the selected scheme immediately
+    });
+
+    // Function to apply the selected color scheme
+    function applyColorScheme(scheme) {
+        document.documentElement.style.setProperty('--darkmode', scheme); // Apply the scheme
+        document.body.classList.remove('light-mode', 'dark-mode');
+
+        // Apply light or dark mode based on the scheme
+        if (scheme === 'light') {
+            document.body.classList.add('light-mode');
+        } else if (scheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+        // 'auto' (system default) will just follow the system preferences without any custom class
+    }
+
+    // On window load, retrieve the saved scheme and apply it
+    window.addEventListener("load", event => {
+        const scheme = localStorage.getItem('color-scheme') || 'auto'; // Default to 'auto' if no scheme is saved
+        applyColorScheme(scheme); // Apply the scheme
+
+        // Set the corresponding radio button as checked
+        const selected = [...colorScheme.elements].find(element => element.value === scheme);
+        if (selected) selected.checked = true;
+    });
+</script></td>
       </tr>
   </table> 
 <!-- </center> --></header>
@@ -84,13 +166,14 @@ Technical Student at <a href="https://cms.cern/">CMS Experiment - CERN - Geneva<
             </div>
             <div class="paper-links">
                 
-                <a href="/SelectivePrivacyPreservation"><img src="assets/icons/file-info-alt-svgrepo-com.svg" class="icon-size" />Project Page</a>
+                <a href="/SelectivePrivacyPreservation"><img class="icon-size info-icon" />Project
+                    Page</a>
                 
                 
-                <a href="https://github.com/f-ilic/SelectivePrivacyPreservation"><img src="assets/icons/file-code-svgrepo-com.svg" class="icon-size" />Code</a>
+                <a href="https://github.com/f-ilic/SelectivePrivacyPreservation"><img class="icon-size code-icon" />Code</a>
                 
                 
-                <a href="https://arxiv.org/pdf/2403.12710.pdf"><img src="assets/icons/file-bookmark-alt-svgrepo-com.svg" class="icon-size" />Paper</a>
+                <a href="https://arxiv.org/pdf/2403.12710.pdf"><img class="icon-size bookmark-icon" />Paper</a>
                 
             </div>
         </td>
@@ -122,10 +205,10 @@ Technical Student at <a href="https://cms.cern/">CMS Experiment - CERN - Geneva<
             <div class="paper-links">
                 
                 
-                <a href="https://github.com/leabogensperger/generative-segmentation-sdf"><img src="assets/icons/file-code-svgrepo-com.svg" class="icon-size" />Code</a>
+                <a href="https://github.com/leabogensperger/generative-segmentation-sdf"><img class="icon-size code-icon" />Code</a>
                 
                 
-                <a href="https://arxiv.org/pdf/2303.05966.pdf"><img src="assets/icons/file-bookmark-alt-svgrepo-com.svg" class="icon-size" />Paper</a>
+                <a href="https://arxiv.org/pdf/2303.05966.pdf"><img class="icon-size bookmark-icon" />Paper</a>
                 
             </div>
         </td>
@@ -154,10 +237,10 @@ Technical Student at <a href="https://cms.cern/">CMS Experiment - CERN - Geneva<
             <div class="paper-links">
                 
                 
-                <a href="https://github.com/LLindn/ASwin-Video-Denoising"><img src="assets/icons/file-code-svgrepo-com.svg" class="icon-size" />Code</a>
+                <a href="https://github.com/LLindn/ASwin-Video-Denoising"><img class="icon-size code-icon" />Code</a>
                 
                 
-                <a href="https://openaccess.thecvf.com/content/WACV2023/papers/Lindner_Lightweight_Video_Denoising_Using_Aggregated_Shifted_Window_Attention_WACV_2023_paper.pdf"><img src="assets/icons/file-bookmark-alt-svgrepo-com.svg" class="icon-size" />Paper</a>
+                <a href="https://openaccess.thecvf.com/content/WACV2023/papers/Lindner_Lightweight_Video_Denoising_Using_Aggregated_Shifted_Window_Attention_WACV_2023_paper.pdf"><img class="icon-size bookmark-icon" />Paper</a>
                 
             </div>
         </td>
@@ -188,13 +271,14 @@ Technical Student at <a href="https://cms.cern/">CMS Experiment - CERN - Geneva<
             </div>
             <div class="paper-links">
                 
-                <a href="/AppearanceFreeActionRecognition"><img src="assets/icons/file-info-alt-svgrepo-com.svg" class="icon-size" />Project Page</a>
+                <a href="/AppearanceFreeActionRecognition"><img class="icon-size info-icon" />Project
+                    Page</a>
                 
                 
-                <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition"><img src="assets/icons/file-code-svgrepo-com.svg" class="icon-size" />Code</a>
+                <a href="https://github.com/f-ilic/AppearanceFreeActionRecognition"><img class="icon-size code-icon" />Code</a>
                 
                 
-                <a href="https://arxiv.org/pdf/2207.06261.pdf"><img src="assets/icons/file-bookmark-alt-svgrepo-com.svg" class="icon-size" />Paper</a>
+                <a href="https://arxiv.org/pdf/2207.06261.pdf"><img class="icon-size bookmark-icon" />Paper</a>
                 
             </div>
         </td>
@@ -222,13 +306,14 @@ Technical Student at <a href="https://cms.cern/">CMS Experiment - CERN - Geneva<
             </div>
             <div class="paper-links">
                 
-                <a href="/RobustFeatureAustenit"><img src="assets/icons/file-info-alt-svgrepo-com.svg" class="icon-size" />Project Page</a>
+                <a href="/RobustFeatureAustenit"><img class="icon-size info-icon" />Project
+                    Page</a>
                 
                 
-                <a href="https://github.com/f-ilic/RobustFeatureAustenit"><img src="assets/icons/file-code-svgrepo-com.svg" class="icon-size" />Code</a>
+                <a href="https://github.com/f-ilic/RobustFeatureAustenit"><img class="icon-size code-icon" />Code</a>
                 
                 
-                <a href="papers/RobustFeatureAustenit/ilic21RobustFeatureAustenit.pdf"><img src="assets/icons/file-bookmark-alt-svgrepo-com.svg" class="icon-size" />Paper</a>
+                <a href="papers/RobustFeatureAustenit/ilic21RobustFeatureAustenit.pdf"><img class="icon-size bookmark-icon" />Paper</a>
                 
             </div>
         </td>
@@ -258,7 +343,7 @@ Technical Student at <a href="https://cms.cern/">CMS Experiment - CERN - Geneva<
                 
                 
                 
-                <a href="papers/T1D/T1D.pdf"><img src="assets/icons/file-bookmark-alt-svgrepo-com.svg" class="icon-size" />Paper</a>
+                <a href="papers/T1D/T1D.pdf"><img class="icon-size bookmark-icon" />Paper</a>
                 
             </div>
         </td>
@@ -289,11 +374,12 @@ Technical Student at <a href="https://cms.cern/">CMS Experiment - CERN - Geneva<
             </div>
             <div class="paper-links">
                 
-                <a href="/STVI"><img src="assets/icons/file-info-alt-svgrepo-com.svg" class="icon-size" />Project Page</a>
+                <a href="/STVI"><img class="icon-size info-icon" />Project
+                    Page</a>
                 
                 
                 
-                <a href="papers/STVI/ilic20stvi.pdf"><img src="assets/icons/file-bookmark-alt-svgrepo-com.svg" class="icon-size" />Paper</a>
+                <a href="papers/STVI/ilic20stvi.pdf"><img class="icon-size bookmark-icon" />Paper</a>
                 
             </div>
         </td>
@@ -424,7 +510,7 @@ Technical Student at <a href="https://cms.cern/">CMS Experiment - CERN - Geneva<
 
         <div class="footnotesize">
             © 2024 Filip Ilic. All rights reserved.<br>
-            <!-- Updated September 2024 -->
+            <!-- Updated October 2024 -->
         </div>
     </center>
 </footer></body>

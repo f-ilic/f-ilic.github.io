@@ -4,6 +4,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/assets/main.css">
+
+    <!--  THIS AVOIDS FLASHING OF CONTENT WHEN THE THEME IS APPLIED -->
+    <style>
+      /* Optional: hide content until the theme is applied */
+      body {
+        visibility: hidden;
+      }
+    </style>
+    
+    <script>
+      (function () {
+        const scheme = localStorage.getItem('color-scheme') || 'auto';
+
+        // Apply the saved color scheme immediately
+        if (scheme === 'light') {
+          document.documentElement.classList.add('light-mode');
+        } else if (scheme === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+        }
+
+        // Remove hidden styling after color scheme is applied
+        document.addEventListener("DOMContentLoaded", function () {
+          document.body.style.visibility = 'visible';
+        });
+      })();
+    </script>
+
 </head><body>
   <header><!-- <center> -->
   <table id="me-container" style="border: none;">
@@ -18,7 +45,62 @@
           <div id='header-description'>
           PhD student at TUGraz<br>
           Computer Vision & Machine Learning<br>
-          </div><a title="Email" href="mailto:filip.ilic@tugraz.at"><img class="svg-social-icon" src="/assets/social-icons/email.svg" /></a><a title="Github" href="https://github.com/f-ilic"><img class="svg-social-icon" src="/assets/social-icons/github.svg" /></a><a title="LinkedIn" href="https://www.linkedin.com/in/filip-ilic-82a898185"><img class="svg-social-icon" src="/assets/social-icons/linkedin.svg" /></a><a title="Google Scholar" href="https://scholar.google.com/citations?user=W56GwcAAAAAJ"><img class="svg-social-icon" src="/assets/social-icons/google_scholar.svg" /></a></td>
+          </div><a title="Email" href="mailto:filip.ilic@tugraz.at">
+    <img class="svg-social-icon email-icon" alt="Email Icon" />
+</a><a title="Github" href="https://github.com/f-ilic">
+    <img class="svg-social-icon github-icon"/>
+</a><a title="LinkedIn" href="https://www.linkedin.com/in/filip-ilic-82a898185">
+    <img class="svg-social-icon linkedin-icon"/></a><a title="Google Scholar"  href="https://scholar.google.com/citations?user=W56GwcAAAAAJ">
+    <img class="svg-social-icon googlescholar-icon"/>
+</a><!-- These are the color toggles -->
+<fieldset class="toggle-group" id="colorScheme">
+    <label>
+        <input type="radio" name="color-scheme" value="light" id="color-scheme-light" data-sr >
+        Light
+    </label>
+    <label>
+        <input type="radio" name="color-scheme" value="light dark" data-sr checked>
+        System
+    </label>
+    <label>
+        <input type="radio" name="color-scheme" value="dark" id="color-scheme-dark" data-sr>
+        Dark
+    </label>
+</fieldset>
+</div>
+
+<script>
+    // Listen for changes on the radio buttons and save the value to localStorage
+    const colorScheme = document.getElementById('colorScheme');
+    colorScheme.addEventListener('change', event => {
+        localStorage.setItem('color-scheme', event.target.value);
+        applyColorScheme(event.target.value); // Apply the selected scheme immediately
+    });
+
+    // Function to apply the selected color scheme
+    function applyColorScheme(scheme) {
+        document.documentElement.style.setProperty('--darkmode', scheme); // Apply the scheme
+        document.body.classList.remove('light-mode', 'dark-mode');
+
+        // Apply light or dark mode based on the scheme
+        if (scheme === 'light') {
+            document.body.classList.add('light-mode');
+        } else if (scheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+        // 'auto' (system default) will just follow the system preferences without any custom class
+    }
+
+    // On window load, retrieve the saved scheme and apply it
+    window.addEventListener("load", event => {
+        const scheme = localStorage.getItem('color-scheme') || 'auto'; // Default to 'auto' if no scheme is saved
+        applyColorScheme(scheme); // Apply the scheme
+
+        // Set the corresponding radio button as checked
+        const selected = [...colorScheme.elements].find(element => element.value === scheme);
+        if (selected) selected.checked = true;
+    });
+</script></td>
       </tr>
   </table> 
 <!-- </center> --></header>
@@ -168,7 +250,7 @@ I would advise against polycarbonate and acrylic glass, because the energy and f
 Take your time when gluing, and make sure that there are no sharp corners on the glue joint.
 I had the best results in using a little more wood glue than needed so that there was enough squeeze-out to seal the sharp corners at the bottom of the pegs.</p>
 
-<p>If you make your own, let me know <a title="Email" href="mailto:filip.ilic@tugraz.at"><img class="svg-social-icon" src="../assets/social-icons/email.svg" /></a>
+<p>If you make your own, let me know <a title="Email" href="mailto:filip.ilic@tugraz.at"><img class="svg-social-icon email-icon" /></a>
 I’d be very happy to see your designs.</p>
 
 <h1 id="further-reading">Further Reading</h1>
@@ -191,7 +273,7 @@ I’d be very happy to see your designs.</p>
 
         <div class="footnotesize">
             © 2024 Filip Ilic. All rights reserved.<br>
-            <!-- Updated September 2024 -->
+            <!-- Updated October 2024 -->
         </div>
     </center>
 </footer></body>
