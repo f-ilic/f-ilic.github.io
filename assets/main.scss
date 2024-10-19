@@ -1,4 +1,4 @@
---- 
+---
 --- 
 
 // $content-width: 45%;
@@ -113,9 +113,12 @@ hr {
 
 ​ //  ---------------- General Image Stuff
 
+
 .svg-icon {
     vertical-align: middle;
 }
+
+
 
 .svg-social-icon {
     width: 24px;
@@ -124,6 +127,17 @@ hr {
     opacity: 0.8;
     border: 2px solid;
     border-radius: 50%;
+    border-color: color-mix(in srgb, CanvasText, Canvas 90%);
+    transition: background-color .05s, transform .05s ease-in-out;
+    fill: CanvasText;
+    stroke: CanvasText;
+}
+    
+.svg-theme-icon {
+    width: 20px;
+    height: 20px;
+    margin: 4px;
+    border-color: color-mix(in srgb, CanvasText, Canvas 90%);
     border-color: color-mix(in srgb, CanvasText, Canvas 90%);
     transition: background-color .05s, transform .05s ease-in-out;
     fill: CanvasText;
@@ -246,17 +260,6 @@ code {
 .svg-icon {
     width: 1em;
     height: 1em;
-}
-
-.svg-icon path,
-.svg-icon polygon,
-.svg-icon rect {
-    fill: #4691f6;
-}
-
-.svg-icon circle {
-    stroke: #4691f6;
-    stroke-width: 1;
 }
 
 body {
@@ -471,26 +474,24 @@ code {
     border: 1px solid color-mix(in srgb, CanvasText, Canvas 90%);
     inline-size: fit-content;
     padding: 3px;
-    position: absolute;
-    /* Fixed to the viewport */
+    // position: absolute;
+    font-size:12px;
     top: 10px;
-    right: 30px;
+    right: 10px;
     background-color: Canvas;
     display: flex;
-    flex-direction: row;
-    /* Default is a row layout */
-    gap: 10px;
+    flex-direction: column;
+    gap: 5px;
     z-index: 1000;
-    /* Ensure it stays above other content */
-    max-width: 100%;
-    /* Prevent overflow */
+    max-width: 80%;
 }
 
 .toggle-group label {
     // border-radius: 21px;
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    display: inline-flex;
-    padding: 0.5em 1em;
+    padding: 0.15em 0.5em;
     text-align: center;
     color: color-mix(in srgb, CanvasText, Canvas 40%);
     user-select: none;
@@ -502,20 +503,26 @@ code {
 }
 
 /* Media query for small screens (less than 600px wide) */
-@media (max-width: 800px) {
-    .toggle-group {
-        flex-direction: column;
-        right: 10px;
-        font-size: 12px;
+// @media (max-width: 900px) {
+    // .toggle-group {
+    //     flex-direction: column;
+    //     right: 10px;
+    //     top:10px;
+    //     font-size: 12px;
+    // }
+    // .svg-theme-icon {
+    //     width: 20px;
+    //     height: 20px;
+    //     margin: 4px;
+    //     border-color: color-mix(in srgb, CanvasText, Canvas 90%);
+    // }
+// }
+
+@media (max-width: 600px) {
+    .theme-text{
+        display: none;
     }
 }
-
-@media (max-width: 550px) {
-    .toggle-group {
-    visibility: hidden;
-    }
-}
-
 
 [data-sr] {
     clip: rect(0 0 0 0);
