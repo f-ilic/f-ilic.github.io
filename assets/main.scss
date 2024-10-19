@@ -195,6 +195,7 @@ hr {
     background: $wrapper-bg;
     padding-bottom: 0px;
     margin-bottom: 0px;
+    padding: clamp(5px, 2vw, 20px);
 }
 
 header {
@@ -468,21 +469,21 @@ code {
 /* DEMO */
 .toggle-group {
     border: 1px solid color-mix(in srgb, CanvasText, Canvas 90%);
-    // border-radius: 24px;
     inline-size: fit-content;
     padding: 3px;
-    position: fixed;
-    /* Follow scroll */
+    position: absolute;
+    /* Fixed to the viewport */
     top: 10px;
     right: 30px;
     background-color: Canvas;
-
     display: flex;
-    /* Use flexbox to arrange labels */
     flex-direction: row;
-    /* Default is horizontal (row layout) */
+    /* Default is a row layout */
     gap: 10px;
-    /* Optional: adds space between toggle items */
+    z-index: 1000;
+    /* Ensure it stays above other content */
+    max-width: 100%;
+    /* Prevent overflow */
 }
 
 .toggle-group label {
@@ -507,11 +508,17 @@ code {
         right: 10px;
         font-size: 12px;
     }
+}
 
-    // .toggle-group label {
-    // margin-bottom: 10px;
-    /* Add margin between the labels */
-    // }
+@media (max-width: 550px) {
+    .toggle-group {
+        flex-direction: row;
+            right: 8px;
+            font-size: 12px;
+    }
+        .toggle-group label {
+            padding: 0.1em 0.1em;
+        }
 }
 
 

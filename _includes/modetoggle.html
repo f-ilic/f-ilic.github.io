@@ -1,0 +1,53 @@
+<!-- These are the color toggles -->
+<fieldset class="toggle-group" id="colorScheme">
+    <label>
+        <input type="radio" name="color-scheme" value="light" id="color-scheme-light" data-sr>
+        Light
+    </label>
+    <label>
+        <input type="radio" name="color-scheme" value="light dark" data-sr checked>
+        System
+    </label>
+    <label>
+        <input type="radio" name="color-scheme" value="dark" id="color-scheme-dark" data-sr>
+        Dark
+    </label>
+</fieldset>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const colorScheme = document.getElementById('colorScheme');
+
+        // Retrieve the saved scheme and set the radio button
+        const scheme = localStorage.getItem('color-scheme') || 'auto';
+
+        // Function to apply the scheme (light, dark, auto)
+        function applyColorScheme(scheme) {
+            // Remove existing classes for theme modes
+            document.documentElement.classList.remove('light-mode', 'dark-mode');
+
+            // Apply the correct mode based on the user's selection or system default
+            if (scheme === 'light') {
+                document.documentElement.classList.add('light-mode');
+            } else if (scheme === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            } else {
+                // Auto mode should rely on system default (handled by @media queries)
+                document.documentElement.classList.remove('light-mode', 'dark-mode');
+            }
+        }
+
+        // Apply the current scheme based on what's stored in localStorage
+        applyColorScheme(scheme);
+
+        // Set the corresponding radio button as checked based on saved scheme
+        const selected = [...colorScheme.elements].find(element => element.value === scheme);
+        if (selected) selected.checked = true;
+
+        // Listen for changes on the radio buttons and save the value to localStorage
+        colorScheme.addEventListener('change', event => {
+            localStorage.setItem('color-scheme', event.target.value);
+            applyColorScheme(event.target.value);
+        });
+    });
+</script>
