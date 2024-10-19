@@ -512,13 +512,8 @@ code {
 
 @media (max-width: 550px) {
     .toggle-group {
-        flex-direction: row;
-            right: 8px;
-            font-size: 12px;
+    visibility: hidden;
     }
-        .toggle-group label {
-            padding: 0.1em 0.1em;
-        }
 }
 
 
