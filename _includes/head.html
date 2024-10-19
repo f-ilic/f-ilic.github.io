@@ -2,32 +2,26 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 
-    <!--  THIS AVOIDS FLASHING OF CONTENT WHEN THE THEME IS APPLIED -->
-    <style>
-      /* Optional: hide content until the theme is applied */
-      body {
-        visibility: hidden;
+  <!-- Inline script to apply the theme immediately before rendering -->
+  <script>
+    (function () {
+      const scheme = localStorage.getItem('color-scheme') || 'auto';
+      
+      let style = document.createElement('style');
+      document.head.appendChild(style);
+
+      // Apply light or dark mode via inline CSS early before the page renders
+      if (scheme === 'dark') {
+        style.innerHTML = 'html { background-color: black; color: white; }';
+        document.documentElement.classList.add('dark-mode');
+      } else if (scheme === 'light') {
+        style.innerHTML = 'html { background-color: white; color: black; }';
+        document.documentElement.classList.add('light-mode');
       }
-    </style>
-    
-    <script>
-      (function () {
-        const scheme = localStorage.getItem('color-scheme') || 'auto';
+    })();
+  </script>
 
-        // Apply the saved color scheme immediately
-        if (scheme === 'light') {
-          document.documentElement.classList.add('light-mode');
-        } else if (scheme === 'dark') {
-          document.documentElement.classList.add('dark-mode');
-        }
-
-        // Remove hidden styling after color scheme is applied
-        document.addEventListener("DOMContentLoaded", function () {
-          document.body.style.visibility = 'visible';
-        });
-      })();
-    </script>
-
+  <!-- Link to external CSS file for full styling -->
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 </head>

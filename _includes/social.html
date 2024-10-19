@@ -1,23 +1,24 @@
 {%- if site.email -%}
 <a title="Email" href="mailto:{{ site.email }}">
-    <img class="svg-social-icon email-icon"/>
+    <!-- <img class="svg-social-icon email-icon" /> -->
+     {% include icons/email.html %}
 </a>
 {%- endif -%}
 
 {%- if site.github_username -%}
 <a title="Github" href="https://github.com/{{ site.github_username| cgi_escape | escape }}">
-    <img class="svg-social-icon github-icon"/>
+    {% include icons/github.html %}
 </a>
 {%- endif -%}
 
 {%- if site.linkedin_username -%}
 <a title="LinkedIn" href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}">
-    <img class="svg-social-icon linkedin-icon"/></a>
+        {% include icons/linkedin.html %}
 {%- endif -%}
 
 {%- if site.scholar_username -%}
 <a title="Google Scholar"  href="https://scholar.google.com/citations?user={{site.scholar_username | cgi_escape | escape }}">
-    <img class="svg-social-icon googlescholar-icon"/>
+        {% include icons/google_scholar.html %}
 </a>
 {%- endif-%}
 
@@ -37,36 +38,40 @@
     </label>
 </fieldset>
 </div>
-
 <script>
-    // Listen for changes on the radio buttons and save the value to localStorage
-    const colorScheme = document.getElementById('colorScheme');
-    colorScheme.addEventListener('change', event => {
-        localStorage.setItem('color-scheme', event.target.value);
-        applyColorScheme(event.target.value); // Apply the selected scheme immediately
-    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const colorScheme = document.getElementById('colorScheme');
 
-    // Function to apply the selected color scheme
-    function applyColorScheme(scheme) {
-        document.documentElement.style.setProperty('--darkmode', scheme); // Apply the scheme
-        document.body.classList.remove('light-mode', 'dark-mode');
+        // Retrieve the saved scheme and set the radio button
+        const scheme = localStorage.getItem('color-scheme') || 'auto';
 
-        // Apply light or dark mode based on the scheme
-        if (scheme === 'light') {
-            document.body.classList.add('light-mode');
-        } else if (scheme === 'dark') {
-            document.body.classList.add('dark-mode');
+        // Function to apply the scheme (light, dark, auto)
+        function applyColorScheme(scheme) {
+            // Remove existing classes for theme modes
+            document.documentElement.classList.remove('light-mode', 'dark-mode');
+
+            // Apply the correct mode based on the user's selection or system default
+            if (scheme === 'light') {
+                document.documentElement.classList.add('light-mode');
+            } else if (scheme === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            } else {
+                // Auto mode should rely on system default (handled by @media queries)
+                document.documentElement.classList.remove('light-mode', 'dark-mode');
+            }
         }
-        // 'auto' (system default) will just follow the system preferences without any custom class
-    }
 
-    // On window load, retrieve the saved scheme and apply it
-    window.addEventListener("load", event => {
-        const scheme = localStorage.getItem('color-scheme') || 'auto'; // Default to 'auto' if no scheme is saved
-        applyColorScheme(scheme); // Apply the scheme
+        // Apply the current scheme based on what's stored in localStorage
+        applyColorScheme(scheme);
 
-        // Set the corresponding radio button as checked
+        // Set the corresponding radio button as checked based on saved scheme
         const selected = [...colorScheme.elements].find(element => element.value === scheme);
         if (selected) selected.checked = true;
+
+        // Listen for changes on the radio buttons and save the value to localStorage
+        colorScheme.addEventListener('change', event => {
+            localStorage.setItem('color-scheme', event.target.value);
+            applyColorScheme(event.target.value);
+        });
     });
 </script>

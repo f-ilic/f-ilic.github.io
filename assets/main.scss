@@ -126,6 +126,8 @@ hr {
     border-radius: 50%;
     border-color: color-mix(in srgb, CanvasText, Canvas 90%);
     transition: background-color .05s, transform .05s ease-in-out;
+    fill: CanvasText;
+    stroke: CanvasText;
 }
 
 .svg-social-icon:hover {
@@ -311,6 +313,9 @@ code {
     height: 1.5em;
     width: auto;
     vertical-align: middle;
+    stroke: CanvasText;
+    fill: none;
+    stroke-width: 1;
 }
 
 .paper-info .paper-head {
@@ -460,26 +465,28 @@ code {
 }
 
 
-/* DEMO  OF AUTOMATIC TOGGLE IN ONE SPOT */
-// https://dev.to/madsstoumann/dark-mode-in-3-lines-of-css-and-other-adventures-1ljj
-// https: //web.dev/articles/light-dark
-//  I JUST BODGED THIS TOGETHER, BUT IT WORKS.
-
 /* DEMO */
 .toggle-group {
     border: 1px solid color-mix(in srgb, CanvasText, Canvas 90%);
-    border-radius: 24px;
+    // border-radius: 24px;
     inline-size: fit-content;
     padding: 3px;
-    // position: absolute; // keep it in the top corner
-    position: fixed; // follow scroll
+    position: fixed;
+    /* Follow scroll */
     top: 10px;
     right: 30px;
     background-color: Canvas;
+
+    display: flex;
+    /* Use flexbox to arrange labels */
+    flex-direction: row;
+    /* Default is horizontal (row layout) */
+    gap: 10px;
+    /* Optional: adds space between toggle items */
 }
 
 .toggle-group label {
-    border-radius: 21px;
+    // border-radius: 21px;
     cursor: pointer;
     display: inline-flex;
     padding: 0.5em 1em;
@@ -492,6 +499,21 @@ code {
     background-color: color-mix(in srgb, CanvasText, Canvas 90%);
     color: CanvasText;
 }
+
+/* Media query for small screens (less than 600px wide) */
+@media (max-width: 800px) {
+    .toggle-group {
+        flex-direction: column;
+        right: 10px;
+        font-size: 12px;
+    }
+
+    // .toggle-group label {
+    // margin-bottom: 10px;
+    /* Add margin between the labels */
+    // }
+}
+
 
 [data-sr] {
     clip: rect(0 0 0 0);
@@ -516,129 +538,4 @@ code {
     &:has(input[name="color-scheme"][value="dark"]:checked) {
         color-scheme: dark;
     }
-}
-
-
-
-//  ICON CLASSES AND PATHS
-
-/* System default: icons when system prefers dark mode */
-@media (prefers-color-scheme: dark) {
-    .email-icon {
-        content: url("/assets/social-icons/light/email.svg");
-    }
-
-    .github-icon {
-        content: url("/assets/social-icons/light/github.svg");
-    }
-
-    .linkedin-icon {
-        content: url("/assets/social-icons/light/linkedin.svg");
-    }
-
-    .googlescholar-icon {
-        content: url("/assets/social-icons/light/google_scholar.svg");
-    }
-
-    .info-icon {
-        content: url("/assets/icons/light/info.svg");
-    }
-
-    .code-icon {
-        content: url("/assets/icons/light/code.svg");
-    }
-
-    .bookmark-icon {
-        content: url("/assets/icons/light/bookmark.svg");
-    }
-}
-
-/* System default: icons when system prefers light mode */
-@media (prefers-color-scheme: light) {
-    .email-icon {
-        content: url("/assets/social-icons/dark/email.svg");
-    }
-
-    .github-icon {
-        content: url("/assets/social-icons/dark/github.svg");
-    }
-
-    .linkedin-icon {
-        content: url("/assets/social-icons/dark/linkedin.svg");
-    }
-
-    .googlescholar-icon {
-        content: url("/assets/social-icons/dark/google_scholar.svg");
-    }
-
-    .info-icon {
-        content: url("/assets/icons/dark/info.svg");
-    }
-
-    .code-icon {
-        content: url("/assets/icons/dark/code.svg");
-    }
-
-    .bookmark-icon {
-        content: url("/assets/icons/dark/bookmark.svg");
-    }
-}
-
-/* Manual override: light mode icons */
-body.light-mode .email-icon {
-    content: url("/assets/social-icons/dark/email.svg");
-}
-
-body.light-mode .github-icon {
-    content: url("/assets/social-icons/dark/github.svg");
-}
-
-body.light-mode .linkedin-icon {
-    content: url("/assets/social-icons/dark/linkedin.svg");
-}
-
-body.light-mode .googlescholar-icon {
-    content: url("/assets/social-icons/dark/google_scholar.svg");
-}
-
-body.light-mode .info-icon {
-    content: url("/assets/icons/dark/info.svg");
-}
-
-body.light-mode .code-icon {
-    content: url("/assets/icons/dark/code.svg");
-}
-
-body.light-mode .bookmark-icon {
-    content: url("/assets/icons/dark/bookmark.svg");
-}
-
-
-/* Manual override: dark mode icons */
-body.dark-mode .email-icon {
-    content: url("/assets/social-icons/light/email.svg");
-}
-
-body.dark-mode .github-icon {
-    content: url("/assets/social-icons/light/github.svg");
-}
-
-body.dark-mode .linkedin-icon {
-    content: url("/assets/social-icons/light/linkedin.svg");
-}
-
-body.dark-mode .googlescholar-icon {
-    content: url("/assets/social-icons/light/google_scholar.svg");
-}
-
-body.dark-mode .info-icon {
-    content: url("/assets/icons/light/info.svg");
-}
-
-body.dark-mode .code-icon {
-    content: url("/assets/icons/light/code.svg");
-}
-
-body.dark-mode .bookmark-icon {
-    content: url("/assets/icons/light/bookmark.svg");
 }

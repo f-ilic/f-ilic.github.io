@@ -134,8 +134,9 @@ Take your time when gluing, and make sure that there are no sharp corners on the
 I had the best results in using a little more wood glue than needed so that there was enough squeeze-out to seal the sharp corners at the bottom of the pegs.
 
 
-If you make your own, let me know <a title="Email" href="mailto:{{ site.email }}"><img class="svg-social-icon email-icon"/></a>
-I'd be very happy to see your designs.
+<p>If you make your own, let me know <a title="Email" href="mailto:{{ site.email }}">
+via email.</a> I’d be very happy to see your designs.</p>
+
 
 # Further Reading
 ---

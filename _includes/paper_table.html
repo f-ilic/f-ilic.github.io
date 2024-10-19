@@ -30,14 +30,14 @@
             </div>
             <div class="paper-links">
                 {% if paper.permalink != nil %}
-                <a href="{{ paper.url }}"><img class='icon-size info-icon'>Project
+                <a href="{{ paper.url }}">{% include icons/info.html %}Project
                     Page</a>
                 {% endif %}
                 {% if paper.code != nil %}
-                <a href="{{ paper.code }}"><img class='icon-size code-icon'>Code</a>
+                <a href="{{ paper.code }}">{% include icons/code.html %}Code</a>
                 {% endif %}
                 {% if paper.paper != nil %}
-                <a href="{{ paper.paper }}"><img class='icon-size bookmark-icon'>Paper</a>
+                <a href="{{ paper.paper }}">{% include icons/bookmark.html %}Paper</a>
                 {% endif %}
             </div>
         </td>

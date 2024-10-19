@@ -18,10 +18,10 @@ layout: default
                 </div>
                 <div class="paper-links">
                     {% if page.code != nil %}
-                    <a href="{{ page.code }}"><img class='icon-size code-icon'>Code</a>
+                    <a href="{{ page.code }}">{% include icons/code.html %}Code</a>
                     {% endif %}
                     {% if page.paper != nil %}
-                    <a href="{{ page.paper }}"><img class='icon-size info-icon'>Paper</a>
+                    <a href="{{ page.paper }}">{% include icons/bookmark.html %}Paper</a>
                     {% endif %}
                 </div>
             </td>
