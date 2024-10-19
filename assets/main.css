@@ -246,7 +246,7 @@ hr { height: 1px; border: none; background-color: #acacac; margin-bottom: 16px; 
 
 .active:hover { box-shadow: 0 2px 0 0 #214897; }
 
-#me-container { background: light dark; padding-bottom: 0px; margin-bottom: 0px; }
+#me-container { background: light dark; padding-bottom: 0px; margin-bottom: 0px; padding: clamp(5px, 2vw, 20px); }
 
 header { background-color: light dark; border-style: solid; border-color: color-mix(in srgb, CanvasText, Canvas 90%); border-width: 1px; margin-bottom: 0px; }
 
@@ -324,15 +324,16 @@ pre, code { background-color: color-mix(in srgb, CanvasText, Canvas 90%); }
 .active, .dot:hover { background-color: #acacac; box-shadow: 0 0 0 0 light dark; }
 
 /* DEMO */
-.toggle-group { border: 1px solid color-mix(in srgb, CanvasText, Canvas 90%); inline-size: fit-content; padding: 3px; position: fixed; /* Follow scroll */ top: 10px; right: 30px; background-color: Canvas; display: flex; /* Use flexbox to arrange labels */ flex-direction: row; /* Default is horizontal (row layout) */ gap: 10px; /* Optional: adds space between toggle items */ }
+.toggle-group { border: 1px solid color-mix(in srgb, CanvasText, Canvas 90%); inline-size: fit-content; padding: 3px; position: absolute; /* Fixed to the viewport */ top: 10px; right: 30px; background-color: Canvas; display: flex; flex-direction: row; /* Default is a row layout */ gap: 10px; z-index: 1000; /* Ensure it stays above other content */ max-width: 100%; /* Prevent overflow */ }
 
 .toggle-group label { cursor: pointer; display: inline-flex; padding: 0.5em 1em; text-align: center; color: color-mix(in srgb, CanvasText, Canvas 40%); user-select: none; }
 
 .toggle-group label:has(input:checked) { background-color: color-mix(in srgb, CanvasText, Canvas 90%); color: CanvasText; }
 
 /* Media query for small screens (less than 600px wide) */
-@media (max-width: 800px) { .toggle-group { flex-direction: column; right: 10px; font-size: 12px; }
-  /* Add margin between the labels */ }
+@media (max-width: 800px) { .toggle-group { flex-direction: column; right: 10px; font-size: 12px; } }
+@media (max-width: 550px) { .toggle-group { flex-direction: row; right: 8px; font-size: 12px; }
+  .toggle-group label { padding: 0.1em 0.1em; } }
 [data-sr] { clip: rect(0 0 0 0); clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }
 
 :root:has(input[name="color-scheme"][value="light dark"]:checked) { color-scheme: light dark; }
