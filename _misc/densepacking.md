@@ -119,7 +119,7 @@ Regarding the bolts: It is important that the clamping force of the plates is di
 
 To properly see the formation of the grains, I added a frosted acrylic film on the backplate that diffuses light. The dispersion in combination with a flashlight that is placed behind the prop, reveals the created structures really well.
 
-If you make your own, let me know <a title="Email" href="mailto:{{ site.email }}"><img class="svg-social-icon" src="{{"../assets/social-icons/email.svg"}}" /></a>
+If you make your own, let me know <a title="Email" href="mailto:{{ site.email }}"><img class="svg-social-icon email-icon"/></a>
 I'd be very happy to see your designs.
 
 # Further Reading

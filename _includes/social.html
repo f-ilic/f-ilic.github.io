@@ -1,6 +1,73 @@
-{%- if site.email -%}<a title="Email" href="mailto:{{ site.email }}"><img class="svg-social-icon" src="{{"/assets/social-icons/email.svg" | | relative_url}}" /></a>{%- endif -%}
-{%- if site.github_username -%}<a title="Github" href="https://github.com/{{ site.github_username| cgi_escape | escape }}"><img class="svg-social-icon" src="{{"/assets/social-icons/github.svg" | | relative_url}}" /></a>{%- endif -%}
-{%- if site.linkedin_username -%}<a title="LinkedIn" href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}"><img class="svg-social-icon" src="{{"/assets/social-icons/linkedin.svg" | | relative_url}}" /></a>{%- endif -%}
-{%- if site.medium_username -%}<a title="LinkedIn" href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}"><img class="svg-social-icon" src="{{"/assets/social-icons/medium.svg" | | relative_url}}" /></a>{%- endif -%}
-{%- if site.scholar_username -%}<a title="Google Scholar" href="https://scholar.google.com/citations?user={{site.scholar_username | cgi_escape | escape }}"><img class="svg-social-icon" src="{{"/assets/social-icons/google_scholar.svg" | | relative_url}}" /></a>{%- endif -%}
-{%- if site.rsa_key -%}<a title="sha256sum of rsa key: b63aba5728e9d4ea0582bb92b080f42bf5425af94a57a1e3b979d5ea443b966f" href="../assets/id_rsa.txt"><img class="svg-social-icon" src="{{"/assets/social-icons/lock.svg" | | relative_url}}" /></a>{%- endif -%}
+
+{%- if site.email -%}
+<a title="Email" href="mailto:{{ site.email }}">
+    <img class="svg-social-icon email-icon" alt="Email Icon" />
+</a>
+{%- endif -%}
+
+{%- if site.github_username -%}
+<a title="Github" href="https://github.com/{{ site.github_username| cgi_escape | escape }}">
+    <img class="svg-social-icon github-icon"/>
+</a>
+{%- endif -%}
+
+{%- if site.linkedin_username -%}
+<a title="LinkedIn" href="https://www.linkedin.com/in/{{ site.linkedin_username| cgi_escape | escape }}">
+    <img class="svg-social-icon linkedin-icon"/></a>
+{%- endif -%}
+
+{%- if site.scholar_username -%}
+<a title="Google Scholar"  href="https://scholar.google.com/citations?user={{site.scholar_username | cgi_escape | escape }}">
+    <img class="svg-social-icon googlescholar-icon"/>
+</a>
+{%- endif-%}
+
+<!-- These are the color toggles -->
+<fieldset class="toggle-group" id="colorScheme">
+    <label>
+        <input type="radio" name="color-scheme" value="light" id="color-scheme-light" data-sr >
+        Light
+    </label>
+    <label>
+        <input type="radio" name="color-scheme" value="light dark" data-sr checked>
+        System
+    </label>
+    <label>
+        <input type="radio" name="color-scheme" value="dark" id="color-scheme-dark" data-sr>
+        Dark
+    </label>
+</fieldset>
+</div>
+
+<script>
+    // Listen for changes on the radio buttons and save the value to localStorage
+    const colorScheme = document.getElementById('colorScheme');
+    colorScheme.addEventListener('change', event => {
+        localStorage.setItem('color-scheme', event.target.value);
+        applyColorScheme(event.target.value); // Apply the selected scheme immediately
+    });
+
+    // Function to apply the selected color scheme
+    function applyColorScheme(scheme) {
+        document.documentElement.style.setProperty('--darkmode', scheme); // Apply the scheme
+        document.body.classList.remove('light-mode', 'dark-mode');
+
+        // Apply light or dark mode based on the scheme
+        if (scheme === 'light') {
+            document.body.classList.add('light-mode');
+        } else if (scheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+        // 'auto' (system default) will just follow the system preferences without any custom class
+    }
+
+    // On window load, retrieve the saved scheme and apply it
+    window.addEventListener("load", event => {
+        const scheme = localStorage.getItem('color-scheme') || 'auto'; // Default to 'auto' if no scheme is saved
+        applyColorScheme(scheme); // Apply the scheme
+
+        // Set the corresponding radio button as checked
+        const selected = [...colorScheme.elements].find(element => element.value === scheme);
+        if (selected) selected.checked = true;
+    });
+</script>

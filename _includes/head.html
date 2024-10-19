@@ -3,4 +3,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+
+    <!--  THIS AVOIDS FLASHING OF CONTENT WHEN THE THEME IS APPLIED -->
+    <style>
+      /* Optional: hide content until the theme is applied */
+      body {
+        visibility: hidden;
+      }
+    </style>
+    
+    <script>
+      (function () {
+        const scheme = localStorage.getItem('color-scheme') || 'auto';
+
+        // Apply the saved color scheme immediately
+        if (scheme === 'light') {
+          document.documentElement.classList.add('light-mode');
+        } else if (scheme === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+        }
+
+        // Remove hidden styling after color scheme is applied
+        document.addEventListener("DOMContentLoaded", function () {
+          document.body.style.visibility = 'visible';
+        });
+      })();
+    </script>
+
 </head>

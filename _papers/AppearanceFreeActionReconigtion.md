@@ -153,7 +153,7 @@ It's also possible to start with different noise (e.g. sparse) and still descern
 </tr>
 </table>
 
-Using sparse noise, we can create videos that evoke a familiarity, at least in spirit, to the perceptual organization experiments of simple movements performed by psychologist Gunnar Johansson <a href="https://link.springer.com/article/10.3758/bf03212378"> <abbr title="Johansson, Gunnar. Visual perception of biological motion and a model for its analysis. Perception & psychophysics 14.2 (1973): 201-211.">[`Ref`]</abbr></a>.
+Using sparse noise, we can create videos that evoke a familiarity, at least in spirit, to the perceptual organization experiments of simple movements performed by psychologist Gunnar Johansson <a href="https://link.springer.com/article/10.3758/bf03212378"> <abbr title="Johansson, Gunnar. Visual perception of biological motion and a model for its analysis. Perception & psychophysics 14.2 (1973): 201-211.">[Ref]</abbr></a>.
 
 <p>
 <center><em>Visual perception of biological motion; Johansson Gunnar (1973)</em></center>
@@ -161,7 +161,7 @@ Using sparse noise, we can create videos that evoke a familiarity, at least in s
 <source  src="../papers/AppearanceFreeActionReconigtion/walkingdots.mp4" type="video/mp4">
 </video> 
 </p>
-Video modified from: <a href="https://www.youtube.com/watch?v=wG_U5m4FShs">[`Credit`]</a>
+Video modified from: <a href="https://www.youtube.com/watch?v=wG_U5m4FShs">[Credit]</a>
 
 
 # Proposed Architecture

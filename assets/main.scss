@@ -2,6 +2,12 @@
 --- 
 
 // $content-width: 45%;
+
+$wrapper-bg: light dark;
+$code-color: color-mix(in srgb, CanvasText, Canvas 90%);
+;
+
+/* such as the site title in the header, visited */
 @import "minima";
 //  ---------------- Colors
 
@@ -11,6 +17,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Linux Libertine';
     src: url('/fonts/LinLibertine_DR.woff') format('woff');
@@ -30,15 +37,6 @@ $teal-light: hsl(196, 41%, 85%);
 $grey-dark: $grey-color-dark;
 $grey-mid: rgb(172, 172, 172);
 $grey-light: $grey-color-light;
-
-// $gradient-primary: $blue-dark;
-// $gradient-secondary: $teal-mid;
-// $gradient-primary: rgb(253,253,253);
-// $gradient-secondary: rgb(253, 253, 253);
-// $gradient-primary: rgb(255, 255, 255);
-// $gradient-secondary: rgb(255, 255, 255);
-
-$wrapper-bg: white;
 
 
 //  ---------------- Paragraphs and Headings
@@ -88,7 +86,7 @@ hr {
 
 //  ---------------- FOOTER
 .site-footer {
-    border-top: 1px solid $grey-light;
+    border-top: 1px solid color-mix(in srgb, CanvasText, Canvas 90%);
     padding: 10px;
     background-color: $wrapper-bg;
     // font-family: 'Linux Biolinum', sans-serif;
@@ -126,7 +124,7 @@ hr {
     opacity: 0.8;
     border: 2px solid white;
     border-radius: 50%;
-    border-color: rgba(0, 0, 0, 0.05);
+    border-color: color-mix(in srgb, CanvasText, Canvas 90%);
     transition: background-color .05s, transform .05s ease-in-out;
 }
 
@@ -145,7 +143,7 @@ hr {
     max-height: 110px;
     width: auto;
     height: auto;
-    border-color: rgba(0, 0, 0, 0.05);
+    border-color: color-mix(in srgb, CanvasText, Canvas 90%);
     transition: transform .1s ease-in-out;
 }
 
@@ -157,7 +155,7 @@ hr {
     max-height: 120px;
     width: auto;
     height: auto;
-    border-color:orange;
+    border-color: orange;
     transition: transform .1s ease-in-out;
 }
 
@@ -165,7 +163,7 @@ hr {
     border-radius: 70%;
     width: auto;
     height: auto;
-    border-color:orange;
+    border-color: orange;
     transition: transform .1s ease-in-out;
 }
 
@@ -192,14 +190,15 @@ hr {
 
 #me-container {
     // background: linear-gradient(120deg, $gradient-primary, $gradient-secondary);
-    background: white;
+    background: $wrapper-bg;
     padding-bottom: 0px;
     margin-bottom: 0px;
 }
+
 header {
     background-color: $wrapper-bg;
     border-style: solid;
-    border-color: $grey-light;
+    border-color: color-mix(in srgb, CanvasText, Canvas 90%);
     // border-radius: 0.5rem;
     border-width: 1px;
     margin-bottom: 0px;
@@ -208,7 +207,7 @@ header {
 
 #header-name {
     // color: white;
-    color: $grey-color-dark;
+    color: CanvasText;
     // font-weight: bold;
     font-size: 24px;
     // font-family: monospace;
@@ -217,14 +216,14 @@ header {
 }
 
 #header-name-cv {
-    color: $grey-color-dark;
+    color: CanvasText;
     font-weight: bold;
     font-size: 20px;
 }
 
 #header-description {
     // color: white;
-    color: $grey-color-dark;
+    color: CanvasText;
     display: block;
     font-weight: normal;
     // font-family: monospace;
@@ -232,7 +231,7 @@ header {
 }
 
 #header-description-cv {
-    color: $grey-color-dark;
+    color: CanvasText;
     display: block;
     font-weight: bold;
 }
@@ -259,34 +258,51 @@ code {
 
 body {
     font-size: 11pt;
-    color: $grey-color-dark;
-    // font-family: 'Linux Biolinum', san-serif;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    // font-family: Helvetica, sans-serif;
+    background-color: Canvas;
+    color: color-mix(in srgb, CanvasText, Canvas 10%);
+    // color: inherit;
+    // color-scheme: light dark;
 }
+
 
 h0 {
     display: inline;
     font-size: 22pt;
     font-weight: 300;
+    color: inherit;
 }
 
 h1 {
     display: inline;
     font-size: 13pt;
     font-weight: 300;
+    color: inherit;
 }
 
 h2 {
     display: inline;
     font-size: 12pt;
     font-weight: 300;
+    color: inherit;
 }
 
 
 .content-container {
     padding: 100px;
+}
+
+.highlighter-rouge .highlight {
+    background-color: $code-color;
+    // padding: 0.5em;
+    // border-radius: 0.5em;
+    // margin-bottom: 1em;
+}
+
+pre,
+code {
+    background-color: $code-color;
 }
 
 //  ---------------- Published Paper Stuff
@@ -299,33 +315,32 @@ h2 {
 
 .paper-info .paper-head {
     margin-bottom: 0px;
+    color: color-mix(in srgb, CanvasText, Canvas 10%);
+    // color: CanvasText;
 }
 
 .paper-info .paper-title {
     font-size: 12pt;
     display: block;
     margin-bottom: 0.5em;
-    margin-top:0.5em;
+    margin-top: 0.5em;
+    color: inherit;
 }
 
 
 .paper-info .paper-authors {
     display: block;
-    // color: $teal-dark;
     font-size: 10pt;
 }
 
 .paper-info .paper-published {
     display: block;
-    // color: $teal-dark;
-    // font-style: italic;
     font-size: 10pt;
 }
 
 .paper-info .section {
     margin-top: 10px;
     font-style: italic;
-    // text-decoration: underline;
     display: block;
 }
 
@@ -351,7 +366,7 @@ h2 {
 .wrapper {
     background-color: $wrapper-bg;
     border-style: solid;
-    border-color: $grey-light;
+    border-color: color-mix(in srgb, CanvasText, Canvas 90%);
     border-width: 1px;
 }
 
@@ -371,7 +386,7 @@ h2 {
     // font-family: monospace;
     font-family: 'Linux Biolinum', sans-serif;
     // font-weight: 300;
-    position:absolute;
+    position: absolute;
 }
 
 
@@ -442,4 +457,303 @@ h2 {
 .dot:hover {
     background-color: $grey-mid;
     box-shadow: 0 0 0 0 $wrapper-bg;
+}
+
+/* System default: icons when system prefers dark mode */
+@media (prefers-color-scheme: dark) {
+    .email-icon {
+        content: url("/assets/social-icons/light/email.svg");
+    }
+
+    .github-icon {
+        content: url("/assets/social-icons/light/github.svg");
+    }
+    .linkedin-icon {
+        content: url("/assets/social-icons/light/linkedin.svg");
+    }
+
+    .googlescholar-icon {
+        content: url("/assets/social-icons/light/google_scholar.svg");
+    }
+
+    .info-icon {
+        content: url("/assets/icons/light/info.svg");
+    }
+
+    .code-icon {
+        content: url("/assets/icons/light/code.svg");
+    }
+
+    .bookmark-icon {
+        content: url("/assets/icons/light/bookmark.svg");
+    }
+}
+
+/* System default: icons when system prefers light mode */
+@media (prefers-color-scheme: light) {
+    .email-icon {
+        content: url("/assets/social-icons/dark/email.svg");
+    }
+
+    .github-icon {
+        content: url("/assets/social-icons/dark/github.svg");
+    }
+
+    .linkedin-icon {
+        content: url("/assets/social-icons/dark/linkedin.svg");
+    }
+
+    .googlescholar-icon {
+        content: url("/assets/social-icons/dark/google_scholar.svg");
+    }
+
+    .info-icon {
+        content: url("/assets/icons/dark/info.svg");
+    }
+
+    .code-icon {
+        content: url("/assets/icons/dark/code.svg");
+    }
+
+    .bookmark-icon {
+        content: url("/assets/icons/dark/bookmark.svg");
+    }
+}
+
+/* Manual override: light mode icons */
+body.light-mode .email-icon {
+    content: url("/assets/social-icons/dark/email.svg");
+}
+
+body.light-mode .github-icon {
+    content: url("/assets/social-icons/dark/github.svg");
+}
+
+body.light-mode  .linkedin-icon {
+    content: url("/assets/social-icons/dark/linkedin.svg");
+}
+
+body.light-mode  .googlescholar-icon {
+    content: url("/assets/social-icons/dark/google_scholar.svg");
+}
+
+body.light-mode  .info-icon {
+    content: url("/assets/icons/dark/info.svg");
+}
+
+body.light-mode  .code-icon {
+    content: url("/assets/icons/dark/code.svg");
+}
+
+body.light-mode  .bookmark-icon {
+    content: url("/assets/icons/dark/bookmark.svg");
+}
+
+
+/* Manual override: dark mode icons */
+body.dark-mode .email-icon {
+    content: url("/assets/social-icons/light/email.svg");
+}
+
+body.dark-mode .github-icon {
+    content: url("/assets/social-icons/light/github.svg");
+}
+
+body.dark-mode .linkedin-icon {
+    content: url("/assets/social-icons/light/linkedin.svg");
+}
+
+body.dark-mode .googlescholar-icon {
+    content: url("/assets/social-icons/light/google_scholar.svg");
+}
+
+body.dark-mode .info-icon {
+    content: url("/assets/icons/light/info.svg");
+}
+
+body.dark-mode .code-icon {
+    content: url("/assets/icons/light/code.svg");
+}
+
+body.dark-mode .bookmark-icon {
+    content: url("/assets/icons/light/bookmark.svg");
+}
+
+// // ICONS OVERRIDE
+// @media (prefers-color-scheme: dark) {
+//     .email-icon {
+//         content: url("/assets/social-icons/light/email.svg");
+//     }
+
+//     .github-icon {
+//         content: url("/assets/social-icons/light/github.svg");
+//     }
+
+//     .linkedin-icon {
+//         content: url("/assets/social-icons/light/linkedin.svg");
+//     }
+
+//     .googlescholar-icon {
+//         content: url("/assets/social-icons/light/google_scholar.svg");
+//     }
+
+//     .info-icon {
+//         content: url("/assets/icons/light/info.svg");
+//     }
+
+//     .code-icon {
+//         content: url("/assets/icons/light/code.svg");
+//     }
+
+//     .bookmark-icon {
+//         content: url("/assets/icons/light/bookmark.svg");
+//     }
+// }
+
+// @media (prefers-color-scheme: light) {
+//     .email-icon {
+//         content: url("/assets/social-icons/dark/email.svg");
+//     }
+
+//     .github-icon {
+//         content: url("/assets/social-icons/dark/github.svg");
+//     }
+
+//     .linkedin-icon {
+//         content: url("/assets/social-icons/dark/linkedin.svg");
+//     }
+
+//     .googlescholar-icon {
+//         content: url("/assets/social-icons/dark/google_scholar.svg");
+//     }
+
+//     .info-icon {
+//         content: url("/assets/icons/dark/info.svg");
+//     }
+
+//     .code-icon {
+//         content: url("/assets/icons/dark/code.svg");
+//     }
+
+//     .bookmark-icon {
+//         content: url("/assets/icons/light/bookmark.svg");
+//     }
+// }
+
+// /* Manual light mode override */
+// body.light-mode .email-icon {
+//     content: url("/assets/social-icons/dark/email.svg");
+// }
+
+// body.light-mode .github-icon {
+//     content: url("/assets/social-icons/dark/github.svg");
+// }
+
+// body.light-mode .linkedin-icon {
+//     content: url("/assets/social-icons/dark/linkedin.svg");
+// }
+
+// body.light-mode .googlescholar-icon {
+//     content: url("/assets/social-icons/dark/google_scholar.svg");
+// }
+
+// body.light-mode .info-icon {
+//     content: url("/assets/icons/dark/info.svg");
+// }
+
+// body.light-mode .code-icon {
+//     content: url("/assets/icons/dark/code.svg");
+// }
+
+// body.light-mode .bookmark-icon {
+//     content: url("/assets/icons/dark/bookmark.svg");
+// }
+
+// /* Manual dark mode override */
+// body.dark-mode .email-icon {
+//     content: url("/assets/social-icons/light/email.svg");
+// }
+
+// body.dark-mode .github-icon {
+//     content: url("/assets/social-icons/light/github.svg");
+// }
+
+// body.dark-mode .linkedin-icon {
+//     content: url("/assets/social-icons/light/linkedin.svg");
+// }
+
+// body.dark-mode .googlescholar-icon {
+//     content: url("/assets/social-icons/light/google_scholar.svg");
+// }
+
+// body.dark-mode .info-icon {
+//     content: url("/assets/icons/light/info.svg");
+// }
+
+// body.dark-mode .code-icon {
+//     content: url("/assets/icons/light/code.svg");
+// }
+
+// body.dark-mode .bookmark-icon {
+//     content: url("/assets/icons/light/bookmark.svg");
+// }
+
+
+/* DEMO  OF AUTOMATIC TOGGLE IN ONE SPOT */
+// https://dev.to/madsstoumann/dark-mode-in-3-lines-of-css-and-other-adventures-1ljj
+// https: //web.dev/articles/light-dark
+//  I JUST BODGED THIS TOGETHER, BUT IT WORKS.
+
+/* DEMO */
+.toggle-group {
+    border: 1px solid color-mix(in srgb, CanvasText, Canvas 90%);
+    border-radius: 24px;
+    inline-size: fit-content;
+    padding: 3px;
+    // position: absolute; // keep it in the top corner
+    position: fixed; // follow scroll
+    top: 10px;
+    right: 30px;
+    background-color: Canvas;
+}
+
+.toggle-group label {
+    border-radius: 21px;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0.5em 1em;
+    text-align: center;
+    color: color-mix(in srgb, CanvasText, Canvas 40%);
+    user-select: none;
+}
+
+.toggle-group label:has(input:checked) {
+    background-color: color-mix(in srgb, CanvasText, Canvas 90%);
+    ;
+    color: CanvasText;
+}
+
+[data-sr] {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+
+:root {
+    &:has(input[name="color-scheme"][value="light dark"]:checked) {
+        color-scheme: light dark;
+    }
+
+    &:has(input[name="color-scheme"][value="light"]:checked) {
+        color-scheme: light;
+    }
+
+    &:has(input[name="color-scheme"][value="dark"]:checked) {
+        color-scheme: dark;
+    }
 }
