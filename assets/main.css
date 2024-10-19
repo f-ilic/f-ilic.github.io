@@ -332,8 +332,7 @@ pre, code { background-color: color-mix(in srgb, CanvasText, Canvas 90%); }
 
 /* Media query for small screens (less than 600px wide) */
 @media (max-width: 800px) { .toggle-group { flex-direction: column; right: 10px; font-size: 12px; } }
-@media (max-width: 550px) { .toggle-group { flex-direction: row; right: 8px; font-size: 12px; }
-  .toggle-group label { padding: 0.1em 0.1em; } }
+@media (max-width: 550px) { .toggle-group { visibility: hidden; } }
 [data-sr] { clip: rect(0 0 0 0); clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }
 
 :root:has(input[name="color-scheme"][value="light dark"]:checked) { color-scheme: light dark; }
