@@ -5,7 +5,7 @@
 
 $wrapper-bg: light dark;
 $code-color: color-mix(in srgb, CanvasText, Canvas 90%);
-;
+
 
 /* such as the site title in the header, visited */
 @import "minima";
@@ -375,26 +375,28 @@ code {
 .wrapper {
     background-color: $wrapper-bg;
     border-style: solid;
-    border-color: color-mix(in srgb, CanvasText, Canvas 90%);
+    border-color: color-mix(in srgb, CanvasText, Canvas 70%);
     border-width: 1px;
 }
 
 .badge {
-    color: #fff !important;
-    background-color: $teal-mid;
+    // color: #fff !important;
+    color: CanvasText;
+    background-color: Canvas;//$teal-mid;
     // background-color: #1756a9;
-    border: solid 1px;
-    border-color: black;
+    // border: solid 1px;
+    border-color: CanvasText;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    margin-left: -5px;
-    margin-top: -5px;
+    // margin-left: 2px;
+    // margin-top: 2px;
     display: inline-block;
     vertical-align: top;
     font-size: 10pt;
     // font-family: monospace;
-    font-family: 'Linux Biolinum', sans-serif;
+    // font-family: 'Linux Biolinum', sans-serif;
     // font-weight: 300;
+    font-size: smaller;
     position: absolute;
 }
 
