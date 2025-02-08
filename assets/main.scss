@@ -215,6 +215,7 @@ hr {
 header {
     background-color: $wrapper-bg;
     border-style: solid;
+    // border-color: color-mix(in srgb, CanvasText, Canvas 90%);
     border-color: color-mix(in srgb, CanvasText, Canvas 90%);
     // border-radius: 0.5rem;
     border-width: 1px;
@@ -375,7 +376,7 @@ code {
 .wrapper {
     background-color: $wrapper-bg;
     border-style: solid;
-    border-color: color-mix(in srgb, CanvasText, Canvas 70%);
+    border-color: color-mix(in srgb, CanvasText, Canvas 90%);
     border-width: 1px;
 }
 
