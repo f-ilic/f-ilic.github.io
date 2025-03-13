@@ -38,7 +38,8 @@ $grey-dark: $grey-color-dark;
 $grey-mid: rgb(172, 172, 172);
 $grey-light: $grey-color-light;
 
-
+$snap-yellow:#FFFC00;
+$linkhover: var(--link-hover);
 //  ---------------- Paragraphs and Headings
 
 abbr {
@@ -61,7 +62,9 @@ a {
 
 /* Style for links when hovering */
 a:hover {
-    color: orange;
+    // color: orange;
+    // color: $snap-yellow;
+    color: $linkhover;
     text-decoration: none;
 }
 
@@ -147,7 +150,8 @@ hr {
 .svg-social-icon:hover {
     opacity: 1;
     transform: scale(1.2);
-    border-color: orange;
+    // border-color: orange;
+    border-color: $snap-yellow;
     transition: background-color .05s, transform .05s ease-in-out;
 }
 
@@ -171,7 +175,8 @@ hr {
     max-height: 120px;
     width: auto;
     height: auto;
-    border-color: orange;
+    // border-color: orange;
+    border-color: $snap-yellow;
     transition: transform .1s ease-in-out;
 }
 
@@ -179,30 +184,31 @@ hr {
     border-radius: 70%;
     width: auto;
     height: auto;
-    border-color: orange;
+    // border-color: orange;
+    border-color: $snap-yellow;
     transition: transform .1s ease-in-out;
 }
 
-.subheading {
+subheading {
     font-size: 10pt;
     margin-bottom: 10px;
     color: $teal-dark;
+
 }
 
+// .nav-elem:hover {
+//     box-shadow: 0 2px 0 0 $grey-color-light;
+//     text-decoration: none;
+//     color: $blue-dark;
+// }
 
-.nav-elem:hover {
-    box-shadow: 0 2px 0 0 $grey-color-light;
-    text-decoration: none;
-    color: $blue-dark;
-}
+// .active {
+//     box-shadow: 0 2px 0 0 $blue-dark;
+// }
 
-.active {
-    box-shadow: 0 2px 0 0 $blue-dark;
-}
-
-.active:hover {
-    box-shadow: 0 2px 0 0 $blue-dark;
-}
+// .active:hover {
+//     box-shadow: 0 2px 0 0 $blue-dark;
+// }
 
 #me-container {
     // background: linear-gradient(120deg, $gradient-primary, $gradient-secondary);
@@ -367,7 +373,8 @@ code {
     padding-top: 0.15rem;
     font-size: 10pt;
     background-color: $wrapper-bg;
-    color: orange;
+    // color: orange;
+    color: $linkhover;
     display: inline-block;
     margin-top: 0.5em;
 }
@@ -467,7 +474,8 @@ code {
 
 .active,
 .dot:hover {
-    background-color: $grey-mid;
+    // background-color: $grey-mid;
+    background-color: $linkhover;
     box-shadow: 0 0 0 0 $wrapper-bg;
 }
 
@@ -505,21 +513,10 @@ code {
     color: CanvasText;
 }
 
-/* Media query for small screens (less than 600px wide) */
-// @media (max-width: 900px) {
-    // .toggle-group {
-    //     flex-direction: column;
-    //     right: 10px;
-    //     top:10px;
-    //     font-size: 12px;
-    // }
-    // .svg-theme-icon {
-    //     width: 20px;
-    //     height: 20px;
-    //     margin: 4px;
-    //     border-color: color-mix(in srgb, CanvasText, Canvas 90%);
-    // }
-// }
+canvas {
+    color: CanvasText; /* System-defined text color */
+    background-color: Canvas;
+}
 
 @media (max-width: 600px) {
     .theme-text{
@@ -539,15 +536,25 @@ code {
 
 
 :root {
+    @media (prefers-color-scheme: light) {
+            --link-hover: orange;
+        }
+    
+    @media (prefers-color-scheme: dark) {
+        --link-hover: #FFFC00;
+    }
+
     &:has(input[name="color-scheme"][value="light dark"]:checked) {
         color-scheme: light dark;
     }
 
     &:has(input[name="color-scheme"][value="light"]:checked) {
         color-scheme: light;
+        --link-hover: orange;
     }
 
     &:has(input[name="color-scheme"][value="dark"]:checked) {
         color-scheme: dark;
+        --link-hover: #FFFC00;
     }
 }

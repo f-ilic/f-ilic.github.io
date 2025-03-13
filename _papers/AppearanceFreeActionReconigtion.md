@@ -171,13 +171,13 @@ We call it <b>Explicit-Two-Stream</b>, as one stream <u>explicitly</u> models te
 <br>
 <br>
 
-<center><em>Our proposed Network Architecture</em></center>
+<!-- <center><em>Our proposed Network Architecture</em></center> -->
 
-![Schematic](../papers/AppearanceFreeActionReconigtion/schematic.png)
+<!-- ![Schematic](../papers/AppearanceFreeActionReconigtion/schematic.png) -->
 
 ![Results](../papers/AppearanceFreeActionReconigtion/results.png)
-<br>
-This design choise for our network allows for a rich dynamics representation that outperforms other methods on Appearance Free Data. We show that it closes the gap to human performance on Appearance Free Data significantly.
+<br><br>
+This design choice for our network allows for a rich dynamics representation that outperforms other methods on Appearance Free Data. We show that it closes the gap to human performance on Appearance Free Data significantly.
 <br>
 <br>
 

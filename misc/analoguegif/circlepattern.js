@@ -26,6 +26,23 @@ function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 
     bufferCanvas.height = canvas.height;
     let random = mulberry32(seed); // Initialize PRNG with the seed
 
+    function getCanvasStyles() {
+        const canvasStyle = getComputedStyle(canvas);
+
+        // Force reflow (important for ensuring styles are available)
+        void canvas.offsetHeight;
+
+        let fillColor = canvasStyle.getPropertyValue("background-color").trim();
+        let textColor = canvasStyle.getPropertyValue("color").trim();
+
+        // Convert to RGBA if not already transparent
+        if (!fillColor.includes("rgba")) {
+            fillColor = fillColor.replace("rgb", "rgba").replace(")", ", 0.5)"); // Add transparency
+        }
+        return { fillColor, textColor };
+    }
+
+
     function updateCanvasSize() {
         const wrapper = document.getElementById('simulation-wrapper');
         canvas.width = wrapper.offsetWidth;
@@ -35,10 +52,11 @@ function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 
         draw(); // Redraw after resizing
     }
 
-
     function createNoiseWithinCircle() {
-        bufferCtx.clearRect(0, 0, canvas.width, canvas.height); // Clear the buffer canvas
-        bufferCtx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+        const { fillColor, textColor } = getCanvasStyles();
+
+        bufferCtx.clearRect(0, 0, canvas.width, canvas.height); // Clear the buffer canvas        
+        bufferCtx.fillStyle = fillColor;
         bufferCtx.fillRect(0, 0, canvas.width, canvas.height);
 
         bufferCtx.beginPath();
@@ -50,7 +68,7 @@ function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 
             const r = radius * Math.sqrt(random()); // Use seeded random number for radius
             const x = centerX + r * Math.cos(angle);
             const y = centerY + r * Math.sin(angle);
-            bufferCtx.fillStyle = 'black';
+            bufferCtx.fillStyle = textColor;
             bufferCtx.fillRect(x, y, 1, 1);
         }
     }
@@ -82,7 +100,7 @@ function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 
 
         window.addEventListener('resize', () => {
             updateCanvasSize();
-            createNoiseWithinCircle(); // Regenerate noise
+            createNoiseWithinCircle();
             draw();
         });
 
@@ -113,7 +131,7 @@ function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 
         // NOISE LEVEL
         document.getElementById('noiseLevelSlider').addEventListener('input', () => {
             noiselevel = parseFloat(document.getElementById('noiseLevelSlider').value);
-            createNoiseWithinCircle(); // Regenerate noise
+            createNoiseWithinCircle();
             draw();
         });
 
@@ -129,55 +147,100 @@ function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 
             document.getElementById('xOffsetSlider').value = xOffset;
             document.getElementById('yOffsetSlider').value = yOffset;
             document.getElementById('noiseLevelSlider').value = noiselevel;
-            createNoiseWithinCircle(); // Regenerate noise
+
+            createNoiseWithinCircle();
             draw();
         });
     }
 
-    createNoiseWithinCircle(); // Create noise once
-    draw(); // Initial draw
+    createNoiseWithinCircle();
+    draw();
+}
+// Define canvas configurations in an array
+const canvasConfigs = [
+    { id: 'canvas0', rotation: 0, scale: 1.0, xOff: 0, yOff: 0, seed: 42, noise: 0.1, addListeners: true },
+
+    // Rotation Variants
+    { id: 'glassRotation1', rotation: 0, scale: 1.0, xOff: 0, yOff: 0 },
+    { id: 'glassRotation2', rotation: 1, scale: 1.0, xOff: 0, yOff: 0 },
+    { id: 'glassRotation3', rotation: 2, scale: 1.0, xOff: 0, yOff: 0 },
+    { id: 'glassRotation4', rotation: 3, scale: 1.0, xOff: 0, yOff: 0 },
+    { id: 'glassRotation5', rotation: 4, scale: 1.0, xOff: 0, yOff: 0 },
+    { id: 'glassRotation6', rotation: 6, scale: 1.0, xOff: 0, yOff: 0 },
+
+    // Scaling Variants
+    { id: 'glassScale1', rotation: 0, scale: 1.0, xOff: 0, yOff: 0 },
+    { id: 'glassScale2', rotation: 0, scale: 0.99, xOff: 0, yOff: 0 },
+    { id: 'glassScale3', rotation: 0, scale: 0.98, xOff: 0, yOff: 0 },
+    { id: 'glassScale4', rotation: 0, scale: 0.97, xOff: 0, yOff: 0 },
+    { id: 'glassScale5', rotation: 0, scale: 0.96, xOff: 0, yOff: 0 },
+    { id: 'glassScale6', rotation: 0, scale: 0.95, xOff: 0, yOff: 0 },
+
+    // Scaling + Rotation Variants (Might have been missing)
+    { id: 'glassScaleRot1', rotation: 1, scale: 0.96, xOff: 0, yOff: 0 },
+    { id: 'glassScaleRot2', rotation: 2, scale: 0.96, xOff: 0, yOff: 0 },
+    { id: 'glassScaleRot3', rotation: 3, scale: 0.96, xOff: 0, yOff: 0 },
+    { id: 'glassScaleRot4', rotation: 4, scale: 0.96, xOff: 0, yOff: 0 },
+    { id: 'glassScaleRot5', rotation: 5, scale: 0.96, xOff: 0, yOff: 0 },
+    { id: 'glassScaleRot6', rotation: 6, scale: 0.96, xOff: 0, yOff: 0 },
+
+    // Scaling + Translation Variants (Might have been missing)
+    { id: 'glassScaleTrans1', rotation: 0, scale: 0.95, xOff: 0, yOff: 0 },
+    { id: 'glassScaleTrans2', rotation: 0, scale: 0.95, xOff: 0.5, yOff: 0 },
+    { id: 'glassScaleTrans3', rotation: 0, scale: 0.95, xOff: 1, yOff: 0 },
+    { id: 'glassScaleTrans4', rotation: 0, scale: 0.95, xOff: 1.5, yOff: 0 },
+    { id: 'glassScaleTrans5', rotation: 0, scale: 0.95, xOff: 2, yOff: 0 },
+    { id: 'glassScaleTrans6', rotation: 0, scale: 0.95, xOff: 2.5, yOff: 0 },
+
+    // Rotation + Translation Variants
+    { id: 'glassRotationTrans1', rotation: 8, scale: 1.0, xOff: -4, yOff: 0 },
+    { id: 'glassRotationTrans2', rotation: 8, scale: 1.0, xOff: -3, yOff: 0 },
+    { id: 'glassRotationTrans3', rotation: 8, scale: 1.0, xOff: -2, yOff: 0 },
+    { id: 'glassRotationTrans4', rotation: 8, scale: 1.0, xOff: 1, yOff: 0 },
+    { id: 'glassRotationTrans5', rotation: 8, scale: 1.0, xOff: 0, yOff: 0 },
+    { id: 'glassRotationTrans6', rotation: 8, scale: 1.0, xOff: 1, yOff: 0 },
+
+    // Over Rotation
+    { id: 'glassOverRotate1', rotation: 2, scale: 1.0, xOff: 0, yOff: 0 },
+    { id: 'glassOverRotate2', rotation: 3, scale: 1.0, xOff: 0, yOff: 0 },
+    { id: 'glassOverRotate3', rotation: 10, scale: 1.0, xOff: 0, yOff: 0 },
+];
+
+// Function to wait until styles are ready before initializing
+function waitForCanvasStyles(canvas, callback) {
+    function checkStyles() {
+        const computedStyle = getComputedStyle(canvas);
+        const bgColor = computedStyle.getPropertyValue("background-color").trim();
+
+        if (bgColor && bgColor !== "transparent" && bgColor !== "rgba(0, 0, 0, 0)") {
+            callback(); // Styles are ready, execute the function
+        } else {
+            requestAnimationFrame(checkStyles); // Try again on the next frame
+        }
+    }
+    checkStyles(); // Start checking immediately
 }
 
-// Initialize canvas0 with event listeners
-initializeCanvas('canvas0', 0, 1.0, 0, 0, 42, 0.1, true);
+// Function to initialize all canvases using the config array
+function initializeAllCanvases() {
+    canvasConfigs.forEach(config => {
+        const canvas = document.getElementById(config.id);
+        if (canvas) {
+            waitForCanvasStyles(canvas, () => {
+                initializeCanvas(
+                    config.id,
+                    config.rotation || 0,
+                    config.scale || 1.0,
+                    config.xOff || 0,
+                    config.yOff || 0,
+                    config.seed || 42,
+                    config.noise || 0.1,
+                    config.addListeners || false
+                );
+            });
+        }
+    });
+}
 
-
-// Initialize other canvases without event listeners
-initializeCanvas('glassRotation1', 0, 1.0, 0, 0);
-initializeCanvas('glassRotation2', 1, 1.0, 0, 0);
-initializeCanvas('glassRotation3', 2, 1.0, 0, 0);
-initializeCanvas('glassRotation4', 3, 1.0, 0, 0);
-initializeCanvas('glassRotation5', 4, 1.0, 0, 0);
-initializeCanvas('glassRotation6', 6, 1.0, 0, 0);
-
-initializeCanvas('glassScale1', 0, 1.0, 0, 0);
-initializeCanvas('glassScale2', 0, 0.99, 0, 0);
-initializeCanvas('glassScale3', 0, 0.98, 0, 0);
-initializeCanvas('glassScale4', 0, 0.97, 0, 0);
-initializeCanvas('glassScale5', 0, 0.96, 0, 0);
-initializeCanvas('glassScale6', 0, 0.95, 0, 0);
-
-initializeCanvas('glassScaleRot1', 1, 0.96, 0, 0);
-initializeCanvas('glassScaleRot2', 2, 0.96, 0, 0);
-initializeCanvas('glassScaleRot3', 3, 0.96, 0, 0);
-initializeCanvas('glassScaleRot4', 4, 0.96, 0, 0);
-initializeCanvas('glassScaleRot5', 5, 0.96, 0, 0);
-initializeCanvas('glassScaleRot6', 6, 0.96, 0, 0);
-
-initializeCanvas('glassScaleTrans1', 0, 0.95, 0, 0);
-initializeCanvas('glassScaleTrans2', 0, 0.95, 0.5, 0);
-initializeCanvas('glassScaleTrans3', 0, 0.95, 1, 0);
-initializeCanvas('glassScaleTrans4', 0, 0.95, 1.5, 0);
-initializeCanvas('glassScaleTrans5', 0, 0.95, 2, 0);
-initializeCanvas('glassScaleTrans6', 0, 0.95, 2.5, 0);
-
-initializeCanvas('glassRotationTrans1', 8, 1.0, -4, 0);
-initializeCanvas('glassRotationTrans2', 8, 1.0, -3, 0);
-initializeCanvas('glassRotationTrans3', 8, 1.0, -2, 0);
-initializeCanvas('glassRotationTrans4', 8, 1.0, 1, 0);
-initializeCanvas('glassRotationTrans5', 8, 1.0, 0, 0);
-initializeCanvas('glassRotationTrans6', 8, 1.0, 1, 0);
-
-initializeCanvas('glassOverRotate1', 2, 1.0, 0, 0);
-initializeCanvas('glassOverRotate2', 3, 1.0, 0, 0);
-initializeCanvas('glassOverRotate3', 10, 1.0, 0, 0);
+// Ensure canvases are only initialized AFTER the DOM is fully loaded.
+window.addEventListener("DOMContentLoaded", initializeAllCanvases);
