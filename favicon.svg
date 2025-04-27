@@ -1,0 +1,12 @@
+<!-- <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#ffcc00"/>
+  <text x="33" y="35" font-family="Linux Libertine, serif" font-size="64" fill="#000000"  text-anchor="middle" dominant-baseline="middle" font-weight="bold" style="letter-spacing:4px;">ƒ</text>
+</svg> -->
+
+<!-- font-weight="bold" -->
+<!-- font-family="Fira Mono, Menlo, Courier, monospace" -->
+
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+  <rect x="4" y="4" width="56" height="56" rx="80" fill="#ffffff"/>
+  <text x="50%" y="58%" font-family="Linux Libertine, serif" font-size="64" fill="#000000" text-anchor="middle" dominant-baseline="middle" font-weight="bold">fi</text>
+</svg>

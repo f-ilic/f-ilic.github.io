@@ -11,7 +11,7 @@ order: 1
 # About
 ---
 <p>
-I'm a Computer Vision and Machine Learning Engineer at Snap. I'm passionate about developing models that can understand and interpret the world around us.
+I'm a Computer Vision & Machine Learning Engineer at Snap, passionate about developing models that can understand and interpret the world around us.
 </p>
 
 <p>
@@ -22,7 +22,7 @@ During my PhD I investigated motion in videos — its modeling and importance �
 Before that, I worked at CERN for the CMS experiment on performance critical monitoring and analysis software.
 </p>
 
-# Short CV
+# Experience
 ---
 <p>
 Computer Vision & Machine Learning Engineer at <a href="https://www.snapchat.com">Snap Inc. — Vienna</a><br>
