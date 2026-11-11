@@ -1,25 +1,5 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: " en" }}">
-{%- include head.html -%}
-
-<body>
-
-  <header>
-    {%- include me.html -%}
-  </header>
-
-  <center>
-    <!-- {%- include navigation.html -%} -->
-  </center>
-
-  <main class="page-content" aria-label="Content">
-    <div class="wrapper">
-      <p></p>
-      {{ content }}
-    </div>
-  </main>
-
-  {%- include footer.html -%}
-</body>
-
-</html>
+---
+layout: default
+---
+<p></p>
+{{ content }}

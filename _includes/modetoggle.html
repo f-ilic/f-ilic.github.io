@@ -1,5 +1,7 @@
-<!-- These are the color toggles -->
+<!-- Light / System / Dark colour scheme toggle. The checked radio drives `color-scheme` via CSS (:has),
+     the script below remembers the choice and applies it inline on <html> (see head.html). -->
 <fieldset class="toggle-group" id="colorScheme">
+    <legend data-sr>Colour scheme</legend>
     <label>
         <input type="radio" name="color-scheme" value="light" id="color-scheme-light" data-sr>{% include icons/theme-lightmode.html %}
         <span class="theme-text">Light</span>
@@ -14,39 +16,25 @@
     </label>
 </fieldset>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const colorScheme = document.getElementById('colorScheme');
+    (function () {
+        var group = document.getElementById('colorScheme');
+        var radios = Array.prototype.slice.call(group.querySelectorAll('input[name="color-scheme"]'));
 
-        // Retrieve the saved scheme and set the radio button
-        const scheme = localStorage.getItem('color-scheme') || 'auto';
-
-        // Function to apply the scheme (light, dark, auto)
+        // 'light' and 'dark' force a scheme; anything else ('light dark') follows the system setting.
         function applyColorScheme(scheme) {
-            // Remove existing classes for theme modes
-            document.documentElement.classList.remove('light-mode', 'dark-mode');
-
-            // Apply the correct mode based on the user's selection or system default
-            if (scheme === 'light') {
-                document.documentElement.classList.add('light-mode');
-            } else if (scheme === 'dark') {
-                document.documentElement.classList.add('dark-mode');
-            } else {
-                // Auto mode should rely on system default (handled by @media queries)
-                document.documentElement.classList.remove('light-mode', 'dark-mode');
-            }
+            document.documentElement.style.colorScheme = (scheme === 'light' || scheme === 'dark') ? scheme : '';
         }
 
-        // Apply the current scheme based on what's stored in localStorage
-        applyColorScheme(scheme);
+        var saved = null;
+        try { saved = localStorage.getItem('color-scheme'); } catch (e) {}
+        radios.forEach(function (radio) {
+            if (radio.value === saved) radio.checked = true;
+        });
+        applyColorScheme(saved);
 
-        // Set the corresponding radio button as checked based on saved scheme
-        const selected = [...colorScheme.elements].find(element => element.value === scheme);
-        if (selected) selected.checked = true;
-
-        // Listen for changes on the radio buttons and save the value to localStorage
-        colorScheme.addEventListener('change', event => {
-            localStorage.setItem('color-scheme', event.target.value);
+        group.addEventListener('change', function (event) {
+            try { localStorage.setItem('color-scheme', event.target.value); } catch (e) {}
             applyColorScheme(event.target.value);
         });
-    });
+    })();
 </script>

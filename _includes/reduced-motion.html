@@ -1,0 +1,12 @@
+<script>
+  // Respect the "reduce motion" OS setting: stop autoplaying videos. Content videos get
+  // controls so they can still be played on demand; decorative (aria-hidden) teasers just stay still.
+  (function () {
+    if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    Array.prototype.forEach.call(document.querySelectorAll('video[autoplay]'), function (video) {
+      video.removeAttribute('autoplay');
+      video.pause();
+      if (video.getAttribute('aria-hidden') !== 'true') video.controls = true;
+    });
+  })();
+</script>

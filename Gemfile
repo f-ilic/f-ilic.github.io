@@ -1,7 +1,20 @@
 source "https://rubygems.org"
-gem "github-pages", group: :jekyll_plugins
 
+# The site is built locally and the generated _site/ is pushed to the `master` branch
+# (see README.md), so only the gems needed for that build are listed here.
+# Jekyll 3.10 + minima 2.5.1 produce exactly the same output as the old `github-pages`
+# gem did, but also install on current Ruby versions (3.4 / 4.0).
+gem "jekyll", "~> 3.10"
+gem "minima", "2.5.1"
+gem "kramdown-parser-gfm"
+gem "webrick" # needed by `jekyll serve` since Ruby 3.0
 
-gem "jekyll", "~> 3.9"
+group :jekyll_plugins do
+  gem "jekyll-feed"
+end
 
-gem "webrick", "~> 1.7"
+# Former default gems that Jekyll 3 still requires but newer Rubies no longer bundle.
+gem "base64"
+gem "bigdecimal"
+gem "csv"
+gem "logger"

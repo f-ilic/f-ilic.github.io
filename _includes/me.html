@@ -1,9 +1,7 @@
-<!-- <center> -->
-  <!-- <div style="background-color: #FFFC00; height: 5px; width: 100%;"></div> -->
-  <table id="me-container" style="border: none;">
+  <table id="me-container" role="presentation" style="border: none;">
       <tr style="border: none;">
         <td style="border: none; width:40%;" align="left">
-          <a title="Homepage" href="/"><img src="{{"/assets/facepic_rect.jpg" | | relative_url}}" class='circle-img' align="right"></a>
+          <a title="Homepage" href="{{ "/" | relative_url }}"><img src="{{ "/assets/facepic_rect.jpg" | relative_url }}" alt="Homepage" class='circle-img' align="right"></a>
         </td>
 
         <td style="border: none; width:50%;" align="left">
@@ -12,14 +10,13 @@
           </div>
           <div id='header-description'>
             Computer Vision & Machine Learning<br>
-            Engineer at Snap <img src="{{" /assets/snap.svg"}}" alt="Snapchat"
+            Engineer at Snap <img src="{{ "/assets/snap.svg" | relative_url }}" alt=""
               style="width: 20px; height: 20px; box-sizing: border-box; vertical-align: text-bottom;"><br>
           </div>
-          {%- include social.html -%}          
+          {%- include social.html -%}
         </td>
         <td style="border: none; width:10%;" align="right">
         {%- include modetoggle.html -%}
         </td>
       </tr>
-  </table> 
-<!-- </center> -->
+  </table>

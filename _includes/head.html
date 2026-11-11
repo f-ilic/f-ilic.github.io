@@ -3,25 +3,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Inline script to apply the theme immediately before rendering -->
+  {%- if page.url == "/" -%}
+    {%- assign page_title = site.title -%}
+  {%- else -%}
+    {%- assign page_title = page.title | replace: "<br>", " " | strip_html | append: " | " | append: site.title -%}
+  {%- endif %}
+  <title>{{ page_title | escape }}</title>
+
+  <link rel="icon" href="{{ "/favicon.svg" | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ "/favicon.ico" | relative_url }}" sizes="any">
+
+  <!-- Apply the saved colour scheme before the first paint, so there is no flash of the wrong theme.
+       Kept in sync with the Light/System/Dark toggle in modetoggle.html. -->
   <script>
     (function () {
-      const scheme = localStorage.getItem('color-scheme') || 'auto';
-      
-      let style = document.createElement('style');
-      document.head.appendChild(style);
-
-      // Apply light or dark mode via inline CSS early before the page renders
-      if (scheme === 'dark') {
-        style.innerHTML = 'html { background-color: black; color: white; }';
-        document.documentElement.classList.add('dark-mode');
-      } else if (scheme === 'light') {
-        style.innerHTML = 'html { background-color: white; color: black; }';
-        document.documentElement.classList.add('light-mode');
+      var scheme = null;
+      try { scheme = localStorage.getItem('color-scheme'); } catch (e) {}
+      if (scheme === 'light' || scheme === 'dark') {
+        document.documentElement.style.colorScheme = scheme;
       }
     })();
   </script>
 
-  <!-- Link to external CSS file for full styling -->
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 </head>

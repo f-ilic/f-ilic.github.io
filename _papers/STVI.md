@@ -24,7 +24,7 @@ Object tracking and decomposition into parts: Our approach (right) bridges the c
 Different object scales: Space-Time Volumes of Interest extracted at increasing spatial and temporal scales from a jumping-jack sequence. Note how finer scales capture more detail at the cost of temporal and spatial coherence, whereas coarser scales model more fundamental patterns.
 
 <br>
-![Slices](../papers/STVI/slices.png)
+![Slices through the extracted space-time volumes](../papers/STVI/slices.png)
 The extracted representation is inherently a volumetric one, allowing us to slice along any of the axis.
 This can reveal interesting details such as the tube in the center image formed by the oscillating motion of the legs.
 

@@ -16,7 +16,7 @@ teaser: papers/SelectivePrivacyPreservation/saliency_teaser.mp4
 </div>
 
 <script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js">
 </script>
 
 
@@ -32,14 +32,14 @@ We show that it is not necessary to train action recognition and privacy network
 # Overview
 ---
 
-![alt text](../papers/SelectivePrivacyPreservation/method.png)
+![Method overview: DINO-ViT template matching produces saliency maps that guide motion consistent noise obfuscation](../papers/SelectivePrivacyPreservation/method.png)
 
 Our method uses templates that we match with DINO-ViT features to find salient regions in video that we need to obfuscate. We create a template library of images, and spatial locations in these images $$ {\tau}_i \in \mathsf{T} $$, which correspond to regions that ought to be obfuscated. In our particular usecase this means regions that can be used to infer labels pertaining to privacy (Skintone, Haircolor, Gender, ...).
 
 <p>
 <center><em>ViT-Tokens: Manually Selected Template Features</em></center>
 <center>
-<img src="../papers/SelectivePrivacyPreservation/templates.png" style="width:80%">
+<img src="../papers/SelectivePrivacyPreservation/templates.png" alt="Manually selected template regions on example images" style="width:80%">
 </center>
 </p>
 
@@ -76,31 +76,31 @@ Below we show examples of input video, motion consistent noise, the saliency map
 
 <center><em>Examples of intermediate results, and the final obfuscated output.</em></center>
 <!-- Slideshow container -->
-<div class="slideshow-container">
+<div class="slideshow-container" data-slideshow="spp-examples">
 
   <!-- Full-width images with number and caption text -->
-  <div class="mySlides1 fade">
-    <img src="../papers/SelectivePrivacyPreservation/composit/1.gif" style="width:100%">
+  <div class="slide fade">
+    <img src="../papers/SelectivePrivacyPreservation/composit/1.gif" alt="Example 1: input video, motion consistent noise, saliency map and obfuscated output" style="width:100%">
   </div>
-  <div class="mySlides1 fade">
-    <img src="../papers/SelectivePrivacyPreservation/composit/2.gif" style="width:100%">
+  <div class="slide fade">
+    <img src="../papers/SelectivePrivacyPreservation/composit/2.gif" alt="Example 2: input video, motion consistent noise, saliency map and obfuscated output" style="width:100%">
   </div>
-  <div class="mySlides1 fade">
-    <img src="../papers/SelectivePrivacyPreservation/composit/3.gif" style="width:100%">
+  <div class="slide fade">
+    <img src="../papers/SelectivePrivacyPreservation/composit/3.gif" alt="Example 3: input video, motion consistent noise, saliency map and obfuscated output" style="width:100%">
   </div>
-  <div class="mySlides1 fade">
-    <img src="../papers/SelectivePrivacyPreservation/composit/4.gif" style="width:100%">
+  <div class="slide fade">
+    <img src="../papers/SelectivePrivacyPreservation/composit/4.gif" alt="Example 4: input video, motion consistent noise, saliency map and obfuscated output" style="width:100%">
   </div>
-  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+  <a class="prev" role="button" tabindex="0" aria-label="Previous slide">&#10094;</a>
+  <a class="next" role="button" tabindex="0" aria-label="Next slide">&#10095;</a>
 </div>
 <p>
 <!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="myDots1 dot" onclick="currentSlide(1, 0)"></span>
-  <span class="myDots1 dot" onclick="currentSlide(2, 0)"></span>
-  <span class="myDots1 dot" onclick="currentSlide(3, 0)"></span>
-  <span class="myDots1 dot" onclick="currentSlide(4, 0)"></span>
+<div style="text-align:center" data-slideshow-dots="spp-examples">
+  <span class="dot" role="button" tabindex="0" aria-label="Show slide 1"></span>
+  <span class="dot" role="button" tabindex="0" aria-label="Show slide 2"></span>
+  <span class="dot" role="button" tabindex="0" aria-label="Show slide 3"></span>
+  <span class="dot" role="button" tabindex="0" aria-label="Show slide 4"></span>
 </div>
 </p>
 
@@ -109,7 +109,7 @@ Below we show examples of input video, motion consistent noise, the saliency map
 ---
 We compare across 11 Action Reocgnition, and 6 Privacy Attribute Classification architectures; We show across all three tested datasets ([IPN](https://gibranbenitez.github.io/IPN_Hand/), [SBU](http://vision.cs.stonybrook.edu/~kiwon/Datasets/SBU_Kinect_Interactions/README.txt), [KTH](https://www.csc.kth.se/cvap/actions/)) that our relatively simple approach of finding similarities and masking it with temporally consistent noise works quite well and outperforms other approaches that require training for each specific architecutre.
 
-![alt text](../papers/SelectivePrivacyPreservation/table.png)
+![Results table comparing action recognition and privacy attribute classification across IPN, SBU and KTH](../papers/SelectivePrivacyPreservation/table.png)
 
 <!-- <p>
 <table style="table-layout: fixed; width:100%">
@@ -141,41 +141,4 @@ year={2024}
 {% endfor %}
 
 
-<script>
-let slideIndex = [1,1];
-let dotIndex = [1,1];
-/* Class the members of each slideshow group with different CSS classes */
-let slideId = ["mySlides1", "mySlides2"];
-let dotId = ["myDots1", "mySlides2"];
-showSlides(1, 0);
-showSlides(1, 1);
-
-
-// Thumbnail image controls
-function currentSlide(n, no) {
-  showSlides(slideIndex[no] = n, no);
-}
-
-function plusSlides(n, no) {
-  showSlides(slideIndex[no] += n, no);
-}
-
-function showSlides(n, no) {
-  let i;
-  let x = document.getElementsByClassName(slideId[no]);
-  let dots = document.getElementsByClassName(dotId[no]);
-
-  if (n > x.length) {slideIndex[no] = 1}
-  if (n < 1) {slideIndex[no] = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    // alert(dots.length)
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  x[slideIndex[no]-1].style.display = "block";
-  dots[slideIndex[no]-1].className += " active";
-
-}
-</script>
+<script src="{{ "/assets/js/slideshow.js" | relative_url }}"></script>

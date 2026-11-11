@@ -9,7 +9,7 @@ date: 2023-09-01
 ---
 
 <script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js">
 </script>
 
 <center>
@@ -30,7 +30,7 @@ Below is a simulation of a Galton Board that I wrote in <a href='https://brm.io/
 <div style="display: flex; justify-content: center; width: 50%;">
     <div id="simulation-wrapper" style="border: solid 1px black; position: relative; width: 100%; overflow: hidden;">
         <div style="width: 100%; padding-top: 150%;">
-            <canvas id="simulation" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+            <canvas id="simulation" role="img" aria-label="Physics simulation of a Galton board" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
         </div>
     </div>
 </div>
@@ -120,7 +120,7 @@ Thats it for now; I plant to investigate the physics and math behind how a non-i
 
 I am publishing the blueprints in case you want to build your own based on mine; <a href="../misc/galtonboard/blueprint.pdf">linked here</a>.
 <center>
-<a href="../misc/galtonboard/blueprint.pdf"><img src='../misc/galtonboard/blueprint.png' width="50%" style='border: 1px solid black'></a>
+<a href="../misc/galtonboard/blueprint.pdf"><img src='../misc/galtonboard/blueprint.png' alt='Galton board blueprint (opens the PDF)' width="50%" style='border: 1px solid black'></a>
 </center>
 <br>
 It is meant to be printed on a  <a href="https://en.wikipedia.org/wiki/Paper_size">DIN A3</a> paper. That way it fits perfectly in a standard IKEA picture frame!

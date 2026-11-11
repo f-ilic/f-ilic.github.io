@@ -9,7 +9,7 @@ date: 2022-09-01
 ---
 
 <script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js">
 </script>
 
 <video autoplay loop muted playsinline width="100%" style='border: 1px solid black'>
@@ -35,7 +35,7 @@ The two wooden bars at to top and bottom of the frame are added such that the la
 I built three 'rolls' that show a different action being performed. Each GIF is edited such that it loops with a period of 24 frames, which coincides with the number of images on the roll. This means, that 1 rotation per second is equivalent to playing the video at 24 frames per second (fps).
 Just by cranking the handle slower you can adjust the frame rate itself, and can see how your perception of motion does break somewhere around the $$\sim$$ 5 fps marks. 
 <center>
-<img src="../misc/analoguegif/rolls.png" width="100%" style='border: 1px solid black'>
+<img src="../misc/analoguegif/rolls.png" alt="The three printed and laminated noise rolls" width="100%" style='border: 1px solid black'>
 </center>
 <br>
 
@@ -46,10 +46,10 @@ Just by cranking the handle slower you can adjust the frame rate itself, and can
             <img src="../misc/analoguegif/rolls/squats.gif" alt="Squats" style="width: auto; height: 30vw; max-height: 250px;">
         </td>
         <td style="width: 33.333%; text-align: center;">
-            <img src="../misc/analoguegif/rolls/jumpingjack.gif" alt="Table Tennis" style="width: auto; height: 30vw; max-height: 250px;">
+            <img src="../misc/analoguegif/rolls/jumpingjack.gif" alt="Jumping Jack" style="width: auto; height: 30vw; max-height: 250px;">
         </td>
         <td style="width: 33.333%; text-align: center;">
-            <img src="../misc/analoguegif/rolls/tabletennis.gif" alt="Jumping Jack" style="width: auto; height: 30vw; max-height: 250px;">
+            <img src="../misc/analoguegif/rolls/tabletennis.gif" alt="Table Tennis" style="width: auto; height: 30vw; max-height: 250px;">
         </td>
     </tr>
 </table>
@@ -86,12 +86,12 @@ In short; what you see is your brain finding correspondences among the two patte
 Rotation
 <div >
 <div class="canvas-container">
-  <canvas width=85 height=85 id="glassRotation1"></canvas>
-  <canvas width=85 height=85 id="glassRotation2"></canvas>
-  <canvas width=85 height=85 id="glassRotation3"></canvas>
-  <canvas width=85 height=85 id="glassRotation4"></canvas>
-  <canvas width=85 height=85 id="glassRotation5"></canvas>
-  <canvas width=85 height=85 id="glassRotation6"></canvas>
+  <canvas width=85 height=85 id="glassRotation1" role="img" aria-label="Glass pattern, rotation, example 1"></canvas>
+  <canvas width=85 height=85 id="glassRotation2" role="img" aria-label="Glass pattern, rotation, example 2"></canvas>
+  <canvas width=85 height=85 id="glassRotation3" role="img" aria-label="Glass pattern, rotation, example 3"></canvas>
+  <canvas width=85 height=85 id="glassRotation4" role="img" aria-label="Glass pattern, rotation, example 4"></canvas>
+  <canvas width=85 height=85 id="glassRotation5" role="img" aria-label="Glass pattern, rotation, example 5"></canvas>
+  <canvas width=85 height=85 id="glassRotation6" role="img" aria-label="Glass pattern, rotation, example 6"></canvas>
 </div>
 </div>
 </center>
@@ -101,12 +101,12 @@ Scaling
 <div>
 <div class="canvas-container">
 
-<canvas width=85 height=85 id="glassScale1"></canvas>
-<canvas width=85 height=85 id="glassScale2"></canvas>
-<canvas width=85 height=85 id="glassScale3"></canvas>
-<canvas width=85 height=85 id="glassScale4"></canvas>
-<canvas width=85 height=85 id="glassScale5"></canvas>
-<canvas width=85 height=85 id="glassScale6"></canvas>
+<canvas width=85 height=85 id="glassScale1" role="img" aria-label="Glass pattern, scaling, example 1"></canvas>
+<canvas width=85 height=85 id="glassScale2" role="img" aria-label="Glass pattern, scaling, example 2"></canvas>
+<canvas width=85 height=85 id="glassScale3" role="img" aria-label="Glass pattern, scaling, example 3"></canvas>
+<canvas width=85 height=85 id="glassScale4" role="img" aria-label="Glass pattern, scaling, example 4"></canvas>
+<canvas width=85 height=85 id="glassScale5" role="img" aria-label="Glass pattern, scaling, example 5"></canvas>
+<canvas width=85 height=85 id="glassScale6" role="img" aria-label="Glass pattern, scaling, example 6"></canvas>
 </div>
 
 </div>
@@ -117,12 +117,12 @@ Scaling + Rotation
 <div>
 <div class="canvas-container">
 
-<canvas width=85 height=85 id="glassScaleRot1"></canvas>
-<canvas width=85 height=85 id="glassScaleRot2"></canvas>
-<canvas width=85 height=85 id="glassScaleRot3"></canvas>
-<canvas width=85 height=85 id="glassScaleRot4"></canvas>
-<canvas width=85 height=85 id="glassScaleRot5"></canvas>
-<canvas width=85 height=85 id="glassScaleRot6"></canvas>
+<canvas width=85 height=85 id="glassScaleRot1" role="img" aria-label="Glass pattern, scaling and rotation, example 1"></canvas>
+<canvas width=85 height=85 id="glassScaleRot2" role="img" aria-label="Glass pattern, scaling and rotation, example 2"></canvas>
+<canvas width=85 height=85 id="glassScaleRot3" role="img" aria-label="Glass pattern, scaling and rotation, example 3"></canvas>
+<canvas width=85 height=85 id="glassScaleRot4" role="img" aria-label="Glass pattern, scaling and rotation, example 4"></canvas>
+<canvas width=85 height=85 id="glassScaleRot5" role="img" aria-label="Glass pattern, scaling and rotation, example 5"></canvas>
+<canvas width=85 height=85 id="glassScaleRot6" role="img" aria-label="Glass pattern, scaling and rotation, example 6"></canvas>
 </div>
 
 </div>
@@ -133,12 +133,12 @@ Scaling + Translation
 <div>
 <div class="canvas-container">
 
-<canvas width=85 height=85 id="glassScaleTrans1"></canvas>
-<canvas width=85 height=85 id="glassScaleTrans2"></canvas>
-<canvas width=85 height=85 id="glassScaleTrans3"></canvas>
-<canvas width=85 height=85 id="glassScaleTrans4"></canvas>
-<canvas width=85 height=85 id="glassScaleTrans5"></canvas>
-<canvas width=85 height=85 id="glassScaleTrans6"></canvas>
+<canvas width=85 height=85 id="glassScaleTrans1" role="img" aria-label="Glass pattern, scaling and translation, example 1"></canvas>
+<canvas width=85 height=85 id="glassScaleTrans2" role="img" aria-label="Glass pattern, scaling and translation, example 2"></canvas>
+<canvas width=85 height=85 id="glassScaleTrans3" role="img" aria-label="Glass pattern, scaling and translation, example 3"></canvas>
+<canvas width=85 height=85 id="glassScaleTrans4" role="img" aria-label="Glass pattern, scaling and translation, example 4"></canvas>
+<canvas width=85 height=85 id="glassScaleTrans5" role="img" aria-label="Glass pattern, scaling and translation, example 5"></canvas>
+<canvas width=85 height=85 id="glassScaleTrans6" role="img" aria-label="Glass pattern, scaling and translation, example 6"></canvas>
 </div>
 
 </div>
@@ -149,12 +149,12 @@ Rotation + Translation
 <div>
 <div class="canvas-container">
 
-<canvas width=85 height=85 id="glassRotationTrans1"></canvas>
-<canvas width=85 height=85 id="glassRotationTrans2"></canvas>
-<canvas width=85 height=85 id="glassRotationTrans3"></canvas>
-<canvas width=85 height=85 id="glassRotationTrans4"></canvas>
-<canvas width=85 height=85 id="glassRotationTrans5"></canvas>
-<canvas width=85 height=85 id="glassRotationTrans6"></canvas>
+<canvas width=85 height=85 id="glassRotationTrans1" role="img" aria-label="Glass pattern, rotation and translation, example 1"></canvas>
+<canvas width=85 height=85 id="glassRotationTrans2" role="img" aria-label="Glass pattern, rotation and translation, example 2"></canvas>
+<canvas width=85 height=85 id="glassRotationTrans3" role="img" aria-label="Glass pattern, rotation and translation, example 3"></canvas>
+<canvas width=85 height=85 id="glassRotationTrans4" role="img" aria-label="Glass pattern, rotation and translation, example 4"></canvas>
+<canvas width=85 height=85 id="glassRotationTrans5" role="img" aria-label="Glass pattern, rotation and translation, example 5"></canvas>
+<canvas width=85 height=85 id="glassRotationTrans6" role="img" aria-label="Glass pattern, rotation and translation, example 6"></canvas>
 </div>
 </div>
 </center>
@@ -167,23 +167,23 @@ For that reason I built an interactive demo that allows you to rotate, scale, an
 <div style="display: flex; align-items: flex-start;">
     <div style="margin-right: 40px;">
         <div>
-            rotate<br>
+            <label for="rotateSlider">rotate</label><br>
             <input type="range" id="rotateSlider" class="vertical-slider" min="-5" max="5" value="0" step="0.1" style="width: 100px;">
         </div>
         <div>
-            scale<br>
+            <label for="scaleSlider">scale</label><br>
             <input type="range" id="scaleSlider" class="vertical-slider" min="0.9" max="1" value="1" step="0.001" style="width: 100px;">
         </div>
         <div>
-            x-offset<br>
+            <label for="xOffsetSlider">x-offset</label><br>
             <input type="range" id="xOffsetSlider" class="vertical-slider" min="-10" max="10" value="0" step="0.1" style="width: 100px;">
         </div>
         <div>
-            y-offset<br>
+            <label for="yOffsetSlider">y-offset</label><br>
             <input type="range" id="yOffsetSlider" class="vertical-slider" min="-10" max="10" value="0" step="0.1" style="width: 100px;">
         </div>
             <div>
-            noise-level<br>
+            <label for="noiseLevelSlider">noise-level</label><br>
             <input type="range" id="noiseLevelSlider" class="vertical-slider" min="0.0001" max="0.2" value="0.10" step="0.001" style="width: 100px;">
         </div>
         <button id="resetBtn">Reset</button>
@@ -191,7 +191,7 @@ For that reason I built an interactive demo that allows you to rotate, scale, an
     <div style="display: flex; justify-content: center; width: 80%;">
     <div id="simulation-wrapper" style="border: solid 1px #ebebeb; position: relative; width: 80%; overflow: hidden;">
         <div style="width: 100%; padding-top: 100%;">
-            <canvas id="canvas0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+            <canvas id="canvas0" role="img" aria-label="Interactive Glass pattern: a random dot pattern overlaid with a transformed copy of itself" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
         </div>
     </div>
 </div>
@@ -239,15 +239,15 @@ The connection between Glass patterns and motion-induced animations becomes espe
   <div class="row">
     <div class="item">
       <div class="caption">2° Rotation</div>
-      <canvas width="200" height="200" id="glassOverRotate1"></canvas>
+      <canvas width="200" height="200" id="glassOverRotate1" role="img" aria-label="Glass pattern, over-rotation, example 1"></canvas>
     </div>
     <div class="item">
       <div class="caption">3° Rotation</div>
-      <canvas width="200" height="200" id="glassOverRotate2"></canvas>
+      <canvas width="200" height="200" id="glassOverRotate2" role="img" aria-label="Glass pattern, over-rotation, example 2"></canvas>
     </div>
     <div class="item">
       <div class="caption">10° Rotation</div>
-      <canvas width="200" height="200" id="glassOverRotate3"></canvas>
+      <canvas width="200" height="200" id="glassOverRotate3" role="img" aria-label="Glass pattern, over-rotation, example 3"></canvas>
     </div>
   </div>
 
@@ -255,15 +255,15 @@ The connection between Glass patterns and motion-induced animations becomes espe
   <div class="row">
     <div class="item">
       <div class="caption">24 FPS</div>
-      <img src="../misc/analoguegif/fps/pushup24.gif" width="200" height="200">
+      <img src="../misc/analoguegif/fps/pushup24.gif" alt="Push-up noise animation at 24 FPS" width="200" height="200">
     </div>
     <div class="item">
       <div class="caption">6 FPS</div>
-      <img src="../misc/analoguegif/fps/pushup6.gif" width="200" height="200">
+      <img src="../misc/analoguegif/fps/pushup6.gif" alt="Push-up noise animation at 6 FPS" width="200" height="200">
     </div>
     <div class="item">
       <div class="caption">2 FPS</div>
-      <img src="../misc/analoguegif/fps/pushup2.gif" width="200" height="200">
+      <img src="../misc/analoguegif/fps/pushup2.gif" alt="Push-up noise animation at 2 FPS" width="200" height="200">
     </div>
   </div>
 </div>
@@ -278,4 +278,4 @@ This analogy between Glass patterns and motion-induced animations in random dot 
   {% include paper_table.html title="Is Appearance Free Action Recognition Possible?" %}
 {% endfor %}
 
-<script src="../misc/analoguegif/circlepattern.js">
+<script src="../misc/analoguegif/circlepattern.js"></script>

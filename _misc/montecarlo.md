@@ -10,7 +10,7 @@ date: 2024-02-01
 
 
 <script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js">
 </script>
 
 # Monte Carlo "Hello World"
@@ -32,7 +32,7 @@ The question boils down to:
 An important observation is that the the ratio of the areas of  of both  $$\frac{A_o}{A_\square}$$ is proportional to the ratio of sampled points, $$\textit{i.e.} \frac{\color{blue}{\#o}}{\color{red}{\#\square} + \color{blue}{\#o}}$$
 
 
-<img src="../misc/montecarlo/pi.gif" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/pi.gif" alt="Animation: estimating pi by sampling points in a square and counting those inside the circle" style='border: 1px solid #E8E8E8'>
 <!-- ![Estimating Pi](pi.gif) -->
 
 If we write down the ratios of the two areas we see that $$\frac{A_o}{A_\square} = \frac{\pi}{4}$$.
@@ -46,10 +46,10 @@ This little toy example is of course only usefull for illustrative purposes, but
 
 Monte Carlo(MC) methods can be used to estimate the Expectation $$\mathbb{E}$$ of functions that might be probabilistic in nature, i.e., calculating $$\mathop{\mathbb{E}}[f(x)] = \int f(x)~p(x)~d{x}$$.
 
-<input type="checkbox" id="toggleImages"> Show Expectation <i>(CLICK ME!)</i>
+<input type="checkbox" id="toggleImages"> <label for="toggleImages">Show Expectation <i>(CLICK ME!)</i></label>
 <div>
-<img src="../misc/montecarlo/fp.svg" id="fp" alt="fp" style='border: 1px solid #E8E8E8'>
-<img src="../misc/montecarlo/expectation.svg" id="expectation" alt="expectation" style="border: 1px solid #E8E8E8; display:none;">
+<img src="../misc/montecarlo/fp.svg" id="fp" alt="Plot of f(x) and p(x)" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/expectation.svg" id="expectation" alt="Plot of f(x) and p(x) with the expectation of f" style="border: 1px solid #E8E8E8; display:none;">
 </div>
 
 We have to keep in mind that for some problems its is intractable to compute the expression of interest, $$p(x)f(x)$$. And have to resort to some clever way of estimating the expectation.
@@ -73,7 +73,7 @@ This, in effect means that the variance decreases with the number of samples, as
 What you can see in the figure below is drawing a point $$x$$ from the $$p(x)$$ and multiplying it with $$f$$ evaluated at $$x$$.
 In the animation the resulting $$y$$ is then projected back on the $$y$$ axis to show the fluctuation of expectation.
 
-<img src="../misc/montecarlo/expectation.gif" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/expectation.gif" alt="Animation: Monte Carlo estimate of the expectation converging as samples are added" style='border: 1px solid #E8E8E8'>
 
 
 # Central Limit Theorem and Convergence
@@ -118,7 +118,7 @@ The collary of the above statement is that we can sample any functional form whi
 We do not need to know how to sample from a gaussian directly, and will use, as mentioned the Uniform distribution $$\mathcal{U_{[0,1]}}$$.
 
 <!-- ![Rejection Sampling gif]() -->
-<img src="../misc/montecarlo/rejection.svg" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/rejection.svg" alt="Rejection sampling: uniform samples below the Gaussian are accepted (blue), above are rejected (red)" style='border: 1px solid #E8E8E8'>
 
 The basic idea is similar to the example of estimating $$\pi$$ with the dart board, and is visualized above.
 Sample from your Uniform distribution an $$x$$ and $$y$$ coordinate for a point, and check if it is above or below the gaussian function, our $$f$$.
@@ -137,7 +137,7 @@ The summary so far:
 * Scale it so it covers the target distribution
 * Sample from Envelope and reject them if they in the gray area!
 
-<img src="../misc/montecarlo/rejection_sampling.svg" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/rejection_sampling.svg" alt="Rejection sampling with a scaled envelope distribution" style='border: 1px solid #E8E8E8'>
 
 
 Note that this is by FAR not the most effective way to sample from a gaussian. 
@@ -161,7 +161,7 @@ Here, $$ \sqrt{-2 \log(U_1)} $$ changes the radial distribution to fit a normal 
 
 A quick refresher on what a **PDF** (Probability Density Function) is (Left in the Figure):
 
-<img src="../misc/montecarlo/pdf_cdf.svg" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/pdf_cdf.svg" alt="PDF (left) and CDF (right) of the exponential distribution" style='border: 1px solid #E8E8E8'>
 A PDF can give us the probability for a range. In the example above we're given the function $$e^{-x}$$, and want to compute the probability of choosing a value between 1, and 3, given the PDF. This, as you might remember, is done through integration.
 
 $$
@@ -205,7 +205,7 @@ In the end this leaves us with a rather elegant solution, such that we only need
 In physics and other sciences it is often easier to measure the CDF of a series of events and intractable or impossible to truly observe the PDF.
 However with inversion sampling there's a cool trick:
 We sample uniformly along the $$y$$-axis of the CDF, and project the samples down on the $$x$$ axis:
-<img src="../misc/montecarlo/inversion.gif" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/inversion.gif" alt="Animation: inversion sampling, projecting uniform samples on the CDF onto the x axis" style='border: 1px solid #E8E8E8'>
 This gives us samples, which can then be again transformed into a PDF with kernel density estimation methods for example.
 
 So summarizing: just by knowing how to sample from $$\mathcal{U_{[0,1]}}$$ and the CDF we can draw samples from the PDF. Cool!
@@ -247,7 +247,7 @@ $$
 $$
 
 <!-- ![importance sampling](importance.gif) -->
-<img src="../misc/montecarlo/importance.gif" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/importance.gif" alt="Animation: direct versus importance sampling converging to the same expectation" style='border: 1px solid #E8E8E8'>
 
 
 

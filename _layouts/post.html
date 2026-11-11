@@ -4,12 +4,11 @@ layout: default
 
 <br>
 <div class="item-wrapper">
-    <table>
+    <table role="presentation">
         <tr>
             <td width="100%" style="padding: 0px">
                 <div class="paper-info">
                     <div class="paper-head">
-                        <!-- <span class="paper-title">{{page.title}}</span> -->
                         <h1>{{page.title}}</h1>
                         <hr>
                         <span class="paper-authors">{{page.subheading}}</span>
@@ -18,10 +17,10 @@ layout: default
                 </div>
                 <div class="paper-links">
                     {% if page.code != nil %}
-                    <a href="{{ page.code }}">{% include icons/code.html %}Code</a>
+                    <a href="{% include url.html url=page.code %}">{% include icons/code.html %}Code</a>
                     {% endif %}
                     {% if page.paper != nil %}
-                    <a href="{{ page.paper }}">{% include icons/bookmark.html %}Paper</a>
+                    <a href="{% include url.html url=page.paper %}">{% include icons/bookmark.html %}Paper</a>
                     {% endif %}
                 </div>
             </td>

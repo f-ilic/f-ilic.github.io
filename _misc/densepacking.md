@@ -20,7 +20,7 @@ date: 2021-01-01
 In the world of metallurgy, the characteristics of steel can be significantly influenced by the processes it undergoes during and after its production. One such process is annealing, which plays a pivotal role in determining the grain density within steel. A project I worked on,<a href="/RobustFeatureAustenit"> linked here</a>, focused on estimating this grain density of steel from microscopy images. Similar alloys can look vastly different based on their annealing duration.
 
 <center>
-<img src='../misc/densepacking/samplessmall.png' width="100%">
+<img src='../misc/densepacking/samplessmall.png' alt='Microscopy images of steel samples with different annealing durations' width="100%">
 </center>
 <br>
 Annealing is essentially a heat treatment process where steel is heated to a high temperature and then cooled slowly. This method is crucial because it affects the microstructure and, thus, the physical properties of the steel. The primary reason for annealing steel is to soften it, relieve internal stresses, and improve its ductility and toughness.
@@ -39,7 +39,7 @@ You will observe that the initial formation and settling results in rather small
 <div style="display: flex; justify-content: center; width: 100%;">
     <div id="simulation-wrapper" style="border: solid 1px black; position: relative; width: 80%; overflow: hidden;">
         <div style="width: 100%; padding-top: 66%;">
-            <canvas id="simulation" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+            <canvas id="simulation" role="img" aria-label="Physics simulation of steel balls settling in a container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
         </div>
     </div>
 </div>
@@ -75,7 +75,7 @@ These gifs show the qualitative similarities between the real world model, and t
 </style>
 
 <center>
-<img src="../misc/densepacking/combined/compare.gif" width="95%">
+<img src="../misc/densepacking/combined/compare.gif" alt="Side-by-side animation of the physical model and the simulation" width="95%">
 </center>
 <br>
 
@@ -83,12 +83,12 @@ The first and the last frame of the animation above are shown now, so that it ea
 
 <table>
     <tr style="background-color: white;">
-    <td><img src="../misc/densepacking/real/first_frame.png" alt="Image 1" style="width:100%;"></td>
-    <td><img src="../misc/densepacking/real/last_frame.png" alt="Image 2" style="width:100%;"></td>
+    <td><img src="../misc/densepacking/real/first_frame.png" alt="Physical model, not annealed" style="width:100%;"></td>
+    <td><img src="../misc/densepacking/real/last_frame.png" alt="Physical model, annealed" style="width:100%;"></td>
     </tr>
     <tr style="background-color: white;">
-    <td><img src="../misc/densepacking/sim/0001.png" alt="Image 1" style="width:100%;"></td>
-    <td><img src="../misc/densepacking/sim/0011.png" alt="Image 2" style="width:100%;"></td>
+    <td><img src="../misc/densepacking/sim/0001.png" alt="Simulation, not annealed" style="width:100%;"></td>
+    <td><img src="../misc/densepacking/sim/0011.png" alt="Simulation, annealed" style="width:100%;"></td>
     </tr>
   <tr style="background-color: white;">
     <td style="text-align:center;"><b>Not Annealed</b> </td>
@@ -137,4 +137,4 @@ via email.</a> I’d be very happy to see your designs.</p>
   {% include paper_table.html title="A study on robust feature representations for grain density estimates in austenitic steel" %}
 {% endfor %}
 
-<script src="../misc/densepacking/densepacking.js">
+<script src="../misc/densepacking/densepacking.js"></script>

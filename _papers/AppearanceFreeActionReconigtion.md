@@ -31,54 +31,54 @@ teaser: papers/AppearanceFreeActionReconigtion/teaser.mp4
 </style>
 
 
-<div class="slideshow-container">
+<div class="slideshow-container" data-slideshow="afd-actions">
 
   <!-- Full-width images with number and caption text -->
-  <div class="mySlides1 fade">
+  <div class="slide fade">
     <center>
-    <img src="../papers/AppearanceFreeActionReconigtion/BaseballPitch.gif" style="height:228px">
+    <img src="../papers/AppearanceFreeActionReconigtion/BaseballPitch.gif" alt="" style="height:228px">
     <div class="text">Baseball Pitch</div>
     </center>
   </div>
 
-  <div class="mySlides1 fade">
+  <div class="slide fade">
     <center>
-    <img src="../papers/AppearanceFreeActionReconigtion/PommelHorse.gif" style="height:228px">
+    <img src="../papers/AppearanceFreeActionReconigtion/PommelHorse.gif" alt="" style="height:228px">
     </center>
     <div class="text">Pommel Horse</div>
   </div>
 
-  <div class="mySlides1 fade">
+  <div class="slide fade">
     <center>
-    <img src="../papers/AppearanceFreeActionReconigtion/ApplyEyeMakeup.gif" style="height:228px">
+    <img src="../papers/AppearanceFreeActionReconigtion/ApplyEyeMakeup.gif" alt="" style="height:228px">
     </center>
     <div class="text">Apply Eye Makeup</div>
   </div>
 
-  <div class="mySlides1 fade">
+  <div class="slide fade">
     <center>
-    <img src="../papers/AppearanceFreeActionReconigtion/Basketball.gif" style="height:228px">
+    <img src="../papers/AppearanceFreeActionReconigtion/Basketball.gif" alt="" style="height:228px">
     </center>
     <div class="text">Basketball</div>
   </div>
 
-  <div class="mySlides1 fade">
+  <div class="slide fade">
     <center>
-    <img src="../papers/AppearanceFreeActionReconigtion/HulaHoop.gif" style="height:228px">
+    <img src="../papers/AppearanceFreeActionReconigtion/HulaHoop.gif" alt="" style="height:228px">
     </center>
     <div class="text">HulaHoop</div>
   </div>
-  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+  <a class="prev" role="button" tabindex="0" aria-label="Previous slide">&#10094;</a>
+  <a class="next" role="button" tabindex="0" aria-label="Next slide">&#10095;</a>
 </div>
 <p>
 <!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="myDots1 dot" onclick="currentSlide(1, 0)"></span>
-  <span class="myDots1 dot" onclick="currentSlide(2, 0)"></span>
-  <span class="myDots1 dot" onclick="currentSlide(3, 0)"></span>
-  <span class="myDots1 dot" onclick="currentSlide(4, 0)"></span>
-  <span class="myDots1 dot" onclick="currentSlide(5, 0)"></span>
+<div style="text-align:center" data-slideshow-dots="afd-actions">
+  <span class="dot" role="button" tabindex="0" aria-label="Show slide 1"></span>
+  <span class="dot" role="button" tabindex="0" aria-label="Show slide 2"></span>
+  <span class="dot" role="button" tabindex="0" aria-label="Show slide 3"></span>
+  <span class="dot" role="button" tabindex="0" aria-label="Show slide 4"></span>
+  <span class="dot" role="button" tabindex="0" aria-label="Show slide 5"></span>
 </div>
 </p>
 
@@ -95,7 +95,7 @@ A simple experiment demonstrates that singleframe classification performance of 
 
 <p>
 <center><em>Action Recognition is sometimes possible from a single frame; Is this a problem?</em></center>
-<img src='../papers/AppearanceFreeActionReconigtion/ucf101singleframe.png'>
+<img src='../papers/AppearanceFreeActionReconigtion/ucf101singleframe.png' alt='UCF101 frames for which a single-frame ResNet50 already predicts the action'>
 </p>
 
 <br>
@@ -103,30 +103,30 @@ The Appearance Free Dataset (AFD) disentangles static and dynamic video componen
 
 <center><em>Examples of Appearance Free Videos</em></center>
 <!-- Slideshow container -->
-<div class="slideshow-container">
+<div class="slideshow-container" data-slideshow="afd-examples">
 
   <!-- Full-width images with number and caption text -->
-  <div class="mySlides2 fade">
-    <img src="../papers/AppearanceFreeActionReconigtion/JumpingJack.gif" style="width:100%">
+  <div class="slide fade">
+    <img src="../papers/AppearanceFreeActionReconigtion/JumpingJack.gif" alt="" style="width:100%">
     <div class="text">Jumping Jacks</div>
   </div>
-  <div class="mySlides2 fade">
-    <img src="../papers/AppearanceFreeActionReconigtion/TableTennisShot.gif" style="width:100%">
+  <div class="slide fade">
+    <img src="../papers/AppearanceFreeActionReconigtion/TableTennisShot.gif" alt="" style="width:100%">
     <div class="text">Table Tennis</div>
   </div>
-  <div class="mySlides2 fade">
-    <img src="../papers/AppearanceFreeActionReconigtion/CleanAndJerk.gif" style="width:100%">
+  <div class="slide fade">
+    <img src="../papers/AppearanceFreeActionReconigtion/CleanAndJerk.gif" alt="" style="width:100%">
     <div class="text">Weightlifting</div>
   </div>
-  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+  <a class="prev" role="button" tabindex="0" aria-label="Previous slide">&#10094;</a>
+  <a class="next" role="button" tabindex="0" aria-label="Next slide">&#10095;</a>
 </div>
 <p>
 <!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="myDots2 dot" onclick="currentSlide(1, 1)"></span>
-  <span class="myDots2 dot" onclick="currentSlide(2, 1)"></span>
-  <span class="myDots2 dot" onclick="currentSlide(3, 1)"></span>
+<div style="text-align:center" data-slideshow-dots="afd-examples">
+  <span class="dot" role="button" tabindex="0" aria-label="Show slide 1"></span>
+  <span class="dot" role="button" tabindex="0" aria-label="Show slide 2"></span>
+  <span class="dot" role="button" tabindex="0" aria-label="Show slide 3"></span>
 </div>
 </p>
 
@@ -139,7 +139,7 @@ We also perform a user study, showing that human participants can detect the mot
 
 <center><em>Usestudy: Regular Videos (Top) vs Appearance Free (Bottom)<br>Our Userstudy shows that people can identify actions from anmiated noise. </em></center>
 
-![Userstudy](../papers/AppearanceFreeActionReconigtion/confusion.png)
+![Confusion matrices of the user study: regular videos (top) and appearance free videos (bottom)](../papers/AppearanceFreeActionReconigtion/confusion.png)
 
 <br>
 It's also possible to start with different noise (e.g. sparse) and still descern moving shapes.
@@ -147,9 +147,9 @@ It's also possible to start with different noise (e.g. sparse) and still descern
 <center><em>Animated Sparse Noise</em></center>
 <table>
 <tr>
-<td> <img src="../papers/AppearanceFreeActionReconigtion/sparse/jumpingjack.gif">  </td>
-<td> <img src="../papers/AppearanceFreeActionReconigtion/sparse/pushup.gif">  </td>
-<td> <img src="../papers/AppearanceFreeActionReconigtion/sparse/pullups.gif">  </td>
+<td> <img src="../papers/AppearanceFreeActionReconigtion/sparse/jumpingjack.gif" alt="Jumping jack shown as animated sparse noise">  </td>
+<td> <img src="../papers/AppearanceFreeActionReconigtion/sparse/pushup.gif" alt="Push-up shown as animated sparse noise">  </td>
+<td> <img src="../papers/AppearanceFreeActionReconigtion/sparse/pullups.gif" alt="Pull-ups shown as animated sparse noise">  </td>
 </tr>
 </table>
 
@@ -175,7 +175,7 @@ We call it <b>Explicit-Two-Stream</b>, as one stream <u>explicitly</u> models te
 
 <!-- ![Schematic](../papers/AppearanceFreeActionReconigtion/schematic.png) -->
 
-![Results](../papers/AppearanceFreeActionReconigtion/results.png)
+![Results of the Explicit-Two-Stream architecture compared to other methods on appearance free data](../papers/AppearanceFreeActionReconigtion/results.png)
 <br><br>
 This design choice for our network allows for a rich dynamics representation that outperforms other methods on Appearance Free Data. We show that it closes the gap to human performance on Appearance Free Data significantly.
 <br>
@@ -210,41 +210,4 @@ year={2022},
 
 
 
-<script>
-let slideIndex = [1,1];
-let dotIndex = [1,1];
-/* Class the members of each slideshow group with different CSS classes */
-let slideId = ["mySlides1", "mySlides2"];
-let dotId = ["myDots1", "myDots2"];
-showSlides(1, 0);
-showSlides(1, 1);
-
-
-// Thumbnail image controls
-function currentSlide(n, no) {
-  showSlides(slideIndex[no] = n, no);
-}
-
-function plusSlides(n, no) {
-  showSlides(slideIndex[no] += n, no);
-}
-
-function showSlides(n, no) {
-  let i;
-  let x = document.getElementsByClassName(slideId[no]);
-  let dots = document.getElementsByClassName(dotId[no]);
-
-  if (n > x.length) {slideIndex[no] = 1}
-  if (n < 1) {slideIndex[no] = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    // alert(dots.length)
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  x[slideIndex[no]-1].style.display = "block";
-  dots[slideIndex[no]-1].className += " active";
-
-}
-</script>
+<script src="{{ "/assets/js/slideshow.js" | relative_url }}"></script>

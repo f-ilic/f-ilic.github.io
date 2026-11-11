@@ -1,15 +1,9 @@
 ---
---- 
+---
 
-// $content-width: 45%;
-
-$wrapper-bg: light dark;
-$code-color: color-mix(in srgb, CanvasText, Canvas 90%);
-
-
-/* such as the site title in the header, visited */
 @import "minima";
-//  ---------------- Colors
+
+//  ---------------- Fonts
 
 @font-face {
     font-family: 'Linux Biolinum';
@@ -18,34 +12,35 @@ $code-color: color-mix(in srgb, CanvasText, Canvas 90%);
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Linux Libertine';
-    src: url('/fonts/LinLibertine_DR.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+//  ---------------- Colors
 
-$blue-dark: hsl(220, 64%, 36%);
-$blue-mid: hsl(220, 63%, 60%);
-$blue-light: hsl(220, 63%, 91%);
-$blue-barely: hsl(220, 100%, 98%);
-
-$teal-dark: hsl(196, 41%, 35%);
-$teal-mid: hsl(196, 41%, 45%);
-$teal-light: hsl(196, 41%, 85%);
-
-$grey-dark: $grey-color-dark;
 $grey-mid: rgb(172, 172, 172);
 $grey-light: $grey-color-light;
+$border-subtle: color-mix(in srgb, CanvasText, Canvas 90%);
+$code-color: color-mix(in srgb, CanvasText, Canvas 90%);
 
-$snap-yellow:#FFFC00;
-$linkhover: var(--link-hover);
-//  ---------------- Paragraphs and Headings
+// Accent used for hovered links, icons and the profile picture (light and dark mode).
+$link-hover: var(--link-hover);
 
-abbr {
-    transition-delay: 0s;
-    transition: 0s opacity;
+:root {
+    --link-hover: orange;
 }
+
+//  ---------------- Accessibility helpers
+
+// Visually hidden but still read by screen readers and keyboard-focusable.
+[data-sr],
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+//  ---------------- Paragraphs and Headings
 
 table td {
     border: none;
@@ -60,24 +55,13 @@ a {
     text-decoration: none;
 }
 
-/* Style for links when hovering */
 a:hover {
-    // color: orange;
-    // color: $snap-yellow;
-    color: $linkhover;
+    color: $link-hover;
     text-decoration: none;
 }
 
 table {
     border: none;
-}
-
-tr.no-bottom-border td {
-    border-bottom: none
-}
-
-.gray {
-    color: $grey-color-dark;
 }
 
 hr {
@@ -87,41 +71,15 @@ hr {
     margin-bottom: 16px;
 }
 
-//  ---------------- FOOTER
+//  ---------------- Footer
+
 .site-footer {
-    border-top: 1px solid color-mix(in srgb, CanvasText, Canvas 90%);
+    border-top: 1px solid $border-subtle;
     padding: 10px;
-    background-color: $wrapper-bg;
-    // font-family: 'Linux Biolinum', sans-serif;
     font-family: 'Roboto', sans-serif;
 }
 
-.site-footer .alignleft {
-    float: left;
-    width: 33.33333%;
-    text-align: left;
-}
-
-.site-footer .aligncenter {
-    float: left;
-    width: 33.33333%;
-    text-align: center;
-}
-
-.site-footer .alignright {
-    float: left;
-    width: 33.33333%;
-    text-align: right;
-}
-
-​ //  ---------------- General Image Stuff
-
-
-.svg-icon {
-    vertical-align: middle;
-}
-
-
+//  ---------------- Icons and profile picture
 
 .svg-social-icon {
     width: 24px;
@@ -130,18 +88,17 @@ hr {
     opacity: 0.8;
     border: 2px solid;
     border-radius: 50%;
-    border-color: color-mix(in srgb, CanvasText, Canvas 90%);
+    border-color: $border-subtle;
     transition: background-color .05s, transform .05s ease-in-out;
     fill: CanvasText;
     stroke: CanvasText;
 }
-    
+
 .svg-theme-icon {
     width: 20px;
     height: 20px;
     margin: 4px;
-    border-color: color-mix(in srgb, CanvasText, Canvas 90%);
-    border-color: color-mix(in srgb, CanvasText, Canvas 90%);
+    border-color: $border-subtle;
     transition: background-color .05s, transform .05s ease-in-out;
     fill: CanvasText;
     stroke: CanvasText;
@@ -150,123 +107,53 @@ hr {
 .svg-social-icon:hover {
     opacity: 1;
     transform: scale(1.2);
-    // border-color: orange;
-    border-color: $snap-yellow;
-    transition: background-color .05s, transform .05s ease-in-out;
+    border-color: $link-hover;
 }
-
 
 .circle-img {
     border-radius: 70%;
     border: 3px solid white;
-    max-width: 110;
     max-height: 110px;
     width: auto;
     height: auto;
-    border-color: color-mix(in srgb, CanvasText, Canvas 90%);
-    transition: transform .1s ease-in-out;
-}
-
-.circle-img-cv {
-    border-radius: 70%;
-    border: 4px solid white;
-    display: block;
-    max-width: 120px;
-    max-height: 120px;
-    width: auto;
-    height: auto;
-    // border-color: orange;
-    border-color: $snap-yellow;
+    border-color: $border-subtle;
     transition: transform .1s ease-in-out;
 }
 
 .circle-img:hover {
-    border-radius: 70%;
-    width: auto;
-    height: auto;
-    // border-color: orange;
-    border-color: $snap-yellow;
-    transition: transform .1s ease-in-out;
+    border-color: $link-hover;
 }
 
-subheading {
-    font-size: 10pt;
-    margin-bottom: 10px;
-    color: $teal-dark;
-
-}
-
-// .nav-elem:hover {
-//     box-shadow: 0 2px 0 0 $grey-color-light;
-//     text-decoration: none;
-//     color: $blue-dark;
-// }
-
-// .active {
-//     box-shadow: 0 2px 0 0 $blue-dark;
-// }
-
-// .active:hover {
-//     box-shadow: 0 2px 0 0 $blue-dark;
-// }
+//  ---------------- Header
 
 #me-container {
-    // background: linear-gradient(120deg, $gradient-primary, $gradient-secondary);
-    background: $wrapper-bg;
     padding-bottom: 0px;
     margin-bottom: 0px;
     padding: clamp(5px, 2vw, 20px);
 }
 
 header {
-    background-color: $wrapper-bg;
     border-style: solid;
-    // border-color: color-mix(in srgb, CanvasText, Canvas 90%);
-    border-color: color-mix(in srgb, CanvasText, Canvas 90%);
-    // border-radius: 0.5rem;
+    border-color: $border-subtle;
     border-width: 1px;
     margin-bottom: 0px;
 }
 
-
 #header-name {
-    // color: white;
     color: CanvasText;
-    // font-weight: bold;
     font-size: 24px;
-    // font-family: monospace;
     font-family: 'Linux Biolinum', serif;
-    // font-family: 'Roboto', sans-serif;
-}
-
-#header-name-cv {
-    color: CanvasText;
-    font-weight: bold;
-    font-size: 20px;
 }
 
 #header-description {
-    // color: white;
     color: CanvasText;
     display: block;
     font-weight: normal;
-    // font-family: monospace;
     font-family: 'Linux Biolinum', serif;
-}
-
-#header-description-cv {
-    color: CanvasText;
-    display: block;
-    font-weight: bold;
 }
 
 code {
     font-size: 12px;
-}
-
-.svg-icon {
-    width: 1em;
-    height: 1em;
 }
 
 body {
@@ -275,16 +162,6 @@ body {
     font-weight: 300;
     background-color: Canvas;
     color: color-mix(in srgb, CanvasText, Canvas 10%);
-    // color: inherit;
-    // color-scheme: light dark;
-}
-
-
-h0 {
-    display: inline;
-    font-size: 22pt;
-    font-weight: 300;
-    color: inherit;
 }
 
 h1 {
@@ -301,16 +178,8 @@ h2 {
     color: inherit;
 }
 
-
-.content-container {
-    padding: 100px;
-}
-
 .highlighter-rouge .highlight {
     background-color: $code-color;
-    // padding: 0.5em;
-    // border-radius: 0.5em;
-    // margin-bottom: 1em;
 }
 
 pre,
@@ -332,7 +201,6 @@ code {
 .paper-info .paper-head {
     margin-bottom: 0px;
     color: color-mix(in srgb, CanvasText, Canvas 10%);
-    // color: CanvasText;
 }
 
 .paper-info .paper-title {
@@ -342,7 +210,6 @@ code {
     margin-top: 0.5em;
     color: inherit;
 }
-
 
 .paper-info .paper-authors {
     display: block;
@@ -369,59 +236,36 @@ code {
 }
 
 .paper-links a:hover {
-    padding-right: 1rem;
-    padding-top: 0.15rem;
-    font-size: 10pt;
-    background-color: $wrapper-bg;
-    // color: orange;
-    color: $linkhover;
-    display: inline-block;
-    margin-top: 0.5em;
+    color: $link-hover;
 }
 
-
 .wrapper {
-    background-color: $wrapper-bg;
     border-style: solid;
-    border-color: color-mix(in srgb, CanvasText, Canvas 90%);
+    border-color: $border-subtle;
     border-width: 1px;
 }
 
 .badge {
-    // color: #fff !important;
     color: CanvasText;
-    background-color: Canvas;//$teal-mid;
-    // background-color: #1756a9;
-    // border: solid 1px;
+    background-color: Canvas;
     border-color: CanvasText;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    // margin-left: 2px;
-    // margin-top: 2px;
     display: inline-block;
     vertical-align: top;
-    font-size: 10pt;
-    // font-family: monospace;
-    // font-family: 'Linux Biolinum', sans-serif;
-    // font-weight: 300;
     font-size: smaller;
     position: absolute;
 }
 
+//  ---------------- Slideshow (see assets/js/slideshow.js)
 
-/* Slideshow container */
 .slideshow-container {
     max-width: 1000px;
     position: relative;
     margin: auto;
 }
 
-/* Hide the images by default */
-.mySlides {
-    display: none;
-}
-
-/* Next & previous buttons */
+// Next & previous buttons
 .prev,
 .next {
     cursor: pointer;
@@ -436,19 +280,17 @@ code {
     user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
     right: 0;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
     background-color: rgba(233, 233, 233, 0.4);
     text-decoration: none;
 }
 
-/* Caption text */
+// Caption text
 .text {
     color: white;
     font-size: 25px;
@@ -460,8 +302,7 @@ code {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-
-/* The dots/bullets/indicators */
+// The dots/bullets/indicators
 .dot {
     cursor: pointer;
     height: 15px;
@@ -474,31 +315,24 @@ code {
 
 .active,
 .dot:hover {
-    // background-color: $grey-mid;
-    background-color: $linkhover;
-    box-shadow: 0 0 0 0 $wrapper-bg;
+    background-color: $link-hover;
 }
 
+//  ---------------- Light / System / Dark toggle (see _includes/modetoggle.html)
 
-/* DEMO */
 .toggle-group {
-    border: 1px solid color-mix(in srgb, CanvasText, Canvas 90%);
+    border: 1px solid $border-subtle;
     inline-size: fit-content;
     padding: 3px;
-    // position: absolute;
-    font-size:12px;
-    top: 10px;
-    right: 10px;
+    font-size: 12px;
     background-color: Canvas;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    z-index: 1000;
     max-width: 80%;
 }
 
 .toggle-group label {
-    // border-radius: 21px;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -509,52 +343,46 @@ code {
 }
 
 .toggle-group label:has(input:checked) {
-    background-color: color-mix(in srgb, CanvasText, Canvas 90%);
+    background-color: $border-subtle;
     color: CanvasText;
 }
 
+// The radio inputs are visually hidden, so show keyboard focus on their label instead.
+.toggle-group label:has(input:focus-visible) {
+    outline: 2px solid CanvasText;
+    outline-offset: -2px;
+}
+
 canvas {
-    color: CanvasText; /* System-defined text color */
+    color: CanvasText;
     background-color: Canvas;
 }
 
+// On small screens only the icons are shown; the text stays available to screen readers.
 @media (max-width: 600px) {
-    .theme-text{
-        display: none;
+    .theme-text {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
     }
 }
 
-[data-sr] {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-}
-
-
+// The selected radio drives the colour scheme even without JavaScript;
+// modetoggle.html additionally sets it inline on <html> to avoid a flash on load.
 :root {
-    @media (prefers-color-scheme: light) {
-            --link-hover: orange;
-        }
-    
-    @media (prefers-color-scheme: dark) {
-        --link-hover: #FFFC00;
-    }
-
     &:has(input[name="color-scheme"][value="light dark"]:checked) {
         color-scheme: light dark;
     }
 
     &:has(input[name="color-scheme"][value="light"]:checked) {
         color-scheme: light;
-        --link-hover: orange;
     }
 
     &:has(input[name="color-scheme"][value="dark"]:checked) {
         color-scheme: dark;
-        --link-hover: #FFFC00;
     }
 }

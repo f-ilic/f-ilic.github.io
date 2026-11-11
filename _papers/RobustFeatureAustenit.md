@@ -12,7 +12,7 @@ teaser: papers/RobustFeatureAustenit/teaser.png
 ---
 
 <center>
-<img src="papers/RobustFeatureAustenit/poster.png" width='95%' style="border: 1px solid black;">
+<img src="papers/RobustFeatureAustenit/poster.png" alt="Conference poster: A study on robust feature representations for grain density estimates in austenitic steel" width='95%' style="border: 1px solid black;">
 </center>
 
 <br>

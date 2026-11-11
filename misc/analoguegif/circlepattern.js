@@ -155,6 +155,13 @@ function initializeCanvas(canvasId, rotation = 0, scale = 1.0, xOff = 0, yOff = 
 
     createNoiseWithinCircle();
     draw();
+
+    // Redraw with the same seed, e.g. after the colour scheme changed.
+    return function refresh() {
+        random = mulberry32(seed);
+        createNoiseWithinCircle();
+        draw();
+    };
 }
 // Define canvas configurations in an array
 const canvasConfigs = [
@@ -221,13 +228,27 @@ function waitForCanvasStyles(canvas, callback) {
     checkStyles(); // Start checking immediately
 }
 
+// The canvases are painted with the page's text/background colours, so repaint them when the
+// colour scheme changes (Light/System/Dark toggle or the operating system setting).
+const canvasRefreshers = [];
+
+function refreshAllCanvases() {
+    requestAnimationFrame(() => canvasRefreshers.forEach(refresh => refresh()));
+}
+
 // Function to initialize all canvases using the config array
 function initializeAllCanvases() {
+    const schemeToggle = document.getElementById('colorScheme');
+    if (schemeToggle) schemeToggle.addEventListener('change', refreshAllCanvases);
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', refreshAllCanvases);
+    }
+
     canvasConfigs.forEach(config => {
         const canvas = document.getElementById(config.id);
         if (canvas) {
             waitForCanvasStyles(canvas, () => {
-                initializeCanvas(
+                canvasRefreshers.push(initializeCanvas(
                     config.id,
                     config.rotation || 0,
                     config.scale || 1.0,
@@ -236,7 +257,7 @@ function initializeAllCanvases() {
                     config.seed || 42,
                     config.noise || 0.1,
                     config.addListeners || false
-                );
+                ));
             });
         }
     });

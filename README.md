@@ -1,26 +1,46 @@
-There is a nested git repo thing going on here.
-The base directory is the location of the source code.
+# f-ilic.github.io
 
-There are two branches: ```master``` and ```sources```.
-switch to ```sources``` when you are developing.
+Personal website, built with [Jekyll](https://jekyllrb.com/) (minima theme) and served by GitHub Pages.
 
+## Branches
 
-Inside this directory:
-```
-bundle exec jekyll build
-```
-This generates the ```_site/``` directory which is the whole static website.
+| Branch    | Contents                                              |
+| --------- | ----------------------------------------------------- |
+| `sources` | Jekyll source (this README, layouts, pages, assets).  |
+| `master`  | The generated static site that GitHub Pages serves.   |
 
-This ```_site/``` directory also contains the master branch of this git repo.
-Push that if you are satisfied with how everything looks.
+Develop on `sources` (or a branch off it). `master` only ever receives build output.
 
-To test locally run the command 
-```
-bundle exec jekyll serve
-```
+## Develop
 
-22.04, do this:
+Requires Ruby (any current version, incl. 3.4 / 4.0) and Bundler.
 
 ```
-bundle add webrick
+bundle install
+bundle exec jekyll serve        # http://localhost:4000, rebuilds on change
 ```
+
+## Build & deploy
+
+```
+bundle exec jekyll build        # writes the site to _site/
+```
+
+`_site/` is a checkout of the `master` branch (a nested git repo, ignored by this one).
+Review the result, then commit and push from inside `_site/`:
+
+```
+cd _site
+git add -A
+git commit -m "Update site"
+git push origin master
+```
+
+First-time setup of `_site/`: `git clone -b master git@github.com:f-ilic/f-ilic.github.io.git _site`,
+then run the build (Jekyll keeps the `.git` folder inside `_site/`).
+
+## Notes
+
+- The contact email shown on the site is `email` in `_config.yml`.
+- The hover/accent colour is `--link-hover` in `assets/main.scss`.
+- The GitHub repository must be **public** for GitHub Pages to serve it on a free plan.
