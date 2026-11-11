@@ -19,13 +19,13 @@
     <p class="card-meta">{{ paper.published }}</p>
     <div class="card-links">
       {%- if paper.permalink != nil %}
-      <a class="pill" href="{{ paper.url | relative_url }}">{% include icons/info.html %}Project Page</a>
+      <a class="icon-link" href="{{ paper.url | relative_url }}">{% include icons/info.html %}Project Page</a>
       {%- endif %}
       {%- if paper.code != nil %}
-      <a class="pill" href="{% include url.html url=paper.code %}">{% include icons/code.html %}Code</a>
+      <a class="icon-link" href="{% include url.html url=paper.code %}">{% include icons/code.html %}Code</a>
       {%- endif %}
       {%- if paper.paper != nil %}
-      <a class="pill" href="{% include url.html url=paper.paper %}">{% include icons/bookmark.html %}Paper</a>
+      <a class="icon-link" href="{% include url.html url=paper.paper %}">{% include icons/bookmark.html %}Paper</a>
       {%- endif %}
     </div>
   </div>

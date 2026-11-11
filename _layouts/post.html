@@ -14,10 +14,10 @@ layout: default
     {%- if page.code or page.paper %}
     <div class="card-links">
       {%- if page.code %}
-      <a class="pill" href="{% include url.html url=page.code %}">{% include icons/code.html %}Code</a>
+      <a class="icon-link" href="{% include url.html url=page.code %}">{% include icons/code.html %}Code</a>
       {%- endif %}
       {%- if page.paper %}
-      <a class="pill" href="{% include url.html url=page.paper %}">{% include icons/bookmark.html %}Paper</a>
+      <a class="icon-link" href="{% include url.html url=page.paper %}">{% include icons/bookmark.html %}Paper</a>
       {%- endif %}
     </div>
     {%- endif %}
