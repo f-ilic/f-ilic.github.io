@@ -24,15 +24,12 @@ Before that, I worked at CERN for the CMS experiment on performance critical mon
 
 # Experience
 ---
-<p>
-Computer Vision & Machine Learning Engineer at <a href="https://www.snapchat.com">Snap Inc. — Vienna</a><br>
-PhD at <a href="https://www.tugraz.at/institute/icg/research/team-pock">Vision, Learning & Optimization Group — ICG — TU Graz </a><br>
-Visiting Researcher at <a href='https://vision.eecs.yorku.ca/main/'>Center for Vision Research — York University — Toronto</a> <br>
-Technical Student at <a href='https://cms.cern/'>CMS Experiment — CERN — Geneva</a> <br>
-
-<br>
-
-</p>
+<ul class="experience">
+  <li>Computer Vision & Machine Learning Engineer at <a href="https://www.snapchat.com">Snap Inc. — Vienna</a></li>
+  <li>PhD at <a href="https://www.tugraz.at/institute/icg/research/team-pock">Vision, Learning & Optimization Group — ICG — TU Graz</a></li>
+  <li>Visiting Researcher at <a href="https://vision.eecs.yorku.ca/main/">Center for Vision Research — York University — Toronto</a></li>
+  <li>Technical Student at <a href="https://cms.cern/">CMS Experiment — CERN — Geneva</a></li>
+</ul>
 
 
 # Publications

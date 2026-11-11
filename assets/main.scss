@@ -257,6 +257,47 @@ code {
     position: absolute;
 }
 
+//  ---------------- Experience timeline (home page)
+
+// Dots joined by a thin vertical line. The dots use the text colour: black in light mode,
+// light in dark mode. Each line runs from an entry's dot to the next one, so it also fits
+// entries that wrap onto two lines.
+$timeline-dot: 7px;
+$timeline-dot-top: calc(0.3em + 0.75em - #{$timeline-dot / 2}); // centred on the first text line
+
+.experience {
+    list-style: none;
+    margin: 0 0 calc(1.5em + 15px);
+    padding: 0;
+}
+
+.experience li {
+    position: relative;
+    margin: 0;
+    padding: 0.3em 0 0.3em 1.25em;
+}
+
+.experience li::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: $timeline-dot-top;
+    width: $timeline-dot;
+    height: $timeline-dot;
+    border-radius: 50%;
+    background: CanvasText;
+}
+
+.experience li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: ($timeline-dot / 2) - 0.5px;
+    top: $timeline-dot-top;
+    bottom: calc(-1 * (0.3em + 0.75em - #{$timeline-dot / 2}));
+    border-left: 1px solid color-mix(in srgb, CanvasText, Canvas 75%);
+}
+
 //  ---------------- Slideshow (see assets/js/slideshow.js)
 
 .slideshow-container {
