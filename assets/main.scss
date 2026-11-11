@@ -1,36 +1,156 @@
 ---
 ---
-
-@import "minima";
+// Site stylesheet. No theme CSS is imported; everything the site uses is defined here.
+// Colours are tokens that follow the active colour scheme (Light / System / Dark toggle).
 
 //  ---------------- Fonts
 
 @font-face {
     font-family: 'Linux Biolinum';
-    src: url('/fonts/Linux-Biolinum.woff') format('woff');
+    src: url('/fonts/Linux-Biolinum.woff2') format('woff2'),
+         url('/fonts/Linux-Biolinum.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
-//  ---------------- Colors
-
-$grey-mid: rgb(172, 172, 172);
-$grey-light: $grey-color-light;
-$border-subtle: color-mix(in srgb, CanvasText, Canvas 90%);
-$code-color: color-mix(in srgb, CanvasText, Canvas 90%);
-
-// Accent used for hovered links, icons and the profile picture (light and dark mode).
-$link-hover: var(--link-hover);
+//  ---------------- Design tokens
 
 :root {
-    --link-hover: orange;
+    color-scheme: light dark;
+
+    --bg: light-dark(#ffffff, #0f1012);
+    --surface: light-dark(#f5f5f4, #18191c);
+    --surface-2: light-dark(#ebebea, #232429);
+    --text: light-dark(#1c1c1e, #e8e8ea);
+    --muted: light-dark(#5c5f66, #a3a6ad);
+    --border: light-dark(#e4e4e2, #2a2c31);
+
+    // Orange accent. The light-mode shade is darker so link text stays readable (WCAG AA).
+    --accent: light-dark(#c2410c, #ffa94d);
+    --accent-strong: orange;
+    --accent-soft: light-dark(#fff3e8, #2b1e10);
+
+    --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-display: 'Linux Biolinum', Georgia, "Times New Roman", serif;
+    --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+
+    --radius: 10px;
+    --radius-sm: 6px;
+    --container: 52rem;
+}
+
+// The selected radio of the theme toggle overrides the system setting (works without JS);
+// modetoggle.html also sets it inline on <html> so it applies before the first paint.
+:root:has(input[name="color-scheme"][value="light"]:checked) { color-scheme: light; }
+:root:has(input[name="color-scheme"][value="dark"]:checked)  { color-scheme: dark; }
+
+//  ---------------- Base
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    color: var(--text);
+    font: 400 1rem/1.65 var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+main {
+    flex: 1;
+    outline: none;
+}
+
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+img,
+video {
+    height: auto;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    color: var(--accent-strong);
+    text-decoration: underline;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+::selection {
+    background: var(--accent-soft);
+}
+
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+    margin: 0 0 1rem;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+button {
+    font: inherit;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.35rem 0.9rem;
+    cursor: pointer;
+    transition: background-color .15s, border-color .15s;
+}
+
+button:hover {
+    background: var(--surface-2);
+    border-color: var(--muted);
+}
+
+input[type="range"],
+input[type="checkbox"] {
+    accent-color: var(--accent);
 }
 
 //  ---------------- Accessibility helpers
 
 // Visually hidden but still read by screen readers and keyboard-focusable.
 [data-sr],
-.visually-hidden {
+.visually-hidden,
+.theme-text {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     height: 1px;
@@ -40,349 +160,672 @@ $link-hover: var(--link-hover);
     width: 1px;
 }
 
-//  ---------------- Paragraphs and Headings
-
-table td {
-    border: none;
-    vertical-align: top;
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -3rem;
+    z-index: 10;
+    padding: 0.5rem 1rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: var(--radius-sm);
+    transition: top .15s;
 }
 
-.footnotesize {
-    font-size: 9pt;
+.skip-link:focus {
+    top: 1rem;
+    color: var(--bg);
 }
 
-a {
-    text-decoration: none;
-}
+//  ---------------- Layout
 
-a:hover {
-    color: $link-hover;
-    text-decoration: none;
-}
-
-table {
-    border: none;
-}
-
-hr {
-    height: 1px;
-    border: none;
-    background-color: $grey-mid;
-    margin-bottom: 16px;
-}
-
-//  ---------------- Footer
-
-.site-footer {
-    border-top: 1px solid $border-subtle;
-    padding: 10px;
-    font-family: 'Roboto', sans-serif;
-}
-
-//  ---------------- Icons and profile picture
-
-.svg-social-icon {
-    width: 24px;
-    height: 24px;
-    margin: 5px;
-    opacity: 0.8;
-    border: 2px solid;
-    border-radius: 50%;
-    border-color: $border-subtle;
-    transition: background-color .05s, transform .05s ease-in-out;
-    fill: CanvasText;
-    stroke: CanvasText;
-}
-
-.svg-theme-icon {
-    width: 20px;
-    height: 20px;
-    margin: 4px;
-    border-color: $border-subtle;
-    transition: background-color .05s, transform .05s ease-in-out;
-    fill: CanvasText;
-    stroke: CanvasText;
-}
-
-.svg-social-icon:hover {
-    opacity: 1;
-    transform: scale(1.2);
-    border-color: $link-hover;
-}
-
-.circle-img {
-    border-radius: 70%;
-    border: 3px solid white;
-    max-height: 110px;
-    width: auto;
-    height: auto;
-    border-color: $border-subtle;
-    transition: transform .1s ease-in-out;
-}
-
-.circle-img:hover {
-    border-color: $link-hover;
+.container {
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
 }
 
 //  ---------------- Header
 
-#me-container {
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    padding: clamp(5px, 2vw, 20px);
+.site-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    padding-block: 2.5rem 2rem;
 }
 
-header {
-    border-style: solid;
-    border-color: $border-subtle;
-    border-width: 1px;
-    margin-bottom: 0px;
+body > header {
+    border-bottom: 1px solid var(--border);
 }
 
-#header-name {
-    color: CanvasText;
-    font-size: 24px;
-    font-family: 'Linux Biolinum', serif;
-}
-
-#header-description {
-    color: CanvasText;
+.avatar-link {
     display: block;
+    border-radius: 50%;
+}
+
+.avatar {
+    display: block;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--border);
+    transition: box-shadow .2s;
+}
+
+.avatar-link:hover .avatar {
+    box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--accent-strong);
+}
+
+.site-name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 2rem;
     font-weight: normal;
-    font-family: 'Linux Biolinum', serif;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+.site-name a {
+    color: var(--text);
+}
+
+.site-name a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-tagline {
+    margin: 0.35rem 0 0.75rem;
+    color: var(--muted);
+}
+
+.snap-logo {
+    width: 18px;
+    height: 18px;
+    vertical-align: -3px;
+    margin-left: 2px;
+}
+
+.social {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.social a {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--muted);
+    transition: color .15s, border-color .15s, transform .15s;
+}
+
+.social a:hover {
+    color: var(--accent-strong);
+    border-color: var(--accent-strong);
+    transform: translateY(-2px);
+}
+
+.svg-social-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+.header-tools {
+    align-self: start;
+}
+
+//  ---------------- Light / System / Dark toggle (see _includes/modetoggle.html)
+
+.theme-toggle {
+    display: inline-flex;
+    gap: 2px;
+    margin: 0;
+    padding: 3px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    min-width: 0;
+}
+
+.theme-toggle label {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background-color .15s, color .15s;
+}
+
+.theme-toggle label:hover {
+    color: var(--text);
+}
+
+.theme-toggle label:has(input:checked) {
+    background: var(--surface-2);
+    color: var(--text);
+}
+
+// The radios are visually hidden, so keyboard focus is shown on their label.
+.theme-toggle label:has(input:focus-visible) {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+.svg-theme-icon {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+//  ---------------- Typography of page content
+
+.prose {
+    padding-block: 1rem 3rem;
+    overflow-wrap: break-word;
+}
+
+.prose h2 {
+    margin: 2.75rem 0 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.prose h3 {
+    margin: 2rem 0 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.prose > :first-child,
+.prose > h2:first-child {
+    margin-top: 1.5rem;
+}
+
+.prose li {
+    margin-bottom: 0.25rem;
+}
+
+// Links inside running text are underlined, so they are not identified by colour alone.
+.prose p a,
+.prose li a,
+.prose td a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+}
+
+.prose p a:hover,
+.prose li a:hover,
+.prose td a:hover {
+    text-decoration-color: currentColor;
+}
+
+.prose img,
+.prose video {
+    border-radius: var(--radius-sm);
+}
+
+// Captions written as <center><em>…</em></center> above figures.
+.prose center > em {
+    display: inline-block;
+    margin: 1rem 0 0.5rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.prose table {
+    border-collapse: collapse;
+}
+
+.prose td,
+.prose th {
+    padding: 0.25rem;
+    vertical-align: top;
+}
+
+blockquote {
+    margin-inline: 0;
+    padding: 0.25rem 0 0.25rem 1rem;
+    border-left: 3px solid var(--accent);
+    color: var(--muted);
+    font-style: italic;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+mjx-container[display="true"] {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+//  ---------------- Code
+
+code,
+pre {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
 }
 
 code {
-    font-size: 12px;
+    padding: 0.1em 0.35em;
+    background: var(--surface);
+    border-radius: 4px;
 }
 
-body {
-    font-size: 11pt;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    background-color: Canvas;
-    color: color-mix(in srgb, CanvasText, Canvas 10%);
+pre {
+    padding: 1rem 1.15rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    line-height: 1.5;
 }
 
-h1 {
-    display: inline;
-    font-size: 13pt;
-    font-weight: 300;
-    color: inherit;
-}
-
-h2 {
-    display: inline;
-    font-size: 12pt;
-    font-weight: 300;
-    color: inherit;
+pre code {
+    padding: 0;
+    background: none;
+    font-size: inherit;
 }
 
 .highlighter-rouge .highlight {
-    background-color: $code-color;
+    background: none;
 }
 
-pre,
-code {
-    background-color: $code-color;
+// Syntax highlighting (Rouge), readable in both colour schemes.
+.highlight {
+    .c, .c1, .cm, .cs, .cp { color: var(--muted); font-style: italic; }
+    .k, .kd, .kn, .kr, .kt, .nc, .nt { color: light-dark(#7c3aed, #c4a5ff); }
+    .s, .s1, .s2, .sb, .sd, .se, .sh, .si, .sx { color: light-dark(#047857, #7dd3a8); }
+    .m, .mi, .mf, .mh, .il { color: light-dark(#b45309, #fbbf77); }
+    .na, .nv, .nf, .nl, .py { color: light-dark(#1d4ed8, #93c5fd); }
+    .o, .p { color: var(--text); }
+    .err { color: inherit; background: none; }
 }
 
-//  ---------------- Published Paper Stuff
+//  ---------------- Cards (publications, projects, further reading)
 
-.icon-size {
-    height: 1.5em;
-    width: auto;
-    vertical-align: middle;
-    stroke: CanvasText;
-    fill: none;
-    stroke-width: 1;
+.card {
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border);
 }
 
-.paper-info .paper-head {
-    margin-bottom: 0px;
-    color: color-mix(in srgb, CanvasText, Canvas 10%);
+.card-list > .card:first-child,
+h2 + .card,
+h2 + .card-list > .card:first-child {
+    border-top: 0;
+    padding-top: 0.5rem;
 }
 
-.paper-info .paper-title {
-    font-size: 12pt;
+.card-media {
+    position: relative;
     display: block;
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
-    color: inherit;
+    align-self: start;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: 0 0 0 1px var(--border);
 }
 
-.paper-info .paper-authors {
+.card-media img,
+.card-media video {
     display: block;
-    font-size: 10pt;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform .3s ease;
 }
 
-.paper-info .paper-published {
-    display: block;
-    font-size: 10pt;
-}
-
-.paper-info .section {
-    margin-top: 10px;
-    font-style: italic;
-    display: block;
-}
-
-.paper-links a {
-    padding-right: 1rem;
-    padding-top: 0.15rem;
-    font-size: 10pt;
-    display: inline-block;
-    margin-top: 0.5em;
-}
-
-.paper-links a:hover {
-    color: $link-hover;
-}
-
-.wrapper {
-    border-style: solid;
-    border-color: $border-subtle;
-    border-width: 1px;
+.card:hover .card-media img,
+.card:hover .card-media video {
+    transform: scale(1.03);
 }
 
 .badge {
-    color: CanvasText;
-    background-color: Canvas;
-    border-color: CanvasText;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    display: inline-block;
-    vertical-align: top;
-    font-size: smaller;
     position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(15, 16, 18, 0.72);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+.prose .card-title {
+    margin: 0 0 0.4rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.card-title a {
+    color: var(--text);
+}
+
+.card-title a:hover {
+    color: var(--accent);
+}
+
+.card-authors,
+.card-meta,
+.card-description {
+    margin: 0 0 0.2rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.card-authors b,
+.post-subheading b {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.card-meta {
+    font-style: italic;
+}
+
+.card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.75rem 0.25rem 0.55rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    transition: border-color .15s, color .15s, background-color .15s;
+}
+
+.pill:hover {
+    border-color: var(--accent-strong);
+    color: var(--accent);
+    background: var(--accent-soft);
+    text-decoration: none;
+}
+
+.icon-size {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+}
+
+//  ---------------- Home page
+
+.experience {
+    padding: 0;
+    list-style: none;
+}
+
+.experience li {
+    position: relative;
+    margin: 0;
+    padding: 0.4rem 0 0.4rem 1.25rem;
+}
+
+.experience li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.05rem;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-strong);
+}
+
+.experience li + li::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: -0.55rem;
+    height: 1.5rem;
+    border-left: 1px solid var(--border);
+}
+
+//  ---------------- Project / paper pages
+
+.post-header {
+    padding-top: 2rem;
+}
+
+.back-link {
+    margin: 0 0 1.5rem;
+    font-size: 0.9rem;
+}
+
+.back-link a {
+    color: var(--muted);
+}
+
+.back-link a:hover {
+    color: var(--accent);
+}
+
+.post-title {
+    margin: 0 0 0.75rem;
+    font-family: var(--font-display);
+    font-size: unquote("clamp(1.75rem, 1.2rem + 2vw, 2.4rem)");
+    font-weight: normal;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.post-subheading {
+    margin: 0 0 0.25rem;
+    color: var(--muted);
+}
+
+.post-meta {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.post-header + .prose {
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--border);
 }
 
 //  ---------------- Slideshow (see assets/js/slideshow.js)
 
 .slideshow-container {
-    max-width: 1000px;
     position: relative;
-    margin: auto;
+    max-width: 1000px;
+    margin: 0.5rem auto;
 }
 
-// Next & previous buttons
 .prev,
 .next {
-    cursor: pointer;
     position: absolute;
-    top: 47%;
-    margin-top: -22px;
-    padding: 12px;
-    color: white;
-    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
-    font-weight: bold;
-    font-size: 32px;
+    top: 50%;
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: -1.25rem;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
     user-select: none;
+    transition: background-color .15s;
 }
 
-.next {
-    right: 0;
-}
+.prev { left: 0.5rem; }
+.next { right: 0.5rem; }
 
 .prev:hover,
 .next:hover {
-    background-color: rgba(233, 233, 233, 0.4);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
     text-decoration: none;
 }
 
-// Caption text
+// Caption text on top of a slide
 .text {
-    color: white;
-    font-size: 25px;
-    padding: 8px 12px;
     position: absolute;
-    bottom: 8px;
+    bottom: 0.5rem;
     width: 100%;
+    padding: 0.5rem 0.75rem;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
     text-align: center;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 1px #000;
 }
 
-// The dots/bullets/indicators
 .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: $grey-light;
-    border-radius: 50%;
     display: inline-block;
-}
-
-.active,
-.dot:hover {
-    background-color: $link-hover;
-}
-
-//  ---------------- Light / System / Dark toggle (see _includes/modetoggle.html)
-
-.toggle-group {
-    border: 1px solid $border-subtle;
-    inline-size: fit-content;
-    padding: 3px;
-    font-size: 12px;
-    background-color: Canvas;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    max-width: 80%;
-}
-
-.toggle-group label {
-    display: flex;
-    align-items: center;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    border-radius: 50%;
+    background: var(--surface-2);
     cursor: pointer;
-    padding: 0.15em 0.5em;
-    text-align: center;
-    color: color-mix(in srgb, CanvasText, Canvas 40%);
-    user-select: none;
+    transition: background-color .15s, transform .15s;
 }
 
-.toggle-group label:has(input:checked) {
-    background-color: $border-subtle;
-    color: CanvasText;
+.dot:hover {
+    background: var(--muted);
 }
 
-// The radio inputs are visually hidden, so show keyboard focus on their label instead.
-.toggle-group label:has(input:focus-visible) {
-    outline: 2px solid CanvasText;
-    outline-offset: -2px;
+.dot.active {
+    background: var(--accent-strong);
+    transform: scale(1.2);
 }
+
+//  ---------------- Interactive demos
 
 canvas {
-    color: CanvasText;
-    background-color: Canvas;
+    color: var(--text);
+    background-color: var(--bg);
 }
 
-// On small screens only the icons are shown; the text stays available to screen readers.
-@media (max-width: 600px) {
-    .theme-text {
-        clip: rect(0 0 0 0);
-        clip-path: inset(50%);
-        height: 1px;
-        overflow: hidden;
-        position: absolute;
-        white-space: nowrap;
-        width: 1px;
+//  ---------------- 404
+
+.not-found {
+    padding-block: 4rem;
+    text-align: center;
+}
+
+.not-found h1 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: normal;
+    line-height: 1;
+}
+
+//  ---------------- Footer
+
+.site-footer {
+    padding-block: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+//  ---------------- Small screens
+
+@media (max-width: 640px) {
+    .site-header {
+        grid-template-columns: auto 1fr;
+        gap: 1rem 1.25rem;
+        padding-block: 1.75rem 1.5rem;
+    }
+
+    .avatar {
+        width: 72px;
+        height: 72px;
+    }
+
+    .site-name {
+        font-size: 1.6rem;
+    }
+
+    .header-tools {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+    }
+
+    .identity {
+        grid-column: 1 / -1;
+    }
+
+    .card {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
 
-// The selected radio drives the colour scheme even without JavaScript;
-// modetoggle.html additionally sets it inline on <html> to avoid a flash on load.
-:root {
-    &:has(input[name="color-scheme"][value="light dark"]:checked) {
-        color-scheme: light dark;
+//  ---------------- Motion
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 
-    &:has(input[name="color-scheme"][value="light"]:checked) {
-        color-scheme: light;
-    }
-
-    &:has(input[name="color-scheme"][value="dark"]:checked) {
-        color-scheme: dark;
+    .card:hover .card-media img,
+    .card:hover .card-media video {
+        transform: none;
     }
 }

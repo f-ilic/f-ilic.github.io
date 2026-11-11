@@ -18,8 +18,7 @@ The following post, is just going to explain how to go about remapping on the ke
 
 
 
-# Linux 
----
+## Linux 
 
 There are multiple ways to go around setting caps as a modifier.
 Your options are:
@@ -81,8 +80,7 @@ xset r 47 # ;
 
 Set the repeat rate script as a startup script, so that it is triggered on login.
 
-# MacOS
----
+## MacOS
 
 If you're using MacOS, one way to do the same it is to use <a href="https://www.hammerspoon.org/">Hammerspoon</a>. Hammerspoon is a program that exposes the system API to a lua scripting engine, in which you can then catch keypresses and send other sigals instead.
 

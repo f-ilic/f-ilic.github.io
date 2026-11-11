@@ -11,11 +11,10 @@ date: 2021-01-01
 <script src="../libs/matter.js"></script>
 
 <center>
-  <video autoplay loop muted playsinline src="../misc/densepacking/teaser.mp4" style='border: 1px solid black'></video>
+  <video autoplay loop muted playsinline src="../misc/densepacking/teaser.mp4" style='border: 1px solid var(--border)'></video>
 </center>
 
-# Introduction
----
+## Introduction
 
 In the world of metallurgy, the characteristics of steel can be significantly influenced by the processes it undergoes during and after its production. One such process is annealing, which plays a pivotal role in determining the grain density within steel. A project I worked on,<a href="/RobustFeatureAustenit"> linked here</a>, focused on estimating this grain density of steel from microscopy images. Similar alloys can look vastly different based on their annealing duration.
 
@@ -27,8 +26,7 @@ Annealing is essentially a heat treatment process where steel is heated to a hig
 
 To understand this better, consider the process of quick quenching, which rapidly cools the steel. This method tends to “freeze” the chaotic structures within the metal, trapping various forms of imperfections. On the other hand, slowly reheating and annealing the steel allows the atoms—modeled as spheres in this scenario—to gain enough energy to move and settle into their lowest energy state. This state often resembles a well-organized grid of spheres.
 
-# Simulating Dense Packing in 2D
----
+## Simulating Dense Packing in 2D
 
 I built a small simulation of the packing problem with spheres.
 It covers the essential parts that are needed to show how artifacts are introduced during the chaotic settling of the spheres in a non-expanding container are. The simulation, written in <a href='https://brm.io/matter-js/'>Matter.js</a>, adheres to friction, interaction of different masses, and rolling. One thing to note is that I've chosen rather small simulation timesteps, as otherwise the whole system becomes unstable.
@@ -37,7 +35,7 @@ Anyway, you should give it a try, and jiggle the particles once they have settle
 You will observe that the initial formation and settling results in rather small coherent patches, the grains in the example of steel plasticity.
 
 <div style="display: flex; justify-content: center; width: 100%;">
-    <div id="simulation-wrapper" style="border: solid 1px black; position: relative; width: 80%; overflow: hidden;">
+    <div id="simulation-wrapper" style="border: solid 1px var(--border); position: relative; width: 80%; overflow: hidden;">
         <div style="width: 100%; padding-top: 66%;">
             <canvas id="simulation" role="img" aria-label="Physics simulation of steel balls settling in a container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
         </div>
@@ -53,8 +51,7 @@ You will observe that the initial formation and settling results in rather small
 <br>
 Compare the results that you get with and without annealing, i.e. only earthquake jiggle vs. earthquake jiggle and then repeatedly, while the balls are still settling, small and medium jiggles, simulating a steady stream of kinetic energy, allowing the particles to find their ground state.
 
-# Qualitative Comparison
----
+## Qualitative Comparison
 
 This simulation also matches qualitative results that are observed using my little toy model.
 In the physical model the annealing is simulated by tapping on the glass itself.
@@ -82,22 +79,21 @@ These gifs show the qualitative similarities between the real world model, and t
 The first and the last frame of the animation above are shown now, so that it easier to see the emerging structural similarities.
 
 <table>
-    <tr style="background-color: white;">
+    <tr>
     <td><img src="../misc/densepacking/real/first_frame.png" alt="Physical model, not annealed" style="width:100%;"></td>
     <td><img src="../misc/densepacking/real/last_frame.png" alt="Physical model, annealed" style="width:100%;"></td>
     </tr>
-    <tr style="background-color: white;">
+    <tr>
     <td><img src="../misc/densepacking/sim/0001.png" alt="Simulation, not annealed" style="width:100%;"></td>
     <td><img src="../misc/densepacking/sim/0011.png" alt="Simulation, annealed" style="width:100%;"></td>
     </tr>
-  <tr style="background-color: white;">
+  <tr>
     <td style="text-align:center;"><b>Not Annealed</b> </td>
     <td style="text-align:center;"><b>Annealed </b></td>
   </tr>
 </table>
 
-# Remarks on building your own
----
+## Remarks on building your own
 If you wish to build your own model there's a few things you could take away without having to make the same mistakes as I did.
 The steel bearings that I bought are 2mm in diameter, and are made of steel. When you invariably drop a 2kg bag of it on the floor, resist the urge to use a magnet to gather them. Magnetization is a real concern, especially once you put them between an isolating material such as plastic glass.
 
@@ -112,7 +108,7 @@ The ballbearing are 2mm and the frame-plate is 2mm. To reduce the scarping, I pl
 Weight plays a significant role in the design: I initially constructed a larger model weighing about 4 kilograms. Although this model produced more attractive patterns, it proved to be impractical. You cannot simply tip it because the weight of the balls causes the polycarbonate glass to bulge. This deformation allows the spheres to stack in 3D. To prevent this, you would need to use much thicker acrylic glass, which is difficult to break or cut without specialized tools like a laser cutter.
 
 <center>
-<video autoplay loop muted playsinline  width="80%" style='border: 1px solid black'> <source  src="../misc/densepacking/large.mp4" type="video/mp4"> </video>
+<video autoplay loop muted playsinline  width="80%" style='border: 1px solid var(--border)'> <source  src="../misc/densepacking/large.mp4" type="video/mp4"> </video>
 </center>
 <br>
 Regarding the bolts: It is important that the clamping force of the plates is distributed evenly. In general this means more bolts = less pressure on a single spot = better. You can see the effects of the clamping around the bolts where individual balls sometimes get stuck, as the bolt is squeezing the acrylic *just* a little too tight and reduces the tolerances enough for it to be an issue.
@@ -122,8 +118,7 @@ To properly see the formation of the grains, I added a frosted acrylic film on t
 <p>If you make your own, let me know <a title="Email" href="mailto:{{ site.email }}">
 via email.</a> I’d be very happy to see your designs.</p>
 
-# Further Reading
----
+## Further Reading
 
 * Interestingly, around the same time I was building my physical model, popular YouTuber Steve Mould released a video,<a href="https://www.youtube.com/watch?v=xuL2yT-B2TM"> linked here</a>, discussing the same topic.
 * <a href="https://en.wikipedia.org/wiki/Circle_packing">Wikipedia Circle Packing</a>
@@ -133,8 +128,10 @@ via email.</a> I’d be very happy to see your designs.</p>
 
 
 
+<div class="card-list">
 {% for paper in site.papers reversed %}
   {% include paper_table.html title="A study on robust feature representations for grain density estimates in austenitic steel" %}
 {% endfor %}
+</div>
 
 <script src="../misc/densepacking/densepacking.js"></script>

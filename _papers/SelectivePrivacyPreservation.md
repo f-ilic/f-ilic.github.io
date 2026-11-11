@@ -29,8 +29,7 @@ teaser: papers/SelectivePrivacyPreservation/saliency_teaser.mp4
 We show that it is not necessary to train action recognition and privacy networks in an adversarial fashion for effective obfuscation of privacy attributes while maintaining strong action recognition performance. We show that a system based on local privacy templates, deep features that capture <u>template semantics</u> and <u>selective noise obfuscation</u> that is animated with source video motion can uphold privacy without hindering action recognition. Our approach is unique compared to alternative recent approaches in terms of <u>interpretability</u>.
 
 <!-- <center><em>Overview of our Method</em></center> -->
-# Overview
----
+## Overview
 
 ![Method overview: DINO-ViT template matching produces saliency maps that guide motion consistent noise obfuscation](../papers/SelectivePrivacyPreservation/method.png)
 
@@ -45,8 +44,7 @@ Our method uses templates that we match with DINO-ViT features to find salient r
 
 We use the keys of a DINO-ViT as the feature descriptors, as they accumulate contextual and semantic meaning, as depth increases in the Vision Transformer.
 
-# Saliency Computation
----
+## Saliency Computation
 
 To decide how strong a particular patch needs to be obfuscated we use the (positive) cosine similarity between the templates and the image patches. 
 
@@ -66,8 +64,7 @@ This process ensures that only targeted areas are obscured, thus preserving the,
 
 These maps highlight the regions that match our privacy-sensitive attributes, effectively pinpointing where obfuscation is needed.
 
-# Temporally Consistent Masking
----
+## Temporally Consistent Masking
 
 Once we've identified these regions, we overlay temporally consistent noise on the input video, guided by the saliency maps.The key here is to maintain the integrity of the video's motion and overall context, crucial for action recognition, while effectively masking personal attributes. 
 
@@ -105,8 +102,7 @@ Below we show examples of input video, motion consistent noise, the saliency map
 </p>
 
 
-# Results
----
+## Results
 We compare across 11 Action Reocgnition, and 6 Privacy Attribute Classification architectures; We show across all three tested datasets ([IPN](https://gibranbenitez.github.io/IPN_Hand/), [SBU](http://vision.cs.stonybrook.edu/~kiwon/Datasets/SBU_Kinect_Interactions/README.txt), [KTH](https://www.csc.kth.se/cvap/actions/)) that our relatively simple approach of finding similarities and masking it with temporally consistent noise works quite well and outperforms other approaches that require training for each specific architecutre.
 
 ![Results table comparing action recognition and privacy attribute classification across IPN, SBU and KTH](../papers/SelectivePrivacyPreservation/table.png)
@@ -121,8 +117,7 @@ We compare across 11 Action Reocgnition, and 6 Privacy Attribute Classification 
 </table>
 </p> -->
 
-# Cite
----
+## Cite
 ```bibtex
 @inproceedings{ilic2024selective,
 title={Selective, Interpretable and Motion Consistent Privacy Attribute Obfuscation for Action Recognition},
@@ -132,13 +127,14 @@ year={2024}
 }
 ``` 
 
-# Further Reading
----
+## Further Reading
 
+<div class="card-list">
 {% for paper in site.papers reversed %}
   {% include paper_table.html title="Is Appearance Free Action Recognition Possible?" %}
   {% include paper_table.html title="Representing Objects in Video as Space-Time Volumes by Combining Top-Down and Bottom-Up Processes" %}
 {% endfor %}
+</div>
 
 
 <script src="{{ "/assets/js/slideshow.js" | relative_url }}"></script>

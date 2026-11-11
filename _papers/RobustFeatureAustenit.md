@@ -12,12 +12,11 @@ teaser: papers/RobustFeatureAustenit/teaser.png
 ---
 
 <center>
-<img src="papers/RobustFeatureAustenit/poster.png" alt="Conference poster: A study on robust feature representations for grain density estimates in austenitic steel" width='95%' style="border: 1px solid black;">
+<img src="papers/RobustFeatureAustenit/poster.png" alt="Conference poster: A study on robust feature representations for grain density estimates in austenitic steel" width='95%' style="border: 1px solid var(--border);">
 </center>
 
 <br>
-# Cite
----
+## Cite
 
 ```bibtex
 @inproceedings{ilic21oagm,
@@ -28,9 +27,10 @@ teaser: papers/RobustFeatureAustenit/teaser.png
 }
 ```
 
-# Further Reading
----
+## Further Reading
 
+<div class="card-list">
 {% for post in site.misc reversed %}
   {% include post_table.html title="Dense packing with spheres" %}
 {% endfor %}
+</div>

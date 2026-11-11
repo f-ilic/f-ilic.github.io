@@ -1,22 +1,20 @@
-  <table id="me-container" role="presentation" style="border: none;">
-      <tr style="border: none;">
-        <td style="border: none; width:40%;" align="left">
-          <a title="Homepage" href="{{ "/" | relative_url }}"><img src="{{ "/assets/facepic_rect.jpg" | relative_url }}" alt="Homepage" class='circle-img' align="right"></a>
-        </td>
-
-        <td style="border: none; width:50%;" align="left">
-          <div id='header-name'>
-            Filip Ilic
-          </div>
-          <div id='header-description'>
-            Computer Vision & Machine Learning<br>
-            Engineer at Snap <img src="{{ "/assets/snap.svg" | relative_url }}" alt=""
-              style="width: 20px; height: 20px; box-sizing: border-box; vertical-align: text-bottom;"><br>
-          </div>
-          {%- include social.html -%}
-        </td>
-        <td style="border: none; width:10%;" align="right">
-        {%- include modetoggle.html -%}
-        </td>
-      </tr>
-  </table>
+<div class="site-header container">
+  <a class="avatar-link" href="{{ "/" | relative_url }}" title="Homepage">
+    <img class="avatar" src="{{ "/assets/facepic_rect.jpg" | relative_url }}" alt="Homepage" width="96" height="96">
+  </a>
+  <div class="identity">
+    {%- if page.url == "/" %}
+    <h1 class="site-name">Filip Ilic</h1>
+    {%- else %}
+    <p class="site-name"><a href="{{ "/" | relative_url }}">Filip Ilic</a></p>
+    {%- endif %}
+    <p class="site-tagline">
+      Computer Vision & Machine Learning Engineer at Snap
+      <img class="snap-logo" src="{{ "/assets/snap.svg" | relative_url }}" alt="" width="18" height="18">
+    </p>
+    {%- include social.html -%}
+  </div>
+  <div class="header-tools">
+    {%- include modetoggle.html -%}
+  </div>
+</div>

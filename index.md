@@ -6,10 +6,7 @@ published: true
 order: 1
 ---
 
-
-
-# About
----
+## About
 <p>
 I'm a Computer Vision & Machine Learning Engineer at Snap, passionate about developing models that can understand and interpret the world around us.
 </p>
@@ -22,35 +19,26 @@ During my PhD I investigated motion in videos — its modeling and importance �
 Before that, I worked at CERN for the CMS experiment on performance critical monitoring and analysis software.
 </p>
 
-# Experience
----
-<p>
-Computer Vision & Machine Learning Engineer at <a href="https://www.snapchat.com">Snap Inc. — Vienna</a><br>
-PhD at <a href="https://www.tugraz.at/institute/icg/research/team-pock">Vision, Learning & Optimization Group — ICG — TU Graz </a><br>
-Visiting Researcher at <a href='https://vision.eecs.yorku.ca/main/'>Center for Vision Research — York University — Toronto</a> <br>
-Technical Student at <a href='https://cms.cern/'>CMS Experiment — CERN — Geneva</a> <br>
+## Experience
+<ul class="experience">
+  <li>Computer Vision & Machine Learning Engineer at <a href="https://www.snapchat.com">Snap Inc. — Vienna</a></li>
+  <li>PhD at <a href="https://www.tugraz.at/institute/icg/research/team-pock">Vision, Learning & Optimization Group — ICG — TU Graz</a></li>
+  <li>Visiting Researcher at <a href="https://vision.eecs.yorku.ca/main/">Center for Vision Research — York University — Toronto</a></li>
+  <li>Technical Student at <a href="https://cms.cern/">CMS Experiment — CERN — Geneva</a></li>
+</ul>
 
-<br>
+## Publications
 
-</p>
-
-
-# Publications
----
-
-
+<div class="card-list">
 {% for paper in site.papers reversed %}
   {% include paper_table.html title=paper.title %}
 {% endfor %}
+</div>
 
+## Miscellaneous
 
-
-
-
-# Miscellaneous
----
-
-
+<div class="card-list">
 {% for post in site.misc reversed %}
   {% include post_table.html title=post.title %}
 {% endfor %}
+</div>

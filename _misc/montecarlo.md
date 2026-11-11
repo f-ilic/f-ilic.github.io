@@ -13,8 +13,7 @@ date: 2024-02-01
   src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js">
 </script>
 
-# Monte Carlo "Hello World"
----
+## Monte Carlo "Hello World"
 We'll start with an intuitive example of estimating $$\pi$$ by throwing darts at a circle inscribed in a square.
 We chose a square with side lengths $$2$$, and inscribe a circle of radius $$1$$.
 We also have to assume that our thrown darts always hit inside of the square at a point $$\mathbf{p} = (x,y)$$, such that $$x$$ and $$y$$ are $$\textit{iid}$$ and drawn from a Uniform distribution $$\mathcal{U}$$.
@@ -32,7 +31,7 @@ The question boils down to:
 An important observation is that the the ratio of the areas of  of both  $$\frac{A_o}{A_\square}$$ is proportional to the ratio of sampled points, $$\textit{i.e.} \frac{\color{blue}{\#o}}{\color{red}{\#\square} + \color{blue}{\#o}}$$
 
 
-<img src="../misc/montecarlo/pi.gif" alt="Animation: estimating pi by sampling points in a square and counting those inside the circle" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/pi.gif" alt="Animation: estimating pi by sampling points in a square and counting those inside the circle" style='border: 1px solid var(--border)'>
 <!-- ![Estimating Pi](pi.gif) -->
 
 If we write down the ratios of the two areas we see that $$\frac{A_o}{A_\square} = \frac{\pi}{4}$$.
@@ -41,15 +40,14 @@ The estimate $$\hat{\pi}$$ and the error of our estimate is shown in the right p
 
 This little toy example is of course only usefull for illustrative purposes, but introduces important concepts such as _Rejection Sampling_ which we will discuss later from a more theoretical point of view.
 
-# What are Monte Carlo methods for?
----
+## What are Monte Carlo methods for?
 
 Monte Carlo(MC) methods can be used to estimate the Expectation $$\mathbb{E}$$ of functions that might be probabilistic in nature, i.e., calculating $$\mathop{\mathbb{E}}[f(x)] = \int f(x)~p(x)~d{x}$$.
 
 <input type="checkbox" id="toggleImages"> <label for="toggleImages">Show Expectation <i>(CLICK ME!)</i></label>
 <div>
-<img src="../misc/montecarlo/fp.svg" id="fp" alt="Plot of f(x) and p(x)" style='border: 1px solid #E8E8E8'>
-<img src="../misc/montecarlo/expectation.svg" id="expectation" alt="Plot of f(x) and p(x) with the expectation of f" style="border: 1px solid #E8E8E8; display:none;">
+<img src="../misc/montecarlo/fp.svg" id="fp" alt="Plot of f(x) and p(x)" style='border: 1px solid var(--border)'>
+<img src="../misc/montecarlo/expectation.svg" id="expectation" alt="Plot of f(x) and p(x) with the expectation of f" style="border: 1px solid var(--border); display:none;">
 </div>
 
 We have to keep in mind that for some problems its is intractable to compute the expression of interest, $$p(x)f(x)$$. And have to resort to some clever way of estimating the expectation.
@@ -73,10 +71,10 @@ This, in effect means that the variance decreases with the number of samples, as
 What you can see in the figure below is drawing a point $$x$$ from the $$p(x)$$ and multiplying it with $$f$$ evaluated at $$x$$.
 In the animation the resulting $$y$$ is then projected back on the $$y$$ axis to show the fluctuation of expectation.
 
-<img src="../misc/montecarlo/expectation.gif" alt="Animation: Monte Carlo estimate of the expectation converging as samples are added" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/expectation.gif" alt="Animation: Monte Carlo estimate of the expectation converging as samples are added" style='border: 1px solid var(--border)'>
 
 
-# Central Limit Theorem and Convergence
+## Central Limit Theorem and Convergence
 Following our observations from above it is possible to show the convergence by using the central limit theorem.
 The formulas are only shown here for completeness. For the derivation check the resources at the bottom.
 
@@ -100,8 +98,7 @@ $$\mathbb{V}_p[f(x)] = \frac{\sigma^2_f}{N} = \mathcal{O} \frac{1}{N}\qquad$$   
 
 
 
-# Sampling
----
+## Sampling
 
 > Anyone who considers arithmetical methods of producing random digits is, of course, in a state of sin.
 > --- Von Neumann (1951)
@@ -112,13 +109,13 @@ More concretely we will also discuss how we can sample from arbitrary distributi
 <!-- * How do we sample from arbitrary distributions?
 * How did I produce the $$p(x)$$ samples in the examples above? -->
 
-## Rejection Sampling 
+### Rejection Sampling 
 
 The collary of the above statement is that we can sample any functional form which we can evaluate. An example of such a functional is, for example a gaussian.
 We do not need to know how to sample from a gaussian directly, and will use, as mentioned the Uniform distribution $$\mathcal{U_{[0,1]}}$$.
 
 <!-- ![Rejection Sampling gif]() -->
-<img src="../misc/montecarlo/rejection.svg" alt="Rejection sampling: uniform samples below the Gaussian are accepted (blue), above are rejected (red)" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/rejection.svg" alt="Rejection sampling: uniform samples below the Gaussian are accepted (blue), above are rejected (red)" style='border: 1px solid var(--border)'>
 
 The basic idea is similar to the example of estimating $$\pi$$ with the dart board, and is visualized above.
 Sample from your Uniform distribution an $$x$$ and $$y$$ coordinate for a point, and check if it is above or below the gaussian function, our $$f$$.
@@ -137,7 +134,7 @@ The summary so far:
 * Scale it so it covers the target distribution
 * Sample from Envelope and reject them if they in the gray area!
 
-<img src="../misc/montecarlo/rejection_sampling.svg" alt="Rejection sampling with a scaled envelope distribution" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/rejection_sampling.svg" alt="Rejection sampling with a scaled envelope distribution" style='border: 1px solid var(--border)'>
 
 
 Note that this is by FAR not the most effective way to sample from a gaussian. 
@@ -157,11 +154,11 @@ Here, $$ \sqrt{-2 \log(U_1)} $$ changes the radial distribution to fit a normal 
 
 
 
-## Inversion Sampling
+### Inversion Sampling
 
 A quick refresher on what a **PDF** (Probability Density Function) is (Left in the Figure):
 
-<img src="../misc/montecarlo/pdf_cdf.svg" alt="PDF (left) and CDF (right) of the exponential distribution" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/pdf_cdf.svg" alt="PDF (left) and CDF (right) of the exponential distribution" style='border: 1px solid var(--border)'>
 A PDF can give us the probability for a range. In the example above we're given the function $$e^{-x}$$, and want to compute the probability of choosing a value between 1, and 3, given the PDF. This, as you might remember, is done through integration.
 
 $$
@@ -205,7 +202,7 @@ In the end this leaves us with a rather elegant solution, such that we only need
 In physics and other sciences it is often easier to measure the CDF of a series of events and intractable or impossible to truly observe the PDF.
 However with inversion sampling there's a cool trick:
 We sample uniformly along the $$y$$-axis of the CDF, and project the samples down on the $$x$$ axis:
-<img src="../misc/montecarlo/inversion.gif" alt="Animation: inversion sampling, projecting uniform samples on the CDF onto the x axis" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/inversion.gif" alt="Animation: inversion sampling, projecting uniform samples on the CDF onto the x axis" style='border: 1px solid var(--border)'>
 This gives us samples, which can then be again transformed into a PDF with kernel density estimation methods for example.
 
 So summarizing: just by knowing how to sample from $$\mathcal{U_{[0,1]}}$$ and the CDF we can draw samples from the PDF. Cool!
@@ -219,7 +216,7 @@ Some considerations:
 This *not scaling well to higher dimensions* is unfortunately a recurring theme, and is just due to the fact that in higher dimensions any PDF is mostly 0 everywhere. Sad.
 
 
-# Importance Sampling
+## Importance Sampling
 The last sampling strategy that we will look at is importance sampling.
 It tries to deal with the following problem: assume that $$p(x)$$ is small in regions where $$f(x)$$ is large.
 When you sample these large values of $$f(x)$$ will be chosen very rarely, as the probability at that point is low. However _if_ a value is chosen the Expectation suddenly jumps more that you might expect. This sudden jump can be described by the Variance $$\mathbb{V}$$.
@@ -247,11 +244,11 @@ $$
 $$
 
 <!-- ![importance sampling](importance.gif) -->
-<img src="../misc/montecarlo/importance.gif" alt="Animation: direct versus importance sampling converging to the same expectation" style='border: 1px solid #E8E8E8'>
+<img src="../misc/montecarlo/importance.gif" alt="Animation: direct versus importance sampling converging to the same expectation" style='border: 1px solid var(--border)'>
 
 
 
-## Convergence
+### Convergence
 
 Unbiased $$\mathbb{E}_q[r] = \mathbb{E}_p[f(x)]$$
 
@@ -262,8 +259,7 @@ We can achieve this by choosing $$q(x)$$ to be high were $$\|p(x)f(x)\|$$ is hig
 However, knowing where  $$\|p(x)f(x)\|$$ is large is not always easy, so choosing an appropriate $$q(x)$$ might be difficult; *oh well*.
 
 
-# Further Reading
---- 
+## Further Reading
 
 Intro
 * [Intro by Ian Murray](https://www.youtube.com/watch?v=Em6mQQy4wYA)

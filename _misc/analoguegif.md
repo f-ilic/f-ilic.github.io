@@ -12,12 +12,11 @@ date: 2022-09-01
   src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js">
 </script>
 
-<video autoplay loop muted playsinline width="100%" style='border: 1px solid black'>
+<video autoplay loop muted playsinline width="100%" style='border: 1px solid var(--border)'>
   <source  src="../misc/analoguegif/teaser.mp4" type="video/mp4">
 </video> 
 <br>
-# Motivation
----
+## Motivation
 I built an analogue GIF in conjunction with a paper that I wrote, <a href='/AppearanceFreeActionRecognition'>linked here</a>.
 In the paper we investigated if humans can perceive motion even if it is only encoded in otherwise static noise. Turns out people can perceive it quite well!
 
@@ -27,15 +26,14 @@ So I built this little analogue GIF machine in which you can play the same noise
 From it you can hopefully see that there is some motion happening (jumping jack).
 It is quite a bit harder to make out on the recording of the analogue GIF, than it is in real life. I assume that this is due to a few things like the compression that is happening when you film noise, some glaring from the illumination, and the rotational speed with which the GIF is played not matching the actual frame-rate at which the camera is recording.
 
-# The Model
----
+## The Model
 The full contraption is rather sturdy and works pretty well. 
 The two wooden bars at to top and bottom of the frame are added such that the laminated paper can build some pressure like a spring during the rotation. Once the rotational angle of the spool exceeds the grip of the wooden bar, the paper flips rather fast due to the stored spring energy. This is important to reduce the time in which the paper is obstructing the view of the paper behind it. A few of my early prototypes were prematurely tossed before I realized that this was a significant factor, *whops*.
 
 I built three 'rolls' that show a different action being performed. Each GIF is edited such that it loops with a period of 24 frames, which coincides with the number of images on the roll. This means, that 1 rotation per second is equivalent to playing the video at 24 frames per second (fps).
 Just by cranking the handle slower you can adjust the frame rate itself, and can see how your perception of motion does break somewhere around the $$\sim$$ 5 fps marks. 
 <center>
-<img src="../misc/analoguegif/rolls.png" alt="The three printed and laminated noise rolls" width="100%" style='border: 1px solid black'>
+<img src="../misc/analoguegif/rolls.png" alt="The three printed and laminated noise rolls" width="100%" style='border: 1px solid var(--border)'>
 </center>
 <br>
 
@@ -57,8 +55,7 @@ Just by cranking the handle slower you can adjust the frame rate itself, and can
 <br>
 
 
-# Random Dot Patterns
----
+## Random Dot Patterns
 
 Visual perception is a complex process where the brain interprets and makes sense of the visual stimuli it receives. An intriguing way to explore this phenomenon is through the study of patterns created from simple elements under transformation. An example of this is seen in experiments involving random dot patterns. In these experiments, a field of randomly distributed dots is created, and then a copy of this field is made. The duplicate is then rotated to various degrees relative to the original. 
 The emerging patterns are called Glass patterns, first studied by <a href="https://ui.adsabs.harvard.edu/abs/1969Natur.223..578G/abstract">Leon Glass in 1969</a>, provides valuable insights into how the human visual system detects and interprets structure.
@@ -189,7 +186,7 @@ For that reason I built an interactive demo that allows you to rotate, scale, an
         <button id="resetBtn">Reset</button>
     </div>
     <div style="display: flex; justify-content: center; width: 80%;">
-    <div id="simulation-wrapper" style="border: solid 1px #ebebeb; position: relative; width: 80%; overflow: hidden;">
+    <div id="simulation-wrapper" style="border: solid 1px var(--border); position: relative; width: 80%; overflow: hidden;">
         <div style="width: 100%; padding-top: 100%;">
             <canvas id="canvas0" role="img" aria-label="Interactive Glass pattern: a random dot pattern overlaid with a transformed copy of itself" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
         </div>
@@ -270,12 +267,13 @@ The connection between Glass patterns and motion-induced animations becomes espe
 
 This analogy between Glass patterns and motion-induced animations in random dot patterns suggests a broader principle at play: our visual system’s ability to interpret and make sense of patterns relies on coherent changes within recognizable limits. When these limits are exceeded—be it through excessive rotation or insufficient frame rates—our ability to perceive continuity and structure breaks down. This insight not only enriches our understanding of visual perception but also underscores the importance of parameters like alignment and frame rate in influencing how effectively we can perceive and interpret motion and transformations in visual patterns.
 
-# Further Reading
----
+## Further Reading
 * [Tadashi Tokieda & Numberphile: Freaky Dot Patterns](https://www.youtube.com/watch?v=QAja2jp1VjE)
 
+<div class="card-list">
 {% for paper in site.papers reversed %}
   {% include paper_table.html title="Is Appearance Free Action Recognition Possible?" %}
 {% endfor %}
+</div>
 
 <script src="../misc/analoguegif/circlepattern.js"></script>

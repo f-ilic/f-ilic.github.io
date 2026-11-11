@@ -1,31 +1,30 @@
 ---
 layout: default
 ---
+<article class="post">
+  <header class="post-header">
+    <p class="back-link"><a href="{{ "/" | relative_url }}"><span aria-hidden="true">←</span> Home</a></p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {%- if page.subheading %}
+    <p class="post-subheading">{{ page.subheading }}</p>
+    {%- endif %}
+    {%- if page.published and page.published != true %}
+    <p class="post-meta">{{ page.published }}</p>
+    {%- endif %}
+    {%- if page.code or page.paper %}
+    <div class="card-links">
+      {%- if page.code %}
+      <a class="pill" href="{% include url.html url=page.code %}">{% include icons/code.html %}Code</a>
+      {%- endif %}
+      {%- if page.paper %}
+      <a class="pill" href="{% include url.html url=page.paper %}">{% include icons/bookmark.html %}Paper</a>
+      {%- endif %}
+    </div>
+    {%- endif %}
+  </header>
 
-<br>
-<div class="item-wrapper">
-    <table role="presentation">
-        <tr>
-            <td width="100%" style="padding: 0px">
-                <div class="paper-info">
-                    <div class="paper-head">
-                        <h1>{{page.title}}</h1>
-                        <hr>
-                        <span class="paper-authors">{{page.subheading}}</span>
-                        <span class="paper-published">{{page.published}}</span>
-                    </div>
-                </div>
-                <div class="paper-links">
-                    {% if page.code != nil %}
-                    <a href="{% include url.html url=page.code %}">{% include icons/code.html %}Code</a>
-                    {% endif %}
-                    {% if page.paper != nil %}
-                    <a href="{% include url.html url=page.paper %}">{% include icons/bookmark.html %}Paper</a>
-                    {% endif %}
-                </div>
-            </td>
-        </tr>
-    </table>
-    {{content}}
-</div>
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>
 <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>

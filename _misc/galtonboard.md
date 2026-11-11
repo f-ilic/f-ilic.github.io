@@ -13,14 +13,13 @@ date: 2023-09-01
 </script>
 
 <center>
-<video autoplay loop muted playsinline  width="80%" style='border: 1px solid black'> <source  src="../misc/galtonboard/galton.mp4" type="video/mp4"> </video>
+<video autoplay loop muted playsinline  width="80%" style='border: 1px solid var(--border)'> <source  src="../misc/galtonboard/galton.mp4" type="video/mp4"> </video>
 </center>
 
 <br>
 I built this Galton Board from a picture frame, some wood for the funnel, round stock for the pegs, and a bunch of steel ball bearings. The glass is held in with silicone caulk and the pressure of all the wooden elements. A thick MDF board is screwed into the frame from the back, giving it structural stability. It is about $$\frac{1}{2}$$meter tall, and weighs in at around 4kg.
 
-# What is a Galton Board?
----
+## What is a Galton Board?
 
 A Galton Board is a vertical board with a series of pegs arranged in a lattice. Balls are dropped from the top, and as they fall, they encounter pegs that deflect them left or right. At the bottom, the balls collect in bins, forming a distribution that resembles the normal distribution.
 
@@ -28,7 +27,7 @@ A Galton Board is a vertical board with a series of pegs arranged in a lattice. 
 Below is a simulation of a Galton Board that I wrote in <a href='https://brm.io/matter-js/'>Matter.js</a>. <button onclick="resetSimulation()">Run Simulation</button>
 <center>
 <div style="display: flex; justify-content: center; width: 50%;">
-    <div id="simulation-wrapper" style="border: solid 1px black; position: relative; width: 100%; overflow: hidden;">
+    <div id="simulation-wrapper" style="border: solid 1px var(--border); position: relative; width: 100%; overflow: hidden;">
         <div style="width: 100%; padding-top: 150%;">
             <canvas id="simulation" role="img" aria-label="Physics simulation of a Galton board" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
         </div>
@@ -41,8 +40,7 @@ Below is a simulation of a Galton Board that I wrote in <a href='https://brm.io/
 <br>
 The distribution of balls resembles that of a Gaussian, for both the simulated and the real life version of the Galton Board. *Neat!* But why does that happen?
 
-# Mechanics of the Galton Board
----
+## Mechanics of the Galton Board
 Let's look at the idealized version of it first:
 When a ball hits a peg, it has an equal probability of deflecting to the left or right. This process can be modeled as a series of Bernoulli trials, where each trial has two possible outcomes: left or right. See also: <a href="https://en.wikipedia.org/wiki/Random_walk">Random Walk</a>.
 
@@ -50,8 +48,7 @@ If a ball encounters $$ n $$ pegs, it will make $$ n $$ decisions. The final pos
 
 From this you can maybe already see that balls that ended up in the central bin, had more paths that they could have taken. Looking at it from another point of view; a ball only ends up in the left-most bin, if at every layer of pegs it bounces left. You can see how there is effectively only *one* path to end up in the left and rightmost bins.
 
-# The Binomial Distribution
----
+## The Binomial Distribution
 
 The distribution of the balls in the bins at the bottom follows a binomial distribution. Let's denote:
 - $$n$$ as the number of pegs (or trials)
@@ -72,8 +69,7 @@ For a Galton Board with $$ p = 0.5 $$, this simplifies to:
 $$ P(X = k) = \binom{n}{k} \left(\frac{1}{2}\right)^n $$
 
 <br>
-# Central Limit Theorem
----
+## Central Limit Theorem
 
 As the number of pegs $$ n $$ increases, the binomial distribution approaches a normal distribution due to the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">central limit theorem</a>. This theorem states that the sum of a large number of independent and identically distributed random variables will be approximately normally distributed.
 
@@ -103,8 +99,7 @@ $$
 X \sim \mathcal{N} \left(\frac{n}{2}, \frac{n}{4}\right)
 $$
 
-# Inaccuracies of the random walk model
----
+## Inaccuracies of the random walk model
 There are of course some caveats; in the real world and even in the particle simulation a ball does not always bounce neatly left or right, into the layer below. Individual balls might skip an entire layer without a bounce due to their left or rightward momentum as they are pushed down by other balls behind it. This can easily be observed in a Galton board that does not have a funnel. If you were to just put triangles instead of a trapezoid, the balls would have too much sidewards momentum when hitting the first pin that they do not have a 50/50% chance of going left or right, but a very skewed chance (something around 20/80%) of bouncing the same as in the previous layer.
 
 I have yet to see the proper math discussed that deals with the actual trajectory that balls take in an un-idealized scenario, i.e. skipping layers, unfair left-right distributions on individual pegs due to imperfect alignment and so on. I might investigate this at a different time; however that would require building a more robust simulation engine. The implementation that you see on this page required some fine-tuning regarding friction, stiction, and air resistance. Choosing either parameter wrong results in unpredictable behavior.
@@ -115,12 +110,11 @@ This is, at least currently, my attempt of an explanation.
 
 Thats it for now; I plant to investigate the physics and math behind how a non-idealized Galton board works in the future.
 
-# Remarks on building your own
----
+## Remarks on building your own
 
 I am publishing the blueprints in case you want to build your own based on mine; <a href="../misc/galtonboard/blueprint.pdf">linked here</a>.
 <center>
-<a href="../misc/galtonboard/blueprint.pdf"><img src='../misc/galtonboard/blueprint.png' alt='Galton board blueprint (opens the PDF)' width="50%" style='border: 1px solid black'></a>
+<a href="../misc/galtonboard/blueprint.pdf"><img src='../misc/galtonboard/blueprint.png' alt='Galton board blueprint (opens the PDF)' width="50%" style='border: 1px solid var(--border)'></a>
 </center>
 <br>
 It is meant to be printed on a  <a href="https://en.wikipedia.org/wiki/Paper_size">DIN A3</a> paper. That way it fits perfectly in a standard IKEA picture frame!
@@ -138,8 +132,7 @@ I had the best results in using a little more wood glue than needed so that ther
 via email.</a> I’d be very happy to see your designs.</p>
 
 
-# Further Reading
----
+## Further Reading
 * [Wikipedia: Galton Board](https://en.wikipedia.org/wiki/Galton_board)
 * [Nice Ablation](https://galeascience.wordpress.com/2016/03/11/galtons-peg-board-and-the-central-limit-theorem/)
 

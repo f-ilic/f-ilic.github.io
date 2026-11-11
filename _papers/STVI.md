@@ -16,8 +16,7 @@ teaser: papers/STVI/teaser.mp4
 **We show how to combine low-level video segmentation, which often lack semantic knowledge, with a masking network to get the best of both worlds.**
 Object tracking and decomposition into parts: Our approach (right) bridges the conceptual gap between low-level video representations such as (left) Temporal Super-Pixels which tend to fall apart over time and do not model objects directly, and instance segmentation methods such as (center) Mask R-CNN  which lack a decomposition into parts, and temporal consistency. Our unsupervised approach is able to detect salient object parts based on motion and appearance.
 
-# Overview and Examples
----
+## Overview and Examples
 
 <br>
 <video autoplay loop muted playsinline width="100%"> <source  src="papers/STVI/jumpingjack.mp4" type="video/mp4"> </video>
@@ -36,15 +35,13 @@ This can reveal interesting details such as the tube in the center image formed 
 Viewer/Object-centered representation: The trajectory w.r.t. the observer is shown on the left. The relative motion of object parts w.r.t. the object centroid is shown on the right. This is useful because objects are represented as the sum of their parts, and not just as instance masks.
 
 
-# Supplement
----
+## Supplement
 
 <center><video autoplay loop muted playsinline width="100%"><source  src="papers/STVI/parts/DAVIS_parts.mp4" type="video/mp4"></video></center>
 The DAVIS Parts Dataset contains a variety of densely annotated objects and their parts. We envision this dataset being used for object part tracking and detection.
 
 
-# Cite
----
+## Cite
 ```bibtex
 @InProceedings{ilic20wacv,
 author = {Ilic, Filip and Pinz, Axel},

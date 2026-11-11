@@ -1,7 +1,7 @@
 {%- comment -%}
   Outputs a link target from front matter: external URLs are kept as-is, site paths such as
   "papers/x.pdf" are made root-relative so they resolve from any page (not only from the homepage).
-  Usage: {% include url.html url=page.paper %}
+  Usage: include url.html with url=page.paper
 {%- endcomment -%}
 {%- if include.url contains "://" -%}
   {{- include.url -}}

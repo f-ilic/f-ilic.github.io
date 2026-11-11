@@ -2,10 +2,9 @@ source "https://rubygems.org"
 
 # The site is built locally and the generated _site/ is pushed to the `master` branch
 # (see README.md), so only the gems needed for that build are listed here.
-# Jekyll 3.10 + minima 2.5.1 produce exactly the same output as the old `github-pages`
-# gem did, but also install on current Ruby versions (3.4 / 4.0).
+# Jekyll 3.10 is what GitHub Pages uses, and installs on current Ruby versions (3.4 / 4.0).
+# All styles live in assets/main.scss; no theme gem is used.
 gem "jekyll", "~> 3.10"
-gem "minima", "2.5.1"
 gem "kramdown-parser-gfm"
 gem "webrick" # needed by `jekyll serve` since Ruby 3.0
 

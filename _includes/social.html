@@ -1,24 +1,14 @@
-<div style="white-space: nowrap; overflow: hidden; ">
-{%- if site.email -%}
-<a title="Email" href="mailto:{{ site.email }}">
-     {% include icons/email.html %}
-</a>
-{%- endif -%}
-
-{%- if site.github_username -%}
-<a title="Github" href="https://github.com/{{ site.github_username | cgi_escape | escape }}">
-    {% include icons/github.html %}
-</a>
-{%- endif -%}
-
-{%- if site.linkedin_username -%}
-<a title="LinkedIn" href="https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}">
-        {% include icons/linkedin.html %}</a>
-{%- endif -%}
-
-{%- if site.scholar_username -%}
-<a title="Google Scholar" href="https://scholar.google.com/citations?user={{ site.scholar_username | cgi_escape | escape }}">
-        {% include icons/google_scholar.html %}
-</a>
-{%- endif -%}
-</div>
+<ul class="social">
+{%- if site.email %}
+  <li><a title="Email" href="mailto:{{ site.email }}">{% include icons/email.html %}</a></li>
+{%- endif %}
+{%- if site.github_username %}
+  <li><a title="Github" href="https://github.com/{{ site.github_username | cgi_escape | escape }}">{% include icons/github.html %}</a></li>
+{%- endif %}
+{%- if site.linkedin_username %}
+  <li><a title="LinkedIn" href="https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}">{% include icons/linkedin.html %}</a></li>
+{%- endif %}
+{%- if site.scholar_username %}
+  <li><a title="Google Scholar" href="https://scholar.google.com/citations?user={{ site.scholar_username | cgi_escape | escape }}">{% include icons/google_scholar.html %}</a></li>
+{%- endif %}
+</ul>

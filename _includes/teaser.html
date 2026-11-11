@@ -1,0 +1,11 @@
+{%- comment -%} Teaser video or image of a card. Decorative: the card title next to it is the link text. {%- endcomment -%}
+{%- assign teaser_ext = include.teaser | split: '.' | last | downcase -%}
+{%- capture teaser_src %}{% include url.html url=include.teaser %}{% endcapture -%}
+{%- case teaser_ext -%}
+{%- when "mp4" or "webm" or "ogg" %}
+    <video autoplay loop muted playsinline preload="metadata" aria-hidden="true">
+      <source src="{{ teaser_src }}" type="video/{{ teaser_ext }}">
+    </video>
+{%- when "gif" or "jpg" or "jpeg" or "png" %}
+    <img src="{{ teaser_src }}" alt="" loading="lazy">
+{%- endcase -%}

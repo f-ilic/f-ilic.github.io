@@ -1,30 +1,17 @@
-{% if post.title == include.title %}
-<table role="presentation">
-    <tr>
-        <td width="35%">
-            <div class="badge">{{ post.venue }}</div>
-            {% assign file_extension = post.teaser | split: '.' | last | downcase %}
-            {% capture teaser_src %}{% include url.html url=post.teaser %}{% endcapture %}
-            {% case file_extension %}
-            {% when "mp4" or "webm" or "ogg" %}
-            <video autoplay loop muted playsinline aria-hidden="true" style="width: 100%;">
-                <source src="{{ teaser_src }}" type="video/{{ file_extension }}">
-                Your browser does not support the video tag.
-            </video>
-            {% when "gif" or "jpg" or "jpeg" or "png" %}
-            <img src="{{ teaser_src }}" alt="" style="width: 100%;">
-            {% else %}
-            <p>Unsupported media type.</p>
-            {% endcase %}
-        </td>
-        <td width="65%" style="padding: 0px">
-            <div class="paper-info">
-                <div class="paper-head">
-                    <span class="paper-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></span>
-                    <span class="paper-author">{{ post.subheading }}</span>
-                </div>
-            </div>
-        </td>
-    </tr>
-</table>
-{% endif %}
+{%- comment -%}
+  Card for an entry of the "misc" collection. Renders only for the post whose title matches
+  include.title, so it can be used inside a loop over site.misc on any page.
+{%- endcomment -%}
+{%- if post.title == include.title -%}
+{%- assign card_href = post.url | relative_url -%}
+<article class="card">
+  <a class="card-media" href="{{ card_href }}" tabindex="-1" aria-hidden="true">
+    {%- include teaser.html teaser=post.teaser -%}
+    <span class="badge">{{ post.venue }}</span>
+  </a>
+  <div class="card-body">
+    <h3 class="card-title"><a href="{{ card_href }}">{{ post.title }}</a></h3>
+    <p class="card-description">{{ post.subheading }}</p>
+  </div>
+</article>
+{%- endif -%}

@@ -42,5 +42,5 @@ then run the build (Jekyll keeps the `.git` folder inside `_site/`).
 ## Notes
 
 - The contact email shown on the site is `email` in `_config.yml`.
-- The hover/accent colour is `--link-hover` in `assets/main.scss`.
+- All styling is in `assets/main.scss` (no theme gem). Colours are the tokens at its top (`--accent` etc.), each with a light and a dark value.
 - The GitHub repository must be **public** for GitHub Pages to serve it on a free plan.

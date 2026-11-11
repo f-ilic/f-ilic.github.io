@@ -1,16 +1,16 @@
 <!-- Light / System / Dark colour scheme toggle. The checked radio drives `color-scheme` via CSS (:has),
      the script below remembers the choice and applies it inline on <html> (see head.html). -->
-<fieldset class="toggle-group" id="colorScheme">
+<fieldset class="theme-toggle" id="colorScheme">
     <legend data-sr>Colour scheme</legend>
-    <label>
+    <label title="Light theme">
         <input type="radio" name="color-scheme" value="light" id="color-scheme-light" data-sr>{% include icons/theme-lightmode.html %}
         <span class="theme-text">Light</span>
     </label>
-    <label>
+    <label title="System theme">
         <input type="radio" name="color-scheme" value="light dark" id="default-scheme" data-sr checked>{% include icons/theme-default.html %}
         <span class="theme-text">System</span>
     </label>
-    <label>
+    <label title="Dark theme">
         <input type="radio" name="color-scheme" value="dark" id="color-scheme-dark" data-sr>{% include icons/theme-darkmode.html %}
         <span class="theme-text">Dark</span>
     </label>
