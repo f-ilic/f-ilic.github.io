@@ -259,15 +259,16 @@ code {
 
 //  ---------------- Experience timeline (home page)
 
-// Dots joined by a thin vertical line. The dots use the text colour: black in light mode,
-// light in dark mode. Each line runs from an entry's dot to the next one, so it also fits
-// entries that wrap onto two lines.
+// Dots joined by a thin vertical line. The dots are grey (dark grey in light mode, light grey
+// in dark mode). Each line runs from an entry's dot to the next one, so it also fits entries
+// that wrap onto two lines.
 $timeline-dot: 7px;
+$timeline-dot-color: color-mix(in srgb, CanvasText, Canvas 45%);
 $timeline-dot-top: calc(0.3em + 0.75em - #{$timeline-dot / 2}); // centred on the first text line
 
 .experience {
     list-style: none;
-    margin: 0 0 calc(1.5em + 15px);
+    margin: 0 0 calc(1.5em + 15px); // same gap as the <br> after the About text
     padding: 0;
 }
 
@@ -286,7 +287,7 @@ $timeline-dot-top: calc(0.3em + 0.75em - #{$timeline-dot / 2}); // centred on th
     width: $timeline-dot;
     height: $timeline-dot;
     border-radius: 50%;
-    background: CanvasText;
+    background: $timeline-dot-color;
 }
 
 .experience li:not(:last-child)::after {
